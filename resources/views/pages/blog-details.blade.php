@@ -11,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -36,7 +36,7 @@
 
                             <!--  start post-->
                             <article class="card card-style01 border-0">
-                                <img src="{{ asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
                                 <div class="card-body position-relative p-0">
                                     <div class="p-1-6 p-xl-1-9">
                                         <ul class="list-unstyled border-bottom pb-3 mb-4 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
@@ -65,12 +65,12 @@
                                         <div class="row mb-1-6 mb-sm-1-9">
                                             <div class="col-6 wow fadeInUp" data-wow-delay="200ms">
                                                 <div class="image-hover">
-                                                    <img src="{{ asset('assets/img/blog/blog-detail-01.jpg') }}" alt="..." title="..." class="rounded">
+                                                    <img src="{{ theme_asset('assets/img/blog/blog-detail-01.jpg') }}" alt="..." title="..." class="rounded">
                                                 </div>
                                             </div>
                                             <div class="col-6 wow fadeInUp" data-wow-delay="200ms">
                                                 <div class="image-hover">
-                                                    <img src="{{ asset('assets/img/blog/blog-detail-02.jpg') }}" alt="..." title="..." class="rounded">
+                                                    <img src="{{ theme_asset('assets/img/blog/blog-detail-02.jpg') }}" alt="..." title="..." class="rounded">
                                                 </div>
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                 <div class="prev-page">
                                     <div class="page-info">
                                         <a href="{{ route('blog.details') }}#">
-                                            <span class="image-prev"><img src="{{ asset('assets/img/blog/blog-prev.jpg') }}" alt="..." title="..." class="rounded"></span>
+                                            <span class="image-prev"><img src="{{ theme_asset('assets/img/blog/blog-prev.jpg') }}" alt="..." title="..." class="rounded"></span>
                                             <div class="prev-link-page-info">
                                                 <h4 class="prev-title">How will you know success when it show up?</h4>
                                                 <span class="date-details"><span class="create-date">Feb 02, 2026</span></span>
@@ -124,7 +124,7 @@
                                                 <h4 class="next-title">Digital tools for real-time shipment tracking</h4>
                                                 <span class="date-details"><span class="create-date">Feb 08, 2026</span></span>
                                             </div>
-                                            <span class="image-next"><img src="{{ asset('assets/img/blog/blog-next.jpg') }}" alt="..." title="..." class="rounded"></span>
+                                            <span class="image-next"><img src="{{ theme_asset('assets/img/blog/blog-next.jpg') }}" alt="..." title="..." class="rounded"></span>
                                         </a>
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="d-flex border-bottom pb-1-9 mb-1-9">
                                     <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/avatar/avatar-05.jpg') }}" class="rounded-circle" alt="..." title="...">
+                                        <img src="{{ theme_asset('assets/img/avatar/avatar-05.jpg') }}" class="rounded-circle" alt="..." title="...">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <div class="h6">Bella Cruz</div>
@@ -148,7 +148,7 @@
                                 <div class="ps-2-1">
                                     <div class="d-flex border-bottom pb-1-9 mb-1-9">
                                         <div class="flex-shrink-0">
-                                            <img src="{{ asset('assets/img/avatar/avatar-06.jpg') }}" class="rounded-circle" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-06.jpg') }}" class="rounded-circle" alt="..." title="...">
                                         </div>
                                         <div class="flex-grow-1 ms-3">
                                             <div class="h6">James Tang</div>
@@ -161,7 +161,7 @@
 
                                 <div class="d-flex">
                                     <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/avatar/avatar-07.jpg') }}" class="rounded-circle" alt="..." title="...">
+                                        <img src="{{ theme_asset('assets/img/avatar/avatar-07.jpg') }}" class="rounded-circle" alt="..." title="...">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <div class="h6">Cieran Prosser</div>
@@ -221,7 +221,7 @@
                                     <div class="mb-1-9 text-white h4">Recent Posts</div>
                                     <div class="d-flex mb-4">
                                         <div class="flex-shrink-0">
-                                            <img src="{{ asset('assets/img/blog/blog-thumb-01.jpg') }}" alt="..." title="..." class="rounded">
+                                            <img src="{{ theme_asset('assets/img/blog/blog-thumb-01.jpg') }}" alt="..." title="..." class="rounded">
                                         </div>
                                         <div class="flex-grow-1 ms-3">
                                             <div class="mb-2 h6"><a href="{{ route('blog.details') }}#" class="text-white text-primary-hover">New design for cargo and warehouse.</a></div>
@@ -230,7 +230,7 @@
                                     </div>
                                     <div class="d-flex mb-4">
                                         <div class="flex-shrink-0">
-                                            <img src="{{ asset('assets/img/blog/blog-thumb-02.jpg') }}" alt="..." title="..." class="rounded">
+                                            <img src="{{ theme_asset('assets/img/blog/blog-thumb-02.jpg') }}" alt="..." title="..." class="rounded">
                                         </div>
                                         <div class="flex-grow-1 ms-3">
                                             <div class="mb-2 h6"><a href="{{ route('blog.details') }}#" class="text-white text-primary-hover">We very careful handling the valuable goods.</a></div>
@@ -239,7 +239,7 @@
                                     </div>
                                     <div class="d-flex">
                                         <div class="flex-shrink-0">
-                                            <img src="{{ asset('assets/img/blog/blog-thumb-03.jpg') }}" alt="..." title="..." class="rounded">
+                                            <img src="{{ theme_asset('assets/img/blog/blog-thumb-03.jpg') }}" alt="..." title="..." class="rounded">
                                         </div>
                                         <div class="flex-grow-1 ms-3">
                                             <div class="mb-2 h6"><a href="{{ route('blog.details') }}#" class="text-white text-primary-hover">Why can we love our logistic task so much?</a></div>

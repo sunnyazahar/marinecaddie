@@ -24,26 +24,31 @@ class AppServiceProvider extends ServiceProvider
             return;
         }
 
-        $requestHost = rtrim(request()->getSchemeAndHttpHost(), '/');
-        $appUrl = (string) config('app.url');
-        $assetUrl = (string) config('app.asset_url');
+        $host = request()->getHost();
 
-        $isLiveRequest = $requestHost !== '' && ! str_contains($requestHost, 'localhost');
-        $hasLocalhostConfig = str_contains($appUrl, 'localhost') || str_contains($assetUrl, 'localhost');
+        // Live host (Hostinger): always use the real domain for assets — never localhost.
+        if ($host !== '' && ! in_array($host, ['localhost', '127.0.0.1'], true)) {
+            $origin = rtrim(request()->getSchemeAndHttpHost(), '/');
 
-        // Hostinger / production: never emit localhost asset URLs (phones cannot load them).
-        if ($isLiveRequest && $hasLocalhostConfig) {
-            URL::forceRootUrl($requestHost);
-            URL::forceScheme('https');
-            // Document root is /public on Hostinger, so assets are at domain root.
-            config(['app.url' => $requestHost]);
-            config(['app.asset_url' => $requestHost]);
+            config([
+                'app.url' => $origin,
+                'app.asset_url' => $origin,
+            ]);
+
+            URL::forceRootUrl($origin);
+            URL::forceScheme(request()->isSecure() ? 'https' : request()->getScheme());
+            URL::useAssetOrigin($origin);
 
             return;
         }
 
-        if ($appUrl !== '') {
-            URL::forceRootUrl($appUrl);
+        // Local XAMPP
+        if ($root = config('app.url')) {
+            URL::forceRootUrl($root);
+        }
+
+        if ($assetRoot = config('app.asset_url')) {
+            URL::useAssetOrigin($assetRoot);
         }
     }
 }

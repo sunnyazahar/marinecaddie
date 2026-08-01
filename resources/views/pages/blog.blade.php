@@ -11,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -33,7 +33,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -54,7 +54,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-02.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-02.jpg') }}" alt="..." title="..." class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -75,7 +75,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-03.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-03.jpg') }}" alt="..." title="..." class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -96,7 +96,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-04.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-04.jpg') }}" alt="..." title="..." class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -117,7 +117,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-05.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-05.jpg') }}" alt="..." title="..." class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -138,7 +138,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-06.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-06.jpg') }}" alt="..." title="..." class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">

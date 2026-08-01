@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -104,7 +104,7 @@
                                                 <div class="form-group">
                                                     <div class="quform-captcha">
                                                         <div class="quform-captcha-inner">
-                                                            <img src="{{ asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
+                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
                                                         </div>
                                                     </div>
                                                 </div>

@@ -29,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item cloned" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ asset('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ asset('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item active" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ asset('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item cloned" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ asset('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item cloned" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
                 </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ti-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ti-arrow-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
         </section>
 
@@ -124,7 +124,7 @@
                 <div class="row align-items-xl-center mt-n1-9">
                     <div class="col-lg-6 mt-1-9">
                         <div class="image-box text-xl-end image-hover wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                            <img src="{{ asset('assets/img/content/about-02.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/content/about-02.jpg') }}" alt="..." title="..." class="rounded">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-1-9">
@@ -148,14 +148,14 @@
                             </div>
                             <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
                                 <div class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/img/avatar/avatar-13.jpg') }}" class="border-radius-4" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/avatar/avatar-13.jpg') }}" class="border-radius-4" alt="..." title="...">
                                     <div class="content-box ms-3">
                                         <h3 class="h4 title">Michael Gsell</h3>
                                         <span class="designation"> Marketing Coordinator</span>
                                     </div>
                                 </div>
                                 <div class="ms-1-9 ms-xl-7">
-                                    <img src="{{ asset('assets/img/content/signature-02.png') }}" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/signature-02.png') }}" alt="..." title="...">
                                 </div>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
                 <div class="row wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                     <div class="col-sm-6 col-lg-3 p-0 text-center">
                         <div class="services-inner">
-                            <div class="bg-img min-height-600 services-content" data-background="{{ asset('assets/img/services/service-13.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/services/service-13.jpg') }}&quot;);">
+                            <div class="bg-img min-height-600 services-content" data-background="{{ theme_asset('assets/img/services/service-13.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/services/service-13.jpg') }}&quot;);">
                                 <div class="services-content-inner">
                                     <div class="services-item-inner-top">
                                         <span class="display-20 lh-1 d-inline-block letter-spacing-0 font-weight-700 text-white">01</span>
@@ -191,7 +191,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3 p-0 text-center">
                         <div class="services-inner">
-                            <div class="bg-img min-height-600 services-content" data-background="{{ asset('assets/img/services/service-14.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/services/service-14.jpg') }}&quot;);">
+                            <div class="bg-img min-height-600 services-content" data-background="{{ theme_asset('assets/img/services/service-14.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/services/service-14.jpg') }}&quot;);">
                                 <div class="services-content-inner">
                                     <div class="services-item-inner-top">
                                         <span class="display-20 lh-1 d-inline-block letter-spacing-0 font-weight-700 text-white">02</span>
@@ -211,7 +211,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3 p-0 text-center">
                         <div class="services-inner">
-                            <div class="bg-img min-height-600 services-content" data-background="{{ asset('assets/img/services/service-15.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/services/service-15.jpg') }}&quot;);">
+                            <div class="bg-img min-height-600 services-content" data-background="{{ theme_asset('assets/img/services/service-15.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/services/service-15.jpg') }}&quot;);">
                                 <div class="services-content-inner">
                                     <div class="services-item-inner-top">
                                         <span class="display-20 lh-1 d-inline-block letter-spacing-0 font-weight-700 text-white">03</span>
@@ -231,7 +231,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3 p-0 text-center">
                         <div class="services-inner">
-                            <div class="bg-img min-height-600 services-content" data-background="{{ asset('assets/img/services/service-16.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/services/service-16.jpg') }}&quot;);">
+                            <div class="bg-img min-height-600 services-content" data-background="{{ theme_asset('assets/img/services/service-16.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/services/service-16.jpg') }}&quot;);">
                                 <div class="services-content-inner">
                                     <div class="services-item-inner-top">
                                         <span class="display-20 lh-1 d-inline-block letter-spacing-0 font-weight-700 text-white">04</span>
@@ -260,32 +260,32 @@
                 <div class="row g-0">
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ asset('assets/img/clients/icon-01.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-01.png') }}" alt="..." title="...">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-md-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ asset('assets/img/clients/icon-02.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-02.png') }}" alt="..." title="...">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-end border-md-end-0 border-xl-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ asset('assets/img/clients/icon-03.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-03.png') }}" alt="..." title="...">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-md-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ asset('assets/img/clients/icon-04.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-04.png') }}" alt="..." title="...">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ asset('assets/img/clients/icon-05.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-05.png') }}" alt="..." title="...">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom py-3 py-md-4 py-xl-5">
-                            <img src="{{ asset('assets/img/clients/icon-06.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-06.png') }}" alt="..." title="...">
                         </div>
                     </div>
                 </div>
@@ -307,7 +307,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">01</span>
                                     </div>
@@ -319,7 +319,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">02</span>
                                     </div>
@@ -331,7 +331,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">03</span>
                                     </div>
@@ -343,7 +343,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">04</span>
                                     </div>
@@ -359,7 +359,7 @@
 
         <!-- EXTRA SECTION
         ================================================== -->
-        <section class="bg-img cover-background pt-24 pb-0 extra-style01 secondary-overlay" data-overlay-dark="3" data-background="{{ asset('assets/img/bg/bg-01.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/bg/bg-01.jpg') }}&quot;);">
+        <section class="bg-img cover-background pt-24 pb-0 extra-style01 secondary-overlay" data-overlay-dark="3" data-background="{{ theme_asset('assets/img/bg/bg-01.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/bg/bg-01.jpg') }}&quot;);">
             <div class="container">
                 <div class="extra-content-box">
                     <ul class="inner-box">
@@ -398,7 +398,7 @@
                             </div>
                             <div class="row mb-2-3 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                                 <div class="col-sm-5 image-hover mb-3 mb-sm-0">
-                                    <img src="{{ asset('assets/img/content/faq-01.jpg') }}" alt="..." title="..." class="rounded">
+                                    <img src="{{ theme_asset('assets/img/content/faq-01.jpg') }}" alt="..." title="..." class="rounded">
                                 </div>
                                 <div class="col-sm-7">
                                     <p class="mb-0">We are committed to delivering reliable, efficient, and innovative logistics solutions that keep your business moving with years.</p>
@@ -473,7 +473,7 @@
                         </div>
                         <div class="col-lg-4 my-2-2 my-lg-0">
                             <div class="contact-icon01">
-                                <img src="{{ asset('assets/img/icons/icon-18.png') }}" class="w-30px" alt="..." title="...">
+                                <img src="{{ theme_asset('assets/img/icons/icon-18.png') }}" class="w-30px" alt="..." title="...">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -601,7 +601,7 @@
                                                 <div class="form-group">
                                                     <div class="quform-captcha">
                                                         <div class="quform-captcha-inner">
-                                                            <img src="{{ asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
+                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -639,7 +639,7 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
                         <article class="card card-style06 border-0 rounded h-100">
                             <div class="image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
                                 <div class="card-img-text"><a href="{{ route('home.alt') }}#">Shipping</a></div>
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
@@ -655,7 +655,7 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                         <article class="card card-style06 border-0 rounded h-100">
                             <div class="image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-02.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-02.jpg') }}" alt="..." title="..." class="rounded-top">
                                 <div class="card-img-text"><a href="{{ route('home.alt') }}#">Transport</a></div>
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
@@ -671,7 +671,7 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
                         <article class="card card-style06 border-0 rounded h-100">
                             <div class="image-hover">
-                                <img src="{{ asset('assets/img/blog/blog-03.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-03.jpg') }}" alt="..." title="..." class="rounded-top">
                                 <div class="card-img-text"><a href="{{ route('home.alt') }}#">Tracking</a></div>
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">

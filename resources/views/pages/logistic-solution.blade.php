@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -57,7 +57,7 @@
                             </div>
                             <div class="widget bg-secondary rounded p-0 wow fadeInUp" data-wow-delay="100ms">
                                 <div class="banner-wrapper">
-                                    <img src="{{ asset('assets/img/content/sidebar-img01.jpg') }}" alt="..." title="..." class="rounded-top w-100">
+                                    <img src="{{ theme_asset('assets/img/content/sidebar-img01.jpg') }}" alt="..." title="..." class="rounded-top w-100">
                                     <div class="p-2-2 pt-6 position-relative text-center">
                                         <div class="icon-boxs bg-primary">
                                             <i class="ti-headphone-alt fs-1 text-white"></i>
@@ -75,7 +75,7 @@
                     <div class="col-lg-8 mt-2-9 order-1 order-lg-2">
                         <div>
                             <div class="mb-2-6 image-hover wow fadeInUp" data-wow-delay="100ms">
-                                <img src="{{ asset('assets/img/services/service-detail-05.jpg') }}" alt="Logistic Solution" title="Logistic Solution" class="rounded">
+                                <img src="{{ theme_asset('assets/img/services/service-detail-05.jpg') }}" alt="Logistic Solution" title="Logistic Solution" class="rounded">
                             </div>
                             <div class="mb-2-9 wow fadeInUp" data-wow-delay="100ms">
                                 <h2 class="display-6 font-weight-600 lh-1 pb-3 mb-2 font-weight-800">Logistic Solution</h2>
@@ -89,17 +89,17 @@
                             <div class="row mt-n1-9 mb-2-6 wow fadeInUp" data-wow-delay="100ms">
                                 <div class="col-6 col-md-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                                     <div class="image-hover">
-                                        <img src="{{ asset('assets/img/services/service-details-1.jpg') }}" alt="..." title="..." class="rounded">
+                                        <img src="{{ theme_asset('assets/img/services/service-details-1.jpg') }}" alt="..." title="..." class="rounded">
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                                     <div class="image-hover">
-                                        <img src="{{ asset('assets/img/services/service-details-2.jpg') }}" alt="..." title="..." class="rounded">
+                                        <img src="{{ theme_asset('assets/img/services/service-details-2.jpg') }}" alt="..." title="..." class="rounded">
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                                     <div class="image-hover">
-                                        <img src="{{ asset('assets/img/services/service-details-3.jpg') }}" alt="..." title="..." class="rounded">
+                                        <img src="{{ theme_asset('assets/img/services/service-details-3.jpg') }}" alt="..." title="..." class="rounded">
                                     </div>
                                 </div>
                             </div>

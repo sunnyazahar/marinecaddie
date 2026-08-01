@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -33,17 +33,17 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="image-hover">
-                                    <img src="{{ asset('assets/img/content/about-04.jpg') }}" class="rounded" alt="...">
+                                    <img src="{{ theme_asset('assets/img/content/about-04.jpg') }}" class="rounded" alt="...">
                                 </div>
                             </div>
                             <div class="col-6 mt-1-9">
                                 <div class="image-hover">
-                                    <img src="{{ asset('assets/img/content/about-05.jpg') }}" class="rounded" alt="...">
+                                    <img src="{{ theme_asset('assets/img/content/about-05.jpg') }}" class="rounded" alt="...">
                                 </div>
                             </div>
                         </div>
                         <div class="position-absolute p-3 p-sm-4 bg-primary rounded-circle start-50 top-50 translate-middle">
-                            <img src="{{ asset('assets/img/icons/icon-16.png') }}" alt="..." class="w-50px">
+                            <img src="{{ theme_asset('assets/img/icons/icon-16.png') }}" alt="..." class="w-50px">
                         </div>
                     </div>
                     <div class="col-lg-6 text-column">
@@ -57,7 +57,7 @@
                             <div class="mb-5">
                                 <div class="d-flex border-bottom pb-1-9 mb-1-9 wow fadeInUp" data-wow-delay="300ms">
                                     <div class="flex-shrink-0 me-4">
-                                        <img src="{{ asset('assets/img/icons/icon-14.png') }}" alt="..." class="w-50px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-14.png') }}" alt="..." class="w-50px">
                                     </div>
                                     <div class="flex-grow-1">
                                         <h3 class="h5">System Integration</h3>
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="d-flex wow fadeInUp" data-wow-delay="400ms">
                                     <div class="flex-shrink-0 me-4">
-                                        <img src="{{ asset('assets/img/icons/icon-15.png') }}" alt="..." class="w-50px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-15.png') }}" alt="..." class="w-50px">
                                     </div>
                                     <div class="flex-grow-1">
                                         <h3 class="h5">Reliability &amp; Trust</h3>
@@ -97,27 +97,27 @@
                     <div class="scroll-track pause-on-hover scroll-left scroll-speed-4">
                         <div class="scroll-group">
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Supply Chain Design">Supply Chain Design</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="3PL Coordination">3PL Coordination</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="End-to-End Visibility">End-to-End Visibility</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Customs Compliance">Customs Compliance</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Network Optimization">Network Optimization</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Maritime Expertise">Maritime Expertise</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Systems Integration">Systems Integration</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Risk Management">Risk Management</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Supply Chain Design">Supply Chain Design</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="3PL Coordination">3PL Coordination</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                             <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="End-to-End Visibility">End-to-End Visibility</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
 
         <!-- TESTIMONIAL
         ================================================== -->
-        <section class="bg-img cover-background secondary-overlay parallax" data-overlay-dark="9" data-background="{{ asset('assets/img/bg/bg-05.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/bg/bg-05.jpg') }}&quot;);">
+        <section class="bg-img cover-background secondary-overlay parallax" data-overlay-dark="9" data-background="{{ theme_asset('assets/img/bg/bg-05.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/bg/bg-05.jpg') }}&quot;);">
             <div class="container">
                 <div class="row align-items-center mt-n1-9">
                     <div class="col-lg-6 mt-1-9 d-lg-block d-none">
@@ -197,7 +197,7 @@
                                                     <div class="form-group">
                                                         <div class="quform-captcha">
                                                             <div class="quform-captcha-inner">
-                                                                <img src="{{ asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
+                                                                <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -232,9 +232,9 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie orchestrates our ocean and inland partners as one network. End-to-end visibility and disciplined 3PL coordination cut exceptions and keep our lanes on schedule.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
                                             <div class="testimonials-quote">
-                                                <img src="{{ asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
+                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1 ms-4">
@@ -246,9 +246,9 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">As our 4PL partner, MarineCaddie integrates systems and manages compliance risk across markets. We reduced landed cost while improving on-time performance—without adding complexity for our teams.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ asset('assets/img/avatar/avatar-04.jpg') }}" class="border-radius-50" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-04.jpg') }}" class="border-radius-50" alt="..." title="...">
                                             <div class="testimonials-quote">
-                                                <img src="{{ asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
+                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1 ms-4">
@@ -260,9 +260,9 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Their maritime operator experience shows in every exception. From customs readiness to warehouse handoffs, we finally have one accountable orchestration layer for our global supply chain.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ asset('assets/img/avatar/avatar-02.jpg') }}" class="border-radius-50" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-02.jpg') }}" class="border-radius-50" alt="..." title="...">
                                             <div class="testimonials-quote">
-                                                <img src="{{ asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
+                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1 ms-4">
@@ -274,9 +274,9 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie orchestrates our ocean and inland partners as one network. End-to-end visibility and disciplined 3PL coordination cut exceptions and keep our lanes on schedule.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
                                             <div class="testimonials-quote">
-                                                <img src="{{ asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
+                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1 ms-4">
@@ -288,9 +288,9 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">As our 4PL partner, MarineCaddie integrates systems and manages compliance risk across markets. We reduced landed cost while improving on-time performance—without adding complexity for our teams.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ asset('assets/img/avatar/avatar-04.jpg') }}" class="border-radius-50" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-04.jpg') }}" class="border-radius-50" alt="..." title="...">
                                             <div class="testimonials-quote">
-                                                <img src="{{ asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
+                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1 ms-4">
@@ -302,9 +302,9 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Their maritime operator experience shows in every exception. From customs readiness to warehouse handoffs, we finally have one accountable orchestration layer for our global supply chain.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ asset('assets/img/avatar/avatar-02.jpg') }}" class="border-radius-50" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-02.jpg') }}" class="border-radius-50" alt="..." title="...">
                                             <div class="testimonials-quote">
-                                                <img src="{{ asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
+                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1 ms-4">
@@ -316,9 +316,9 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie orchestrates our ocean and inland partners as one network. End-to-end visibility and disciplined 3PL coordination cut exceptions and keep our lanes on schedule.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
+                                            <img src="{{ theme_asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
                                             <div class="testimonials-quote">
-                                                <img src="{{ asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
+                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="..." title="...">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1 ms-4">
@@ -348,7 +348,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="150ms">
                         <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ asset('assets/img/team/team-01.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/team/team-01.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Maya Paschke</h3>
                                 <span>Distribution Network Lead</span>
@@ -365,7 +365,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                         <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ asset('assets/img/team/team-02.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/team/team-02.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Archie Symes</h3>
                                 <span>4PL Program Director</span>
@@ -382,7 +382,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="250ms">
                         <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ asset('assets/img/team/team-03.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/team/team-03.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Summer Meldrum</h3>
                                 <span>Supply Chain Designer</span>
@@ -399,7 +399,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
                         <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ asset('assets/img/team/team-04.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/team/team-04.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Jonathan Lont</h3>
                                 <span>Maritime Operations Lead</span>
@@ -416,7 +416,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="350ms">
                         <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ asset('assets/img/team/team-05.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/team/team-05.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Asmeret Girmay</h3>
                                 <span>Customs &amp; Compliance Advisor</span>
@@ -433,7 +433,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="400ms">
                         <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ asset('assets/img/team/team-06.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/team/team-06.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Askalu Isaias</h3>
                                 <span>3PL Coordination Manager</span>
@@ -454,10 +454,10 @@
 
         <!-- CALL TO ACTION
         ================================================== -->
-        <section class="py-22 py-md-24 video-banner secondary-overlay" data-overlay-dark="8" style="background-image: url({{ asset('assets/img/banner/video-cover.jpg') }});">
+        <section class="py-22 py-md-24 video-banner secondary-overlay" data-overlay-dark="8" style="background-image: url({{ theme_asset('assets/img/banner/video-cover.jpg') }});">
             <div class="banner-video" aria-hidden="true">
-                <video autoplay muted loop playsinline preload="auto" poster="{{ asset('assets/img/banner/video-cover.jpg') }}">
-                    <source src="{{ asset('assets/video/cargo-ship-loading-port.mp4') }}" type="video/mp4">
+                <video autoplay muted loop playsinline preload="auto" poster="{{ theme_asset('assets/img/banner/video-cover.jpg') }}">
+                    <source src="{{ theme_asset('assets/video/cargo-ship-loading-port.mp4') }}" type="video/mp4">
                 </video>
             </div>
             <div class="container py-xl-8 position-relative z-index-9"></div>

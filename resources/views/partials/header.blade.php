@@ -27,7 +27,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0 current">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" src="{{ asset('assets/img/logos/logo.svg') }}" data-logo="{{ asset('assets/img/logos/logo.svg') }}" data-logo-inner="{{ asset('assets/img/logos/logo-inner.svg') }}" alt="MarineCaddie" width="280" height="110" style="height: 110px !important; max-height: 110px !important; width: auto; max-width: 300px;"></a>
+                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}" alt="MarineCaddie" width="280" height="110" style="height: 110px !important; max-height: 110px !important; width: auto; max-width: 300px;"></a>
                                         <!-- end logo -->
                                     </div>
 

@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">                                                    
@@ -29,10 +29,10 @@
         <section>
             <div class="container">
                 <div class="row portfolio-gallery-isotope mt-n4">
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="100ms" data-src="{{ asset('assets/img/portfolio/portfolio-01.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Air Transport #01&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Sky Freight&lt;/p&gt;" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="100ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-01.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Air Transport #01&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Sky Freight&lt;/p&gt;" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-01.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-01.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">
@@ -45,10 +45,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="200ms" data-src="{{ asset('assets/img/portfolio/portfolio-02.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Freight Wave #02&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Supply Chain&lt;/p&gt;" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="200ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-02.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Freight Wave #02&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Supply Chain&lt;/p&gt;" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-02.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-02.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">
@@ -61,10 +61,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="300ms" data-src="{{ asset('assets/img/portfolio/portfolio-03.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Special Transport #03&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Priority Shipping&lt;/p&gt;" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="300ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-03.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Special Transport #03&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Priority Shipping&lt;/p&gt;" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-03.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-03.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">
@@ -77,10 +77,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="400ms" data-src="{{ asset('assets/img/portfolio/portfolio-04.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Warehouse Inventory #04&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Inventory Tracking&lt;/p&gt;" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="400ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-04.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Warehouse Inventory #04&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Inventory Tracking&lt;/p&gt;" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-04.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-04.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">
@@ -93,10 +93,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="100ms" data-src="{{ asset('assets/img/portfolio/portfolio-05.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;OnTime Freight #05&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Timely Delivery&lt;/p&gt;" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="100ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-05.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;OnTime Freight #05&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Timely Delivery&lt;/p&gt;" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-05.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-05.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">
@@ -109,10 +109,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="200ms" data-src="{{ asset('assets/img/portfolio/portfolio-06.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Logistic Services #06&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Global Shipping&lt;/p&gt;" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="200ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-06.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Logistic Services #06&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Global Shipping&lt;/p&gt;" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-06.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-06.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">
@@ -125,10 +125,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="300ms" data-src="{{ asset('assets/img/portfolio/portfolio-07.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Road Transportation #07&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Transportation&lt;/p&gt;" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="300ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-07.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Road Transportation #07&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Transportation&lt;/p&gt;" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-07.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-07.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">
@@ -141,10 +141,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="400ms" data-src="{{ asset('assets/img/portfolio/portfolio-08.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Security For Cargo #08&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Trusted Cargo&lt;/p&gt;" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
+                    <div class="col-md-6 col-xl-3 mt-4 wow fadeInUp" data-wow-delay="400ms" data-src="{{ theme_asset('assets/img/portfolio/portfolio-08.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Security For Cargo #08&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Trusted Cargo&lt;/p&gt;" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                         <div class="portfolio-style01 position-relative">
                             <div class="img-hover rounded">
-                                <img src="{{ asset('assets/img/portfolio/portfolio-08.jpg') }}" alt="..." title="..." class="rounded">
+                                <img src="{{ theme_asset('assets/img/portfolio/portfolio-08.jpg') }}" alt="..." title="..." class="rounded">
                             </div>
                             <div class="content">
                                 <div class="pe-3">

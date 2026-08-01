@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="position-relative mb-1-9 mb-sm-2-9 image-hover wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
-                            <img src="{{ asset('assets/img/portfolio/portfolio-details-01.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/portfolio/portfolio-details-01.jpg') }}" alt="..." title="..." class="rounded">
                         </div>
                         <div class="row mb-2-9 mt-n4">
                             <div class="col-lg-4 mt-4 wow fadeInUp" data-wow-delay="200ms">
@@ -56,22 +56,22 @@
                         <div class="row mb-1-9 mb-sm-6 mt-n4 wow fadeInUp" data-wow-delay="200ms">
                             <div class="col-6 col-lg-3 mt-4">
                                 <div class="image-hover">
-                                    <img src="{{ asset('assets/img/portfolio/portfolio-detail-01.jpg') }}" alt="..." title="..." class="rounded">
+                                    <img src="{{ theme_asset('assets/img/portfolio/portfolio-detail-01.jpg') }}" alt="..." title="..." class="rounded">
                                 </div>
                             </div>
                             <div class="col-6 col-lg-3 mt-4">
                                 <div class="image-hover">
-                                    <img src="{{ asset('assets/img/portfolio/portfolio-detail-02.jpg') }}" alt="..." title="..." class="rounded">
+                                    <img src="{{ theme_asset('assets/img/portfolio/portfolio-detail-02.jpg') }}" alt="..." title="..." class="rounded">
                                 </div>
                             </div>
                             <div class="col-6 col-lg-3 mt-4">
                                 <div class="image-hover">
-                                    <img src="{{ asset('assets/img/portfolio/portfolio-detail-03.jpg') }}" alt="..." title="..." class="rounded">
+                                    <img src="{{ theme_asset('assets/img/portfolio/portfolio-detail-03.jpg') }}" alt="..." title="..." class="rounded">
                                 </div>
                             </div>
                             <div class="col-6 col-lg-3 mt-4">
                                 <div class="image-hover">
-                                    <img src="{{ asset('assets/img/portfolio/portfolio-detail-04.jpg') }}" alt="..." title="..." class="rounded">
+                                    <img src="{{ theme_asset('assets/img/portfolio/portfolio-detail-04.jpg') }}" alt="..." title="..." class="rounded">
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             <div class="prev-page">
                                 <div class="page-info">
                                     <a href="{{ route('portfolio.details') }}#">
-                                        <span class="image-prev"><img src="{{ asset('assets/img/portfolio/prev-project.jpg') }}" alt="Country House Cleaning"></span>
+                                        <span class="image-prev"><img src="{{ theme_asset('assets/img/portfolio/prev-project.jpg') }}" alt="Country House Cleaning"></span>
                                         <div class="prev-link-page-info">
                                             <h3 class="h4 prev-title">Security For Cargo</h3>
                                             <span class="date-details"><span class="create-date">Feb 10, 2026</span></span>
@@ -94,7 +94,7 @@
                                             <h3 class="h4 next-title">Freight Wave</h3>
                                             <span class="date-details"><span class="create-date">Feb 08, 2026</span></span>
                                         </div>
-                                        <span class="image-next"><img src="{{ asset('assets/img/portfolio/next-project.jpg') }}" alt="Take Care Of Your Furniture"></span>
+                                        <span class="image-next"><img src="{{ theme_asset('assets/img/portfolio/next-project.jpg') }}" alt="Take Care Of Your Furniture"></span>
                                     </a>
                                 </div>
                             </div>

@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -90,12 +90,12 @@
                             <div class="row mt-n1-9 mb-1-9">
                                 <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <div class="image-hover">
-                                        <img src="{{ asset('assets/img/content/faq-02.jpg') }}" class="rounded" alt="MarineCaddie logistics team reviewing supply chain questions" title="MarineCaddie FAQs">
+                                        <img src="{{ theme_asset('assets/img/content/faq-02.jpg') }}" class="rounded" alt="MarineCaddie logistics team reviewing supply chain questions" title="MarineCaddie FAQs">
                                     </div>
                                 </div>
                                 <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                                     <div class="image-hover">
-                                        <img src="{{ asset('assets/img/content/faq-03.jpg') }}" class="rounded" alt="Global freight and maritime logistics support" title="Logistics support">
+                                        <img src="{{ theme_asset('assets/img/content/faq-03.jpg') }}" class="rounded" alt="Global freight and maritime logistics support" title="Logistics support">
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
 
         <!-- EXTRA SECTION
         ================================================== -->
-        <section class="bg-img cover-background pt-24 pb-0 extra-style01 secondary-overlay" data-overlay-dark="3" data-background="{{ asset('assets/img/bg/bg-01.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/bg/bg-01.jpg') }}&quot;);">
+        <section class="bg-img cover-background pt-24 pb-0 extra-style01 secondary-overlay" data-overlay-dark="3" data-background="{{ theme_asset('assets/img/bg/bg-01.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/bg/bg-01.jpg') }}&quot;);">
             <div class="container">
                 <div class="extra-content-box">
                     <ul class="inner-box">
@@ -323,7 +323,7 @@
                                                 <div class="form-group">
                                                     <div class="quform-captcha">
                                                         <div class="quform-captcha-inner">
-                                                            <img src="{{ asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
+                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
                                                         </div>
                                                     </div>
                                                 </div>

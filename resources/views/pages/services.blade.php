@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -32,10 +32,10 @@
 
                     <div class="col-lg-6 mt-1-9 position-relative z-index-9">
                         <div class="w-80 w-sm-75 wow image-hover animated" style="visibility: visible;">
-                            <img src="{{ asset('assets/img/content/about-07.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/content/about-07.jpg') }}" alt="..." title="..." class="rounded">
                         </div>
                         <div class="position-absolute right bottom-n10 w-55 w-md-50 overflow-hidden image-hover z-index-9">
-                            <img src="{{ asset('assets/img/content/about-06.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/content/about-06.jpg') }}" alt="..." title="..." class="rounded">
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                 <div class="row mt-n1-9">
                     <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
                         <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ asset('assets/img/services/service-01.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/services/service-01.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="service-body">
                                 <div class="content">
                                     <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.air-freight') }}">Air Freight</a></h3>
@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                         <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ asset('assets/img/services/service-02.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/services/service-02.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="service-body">
                                 <div class="content">
                                     <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.road-freight') }}">Road Freight</a></h3>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
                         <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ asset('assets/img/services/service-03.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/services/service-03.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="service-body">
                                 <div class="content">
                                     <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.ocean-freight') }}">Ocean Freight</a></h3>
@@ -125,7 +125,7 @@
                     </div>
                     <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
                         <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ asset('assets/img/services/service-04.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/services/service-04.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="service-body">
                                 <div class="content">
                                     <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.warehousing') }}">Warehousing</a></h3>
@@ -139,7 +139,7 @@
                     </div>
                     <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                         <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ asset('assets/img/services/service-05.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/services/service-05.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="service-body">
                                 <div class="content">
                                     <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.logistic-solution') }}">Logistic Solution</a></h3>
@@ -153,7 +153,7 @@
                     </div>
                     <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
                         <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ asset('assets/img/services/service-06.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/services/service-06.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="service-body">
                                 <div class="content">
                                     <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.rail-freight') }}">Rail Freight</a></h3>
@@ -182,8 +182,8 @@
                             </div>
                             <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms">With 25+ years of maritime shipping operators behind us, MarineCaddie earns trust through disciplined orchestration—clear accountability across partners, measurable on-time performance, and compliance that protects your brand.</p>
                             <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
-                                <img src="{{ asset('assets/img/avatar/avatar-08.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow">
-                                <img src="{{ asset('assets/img/avatar/avatar-09.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
+                                <img src="{{ theme_asset('assets/img/avatar/avatar-08.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow">
+                                <img src="{{ theme_asset('assets/img/avatar/avatar-09.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
                                 <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted by <strong>global trade leaders worldwide.</strong></p>
                             </div>
                         </div>
@@ -193,7 +193,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ asset('assets/img/icons/icon-03.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-03.png') }}" alt="..." title="..." class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -208,7 +208,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ asset('assets/img/icons/icon-04.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-04.png') }}" alt="..." title="..." class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -223,7 +223,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ asset('assets/img/icons/icon-05.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-05.png') }}" alt="..." title="..." class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -393,7 +393,7 @@
                                                 <div class="form-group">
                                                     <div class="quform-captcha">
                                                         <div class="quform-captcha-inner">
-                                                            <img src="{{ asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
+                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
                                                         </div>
                                                     </div>
                                                 </div>

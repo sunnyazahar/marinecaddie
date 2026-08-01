@@ -29,12 +29,12 @@
 
     $ogType = trim($__env->yieldContent('og_type', 'website'));
     $ogImagePath = trim($__env->yieldContent('og_image', ''));
-    $ogImage = $ogImagePath !== '' ? $ogImagePath : asset(config('seo.og_image'));
+    $ogImage = $ogImagePath !== '' ? $ogImagePath : theme_asset(config('seo.og_image'));
     $ogImageAlt = trim($__env->yieldContent('og_image_alt', $siteName . ' — supply chain orchestration'));
 
     $org = config('seo.organization');
     $orgUrl = $org['url'] ?: config('app.url');
-    $orgLogo = asset($org['logo']);
+    $orgLogo = theme_asset($org['logo']);
     $schemaType = trim($__env->yieldContent('schema_type', 'WebPage'));
     $serviceName = trim($__env->yieldContent('service_name', $pageTitle));
 

@@ -10,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -39,7 +39,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">01</span>
                                     </div>
@@ -51,7 +51,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="350ms" style="visibility: visible; animation-delay: 350ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">02</span>
                                     </div>
@@ -63,7 +63,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">03</span>
                                     </div>
@@ -75,7 +75,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="650ms" style="visibility: visible; animation-delay: 650ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
                                     <div class="count-size">
                                         <span class="number">04</span>
                                     </div>
@@ -204,7 +204,7 @@
                                                 <div class="form-group">
                                                     <div class="quform-captcha">
                                                         <div class="quform-captcha-inner">
-                                                            <img src="{{ asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
+                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -243,8 +243,8 @@
                             </div>
                             <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms" style="visibility: visible; animation-delay: 150ms; animation-name: fadeInUp;">MarineCaddie combines 25+ years of shipping operator experience with disciplined orchestration—so systems, 3PLs, and trade lanes stay aligned to cost, compliance, and on-time outcomes.</p>
                             <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
-                                <img src="{{ asset('assets/img/avatar/avatar-08.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow">
-                                <img src="{{ asset('assets/img/avatar/avatar-09.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
+                                <img src="{{ theme_asset('assets/img/avatar/avatar-08.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow">
+                                <img src="{{ theme_asset('assets/img/avatar/avatar-09.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
                                 <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted by <strong>global trade leaders worldwide.</strong></p>
                             </div>
                         </div>
@@ -254,7 +254,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ asset('assets/img/icons/icon-03.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-03.png') }}" alt="..." title="..." class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -269,7 +269,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ asset('assets/img/icons/icon-04.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-04.png') }}" alt="..." title="..." class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -284,7 +284,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ asset('assets/img/icons/icon-05.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-05.png') }}" alt="..." title="..." class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
