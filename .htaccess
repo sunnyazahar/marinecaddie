@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Serve real files/dirs from /public (assets, etc.)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} ^/MarineCaddie/(assets|css|js|img|images|fonts|video)/(.*)$ [NC]
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Shortcut: /MarineCaddie/assets/... -> public/assets/...
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    # Front controller
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+DirectoryIndex index.php
