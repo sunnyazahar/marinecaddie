@@ -1,49 +1,59 @@
 <!-- HEADER
         ================================================== -->
         <style>
-            /* Force logo size (beats theme + cached CSS) */
+            /* Compact white plate so blue logo stays readable on hero/video */
             header .navbar-brand.logochange {
-                background: transparent !important;
-                box-shadow: none !important;
-                padding: 0 !important;
+                background: #ffffff !important;
+                box-shadow: 0 4px 14px rgba(14, 47, 62, 0.18) !important;
+                padding: 6px 12px !important;
+                border-radius: 0 0 12px 0 !important;
+                line-height: 0 !important;
             }
             header .navbar-brand.logochange img#logo.site-logo {
                 width: auto !important;
-                height: 48px !important;
-                max-height: 48px !important;
-                max-width: 170px !important;
+                height: 44px !important;
+                max-height: 44px !important;
+                max-width: 160px !important;
                 object-fit: contain !important;
                 background: transparent !important;
+                display: block !important;
             }
             header .navbar-header-custom {
-                padding: 4px 0 !important;
+                padding: 0 !important;
                 background: transparent !important;
             }
             @media (min-width: 576px) {
+                header .navbar-brand.logochange {
+                    padding: 8px 14px !important;
+                }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    height: 60px !important;
-                    max-height: 60px !important;
-                    max-width: 220px !important;
+                    height: 56px !important;
+                    max-height: 56px !important;
+                    max-width: 210px !important;
                 }
             }
             @media (min-width: 992px) {
+                header .navbar-brand.logochange {
+                    padding: 10px 16px !important;
+                    border-radius: 0 0 14px 0 !important;
+                }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    height: 85px !important;
-                    max-height: 85px !important;
-                    max-width: 280px !important;
+                    height: 78px !important;
+                    max-height: 78px !important;
+                    max-width: 260px !important;
                 }
                 header .navbar-header-custom {
-                    padding: 8px 0 !important;
+                    padding: 4px 0 !important;
                 }
             }
             @media (min-width: 1200px) {
                 header .navbar-brand.logochange img#logo.site-logo {
-                    height: 100px !important;
-                    max-height: 100px !important;
-                    max-width: 300px !important;
+                    height: 92px !important;
+                    max-height: 92px !important;
+                    max-width: 290px !important;
                 }
             }
-            /* Footer logo: transparent plate */
+            /* Footer logo stays transparent on dark footer */
             .footer-logo img,
             footer img[src*="footer-light-logo"],
             footer img[src*="logo"] {
