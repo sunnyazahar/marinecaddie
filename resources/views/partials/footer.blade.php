@@ -4,7 +4,7 @@
                     <div class="col-lg-4 mb-1-9 mb-lg-0">
                         <div class="footer-logo">
                             <a href="{{ route('home') }}">
-                                <img src="{{ theme_asset('assets/img/logos/footer-light-logo.svg') }}?v=nobg1" class="mb-4" alt="MarineCaddie" title="MarineCaddie">
+                                <img src="{{ theme_asset('assets/img/logos/footer-light-logo.svg') }}?v=nobg3" class="mb-4" alt="MarineCaddie" title="MarineCaddie">
                             </a>
                         </div>
                         <p class="mb-1-9 text-white w-xxl-85">25+ years maritime shipping expertise, orchestrating complex supply chains.</p>

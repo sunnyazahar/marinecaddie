@@ -1,7 +1,7 @@
 <!-- HEADER
         ================================================== -->
         <style>
-            /* Tight white plate + wider logo; no header border line */
+            /* Tight white plate + wider logo; no shadow / header border */
             header .navbar-default,
             header .navbar-default.border-bottom,
             header .navbar-default.border-color-light-white {
@@ -11,52 +11,57 @@
             }
             header .navbar-brand.logochange {
                 background: #ffffff !important;
-                box-shadow: 0 2px 8px rgba(14, 47, 62, 0.12) !important;
-                padding: 2px 6px !important;
-                border-radius: 0 0 8px 0 !important;
+                box-shadow: none !important;
+                filter: none !important;
+                padding: 1px 4px !important;
+                border-radius: 0 0 6px 0 !important;
                 line-height: 0 !important;
                 display: inline-flex !important;
                 align-items: center !important;
             }
             header .navbar-brand.logochange img#logo.site-logo {
-                width: 200px !important;
-                max-width: 68vw !important;
+                width: 210px !important;
+                max-width: 72vw !important;
                 height: auto !important;
-                max-height: 52px !important;
+                max-height: 48px !important;
                 object-fit: contain !important;
+                object-position: left center !important;
                 background: transparent !important;
                 display: block !important;
+                box-shadow: none !important;
+                filter: none !important;
             }
             header .navbar-header-custom {
                 padding: 0 !important;
                 background: transparent !important;
+                box-shadow: none !important;
             }
             @media (min-width: 576px) {
                 header .navbar-brand.logochange {
-                    padding: 3px 8px !important;
+                    padding: 1px 5px !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    width: 240px !important;
-                    max-width: 240px !important;
-                    max-height: 62px !important;
+                    width: 250px !important;
+                    max-width: 250px !important;
+                    max-height: 56px !important;
                 }
             }
             @media (min-width: 992px) {
                 header .navbar-brand.logochange {
-                    padding: 4px 10px !important;
-                    border-radius: 0 0 10px 0 !important;
+                    padding: 2px 6px !important;
+                    border-radius: 0 0 8px 0 !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    width: 280px !important;
-                    max-width: 280px !important;
-                    max-height: 78px !important;
+                    width: 300px !important;
+                    max-width: 300px !important;
+                    max-height: 72px !important;
                 }
             }
             @media (min-width: 1200px) {
                 header .navbar-brand.logochange img#logo.site-logo {
-                    width: 320px !important;
-                    max-width: 320px !important;
-                    max-height: 90px !important;
+                    width: 340px !important;
+                    max-width: 340px !important;
+                    max-height: 82px !important;
                 }
             }
             /* Footer logo stays transparent on dark footer */
@@ -64,6 +69,7 @@
             footer img[src*="footer-light-logo"],
             footer img[src*="logo"] {
                 background: transparent !important;
+                box-shadow: none !important;
             }
         </style>
         <header class="header-style1 menu_area-light @yield('header_class', 'scrollHeader')">
@@ -93,7 +99,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0 current">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg1" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg1" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=nobg1" alt="MarineCaddie"></a>
+                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg3" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg3" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=nobg3" alt="MarineCaddie"></a>
                                         <!-- end logo -->
                                     </div>
 
