@@ -4,9 +4,23 @@
                     <div class="col-lg-4 mb-1-9 mb-lg-0">
                         <div class="footer-logo">
                             <a href="{{ route('home') }}">
-                                <img src="{{ theme_asset('assets/img/logos/footer-light-logo.svg') }}?v=nobg4" class="mb-4" alt="MarineCaddie" title="MarineCaddie">
+                                <img src="{{ theme_asset('assets/img/logos/footer-light-logo.svg') }}?v=footerlight1" class="mb-4 footer-brand-logo" alt="MarineCaddie" title="MarineCaddie">
                             </a>
                         </div>
+                        <style>
+                            .footer-logo .footer-brand-logo {
+                                max-width: 220px;
+                                width: 100%;
+                                height: auto;
+                                background: transparent !important;
+                                filter: none !important;
+                            }
+                            @media (min-width: 992px) {
+                                .footer-logo .footer-brand-logo {
+                                    max-width: 260px;
+                                }
+                            }
+                        </style>
                         <p class="mb-1-9 text-white w-xxl-85">25+ years maritime shipping expertise, orchestrating complex supply chains.</p>
                         <div class="social-icons2">
                             <ul class="ps-0 mb-0">
