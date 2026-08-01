@@ -7,3 +7,52 @@
 .video-banner .banner-video{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .video-banner .banner-video video{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:0;transform:translate(-50%,-50%);object-fit:cover}
 .video-banner>[class*="container"]{position:relative;z-index:2}
+
+/* Site logo — responsive (mobile smaller, desktop larger) */
+.navbar-brand.logochange {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  max-width: min(70vw, 220px);
+}
+.navbar-brand.logochange .site-logo,
+.navbar-brand.logochange #logo {
+  height: 52px !important;
+  max-height: 52px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain;
+}
+@media (min-width: 576px) {
+  .navbar-brand.logochange { max-width: 260px; }
+  .navbar-brand.logochange .site-logo,
+  .navbar-brand.logochange #logo {
+    height: 68px !important;
+    max-height: 68px !important;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-brand.logochange { max-width: 300px; }
+  .navbar-brand.logochange .site-logo,
+  .navbar-brand.logochange #logo {
+    height: 90px !important;
+    max-height: 90px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar-brand.logochange .site-logo,
+  .navbar-brand.logochange #logo {
+    height: 110px !important;
+    max-height: 110px !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar-header-custom {
+    padding: 6px 0 !important;
+  }
+  .navbar-default .container-fluid {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+  }
+}

@@ -1,5 +1,42 @@
 <!-- HEADER
         ================================================== -->
+        <style>
+            /* Force logo size (beats theme + cached CSS) */
+            header .navbar-brand.logochange img#logo.site-logo {
+                width: auto !important;
+                height: 48px !important;
+                max-height: 48px !important;
+                max-width: 170px !important;
+                object-fit: contain !important;
+            }
+            header .navbar-header-custom {
+                padding: 4px 0 !important;
+            }
+            @media (min-width: 576px) {
+                header .navbar-brand.logochange img#logo.site-logo {
+                    height: 60px !important;
+                    max-height: 60px !important;
+                    max-width: 220px !important;
+                }
+            }
+            @media (min-width: 992px) {
+                header .navbar-brand.logochange img#logo.site-logo {
+                    height: 85px !important;
+                    max-height: 85px !important;
+                    max-width: 280px !important;
+                }
+                header .navbar-header-custom {
+                    padding: 8px 0 !important;
+                }
+            }
+            @media (min-width: 1200px) {
+                header .navbar-brand.logochange img#logo.site-logo {
+                    height: 100px !important;
+                    max-height: 100px !important;
+                    max-width: 300px !important;
+                }
+            }
+        </style>
         <header class="header-style1 menu_area-light @yield('header_class', 'scrollHeader')">
 
             <div class="navbar-default border-bottom border-color-light-white">
@@ -27,7 +64,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0 current">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}" alt="MarineCaddie" width="280" height="110" style="height: 110px !important; max-height: 110px !important; width: auto; max-width: 300px;"></a>
+                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}" alt="MarineCaddie"></a>
                                         <!-- end logo -->
                                     </div>
 
