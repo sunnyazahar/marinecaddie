@@ -2,15 +2,22 @@
         ================================================== -->
         <style>
             /* Force logo size (beats theme + cached CSS) */
+            header .navbar-brand.logochange {
+                background: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
             header .navbar-brand.logochange img#logo.site-logo {
                 width: auto !important;
                 height: 48px !important;
                 max-height: 48px !important;
                 max-width: 170px !important;
                 object-fit: contain !important;
+                background: transparent !important;
             }
             header .navbar-header-custom {
                 padding: 4px 0 !important;
+                background: transparent !important;
             }
             @media (min-width: 576px) {
                 header .navbar-brand.logochange img#logo.site-logo {
@@ -35,6 +42,12 @@
                     max-height: 100px !important;
                     max-width: 300px !important;
                 }
+            }
+            /* Footer logo: transparent plate */
+            .footer-logo img,
+            footer img[src*="footer-light-logo"],
+            footer img[src*="logo"] {
+                background: transparent !important;
             }
         </style>
         <header class="header-style1 menu_area-light @yield('header_class', 'scrollHeader')">
@@ -64,7 +77,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0 current">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}" alt="MarineCaddie"></a>
+                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg1" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg1" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=nobg1" alt="MarineCaddie"></a>
                                         <!-- end logo -->
                                     </div>
 
