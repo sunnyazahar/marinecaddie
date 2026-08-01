@@ -1,19 +1,28 @@
 <!-- HEADER
         ================================================== -->
         <style>
-            /* Compact white plate so blue logo stays readable on hero/video */
+            /* Tight white plate + wider logo; no header border line */
+            header .navbar-default,
+            header .navbar-default.border-bottom,
+            header .navbar-default.border-color-light-white {
+                border: 0 !important;
+                border-bottom: 0 !important;
+                box-shadow: none !important;
+            }
             header .navbar-brand.logochange {
                 background: #ffffff !important;
-                box-shadow: 0 4px 14px rgba(14, 47, 62, 0.18) !important;
-                padding: 6px 12px !important;
-                border-radius: 0 0 12px 0 !important;
+                box-shadow: 0 2px 8px rgba(14, 47, 62, 0.12) !important;
+                padding: 2px 6px !important;
+                border-radius: 0 0 8px 0 !important;
                 line-height: 0 !important;
+                display: inline-flex !important;
+                align-items: center !important;
             }
             header .navbar-brand.logochange img#logo.site-logo {
-                width: auto !important;
-                height: 44px !important;
-                max-height: 44px !important;
-                max-width: 160px !important;
+                width: 200px !important;
+                max-width: 68vw !important;
+                height: auto !important;
+                max-height: 52px !important;
                 object-fit: contain !important;
                 background: transparent !important;
                 display: block !important;
@@ -24,33 +33,30 @@
             }
             @media (min-width: 576px) {
                 header .navbar-brand.logochange {
-                    padding: 8px 14px !important;
+                    padding: 3px 8px !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    height: 56px !important;
-                    max-height: 56px !important;
-                    max-width: 210px !important;
+                    width: 240px !important;
+                    max-width: 240px !important;
+                    max-height: 62px !important;
                 }
             }
             @media (min-width: 992px) {
                 header .navbar-brand.logochange {
-                    padding: 10px 16px !important;
-                    border-radius: 0 0 14px 0 !important;
+                    padding: 4px 10px !important;
+                    border-radius: 0 0 10px 0 !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    height: 78px !important;
+                    width: 280px !important;
+                    max-width: 280px !important;
                     max-height: 78px !important;
-                    max-width: 260px !important;
-                }
-                header .navbar-header-custom {
-                    padding: 4px 0 !important;
                 }
             }
             @media (min-width: 1200px) {
                 header .navbar-brand.logochange img#logo.site-logo {
-                    height: 92px !important;
-                    max-height: 92px !important;
-                    max-width: 290px !important;
+                    width: 320px !important;
+                    max-width: 320px !important;
+                    max-height: 90px !important;
                 }
             }
             /* Footer logo stays transparent on dark footer */
@@ -62,7 +68,7 @@
         </style>
         <header class="header-style1 menu_area-light @yield('header_class', 'scrollHeader')">
 
-            <div class="navbar-default border-bottom border-color-light-white">
+            <div class="navbar-default">
 
                 <!-- start top search -->
                 <div class="top-search bg-primary">
