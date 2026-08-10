@@ -2,10 +2,27 @@
 
 @section('title', 'Contact')
 @section('meta_title', 'Contact MarineCaddie Shipping | Dubai Ops Team')
-@section('meta_description', 'Contact MarineCaddie Shipping LLC in Deira, Dubai. Email ops@marinecaddie.com or call +971 50 5643375.')
-@section('meta_keywords', 'contact MarineCaddie, Dubai shipping company, maritime logistics contact, ops@marinecaddie.com')
+@section('meta_description', 'Contact MarineCaddie Shipping LLC in Deira, Dubai. Email ops@marinecaddie.com or call +971 50 5643375 for ship spares, freight, customs, and port husbandry.')
+@section('meta_keywords', 'contact MarineCaddie, Dubai shipping company, maritime logistics contact, ops@marinecaddie.com, Al Safi Building Deira')
 @section('schema_type', 'ContactPage')
 @section('header_class', 'scrollHeader')
+
+@php
+    $mapLat = (float) config('company.address.lat');
+    $mapLng = (float) config('company.address.lng');
+    $mapZoom = (int) config('company.address.map_zoom', 15);
+    $delta = 0.012;
+    $bbox = implode(',', [
+        $mapLng - $delta,
+        $mapLat - $delta,
+        $mapLng + $delta,
+        $mapLat + $delta,
+    ]);
+    $mapQuery = rawurlencode(config('company.address.map_query'));
+    $osmEmbed = "https://www.openstreetmap.org/export/embed.html?bbox={$bbox}&layer=mapnik&marker={$mapLat}%2C{$mapLng}";
+    $osmLink = "https://www.openstreetmap.org/?mlat={$mapLat}&mlon={$mapLng}#map={$mapZoom}/{$mapLat}/{$mapLng}";
+    $googleLink = "https://www.google.com/maps/search/?api=1&query={$mapQuery}";
+@endphp
 
 @section('content')
 <!-- PAGETITLE
@@ -24,162 +41,183 @@
             </div>
         </section>
 
-        <!-- CONTACT FROM
+        <!-- INTRO + QUICK CONTACTS
         ================================================== -->
-        <section class="bg-light">
+        <section class="contact-intro">
             <div class="container">
-                <div class="row align-items-center mt-n2-9">
-                    <div class="col-lg-6 mt-2-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                        <div class="bg-white p-1-9 p-md-2-9 p-xl-6">
-                            <div class="mb-3">
-                                <h2 class="ls-minus-2px display-4 font-weight-800 lh-1 mb-1-9">Get in touch</h2>
-                            </div>
-                            <form class="contact quform" action="#" method="post" enctype="multipart/form-data" onclick="">
-                                <div class="quform-elements">
-                                    <div class="row">
+                <div class="row justify-content-center text-center mb-1-9 mb-lg-2-5">
+                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
+                        <p class="contact-intro__brand">{{ config('company.brand') }}</p>
+                        <h2 class="contact-intro__title display-4 font-weight-800 lh-1 ls-minus-2px mb-3">Talk to operations</h2>
+                        <p class="contact-intro__text lead mb-0 mx-auto">{{ config('company.motto') }} Reach us for ship spare logistics, freight, customs clearance, or vessel husbandry.</p>
+                    </div>
+                </div>
+                <div class="contact-quick">
+                    <a href="tel:{{ config('company.phone_tel') }}" class="contact-quick__card wow fadeInUp" data-wow-delay="120ms">
+                        <span class="contact-quick__label">Phone</span>
+                        <strong class="contact-quick__value">{{ config('company.phone_display') }}</strong>
+                        <span class="contact-quick__hint">Call operations</span>
+                    </a>
+                    <a href="mailto:{{ config('company.email') }}" class="contact-quick__card wow fadeInUp" data-wow-delay="180ms">
+                        <span class="contact-quick__label">Email</span>
+                        <strong class="contact-quick__value">{{ config('company.email') }}</strong>
+                        <span class="contact-quick__hint">24/7 coordination</span>
+                    </a>
+                    <div class="contact-quick__card wow fadeInUp" data-wow-delay="240ms">
+                        <span class="contact-quick__label">Office</span>
+                        <strong class="contact-quick__value">{{ config('company.address.short') }}</strong>
+                        <span class="contact-quick__hint">{{ config('company.legal_name') }}</span>
+                    </div>
+                    <a href="{{ config('company.website') }}" class="contact-quick__card wow fadeInUp" data-wow-delay="300ms" target="_blank" rel="noopener">
+                        <span class="contact-quick__label">Web</span>
+                        <strong class="contact-quick__value">marinecaddie.com</strong>
+                        <span class="contact-quick__hint">{{ config('company.tagline') }}</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-6">
-                                            <div class="quform-element form-group">
-                                                <label for="name">Your Name <span class="quform-required">*</span></label>
-                                                <div class="quform-input">
-                                                    <input class="form-control" id="name" type="text" name="name" placeholder="Your name here">
-                                                </div>
+        <!-- FORM + DETAILS
+        ================================================== -->
+        <section class="contact-main">
+            <div class="container">
+                <div class="contact-main__grid">
+                    <div class="contact-form-panel wow fadeInUp" data-wow-delay="100ms">
+                        <div class="contact-form-panel__head">
+                            <span class="contact-form-panel__eyebrow">Send a message</span>
+                            <h2 class="contact-form-panel__title">Tell us about your vessel need</h2>
+                            <p class="contact-form-panel__text mb-0">Share shipment details, port call timing, or cargo type—our team will respond promptly.</p>
+                        </div>
+                        <form class="contact quform contact-form" action="#" method="post" enctype="multipart/form-data">
+                            <div class="quform-elements">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="quform-element form-group">
+                                            <label for="name">Your Name <span class="quform-required">*</span></label>
+                                            <div class="quform-input">
+                                                <input class="form-control" id="name" type="text" name="name" placeholder="Full name" required>
                                             </div>
                                         </div>
-                                        <!-- End Text input element -->
-
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-6">
-                                            <div class="quform-element form-group">
-                                                <label for="email">Your Email <span class="quform-required">*</span></label>
-                                                <div class="quform-input">
-                                                    <input class="form-control" id="email" type="text" name="email" placeholder="Your email here">
-                                                </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="quform-element form-group">
+                                            <label for="email">Your Email <span class="quform-required">*</span></label>
+                                            <div class="quform-input">
+                                                <input class="form-control" id="email" type="email" name="email" placeholder="name@company.com" required>
                                             </div>
                                         </div>
-                                        <!-- End Text input element -->
-
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-6">
-                                            <div class="quform-element form-group quform-select-replaced">
-                                                <label for="subject">Your Subject <span class="quform-required">*</span></label>
-                                                <div class="quform-input">
-                                                    <input class="form-control" id="subject" type="text" name="subject" placeholder="Your subject here">
-                                                </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="quform-element form-group">
+                                            <label for="subject">Subject <span class="quform-required">*</span></label>
+                                            <div class="quform-input">
+                                                <input class="form-control" id="subject" type="text" name="subject" placeholder="Ship spares / customs / husbandry" required>
                                             </div>
                                         </div>
-                                        <!-- End Text input element -->
-
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-6">
-                                            <div class="quform-element form-group">
-                                                <label for="phone">Contact Number</label>
-                                                <div class="quform-input">
-                                                    <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here">
-                                                </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="quform-element form-group">
+                                            <label for="phone">Contact Number</label>
+                                            <div class="quform-input">
+                                                <input class="form-control" id="phone" type="tel" name="phone" placeholder="+971 …">
                                             </div>
                                         </div>
-                                        <!-- End Text input element -->
-
-                                        <!-- Begin Textarea element -->
-                                        <div class="col-md-12">
-                                            <div class="quform-element form-group">
-                                                <label for="message">Message <span class="quform-required">*</span></label>
-                                                <div class="quform-input">
-                                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us a few words"></textarea>
-                                                </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="quform-element form-group">
+                                            <label for="message">Message <span class="quform-required">*</span></label>
+                                            <div class="quform-input">
+                                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Port, vessel schedule, cargo urgency…" required></textarea>
                                             </div>
                                         </div>
-                                        <!-- End Textarea element -->
-
-                                        <!-- Begin Captcha element -->
-                                        <div class="col-md-12">
-                                            <div class="quform-element">
-                                                <div class="form-group">
-                                                    <div class="quform-input">
-                                                        <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Type the below word">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="quform-captcha">
-                                                        <div class="quform-captcha-inner">
-                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="quform-submit-inner">
+                                            <button class="butn-style01 w-100 border-0" type="submit">Send Message</button>
                                         </div>
-                                        <!-- End Captcha element -->
-
-                                        <!-- Begin Submit button -->
-                                        <div class="col-md-12">
-                                            <div class="quform-submit-inner">
-                                                <button class="butn-style01 w-100 border-0" type="submit">Send Message</button>
-                                            </div>
-                                            <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
-                                        </div>
-                                        <!-- End Submit button -->
-
+                                        <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-lg-6 mt-2-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
-                        <div class="ps-xl-1-9 ps-xxl-7">
-                            <div class="mb-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Let’s Work Together.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1">Contact Us</h2>
-                            </div>
-                            <p class="mb-1-9">{{ config('company.motto') }} Reach our Dubai operations team for ship spares logistics, freight, customs clearance, or vessel husbandry.</p>
-                            <div class="row mt-n1-9 mb-6 g-5">
-                                <div class="col-sm-6 mt-1-9">
-                                    <h3 class="h4">Office</h3>
-                                    <p class="mb-0">{{ config('company.legal_name') }}<br>{{ config('company.address.line1') }}<br>{{ config('company.address.line2') }}</p>
-                                </div>
-                                <div class="col-sm-6 mt-1-9">
-                                    <h3 class="h4">Phone</h3>
-                                    <p class="mb-0"><a href="tel:{{ config('company.phone_tel') }}" class="text-primary text-secondary-hover">{{ config('company.phone_display') }}</a></p>
-                                </div>
-                                <div class="col-sm-6 mt-1-9">
-                                    <h3 class="h4">Website</h3>
-                                    <p class="mb-0"><a href="{{ config('company.website') }}" class="text-primary text-secondary-hover" target="_blank" rel="noopener">www.marinecaddie.com</a></p>
-                                    <ul class="social-icon-style04 list-unstyled mb-0 mt-2">
-                                        <li><a href="{{ route('contact') }}#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="{{ route('contact') }}#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                        <li><a href="{{ route('contact') }}#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="{{ route('contact') }}#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6 mt-1-9">
-                                    <h3 class="h4">Email</h3>
-                                    <p class="mb-0">{{ config('company.tagline') }}</p>
-                                    <p class="mb-0"><a href="mailto:{{ config('company.email') }}" class="text-decoration-underline text-primary text-secondary-hover">{{ config('company.email') }}</a></p>
-                                </div>
-                            </div>
-                            <div class="display-custom-1 text-primary font-weight-700">
-                                <p class="mb-0">24/7 Ops</p>
+
+                    <aside class="contact-side wow fadeInUp" data-wow-delay="180ms">
+                        <div class="contact-side__card">
+                            <span class="contact-side__eyebrow">Visit</span>
+                            <h3 class="contact-side__title">{{ config('company.legal_name') }}</h3>
+                            <p class="contact-side__address mb-1-9">{{ config('company.address.line1') }}<br>{{ config('company.address.line2') }}</p>
+                            <ul class="contact-side__list">
+                                <li>
+                                    <span>Phone</span>
+                                    <a href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a>
+                                </li>
+                                <li>
+                                    <span>Email</span>
+                                    <a href="mailto:{{ config('company.email') }}">{{ config('company.email') }}</a>
+                                </li>
+                                <li>
+                                    <span>Hours</span>
+                                    <strong>24/7 operations support</strong>
+                                </li>
+                            </ul>
+                            <div class="contact-side__actions">
+                                <a href="{{ $googleLink }}" class="butn-style01" target="_blank" rel="noopener">Open in Google Maps</a>
+                                <a href="{{ $osmLink }}" class="contact-side__link" target="_blank" rel="noopener">View on OpenStreetMap</a>
                             </div>
                         </div>
-                    </div>
+                        <div class="contact-side__note">
+                            <p class="mb-0">{{ config('company.who_we_are') }}</p>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT MAP
+        <!-- MAP
         ================================================== -->
-        <section class="p-0">
-            <div class="map bg-secondary d-flex align-items-center justify-content-center text-center" style="min-height: 380px;">
-                <div class="px-4 py-5">
-                    <h3 class="text-white h4 mb-3">{{ config('company.legal_name') }}</h3>
-                    <p class="text-white opacity8 mb-3 mb-0">{{ config('company.address.line1') }}, {{ config('company.address.line2') }}</p>
-                    <p class="mb-1"><a href="tel:{{ config('company.phone_tel') }}" class="text-primary">{{ config('company.phone_display') }}</a></p>
-                    <p class="mb-0"><a href="mailto:{{ config('company.email') }}" class="text-primary">{{ config('company.email') }}</a></p>
+        <section class="contact-map" aria-label="Office location map">
+            <div class="contact-map__frame" data-map-lock>
+                <iframe
+                    title="MarineCaddie office map — {{ config('company.address.short') }}"
+                    src="{{ $osmEmbed }}"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                    tabindex="-1"
+                ></iframe>
+                <button type="button" class="contact-map__lock" data-map-unlock aria-label="Click to interact with map">
+                    <span>Click to interact with map</span>
+                </button>
+                <div class="contact-map__chip">
+                    <span class="contact-map__chip-label">Our office</span>
+                    <strong>{{ config('company.address.line1') }}</strong>
+                    <span>{{ config('company.address.line2') }}</span>
+                    <a href="{{ $googleLink }}" target="_blank" rel="noopener">Get directions →</a>
                 </div>
             </div>
         </section>
-
-        <!-- FOOTER
-        ================================================== -->
 @endsection
+
+@push('scripts')
+<script>
+(function () {
+    document.querySelectorAll('[data-map-lock]').forEach(function (wrap) {
+        var unlock = wrap.querySelector('[data-map-unlock]');
+        var iframe = wrap.querySelector('iframe');
+        if (!unlock || !iframe) return;
+
+        unlock.addEventListener('click', function () {
+            wrap.classList.add('is-unlocked');
+            iframe.focus();
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!wrap.contains(e.target)) {
+                wrap.classList.remove('is-unlocked');
+            }
+        });
+    });
+})();
+</script>
+@endpush

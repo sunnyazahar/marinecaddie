@@ -18,6 +18,10 @@ return [
         'line1' => 'Unit No. 204 – 224, Al Safi Building, Tower 1',
         'line2' => 'Deira, Dubai, United Arab Emirates',
         'short' => 'Deira, Dubai, UAE',
+        'lat' => 25.2727936,
+        'lng' => 55.3053340,
+        'map_zoom' => 15,
+        'map_query' => 'Al Safi Building, Tower 1, Deira, Dubai, United Arab Emirates',
     ],
 
     'who_we_are' => 'We are a specialized marine logistics and freight forwarding company providing time-critical ship spare logistics, customs clearance, vessel husbandry, transportation, and end-to-end maritime support services across global ports.',
