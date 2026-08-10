@@ -7,11 +7,16 @@
 
     @include('partials.seo')
 
-    <link rel="shortcut icon" href="{{ theme_asset('assets/img/logos/favicon.png') }}" type="image/png">
-    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon.png') }}" type="image/png">
-    <link rel="apple-touch-icon" href="{{ theme_asset('assets/img/logos/apple-touch-icon-57x57.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ theme_asset('assets/img/logos/apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ theme_asset('assets/img/logos/apple-touch-icon-114x114.png') }}">
+    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon.svg') }}?v=mc1" type="image/svg+xml">
+    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon-32x32.png') }}?v=mc1" type="image/png" sizes="32x32">
+    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon-16x16.png') }}?v=mc1" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="{{ theme_asset('assets/img/logos/favicon.ico') }}?v=mc1" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc1">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ theme_asset('assets/img/logos/apple-touch-icon-57x57.png') }}?v=mc1">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ theme_asset('assets/img/logos/apple-touch-icon-72x72.png') }}?v=mc1">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ theme_asset('assets/img/logos/apple-touch-icon-114x114.png') }}?v=mc1">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc1">
+    <link rel="manifest" href="{{ theme_asset('assets/img/logos/site.webmanifest') }}?v=mc1">
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}">
