@@ -11,17 +11,11 @@
     $mapLat = (float) config('company.address.lat');
     $mapLng = (float) config('company.address.lng');
     $mapZoom = (int) config('company.address.map_zoom', 15);
-    $delta = 0.012;
-    $bbox = implode(',', [
-        $mapLng - $delta,
-        $mapLat - $delta,
-        $mapLng + $delta,
-        $mapLat + $delta,
-    ]);
     $mapQuery = rawurlencode(config('company.address.map_query'));
-    $osmEmbed = "https://www.openstreetmap.org/export/embed.html?bbox={$bbox}&layer=mapnik&marker={$mapLat}%2C{$mapLng}";
     $osmLink = "https://www.openstreetmap.org/?mlat={$mapLat}&mlon={$mapLng}#map={$mapZoom}/{$mapLat}/{$mapLng}";
     $googleLink = "https://www.google.com/maps/search/?api=1&query={$mapQuery}";
+    // Google embed with English labels (OSM default shows local Arabic names in Dubai)
+    $mapEmbed = "https://maps.google.com/maps?q={$mapQuery}&hl=en&z={$mapZoom}&output=embed";
 @endphp
 
 @section('content')
@@ -180,7 +174,7 @@
             <div class="contact-map__frame" data-map-lock>
                 <iframe
                     title="MarineCaddie office map — {{ config('company.address.short') }}"
-                    src="{{ $osmEmbed }}"
+                    src="{{ $mapEmbed }}"
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     allowfullscreen
