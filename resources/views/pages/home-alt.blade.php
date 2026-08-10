@@ -2,8 +2,8 @@
 
 @section('title', 'Home Alternative')
 @section('meta_title', 'MarineCaddie Shipping | Home Alternative')
-@section('meta_description', 'Alternate homepage layout for MarineCaddie Shipping — 4PL supply chain orchestration for maritime and global logistics.')
-@section('meta_keywords', 'MarineCaddie, 4PL, supply chain')
+@section('meta_description', 'Alternate homepage layout for MarineCaddie Shipping — specialized marine logistics and freight forwarding for vessels and global ports.')
+@section('meta_keywords', 'MarineCaddie, maritime logistics, ship spares')
 @section('meta_robots', 'noindex, follow')
 @section('schema_type', 'WebPage')
 @section('header_class', 'scrollHeader')
@@ -133,7 +133,7 @@
                                 <span>About our Company</span>
                                 <h2 class="display-4 font-weight-800 lh-1 ls-minus-2px mb-0">Connect business and move forward</h2>
                             </div>
-                            <p class="mb-1-9 border-bottom pb-1-6 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">MarineCaddie Shipping is a 4PL orchestration partner for complex maritime and global logistics—integrating systems, managing 3PLs, and delivering end-to-end visibility.</p>
+                            <p class="mb-1-9 border-bottom pb-1-6 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">MarineCaddie Shipping is a specialized marine logistics and freight forwarding partner for ship spares, customs clearance, vessel husbandry, and end-to-end maritime support.</p>
                             <div class="d-flex justify-content-between mb-1-6">
                                 <ul class="list-unstyled me-1 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                                     <li class="mb-2"><i class="fa-solid fa-square-check me-2 text-primary"></i>Innovative Solutions</li>
@@ -377,7 +377,7 @@
                             </div>
                             <div>
                                 <small class="text-white display-28">24/7 Logistics Support</small>
-                                <h3 class="h5 mb-0"><a href="tel:+18005550148" class="text-white">(+1) 800 555 0148</a></h3>
+                                <h3 class="h5 mb-0"><a href="tel:+971505643375" class="text-white">+971 50 5643375</a></h3>
                             </div>
                         </li>
                     </ul>
@@ -430,7 +430,7 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" role="region" aria-labelledby="headingOne" data-bs-parent="#accordion">
                                         <div class="card-body">
-                                            As a 4PL partner, MarineCaddie designs and manages end-to-end supply chains—coordinating 3PLs, integrating ERP/TMS, and optimizing freight, warehousing, and distribution for cost, compliance, and on-time performance.
+                                            As your maritime logistics caddie, MarineCaddie manages ship spare logistics, freight forwarding, customs clearance, and vessel husbandry—keeping fleets moving with responsive, cost-effective coordination.
                                         </div>
                                     </div>
                                 </div>
@@ -477,8 +477,8 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <h3 class="h4 font-weight-700"><a href="tel:+18005550148" class="text-white text-secondary-hover">(+1) 800 555 0148</a></h3>
-                            <h3 class="h4 mb-0 font-weight-700"><a href="mailto:info@marinecaddie.com" class="text-white text-secondary-hover">info@marinecaddie.com</a></h3>
+                            <h3 class="h4 font-weight-700"><a href="tel:+971505643375" class="text-white text-secondary-hover">+971 50 5643375</a></h3>
+                            <h3 class="h4 mb-0 font-weight-700"><a href="mailto:ops@marinecaddie.com" class="text-white text-secondary-hover">ops@marinecaddie.com</a></h3>
                         </div>
                     </div>
                 </div>
@@ -503,8 +503,8 @@
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Phone</h3>
-                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:+18005550148">(+1) 800 555 0148</a></p>
-                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:+18005550148">(+1) 800 555 0148</a></p>
+                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:+971505643375">+971 50 5643375</a></p>
+                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:+971505643375">+971 50 5643375</a></p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Follow us</h3>
@@ -518,7 +518,7 @@
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Email</h3>
                                     <p class="mb-0 text-white opacity8">Interested in working with us?</p>
-                                    <p class="mb-0"><a href="mailto:info@marinecaddie.com" class="text-decoration-underline text-primary text-white-hover">info@marinecaddie.com</a></p>
+                                    <p class="mb-0"><a href="mailto:ops@marinecaddie.com" class="text-decoration-underline text-primary text-white-hover">ops@marinecaddie.com</a></p>
                                 </div>
                             </div>
                             <div class="contact-text wow fadeInUp" data-wow-delay="100ms">

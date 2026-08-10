@@ -59,3 +59,41 @@ jQuery(function($) {
 		$.preloadImages(images);
 	});
 })(jQuery);
+
+/* MarineCaddie — dynamic center fill for scrolling ticker text */
+(function () {
+	function updateScrollTextFill() {
+		var sections = document.querySelectorAll('.scroll-section--dynamic');
+		if (!sections.length) {
+			return;
+		}
+
+		var fillLine = window.innerWidth * 0.42;
+
+		sections.forEach(function (section) {
+			var texts = section.querySelectorAll('.scroll-text');
+			texts.forEach(function (el) {
+				var rect = el.getBoundingClientRect();
+				if (rect.bottom < 0 || rect.top > window.innerHeight) {
+					el.style.setProperty('--fill', '0px');
+					el.classList.remove('is-active');
+					return;
+				}
+
+				var filled = Math.min(rect.width, Math.max(0, fillLine - rect.left));
+				el.style.setProperty('--fill', filled + 'px');
+				el.classList.toggle('is-active', filled > rect.width * 0.55);
+			});
+		});
+
+		window.requestAnimationFrame(updateScrollTextFill);
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', function () {
+			window.requestAnimationFrame(updateScrollTextFill);
+		});
+	} else {
+		window.requestAnimationFrame(updateScrollTextFill);
+	}
+})();

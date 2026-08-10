@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'FAQ')
-@section('meta_title', 'FAQ | MarineCaddie 4PL Supply Chain Questions Answered')
-@section('meta_description', 'Answers to common questions about MarineCaddie 4PL services, orchestration process, on-time delivery, customs compliance, and systems integration.')
-@section('meta_keywords', 'MarineCaddie FAQ, 4PL questions, logistics FAQ, supply chain FAQ')
+@section('meta_title', 'FAQ | MarineCaddie Maritime Logistics Questions')
+@section('meta_description', 'Answers about MarineCaddie ship spares logistics, customs clearance, vessel husbandry, freight forwarding, and how to contact our Dubai operations team.')
+@section('meta_keywords', 'MarineCaddie FAQ, ship spares FAQ, customs clearance, vessel husbandry, maritime logistics')
 @section('schema_type', 'FAQPage')
 @section('header_class', 'scrollHeader')
 
@@ -34,48 +34,48 @@
                             <div class="card mb-4 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link " data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 1. What is a 4PL, and how is MarineCaddie different?</button>
+                                        <button class="btn btn-link " data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 1. What does MarineCaddie do?</button>
                                     </h2>
                                 </div>
                                 <div id="collapseOne" class="collapse show" role="region" aria-labelledby="headingOne" data-bs-parent="#accordion">
                                     <div class="card-body">
-                                        A 4PL orchestrates your supply chain rather than owning every truck or warehouse. MarineCaddie integrates systems, manages 3PLs, and delivers end-to-end visibility—designing and running networks that reduce cost, improve compliance, and protect on-time delivery.
+                                        {{ config('company.who_we_are') }}
                                     </div>
                                 </div>
                             </div>
                             <div class="card mb-4 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                                 <div class="card-header" id="headingTwo">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">2. How does your orchestration process work?</button>
+                                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">2. How do ship spares logistics work?</button>
                                     </h2>
                                 </div>
                                 <div id="collapseTwo" class="collapse " role="region" aria-labelledby="headingTwo" data-bs-parent="#accordion">
                                     <div class="card-body">
-                                        We start with Discover &amp; Design, then Integrate Systems &amp; Partners, Orchestrate &amp; Optimize day-to-day execution, and drive Continuous Performance with scorecards, exception management, and network improvements.
+                                        We provide {{ strtolower(implode(', ', config('company.ship_spare_logistics'))) }}. A typical flow is {{ collect(config('company.ship_spare_flow'))->pluck('label')->implode(' → ') }}.
                                     </div>
                                 </div>
                             </div>
                             <div class="card mb-4 wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                                 <div class="card-header" id="headingThree">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">3. How do you support on-time delivery?</button>
+                                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">3. What customs clearance services are available?</button>
                                     </h2>
                                 </div>
                                 <div id="collapseThree" class="collapse " role="region" aria-labelledby="headingThree" data-bs-parent="#accordion">
                                     <div class="card-body">
-                                        On-time performance is managed as a network outcome: aligned SLAs with 3PLs, proactive exception handling, multimodal contingency plans, and shared tracking so every handoff is visible before delays become customer issues.
+                                        Our {{ config('company.services.customs_clearance.title') }} offering includes {{ implode(', ', config('company.services.customs_clearance.items')) }}.
                                     </div>
                                 </div>
                             </div>
                             <div class="card mb-0 wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
                                 <div class="card-header" id="headingFour">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">4. How do you handle customs, compliance, and systems integration?</button>
+                                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">4. Where do you offer vessel husbandry / port support?</button>
                                     </h2>
                                 </div>
                                 <div id="collapseFour" class="collapse " role="region" aria-labelledby="headingFour" data-bs-parent="#accordion">
                                     <div class="card-body">
-                                        We embed customs readiness and compliance risk into lane design, then connect ERP, TMS, and tracking so documentation, status, and exceptions flow across partners. Manufacturing, retail, energy, and industrial shippers use the same orchestration model across maritime and inland networks.
+                                        Port husbandry focuses on {{ config('company.port_husbandry_regions') }}, covering services such as {{ implode(', ', array_slice(config('company.port_husbandry'), 0, 6)) }}, and more. Global presence: {{ config('company.presence') }}.
                                     </div>
                                 </div>
                             </div>
@@ -90,17 +90,17 @@
                             <div class="row mt-n1-9 mb-1-9">
                                 <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <div class="image-hover">
-                                        <img src="{{ theme_asset('assets/img/content/faq-02.jpg') }}" class="rounded" alt="MarineCaddie logistics team reviewing supply chain questions" title="MarineCaddie FAQs">
+                                        <img src="{{ theme_asset('assets/img/content/faq-02.jpg') }}" class="rounded" alt="MarineCaddie maritime logistics FAQ" title="MarineCaddie FAQs">
                                     </div>
                                 </div>
                                 <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                                     <div class="image-hover">
-                                        <img src="{{ theme_asset('assets/img/content/faq-03.jpg') }}" class="rounded" alt="Global freight and maritime logistics support" title="Logistics support">
+                                        <img src="{{ theme_asset('assets/img/content/faq-03.jpg') }}" class="rounded" alt="Ship spares and port support" title="Maritime support">
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <p class="mb-4 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">Answers for shippers evaluating 4PL partnership—how we orchestrate networks, integrate systems, manage customs and compliance risk, and keep freight on time across maritime and inland lanes.</p>
+                                <p class="mb-4 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">Quick answers on ship spares logistics, customs clearance, vessel husbandry, and freight forwarding—from your trusted maritime logistics caddies.</p>
                                 <div class="progress-text wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                                     <div class="row small mb-1">
                                         <div class="col-6">On-Time Delivery</div>
@@ -174,7 +174,7 @@
                             </div>
                             <div>
                                 <small class="text-white display-28">24/7 Logistics Support</small>
-                                <h3 class="h5 mb-0"><a href="tel:+18005550148" class="text-white">(+1) 800 555 0148</a></h3>
+                                <h3 class="h5 mb-0"><a href="tel:{{ config('company.phone_tel') }}" class="text-white">{{ config('company.phone_display') }}</a></h3>
                             </div>
                         </li>
                     </ul>
@@ -188,21 +188,21 @@
             <div class="container">
                 <div class="mb-1-9 text-center wow fadeInUp" data-wow-delay="100ms">
                     <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Pricing.</span>
-                    <h2 class="mb-0 display-4 font-weight-800 lh-1 ls-minus-2px mx-auto w-sm-80 w-md-70 w-lg-60 w-xl-50">Orchestration packages for growing networks</h2>
+                    <h2 class="mb-0 display-4 font-weight-800 lh-1 ls-minus-2px mx-auto w-sm-80 w-md-70 w-lg-60 w-xl-50">Solutions tailored to every vessel call</h2>
                 </div>
                 <div class="row mt-n1-9">
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
                         <div class="border p-1-9 p-xl-5 h-100 rounded">
                             <div class="border-bottom pb-4 mb-4">
-                                <span class="text-primary font-weight-800 d-inline-block mb-2">Network Essentials</span>
-                                <h3 class="h1 mb-0">Custom<span class="font-weight-300 display-29 ms-1">/Engagement</span></h3>
+                                <span class="text-primary font-weight-800 d-inline-block mb-2">Ship Spares</span>
+                                <h3 class="h1 mb-0">Custom<span class="font-weight-300 display-29 ms-1">/Shipment</span></h3>
                             </div>
                             <ul class="list-unstyled list-style02">
-                                <li>Lane &amp; network assessment</li>
-                                <li>3PL performance baselines</li>
-                                <li>Core visibility reporting</li>
-                                <li><del>Multi-system ERP/TMS integration</del></li>
-                                <li><del>Dedicated compliance program</del></li>
+                                <li>24/7 time-critical coordination</li>
+                                <li>Door-to-deck delivery</li>
+                                <li>Hand carry &amp; express options</li>
+                                <li>Customs clearance support</li>
+                                <li>Last-mile onboard delivery</li>
                             </ul>
                             <a class="butn-style01 w-100 text-center" href="{{ route('contact') }}">Talk to Us</a>
                         </div>
@@ -210,15 +210,15 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                         <div class="border p-1-9 p-xl-5 h-100 rounded">
                             <div class="border-bottom pb-4 mb-4">
-                                <span class="text-primary font-weight-800 d-inline-block mb-2">Orchestrated Growth</span>
-                                <h3 class="h1 mb-0">Custom<span class="font-weight-300 display-29 ms-1">/Engagement</span></h3>
+                                <span class="text-primary font-weight-800 d-inline-block mb-2">Freight &amp; Customs</span>
+                                <h3 class="h1 mb-0">Custom<span class="font-weight-300 display-29 ms-1">/Lane</span></h3>
                             </div>
                             <ul class="list-unstyled list-style02">
-                                <li>Supply chain design &amp; management</li>
-                                <li>Active 3PL coordination</li>
-                                <li>Freight &amp; warehouse optimization</li>
-                                <li>ERP/TMS &amp; tracking integration</li>
-                                <li><del>Enterprise control tower</del></li>
+                                <li>Air, ocean &amp; road freight</li>
+                                <li>TP / import / export clearance</li>
+                                <li>Duty exemption guidance</li>
+                                <li>Multimodal transport</li>
+                                <li>Special project cargo support</li>
                             </ul>
                             <a class="butn-style01 secondary w-100 text-center" href="{{ route('contact') }}">Talk to Us</a>
                         </div>
@@ -226,15 +226,15 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
                         <div class="border p-1-9 p-xl-5 h-100 rounded">
                             <div class="border-bottom pb-4 mb-4">
-                                <span class="text-primary font-weight-800 d-inline-block mb-2">Enterprise Control</span>
-                                <h3 class="h1 mb-0">Custom<span class="font-weight-300 display-29 ms-1">/Engagement</span></h3>
+                                <span class="text-primary font-weight-800 d-inline-block mb-2">Port Husbandry</span>
+                                <h3 class="h1 mb-0">Custom<span class="font-weight-300 display-29 ms-1">/Call</span></h3>
                             </div>
                             <ul class="list-unstyled list-style02">
-                                <li>Full 4PL orchestration ownership</li>
-                                <li>Customs, compliance &amp; risk programs</li>
-                                <li>Multi-region partner governance</li>
-                                <li>Continuous performance reviews</li>
-                                <li>Executive scorecards &amp; SLAs</li>
+                                <li>Port agency &amp; crew change</li>
+                                <li>Immigration &amp; visa assistance</li>
+                                <li>Bunkering &amp; fresh water</li>
+                                <li>Ship chandling &amp; repairs</li>
+                                <li>Coverage across {{ config('company.port_husbandry_regions') }}</li>
                             </ul>
                             <a class="butn-style01 w-100 text-center" href="{{ route('contact') }}">Talk to Us</a>
                         </div>
@@ -348,17 +348,17 @@
                     <div class="col-lg-6 mt-2-9 wow fadeInUp" data-wow-delay="200ms">
                         <div class="ps-xl-1-9 ps-xxl-7">
                             <div class="mb-1-9 wow fadeInUp" data-wow-delay="100ms">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Contact Us.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1">Questions about customs, integration, or a new lane?</h2>
+                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Let’s Work Together.</span>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1">Questions about spares, customs, or husbandry?</h2>
                             </div>
                             <div class="row mt-n1-9 mb-6 g-5">
                                 <div class="col-sm-6 mt-1-9">
-                                    <h3 class="h4">Coverage</h3>
-                                    <p class="mb-0">Global maritime &amp; logistics coverage</p>
+                                    <h3 class="h4">Office</h3>
+                                    <p class="mb-0">{{ config('company.address.short') }}</p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9">
                                     <h3 class="h4">Phone</h3>
-                                    <p class="mb-0"><a href="tel:+18005550148" class="text-primary text-secondary-hover">(+1) 800 555 0148</a></p>
+                                    <p class="mb-0"><a href="tel:{{ config('company.phone_tel') }}" class="text-primary text-secondary-hover">{{ config('company.phone_display') }}</a></p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9">
                                     <h3 class="h4">Follow us</h3>
@@ -371,12 +371,12 @@
                                 </div>
                                 <div class="col-sm-6 mt-1-9">
                                     <h3 class="h4">Email</h3>
-                                    <p class="mb-0">Ready to orchestrate your supply chain?</p>
-                                    <p class="mb-0"><a href="mailto:info@marinecaddie.com" class="text-decoration-underline text-primary text-secondary-hover">info@marinecaddie.com</a></p>
+                                    <p class="mb-0">{{ config('company.motto') }}</p>
+                                    <p class="mb-0"><a href="mailto:{{ config('company.email') }}" class="text-decoration-underline text-primary text-secondary-hover">{{ config('company.email') }}</a></p>
                                 </div>
                             </div>
                             <div class="display-custom-1 text-primary font-weight-700">
-                                <p class="mb-0">25+ Years</p>
+                                <p class="mb-0">24/7 Ops</p>
                             </div>
                         </div>
                     </div>
@@ -392,34 +392,34 @@
     'mainEntity' => [
         [
             '@type' => 'Question',
-            'name' => 'What is a 4PL, and how is MarineCaddie different?',
+            'name' => 'What does MarineCaddie do?',
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text' => 'A 4PL orchestrates your supply chain rather than owning every truck or warehouse. MarineCaddie integrates systems, manages 3PLs, and delivers end-to-end visibility—designing and running networks that reduce cost, improve compliance, and protect on-time delivery.',
+                'text' => config('company.who_we_are'),
             ],
         ],
         [
             '@type' => 'Question',
-            'name' => 'How does your orchestration process work?',
+            'name' => 'How do ship spares logistics work?',
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text' => 'We start with Discover & Design, then Integrate Systems & Partners, Orchestrate & Optimize day-to-day execution, and drive Continuous Performance with scorecards, exception management, and network improvements.',
+                'text' => 'We provide ' . strtolower(implode(', ', config('company.ship_spare_logistics'))) . '. A typical flow is ' . collect(config('company.ship_spare_flow'))->pluck('label')->implode(' → ') . '.',
             ],
         ],
         [
             '@type' => 'Question',
-            'name' => 'How do you support on-time delivery?',
+            'name' => 'What customs clearance services are available?',
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text' => 'On-time performance is managed as a network outcome: aligned SLAs with 3PLs, proactive exception handling, multimodal contingency plans, and shared tracking so every handoff is visible before delays become customer issues.',
+                'text' => 'Our ' . config('company.services.customs_clearance.title') . ' offering includes ' . implode(', ', config('company.services.customs_clearance.items')) . '.',
             ],
         ],
         [
             '@type' => 'Question',
-            'name' => 'How do you handle customs, compliance, and systems integration?',
+            'name' => 'Where do you offer vessel husbandry / port support?',
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text' => 'We embed customs readiness and compliance risk into lane design, then connect ERP, TMS, and tracking so documentation, status, and exceptions flow across partners. Manufacturing, retail, energy, and industrial shippers use the same orchestration model across maritime and inland networks.',
+                'text' => 'Port husbandry focuses on ' . config('company.port_husbandry_regions') . ', covering services such as ' . implode(', ', array_slice(config('company.port_husbandry'), 0, 6)) . ', and more. Global presence: ' . config('company.presence') . '.',
             ],
         ],
     ],

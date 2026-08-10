@@ -30,7 +30,7 @@
     $ogType = trim($__env->yieldContent('og_type', 'website'));
     $ogImagePath = trim($__env->yieldContent('og_image', ''));
     $ogImage = $ogImagePath !== '' ? $ogImagePath : theme_asset(config('seo.og_image'));
-    $ogImageAlt = trim($__env->yieldContent('og_image_alt', $siteName . ' — supply chain orchestration'));
+    $ogImageAlt = trim($__env->yieldContent('og_image_alt', $siteName . ' — maritime logistics'));
 
     $org = config('seo.organization');
     $orgUrl = $org['url'] ?: config('app.url');

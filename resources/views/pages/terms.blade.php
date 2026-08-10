@@ -2,7 +2,7 @@
 
 @section('title', 'Terms & Conditions')
 @section('meta_title', 'Terms & Conditions | MarineCaddie Shipping')
-@section('meta_description', 'Terms and conditions for using the MarineCaddie Shipping website and engaging with our 4PL logistics services.')
+@section('meta_description', 'Terms and conditions for using the MarineCaddie Shipping website and engaging with our maritime logistics services.')
 @section('meta_keywords', 'MarineCaddie terms, terms of use, logistics terms and conditions')
 @section('schema_type', 'WebPage')
 @section('header_class', 'scrollHeader')
@@ -33,7 +33,7 @@
                         <div class="p-1-6 p-md-2-2 border border-color-light-black rounded">
                             <div class="mb-1-6 mb-lg-1-9 mb-xl-2-5">
                                 <h2 class="mb-3 h4">01. Acceptance of terms</h2>
-                                <p class="mb-4">These Terms &amp; Conditions govern your use of the MarineCaddie Shipping website and any general information published here about our 4PL supply chain orchestration services. By accessing the site, you agree to these terms. If you do not agree, please do not use the website.</p>
+                                <p class="mb-4">These Terms &amp; Conditions govern your use of the MarineCaddie Shipping website and any general information published here about our marine logistics and freight forwarding services. By accessing the site, you agree to these terms. If you do not agree, please do not use the website.</p>
                                 <ul class="list-style1 list-unstyled mb-0">
                                     <li>Content is provided for general business information and does not replace a signed service agreement.</li>
                                     <li>Operational engagements are governed by separate contracts, statements of work, and applicable shipping documents.</li>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="mb-1-6 mb-lg-1-9 mb-xl-2-5">
                                 <h2 class="mb-3 h4">02. Services information</h2>
-                                <p class="mb-0">Descriptions of air, ocean, road, rail, warehousing, and logistics orchestration capabilities are illustrative. Service scope, pricing, SLAs, and compliance requirements are confirmed only in writing for each engagement. MarineCaddie may update website content without notice to reflect evolving offerings.</p>
+                                <p class="mb-0">Descriptions of air, ocean, road transportation, ship spares logistics, customs clearance, vessel husbandry, and related capabilities are illustrative. Service scope, pricing, SLAs, and compliance requirements are confirmed only in writing for each engagement. MarineCaddie may update website content without notice to reflect evolving offerings.</p>
                             </div>
                             <div class="mb-1-6 mb-lg-1-9 mb-xl-2-5">
                                 <h2 class="mb-3 h4">03. Intellectual property</h2>
@@ -59,7 +59,7 @@
                             </div>
                             <div>
                                 <h2 class="mb-3 h4">06. Changes and contact</h2>
-                                <p class="mb-0">We may revise these Terms &amp; Conditions at any time by posting an updated version on this page. For questions, contact info@marinecaddie.com or (+1) 800 555 0148.</p>
+                                <p class="mb-0">We may revise these Terms &amp; Conditions at any time by posting an updated version on this page. For questions, contact ops@marinecaddie.com or +971 50 5643375.</p>
                             </div>
                         </div>
                     </div>

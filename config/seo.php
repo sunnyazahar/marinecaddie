@@ -2,44 +2,44 @@
 
 return [
 
-    'site_name' => 'MarineCaddie Shipping',
+    'site_name' => 'MarineCaddie Shipping LLC',
 
-    'default_title' => '4PL Supply Chain Orchestration for Maritime Logistics',
+    'default_title' => 'Maritime Logistics & Ship Spare Specialists',
 
     'title_separator' => ' | ',
 
-    'default_description' => 'MarineCaddie Shipping is a 4PL partner that orchestrates maritime and global supply chains—integrating systems, 3PLs, and visibility so freight moves on time, compliant, and cost-efficient.',
+    'default_description' => 'MarineCaddie is a specialized marine logistics and freight forwarding company providing time-critical ship spare logistics, customs clearance, vessel husbandry, and end-to-end maritime support across global ports.',
 
-    'default_keywords' => 'MarineCaddie, 4PL, supply chain orchestration, maritime logistics, ocean freight, air freight, road freight, rail freight, warehousing, logistics management, freight forwarding',
+    'default_keywords' => 'MarineCaddie, maritime logistics, ship spares logistics, vessel husbandry, port husbandry, customs clearance, freight forwarding, special projects, air freight, ocean freight, Dubai, onboard delivery',
 
     'twitter_handle' => '@MarineCaddie',
 
     'og_image' => 'assets/img/banner/slide-01.jpg',
 
-    'theme_color' => '#0a2e4d',
+    'theme_color' => '#042158',
 
     'locale' => 'en_US',
 
     'organization' => [
-        'name' => 'MarineCaddie Shipping',
-        'legal_name' => 'MarineCaddie Shipping',
-        'url' => null, // falls back to app.url
+        'name' => 'MarineCaddie Shipping LLC',
+        'legal_name' => 'MarineCaddie Shipping LLC',
+        'url' => 'https://www.marinecaddie.com',
         'logo' => 'assets/img/logos/logo.svg',
-        'email' => 'info@marinecaddie.com',
-        'telephone' => '+1-800-555-0148',
-        'description' => '4PL supply chain orchestration for maritime and global logistics. Your supply chain, orchestrated.',
-        'same_as' => [
-            // Add live social profile URLs when available
-        ],
+        'email' => 'ops@marinecaddie.com',
+        'telephone' => '+971-50-5643375',
+        'description' => 'Your trusted maritime logistics caddies. Smart Caddies, Smarter Logistics!',
+        'same_as' => [],
         'area_served' => 'Worldwide',
         'knows_about' => [
-            'Fourth-party logistics (4PL)',
             'Maritime logistics',
-            'Supply chain orchestration',
-            'Ocean freight',
-            'Air freight',
-            'Multimodal transportation',
-            'Warehousing and distribution',
+            'Ship spare logistics',
+            'Vessel husbandry',
+            'Customs clearance',
+            'Freight forwarding',
+            'Port agency',
+            'Crew logistics',
+            'Special projects',
+            'Door-to-deck delivery',
         ],
     ],
 

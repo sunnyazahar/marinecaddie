@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Air Freight')
-@section('meta_title', 'Air Freight Logistics | Time-Critical Cargo | MarineCaddie')
-@section('meta_description', 'MarineCaddie air freight orchestration for time-critical cargo—carrier selection, documentation, tracking, and exception management across global lanes.')
-@section('meta_keywords', 'air freight, air cargo, express freight, time-critical shipping, 4PL air logistics')
+@section('meta_title', 'Air Freight & Express / Hand Carry | MarineCaddie')
+@section('meta_description', 'MarineCaddie air freight for time-critical maritime cargo—express courier and hand-carry options to keep vessels moving worldwide.')
+@section('meta_keywords', 'air freight, express courier, hand carry, time-critical shipping, maritime air cargo')
 @section('schema_type', 'Service')
 @section('header_class', 'scrollHeader')
 
@@ -35,11 +35,11 @@
                                 <div class="mb-1-9 text-white h4">Our Services</div>
                                 <ul class="cetegory p-0 list-unstyled mb-0">
                                     <li class="mb-2 active"><a href="{{ route('services.air-freight') }}">Air Freight <i class="ti-arrow-top-right"></i></a></li>
-                                    <li class="mb-2"><a href="{{ route('services.road-freight') }}">Road Freight <i class="ti-arrow-top-right"></i></a></li>
+                                    <li class="mb-2"><a href="{{ route('services.road-freight') }}">Road Transportation <i class="ti-arrow-top-right"></i></a></li>
                                     <li class="mb-2"><a href="{{ route('services.ocean-freight') }}">Ocean Freight <i class="ti-arrow-top-right"></i></a></li>
-                                    <li class="mb-2"><a href="{{ route('services.warehousing') }}">Warehousing <i class="ti-arrow-top-right"></i></a></li>
-                                    <li class="mb-2"><a href="{{ route('services.logistic-solution') }}">Logistic Solution <i class="ti-arrow-top-right"></i></a></li>
-                                    <li><a href="{{ route('services.rail-freight') }}">Rail Freight <i class="ti-arrow-top-right"></i></a></li>
+                                    <li class="mb-2"><a href="{{ route('services.warehousing') }}">Customs Clearance <i class="ti-arrow-top-right"></i></a></li>
+                                    <li class="mb-2"><a href="{{ route('services.logistic-solution') }}">Ship Spares Logistics <i class="ti-arrow-top-right"></i></a></li>
+                                    <li><a href="{{ route('services.rail-freight') }}">Vessel Husbandry / Port Support <i class="ti-arrow-top-right"></i></a></li>
                                 </ul>
                             </div>
                             <div class="widget bg-secondary wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
@@ -64,8 +64,8 @@
                                         </div>
                                         <div class="mb-3 text-white h4">How Can We Help?</div>
                                         <ul class="text-center list-unstyled mb-0">
-                                            <li class="text-white mb-2"><i class="fa fa-phone small text-white me-2"></i><a href="tel:+18005550148" class="text-white">(+1) 800 555 0148</a></li>
-                                            <li class="text-white"><i class="fa fa-envelope-open small text-white me-2"></i><a href="mailto:info@marinecaddie.com" class="text-white">info@marinecaddie.com</a></li>
+                                            <li class="text-white mb-2"><i class="fa fa-phone small text-white me-2"></i><a href="tel:{{ config('company.phone_tel') }}" class="text-white">{{ config('company.phone_display') }}</a></li>
+                                            <li class="text-white"><i class="fa fa-envelope-open small text-white me-2"></i><a href="mailto:{{ config('company.email') }}" class="text-white">{{ config('company.email') }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -79,12 +79,18 @@
                             </div>
                             <div class="mb-2-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                 <h2 class="display-6 font-weight-600 lh-1 pb-3 mb-2 font-weight-800">Air Freight</h2>
-                                <p>When speed is non-negotiable, MarineCaddie orchestrates air freight as a coordinated layer of your wider 4PL network—not a standalone booking. We align airline capacity, ground handlers, and customs brokers so urgent cargo moves with a single accountable plan from uplift to last-mile handoff.</p>
-                                <p class="mb-0">Our control tower monitors flight schedules, cut-offs, and exception risks in real time, then reallocates capacity or mode when disruption hits. Integrated with your ERP and TMS, every airway bill, milestone, and cost event feeds one source of truth—so air freight stays synchronized with ocean, road, and warehouse flows across your global supply chain.</p>
+                                <p>When vessel schedules leave no room for delay, MarineCaddie air freight keeps critical parts and cargo moving. We arrange airline capacity, documentation, and gateway handoffs so urgent maritime shipments reach port or vessel on time.</p>
+                                <p class="mb-3">Our freight forwarding scope also includes express courier and hand-carry solutions for the most time-sensitive ship spares and operational cargo—especially where standard air freights cannot meet sailing windows.</p>
+                                <ul class="list-style03 mb-0">
+                                    <li>Scheduled and ad-hoc air freight for maritime cargo</li>
+                                    <li>Express courier for urgent documents and small critical parts</li>
+                                    <li>Hand-carry coordination when every hour counts</li>
+                                    <li>Multimodal links to road, customs, and onboard delivery</li>
+                                </ul>
                             </div>
                             <div class="mb-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                 <h3 class="lh-1 mb-3">How We Add Value</h3>
-                                <p class="mb-0">You gain prioritized lift without losing cost discipline: we compare carrier options, consolidate where it makes sense, and escalate only what must fly. That 4PL oversight shortens decision cycles, reduces demurrage at gateways, and keeps high-value or time-critical freight visible from origin dock to consignee.</p>
+                                <p class="mb-0">You get prioritised lift without losing operational control: we match the right air option—standard, express, or hand carry—to vessel ETA, customs readiness, and last-mile delivery so your fleet stays on schedule.</p>
                             </div>
                             <div class="row mt-n1-9 mb-2-6 wow fadeInUp" data-wow-delay="100ms">
                                 <div class="col-6 col-md-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
@@ -107,34 +113,34 @@
                                 <div class="card wow fadeInUp" data-wow-delay="200ms">
                                     <h2 class="card-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            1. How does MarineCaddie manage air freight as a 4PL?
+                                            1. When should we use air freight for ship spares?
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show" role="region" aria-labelledby="headingOne" data-bs-parent="#accordion">
-                                        <div class="card-body">We select and govern airlines and ground partners on your behalf, then orchestrate booking, documentation, and milestone tracking through one control layer—so air moves stay aligned with your broader multimodal program.</div>
+                                        <div class="card-body">Choose air when vessel ETA, AOG-style urgency, or dry-dock windows leave insufficient ocean transit time. We assess cut-offs, customs, and last-mile access before locking capacity.</div>
                                     </div>
                                 </div>
                                 <div class="card wow fadeInUp" data-wow-delay="200ms">
                                     <h2 class="card-header" id="headingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                            2. When should cargo fly versus use another mode?
+                                            2. Do you offer express courier and hand carry?
                                         </button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse" role="region" aria-labelledby="headingTwo" data-bs-parent="#accordion">
                                         <div class="card-body">
-                                            We recommend air for perishables, high-value inventory, production-line critical parts, and recovery after disruption. Our team weighs transit time, total landed cost, and inventory impact before committing capacity.
+                                            Yes. Express courier and hand-carry options sit alongside our air freight service for highly critical parts and documents that must arrive ahead of standard airline schedules.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card wow fadeInUp" data-wow-delay="200ms">
                                     <h2 class="card-header" id="headingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                            3. Can air freight data connect to our existing systems?
+                                            3. Can air freight connect to customs and onboard delivery?
                                         </button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse" role="region" aria-labelledby="headingThree" data-bs-parent="#accordion">
                                         <div class="card-body">
-                                            Yes. Status events, AWB data, and exception alerts can feed your ERP or TMS so planners see air freight alongside ocean, road, and warehouse inventory—without switching portals for every carrier.
+                                            Absolutely. We coordinate clearance, road transport, and door-to-deck handoffs so air arrivals flow straight into vessel husbandry and ship spares logistics.
                                         </div>
                                     </div>
                                 </div>

@@ -110,26 +110,23 @@
                                     <ul class="navbar-nav ms-auto" id="nav" style="">
                                         <li class="current"><a href="{{ route('home') }}">Home</a></li>
                                         <li class="has-sub"><span class="submenu-button"></span>
-                                            <a href="{{ route('home') }}#">Who We Are</a>
+                                            <a href="{{ route('about') }}">Who We Are</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('about') }}">About Us</a></li>
-                                                <li><a href="{{ route('about') }}">Our Mission & Vision</a></li>
-                                                
+                                                <li><a href="{{ route('about') }}#mission">Our Mission & Vision</a></li>
                                             </ul>
                                         </li>
-                                        <li class="has-sub"><span class="submenu-button"></span><a href="{{ route('home') }}#">Our Services</a>
+                                        <li class="has-sub"><span class="submenu-button"></span><a href="{{ route('services') }}">Our Services</a>
                                             <ul class="sub-menu">
+                                                <li><a href="{{ route('services.logistic-solution') }}">Ship Spares Logistics</a></li>
                                                 <li><a href="{{ route('services.air-freight') }}">Air Freight</a></li>
-                                                <li><a href="{{ route('services.road-freight') }}">Road Freight</a></li>
                                                 <li><a href="{{ route('services.ocean-freight') }}">Ocean Freight</a></li>
-                                                <li><a href="{{ route('services.warehousing') }}">Warehousing</a></li>
-                                                <li><a href="{{ route('services.logistic-solution') }}">Logistic Solution</a></li>
-                                                <li><a href="{{ route('services.rail-freight') }}">Rail Freight</a></li>
+                                                <li><a href="{{ route('services.road-freight') }}">Road Transportation</a></li>
+                                                <li><a href="{{ route('services.warehousing') }}">Customs Clearance</a></li>
+                                                <li><a href="{{ route('services.rail-freight') }}">Vessel Husbandry</a></li>
                                             </ul>
                                         </li>
-                                       
-                                       
-                                        <li><a href="#">Network</a></li>
+                                        <li><a href="{{ route('about') }}#network">Network</a></li>
                                         <li><a href="{{ route('contact') }}">Contact</a></li>
                                     </ul>
                                     <!-- end menu area -->

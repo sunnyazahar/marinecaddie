@@ -2,7 +2,7 @@
 
 @section('title', 'Portfolio')
 @section('meta_title', 'Case Studies & Portfolio | MarineCaddie Shipping')
-@section('meta_description', 'Explore MarineCaddie portfolio highlights—examples of supply chain orchestration across maritime, multimodal, and distribution networks.')
+@section('meta_description', 'Explore MarineCaddie portfolio highlights—maritime logistics, freight forwarding, and port support across global networks.')
 @section('meta_keywords', 'logistics portfolio, supply chain case studies, MarineCaddie projects')
 @section('schema_type', 'CollectionPage')
 @section('header_class', 'scrollHeader')

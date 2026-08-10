@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('title', 'Our Services')
-@section('meta_title', 'Logistics Services | Air, Ocean, Road, Rail & Warehousing | MarineCaddie')
-@section('meta_description', 'Explore MarineCaddie 4PL services: air freight, ocean freight, road and rail, warehousing, and end-to-end logistic solutions orchestrated for performance.')
-@section('meta_keywords', 'logistics services, air freight, ocean freight, road freight, rail freight, warehousing, 4PL services')
+@section('meta_title', 'Our Services | Marine Logistics & Ship Spares')
+@section('meta_description', 'Marine logistics, freight forwarding, customs clearance, special projects, ship spares and port husbandry for India, Sri Lanka, Indonesia, Singapore and beyond.')
+@section('meta_keywords', 'marine logistics, ship spares logistics, freight forwarding, customs clearance, special projects, vessel husbandry, port husbandry, air freight, ocean freight')
 @section('schema_type', 'CollectionPage')
+@section('og_image_alt', 'MarineCaddie maritime logistics services')
 @section('header_class', 'scrollHeader')
 
 @section('content')
@@ -32,22 +33,22 @@
 
                     <div class="col-lg-6 mt-1-9 position-relative z-index-9">
                         <div class="w-80 w-sm-75 wow image-hover animated" style="visibility: visible;">
-                            <img src="{{ theme_asset('assets/img/content/about-07.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/content/about-07.jpg') }}" alt="Marine logistics operations" title="Marine logistics operations" class="rounded">
                         </div>
                         <div class="position-absolute right bottom-n10 w-55 w-md-50 overflow-hidden image-hover z-index-9">
-                            <img src="{{ theme_asset('assets/img/content/about-06.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/content/about-06.jpg') }}" alt="Port operations" title="Port operations" class="rounded">
                         </div>
                     </div>
 
                     <div class="col-lg-6 mt-1-9">
                         <div class="ps-lg-1-6 ps-xl-2-9">
                             <div class="mb-4 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">About company.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">Your supply chain, orchestrated.</h2>
+                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Services</span>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">{{ config('company.headline') }}</h2>
                             </div>
                             <div class="ps-1-6 ps-xxl-10">
 
-                                <p class="mb-1-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">MarineCaddie Shipping is a 4PL partner for maritime and global supply chain orchestration. We design and manage end-to-end networks, coordinate 3PLs, integrate ERP/TMS and tracking systems, strengthen customs and compliance, and optimize freight, warehouse, and distribution with data—so you reduce cost, improve compliance, and hit on-time delivery.</p>
+                                <p class="mb-1-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">{{ config('company.who_we_are') }} Capabilities span {{ config('company.services.marine_logistics.title') }}, {{ config('company.services.freight_forwarding.title') }}, {{ config('company.services.customs_clearance.title') }}, and {{ config('company.services.special_projects.title') }}.</p>
 
                                 <div class="d-sm-flex align-items-center mb-2-9">
                                     <div class="pe-sm-1-9 border-sm-end text-sm-center mb-3 mb-sm-0 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
@@ -56,13 +57,13 @@
                                     </div>
                                     <div class="ps-sm-1-9">
                                         <ul class="list-style03 mb-0">
-                                            <li class="wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">Supply Chain Design</li>
-                                            <li class="wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">3PL Coordination</li>
-                                            <li class="wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">Systems Integration</li>
+                                            @foreach(config('company.services') as $service)
+                                            <li class="wow fadeInUp" data-wow-delay="{{ 300 + ($loop->index * 100) }}ms">{{ $service['title'] }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="{{ route('about') }}" class="butn-style01 wow fadeInUp" data-wow-delay="600ms">Read More</a>
+                                <a href="#service-categories" class="butn-style01 wow fadeInUp" data-wow-delay="600ms">Explore Capabilities</a>
                             </div>
 
                         </div>
@@ -72,99 +73,44 @@
             </div>
         </section>
 
-        <!-- SERVICES
+        <!-- SERVICES — PDF categories
         ================================================== -->
-        <section class="overflow-visible bg-light">
+        <section class="services-page-showcase overflow-hidden" id="service-categories">
             <div class="container">
-                <div class="mb-2-9 text-center">
-                    <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Services.</span>
-                    <h2 class="mb-0 display-4 font-weight-800 lh-1 ls-minus-2px w-md-80 w-lg-60 w-xl-50 mx-auto">Capabilities that keep global trade moving</h2>
+                <div class="mb-2-9 text-center wow fadeInUp" data-wow-delay="100ms">
+                    <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">What We Deliver</span>
+                    <h2 class="mb-3 display-4 font-weight-800 lh-1 ls-minus-2px w-md-80 w-lg-70 w-xl-55 mx-auto">{{ config('company.tagline') }}</h2>
+                    <p class="lead mb-0 mx-auto w-lg-70">{{ config('company.motto') }} The same four service pillars from our company profile—ready at ports worldwide.</p>
                 </div>
-                <div class="row mt-n1-9">
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ theme_asset('assets/img/services/service-01.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="service-body">
-                                <div class="content">
-                                    <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.air-freight') }}">Air Freight</a></h3>
-                                    <p class="mb-0 w-90">Time-critical air moves coordinated with ocean and inland partners for reliable door-to-door handoffs.</p>
-                                </div>
-                                <div class="service-btn">
-                                    <a href="{{ route('services.air-freight') }}" class="font-weight-700 portfolio-link">Read More<i class="ti-arrow-top-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                @include('partials.services-categories', ['variant' => 'page'])
+            </div>
+        </section>
+
+        <!-- SERVICE DETAIL LINKS
+        ================================================== -->
+        <section class="service-pages-strip bg-light overflow-hidden">
+            <div class="container">
+                <div class="row align-items-end mb-1-9">
+                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
+                        <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Go Deeper</span>
+                        <h2 class="display-5 font-weight-800 mb-0 lh-1 ls-minus-1px text-secondary">Specialized service pages</h2>
                     </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ theme_asset('assets/img/services/service-02.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="service-body">
-                                <div class="content">
-                                    <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.road-freight') }}">Road Freight</a></h3>
-                                    <p class="mb-0 w-90">Inland trucking and drayage aligned to port windows, warehouse slots, and distribution commitments.</p>
-                                </div>
-                                <div class="service-btn">
-                                    <a href="{{ route('services.road-freight') }}" class="font-weight-700 portfolio-link">Read More<i class="ti-arrow-top-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="row g-3 g-lg-4">
+                    @foreach(config('company.service_pages') as $page)
+                    <div class="col-sm-6 col-xl-4 wow fadeInUp" data-wow-delay="{{ 100 + ($loop->index * 60) }}ms">
+                        <a href="{{ route($page['route']) }}" class="service-page-link">
+                            <span class="service-page-link__media">
+                                <img src="{{ theme_asset($page['image']) }}" alt="{{ $page['title'] }}" title="{{ $page['title'] }}">
+                            </span>
+                            <span class="service-page-link__body">
+                                <span class="service-page-link__title">{{ $page['title'] }}</span>
+                                <span class="service-page-link__excerpt">{{ $page['excerpt'] }}</span>
+                                <span class="service-page-link__cta">Read more <i class="ti-arrow-top-right" aria-hidden="true"></i></span>
+                            </span>
+                        </a>
                     </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ theme_asset('assets/img/services/service-03.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="service-body">
-                                <div class="content">
-                                    <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.ocean-freight') }}">Ocean Freight</a></h3>
-                                    <p class="mb-0 w-90">Ocean freight orchestration with carrier selection, schedule discipline, and full-lane visibility.</p>
-                                </div>
-                                <div class="service-btn">
-                                    <a href="{{ route('services.ocean-freight') }}" class="font-weight-700 portfolio-link">Read More<i class="ti-arrow-top-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ theme_asset('assets/img/services/service-04.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="service-body">
-                                <div class="content">
-                                    <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.warehousing') }}">Warehousing</a></h3>
-                                    <p class="mb-0 w-90">Warehouse and distribution nodes optimized for inventory accuracy, throughput, and network cost.</p>
-                                </div>
-                                <div class="service-btn">
-                                    <a href="{{ route('services.warehousing') }}" class="font-weight-700 portfolio-link">Read More<i class="ti-arrow-top-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ theme_asset('assets/img/services/service-05.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="service-body">
-                                <div class="content">
-                                    <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.logistic-solution') }}">Logistic Solution</a></h3>
-                                    <p class="mb-0 w-90">End-to-end 4PL design—3PL management, systems integration, compliance, and performance control.</p>
-                                </div>
-                                <div class="service-btn">
-                                    <a href="{{ route('services.logistic-solution') }}" class="font-weight-700 portfolio-link">Read More<i class="ti-arrow-top-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="service-style01 position-relative overflow-hidden rounded">
-                            <img src="{{ theme_asset('assets/img/services/service-06.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="service-body">
-                                <div class="content">
-                                    <h3 class="title mb-1-6 pb-4 h4 pe-2 pe-xxl-0"><a href="{{ route('services.rail-freight') }}">Rail Freight</a></h3>
-                                    <p class="mb-0 w-90">Rail and intermodal options integrated into multimodal plans for cost, capacity, and resiliency.</p>
-                                </div>
-                                <div class="service-btn">
-                                    <a href="{{ route('services.rail-freight') }}" class="font-weight-700 portfolio-link">Read More<i class="ti-arrow-top-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -178,62 +124,34 @@
                         <div class="pe-lg-1-9 pe-xxl-12">
                             <div class="mb-4 wow fadeInUp" data-wow-delay="100ms">
                                 <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Why Choose Us.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">Reliability and trust, built into every lane</h2>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">{{ config('company.motto') }}</h2>
                             </div>
-                            <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms">With 25+ years of maritime shipping operators behind us, MarineCaddie earns trust through disciplined orchestration—clear accountability across partners, measurable on-time performance, and compliance that protects your brand.</p>
+                            <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms">{{ config('company.mission') }}</p>
                             <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
-                                <img src="{{ theme_asset('assets/img/avatar/avatar-08.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow">
-                                <img src="{{ theme_asset('assets/img/avatar/avatar-09.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
-                                <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted by <strong>global trade leaders worldwide.</strong></p>
+                                <img src="{{ theme_asset('assets/img/avatar/avatar-08.jpg') }}" alt="Operations team" title="Operations team" class="rounded-circle border border-width-4 border-white shadow">
+                                <img src="{{ theme_asset('assets/img/avatar/avatar-09.jpg') }}" alt="MarineCaddie team" title="MarineCaddie team" class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
+                                <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted across <strong>{{ config('company.address.short') }} and global ports.</strong></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 mt-2-9 wow fadeInUp" data-wow-delay="250ms">
-                        <div class="border-bottom border-color-light-black mb-4 mb-sm-0">
+                        @foreach(array_slice(config('company.why_choose_us'), 0, 3) as $why)
+                        <div class="@if(!$loop->last) border-bottom border-color-light-black mb-4 mb-sm-0 @endif">
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-03.png') }}" alt="..." title="..." class="w-60px">
+                                        <span class="service-why-num">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
-                                    <div class="px-sm-1-6 px-xl-5 py-1-6">
-                                        <h3 class="h4">Accountable Orchestration</h3>
-                                        <p class="mb-0">One 4PL owner across systems, 3PLs, and lanes.</p>
+                                    <div class="px-sm-1-6 px-xl-5 @if($loop->last) pt-1-6 @else py-1-6 @endif">
+                                        <h3 class="h4">{{ $why['title'] }}</h3>
+                                        <p class="mb-0">{{ $why['text'] }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="border-bottom border-color-light-black mb-4 mb-sm-0">
-                            <div class="row g-0">
-                                <div class="col-sm-3 border-sm-end">
-                                    <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-04.png') }}" alt="..." title="..." class="w-60px">
-                                    </div>
-                                </div>
-                                <div class="col-sm-9">
-                                    <div class="px-sm-1-6 px-xl-5 py-1-6">
-                                        <h3 class="h4">Cost &amp; Compliance Control</h3>
-                                        <p class="mb-0">Data-driven freight, warehouse, and risk decisions.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="row g-0">
-                                <div class="col-sm-3 border-sm-end">
-                                    <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-05.png') }}" alt="..." title="..." class="w-60px">
-                                    </div>
-                                </div>
-                                <div class="col-sm-9">
-                                    <div class="px-sm-1-6 px-xl-5 pt-1-6">
-                                        <h3 class="h4">End-to-End Visibility</h3>
-                                        <p class="mb-0">Integrated tracking from origin to final delivery.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -288,21 +206,21 @@
                     <div class="col-lg-6 col-xxl-7 mt-2-6">
                         <div class="pe-xl-6 pe-xxl-10">
                             <div class="mb-4 wow fadeInUp" data-wow-delay="100ms">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Contact Us.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">Ready to orchestrate your supply chain?</h2>
+                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Let’s Work Together.</span>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">Contact Us</h2>
                             </div>
-                            <p class="display-27 mb-1-9 mb-md-2-9 wow fadeInUp" data-wow-delay="150ms">Talk with our team about network design, 3PL coordination, systems integration, or a new trade lane.</p>
+                            <p class="display-27 mb-1-9 mb-md-2-9 wow fadeInUp" data-wow-delay="150ms">{{ config('company.motto') }} Talk with our team about ship spares logistics, freight, customs clearance, or vessel husbandry.</p>
                             <div class="row mt-n1-6 mt-sm-n2-6">
                                 <div class="col-sm-6 mt-1-6 mt-sm-2-6 wow fadeInUp" data-wow-delay="200ms">
                                     <div>
                                         <h3 class="h5 text-secondary">Main Phone Number</h3>
-                                        <div><a href="tel:+18005550148">(+1) 800 555 0148</a></div>
+                                        <div><a href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mt-1-6 mt-sm-2-6 wow fadeInUp" data-wow-delay="250ms">
                                     <div>
                                         <h3 class="h5 text-secondary">Coverage</h3>
-                                        <div>Global maritime &amp; logistics coverage</div>
+                                        <div>{{ config('company.presence') }}</div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mt-1-6 mt-sm-2-6 wow fadeInUp" data-wow-delay="300ms">
@@ -314,19 +232,19 @@
                                 <div class="col-sm-6 mt-1-6 mt-sm-2-6 wow fadeInUp" data-wow-delay="350ms">
                                     <div>
                                         <h3 class="h5 text-secondary">How We Work</h3>
-                                        <div><a href="{{ route('how-we-work') }}">See our orchestration process</a></div>
+                                        <div><a href="{{ route('how-we-work') }}">See our logistics process</a></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mt-1-6 mt-sm-2-6 wow fadeInUp" data-wow-delay="400ms">
                                     <div>
                                         <h3 class="h5 text-secondary">Email Address</h3>
-                                        <div><a href="mailto:info@marinecaddie.com">info@marinecaddie.com</a></div>
+                                        <div><a href="mailto:{{ config('company.email') }}">{{ config('company.email') }}</a></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mt-1-6 mt-sm-2-6 wow fadeInUp" data-wow-delay="450ms">
                                     <div>
-                                        <h3 class="h5 text-secondary">Start a Conversation</h3>
-                                        <div><a href="{{ route('contact') }}">Contact our team</a></div>
+                                        <h3 class="h5 text-secondary">Office</h3>
+                                        <div>{{ config('company.address.short') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -393,7 +311,7 @@
                                                 <div class="form-group">
                                                     <div class="quform-captcha">
                                                         <div class="quform-captcha-inner">
-                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
+                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="Security captcha" title="Security captcha">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -422,3 +340,38 @@
         <!-- FOOTER
         ================================================== -->
 @endsection
+
+@push('structured_data')
+@php
+    $serviceList = [];
+    $pos = 1;
+    foreach (config('company.services') as $service) {
+        $serviceList[] = [
+            '@type' => 'ListItem',
+            'position' => $pos++,
+            'name' => $service['title'],
+            'description' => $service['excerpt'] ?? '',
+            'url' => !empty($service['route']) ? route($service['route']) : route('services'),
+        ];
+    }
+    foreach (config('company.service_pages') as $page) {
+        $serviceList[] = [
+            '@type' => 'ListItem',
+            'position' => $pos++,
+            'name' => $page['title'],
+            'description' => $page['excerpt'] ?? '',
+            'url' => route($page['route']),
+        ];
+    }
+@endphp
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'ItemList',
+    'name' => 'MarineCaddie Our Services',
+    'description' => 'Marine logistics, freight forwarding, customs clearance, special projects, ship spares and vessel husbandry services.',
+    'numberOfItems' => count($serviceList),
+    'itemListElement' => $serviceList,
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Contact')
-@section('meta_title', 'Contact MarineCaddie Shipping | Talk to Our 4PL Team')
-@section('meta_description', 'Contact MarineCaddie Shipping for 4PL supply chain orchestration. Email info@marinecaddie.com or call (+1) 800 555 0148.')
-@section('meta_keywords', 'contact MarineCaddie, logistics quote, 4PL inquiry, maritime logistics contact')
+@section('meta_title', 'Contact MarineCaddie Shipping | Dubai Ops Team')
+@section('meta_description', 'Contact MarineCaddie Shipping LLC in Deira, Dubai. Email ops@marinecaddie.com or call +971 50 5643375.')
+@section('meta_keywords', 'contact MarineCaddie, Dubai shipping company, maritime logistics contact, ops@marinecaddie.com')
 @section('schema_type', 'ContactPage')
 @section('header_class', 'scrollHeader')
 
@@ -129,21 +129,23 @@
                     <div class="col-lg-6 mt-2-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                         <div class="ps-xl-1-9 ps-xxl-7">
                             <div class="mb-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Contact Us.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1">How can we help orchestrate your supply chain?</h2>
+                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Let’s Work Together.</span>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1">Contact Us</h2>
                             </div>
+                            <p class="mb-1-9">{{ config('company.motto') }} Reach our Dubai operations team for ship spares logistics, freight, customs clearance, or vessel husbandry.</p>
                             <div class="row mt-n1-9 mb-6 g-5">
                                 <div class="col-sm-6 mt-1-9">
-                                    <h3 class="h4">Coverage</h3>
-                                    <p class="mb-0">Global maritime &amp; logistics coverage</p>
+                                    <h3 class="h4">Office</h3>
+                                    <p class="mb-0">{{ config('company.legal_name') }}<br>{{ config('company.address.line1') }}<br>{{ config('company.address.line2') }}</p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9">
                                     <h3 class="h4">Phone</h3>
-                                    <p class="mb-0"><a href="tel:+18005550148" class="text-primary text-secondary-hover">(+1) 800 555 0148</a></p>
+                                    <p class="mb-0"><a href="tel:{{ config('company.phone_tel') }}" class="text-primary text-secondary-hover">{{ config('company.phone_display') }}</a></p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9">
-                                    <h3 class="h4">Follow us</h3>
-                                    <ul class="social-icon-style04 list-unstyled mb-0">
+                                    <h3 class="h4">Website</h3>
+                                    <p class="mb-0"><a href="{{ config('company.website') }}" class="text-primary text-secondary-hover" target="_blank" rel="noopener">www.marinecaddie.com</a></p>
+                                    <ul class="social-icon-style04 list-unstyled mb-0 mt-2">
                                         <li><a href="{{ route('contact') }}#"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="{{ route('contact') }}#"><i class="fa-brands fa-x-twitter"></i></a></li>
                                         <li><a href="{{ route('contact') }}#"><i class="fab fa-instagram"></i></a></li>
@@ -152,12 +154,12 @@
                                 </div>
                                 <div class="col-sm-6 mt-1-9">
                                     <h3 class="h4">Email</h3>
-                                    <p class="mb-0">Your supply chain, orchestrated.</p>
-                                    <p class="mb-0"><a href="mailto:info@marinecaddie.com" class="text-decoration-underline text-primary text-secondary-hover">info@marinecaddie.com</a></p>
+                                    <p class="mb-0">{{ config('company.tagline') }}</p>
+                                    <p class="mb-0"><a href="mailto:{{ config('company.email') }}" class="text-decoration-underline text-primary text-secondary-hover">{{ config('company.email') }}</a></p>
                                 </div>
                             </div>
                             <div class="display-custom-1 text-primary font-weight-700">
-                                <p class="mb-0">25+ Years</p>
+                                <p class="mb-0">24/7 Ops</p>
                             </div>
                         </div>
                     </div>
@@ -170,10 +172,10 @@
         <section class="p-0">
             <div class="map bg-secondary d-flex align-items-center justify-content-center text-center" style="min-height: 380px;">
                 <div class="px-4 py-5">
-                    <h3 class="text-white h4 mb-3">Global maritime &amp; logistics coverage</h3>
-                    <p class="text-white opacity8 mb-3 mb-0">Reach MarineCaddie Shipping for 4PL orchestration support worldwide.</p>
-                    <p class="mb-1"><a href="tel:+18005550148" class="text-primary">(+1) 800 555 0148</a></p>
-                    <p class="mb-0"><a href="mailto:info@marinecaddie.com" class="text-primary">info@marinecaddie.com</a></p>
+                    <h3 class="text-white h4 mb-3">{{ config('company.legal_name') }}</h3>
+                    <p class="text-white opacity8 mb-3 mb-0">{{ config('company.address.line1') }}, {{ config('company.address.line2') }}</p>
+                    <p class="mb-1"><a href="tel:{{ config('company.phone_tel') }}" class="text-primary">{{ config('company.phone_display') }}</a></p>
+                    <p class="mb-0"><a href="mailto:{{ config('company.email') }}" class="text-primary">{{ config('company.email') }}</a></p>
                 </div>
             </div>
         </section>

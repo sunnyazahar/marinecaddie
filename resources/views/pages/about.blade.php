@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'About Us')
-@section('meta_title', 'About MarineCaddie Shipping | 25+ Years in Maritime Logistics')
-@section('meta_description', 'Learn how MarineCaddie Shipping combines 25+ years of maritime expertise with modern 4PL orchestration—integrating partners, systems, and visibility for global shippers.')
-@section('meta_keywords', 'about MarineCaddie, 4PL company, maritime logistics expertise, supply chain partner')
+@section('meta_title', 'About MarineCaddie Shipping | Maritime Logistics Caddies')
+@section('meta_description', 'MarineCaddie Shipping LLC is a specialized marine logistics and freight forwarding company providing ship spare logistics, customs clearance, vessel husbandry, and end-to-end maritime support worldwide.')
+@section('meta_keywords', 'about MarineCaddie, maritime logistics, ship spare logistics, vessel husbandry, freight forwarding Dubai')
 @section('schema_type', 'AboutPage')
 @section('header_class', 'scrollHeader')
 
@@ -49,19 +49,19 @@
                     <div class="col-lg-6 text-column">
                         <div class="ps-xl-2-9">
                             <div class="mb-4 wow fadeInUp" data-wow-delay="100ms">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">About MarineCaddie</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">Orchestrating complex maritime supply chains</h2>
+                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Who We Are</span>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">{{ config('company.headline') }}</h2>
                             </div>
-                            <p class="mb-3 lead text-secondary font-weight-600 wow fadeInUp" data-wow-delay="200ms">MarineCaddie Shipping is a 4PL supply chain orchestration partner for businesses managing complex maritime and global logistics.</p>
-                            <p class="mb-4 wow fadeInUp" data-wow-delay="250ms">We optimize the entire network. By integrating systems, managing 3PLs, and driving end-to-end visibility, we help shippers reduce cost, improve compliance, and deliver on time, every time.</p>
+                            <p class="mb-3 lead text-secondary font-weight-600 wow fadeInUp" data-wow-delay="200ms">{{ config('company.tagline') }}</p>
+                            <p class="mb-4 wow fadeInUp" data-wow-delay="250ms">{{ config('company.who_we_are') }}</p>
                             <div class="mb-5">
                                 <div class="d-flex border-bottom pb-1-9 mb-1-9 wow fadeInUp" data-wow-delay="300ms">
                                     <div class="flex-shrink-0 me-4">
                                         <img src="{{ theme_asset('assets/img/icons/icon-14.png') }}" alt="..." class="w-50px">
                                     </div>
                                     <div class="flex-grow-1">
-                                        <h3 class="h5">System Integration</h3>
-                                        <p class="mb-0">We connect ERP, TMS, and tracking platforms into one orchestration layer—so freight, warehouse, and distribution data work together across partners and lanes.</p>
+                                        <h3 class="h5">Our Mission</h3>
+                                        <p class="mb-0">{{ config('company.mission') }}</p>
                                     </div>
                                 </div>
                                 <div class="d-flex wow fadeInUp" data-wow-delay="400ms">
@@ -69,8 +69,8 @@
                                         <img src="{{ theme_asset('assets/img/icons/icon-15.png') }}" alt="..." class="w-50px">
                                     </div>
                                     <div class="flex-grow-1">
-                                        <h3 class="h5">Reliability &amp; Trust</h3>
-                                        <p class="mb-0">Built by logistics operators with 25+ years in maritime shipping, MarineCaddie combines deep industry experience with technology to give you control over your supply chain—without the overhead of managing it alone.</p>
+                                        <h3 class="h5">Our Vision</h3>
+                                        <p class="mb-0">{{ config('company.vision') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                     <a class="butn-style01 text-white-hover" href="{{ route('contact') }}">Talk to Us</a>
                                 </div>
                                 <div class="flex-grow-1 ms-3 ms-xl-5">
-                                    <p class="mb-0 text-secondary font-weight-600 fst-italic">Your supply chain, orchestrated.</p>
+                                    <p class="mb-0 text-secondary font-weight-600 fst-italic">{{ config('company.motto') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -88,37 +88,91 @@
             </div>
         </section>
 
+        <!-- GLOBAL COVERAGE & PORT HUSBANDRY
+        ================================================== -->
+        <section class="pt-0">
+            <div class="container">
+                <div class="row mt-n1-9">
+                    <div class="col-lg-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="mb-4">
+                            <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Global Coverage</span>
+                            <h2 class="display-5 font-weight-800 mb-3 lh-1 ls-minus-2px">Present where your vessels call</h2>
+                            <p class="mb-0">{{ config('company.brand') }} operates with coverage across {{ config('company.presence') }}. From our base as {{ config('company.legal_name') }} in {{ config('company.address.short') }}, we coordinate maritime logistics support for fleets worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="mb-4">
+                            <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Port Husbandry</span>
+                            <h2 class="display-5 font-weight-800 mb-3 lh-1 ls-minus-2px">Local support at key ports</h2>
+                            <p class="mb-0">Port husbandry services across {{ config('company.port_husbandry_regions') }}—including port agency, crew change, immigration and visa assistance, launch boats, fresh water, bunkering coordination, cash to master, medical assistance, ship chandling, repairs, and dry dock support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ANIMATION-LINE
         ================================================== -->
-        <section class="pb-1-9 pb-sm-2-9 pt-0">
-            <div class="container-fluid">
-                <!-- SCROLLING ANIMATION -->
-                <div class="scroll-section">
+        <section class="pb-1-9 pb-sm-2-9 pt-0 home-section--ticker">
+            <div class="container-fluid px-0">
+                <div class="scroll-section scroll-section--dynamic">
                     <div class="scroll-track pause-on-hover scroll-left scroll-speed-4">
                         <div class="scroll-group">
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Supply Chain Design">Supply Chain Design</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="3PL Coordination">3PL Coordination</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="End-to-End Visibility">End-to-End Visibility</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Customs Compliance">Customs Compliance</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Network Optimization">Network Optimization</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Maritime Expertise">Maritime Expertise</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Systems Integration">Systems Integration</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Risk Management">Risk Management</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="Supply Chain Design">Supply Chain Design</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="3PL Coordination">3PL Coordination</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
-                            <div class="scroll-item scroll-text display-5 text-uppercase font-weight-800 me-5" data-text="End-to-End Visibility">End-to-End Visibility</div>
-                            <div class="scroll-item with-img me-5"><img src="{{ theme_asset('assets/img/icons/icon-17.png') }}" alt="..." title="..." class="w-60px"></div>
+                            @include('partials.scroll-ticker', ['phrases' => [
+                                'Ship Spare Logistics',
+                                'Vessel Husbandry',
+                                'Customs Clearance',
+                                'Freight Forwarding',
+                                'Crew Logistics',
+                                'Port Coordination',
+                                'Door to Deck',
+                                '24/7 Operations',
+                            ]])
                         </div>
+                        <div class="scroll-group" aria-hidden="true">
+                            @include('partials.scroll-ticker', ['phrases' => [
+                                'Ship Spare Logistics',
+                                'Vessel Husbandry',
+                                'Customs Clearance',
+                                'Freight Forwarding',
+                                'Crew Logistics',
+                                'Port Coordination',
+                                'Door to Deck',
+                                '24/7 Operations',
+                            ]])
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US
+        ================================================== -->
+        <section class="pt-0">
+            <div class="container">
+                <div class="mb-1-9 text-center wow fadeInUp" data-wow-delay="100ms">
+                    <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Why Choose Us.</span>
+                    <h2 class="mb-0 display-4 font-weight-800 lh-1 ls-minus-2px w-sm-90 w-md-75 w-lg-65 w-xl-55 mx-auto">{{ config('company.motto') }}</h2>
+                </div>
+                <div class="row mt-n1-9">
+                    @foreach(config('company.why_choose_us') as $index => $item)
+                    <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="{{ 100 + ($index * 50) }}ms">
+                        <div class="border border-color-light-black rounded p-1-9 h-100">
+                            <h3 class="h5 mb-2">{{ $item['title'] }}</h3>
+                            <p class="mb-0">{{ $item['text'] }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="row mt-2-9">
+                    <div class="col-lg-8 mx-auto text-center wow fadeInUp" data-wow-delay="100ms">
+                        <p class="mb-2 text-secondary font-weight-600">{{ config('company.legal_name') }}</p>
+                        <p class="mb-1">{{ config('company.address.line1') }}</p>
+                        <p class="mb-3">{{ config('company.address.line2') }}</p>
+                        <p class="mb-0">
+                            <a href="tel:{{ config('company.phone_tel') }}" class="text-primary me-3">{{ config('company.phone_display') }}</a>
+                            <a href="mailto:{{ config('company.email') }}" class="text-primary">{{ config('company.email') }}</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -222,14 +276,14 @@
                         <div class="pe-xl-1-9">
                             <div class="mb-4">
                                 <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Testimonial.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px text-white">Partners who trust our orchestration</h2>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px text-white">Trusted maritime logistics partners</h2>
                             </div>
                             <div class="testimonial-carousel-two owl-carousel owl-loaded owl-drag" data-owl="{&quot;loop&quot;:true,&quot;responsiveClass&quot;:true,&quot;autoplay&quot;:true,&quot;autoplayTimeout&quot;:5000, &quot;nav&quot;:true, &quot;navText&quot;: [&quot;&lt;i class=\&quot;ti-arrow-left\&quot;&gt;&lt;/i&gt;&quot;,&quot;&lt;i class=\&quot;ti-arrow-right\&quot;&gt;&lt;/i&gt;&quot;], &quot;dots&quot;:false,&quot;center&quot;:false,&quot;smartSpeed&quot;:1500,&quot;margin&quot;:30,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1}}}">
                                 
                                 
                                 
                             <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1271px, 0px, 0px); transition: 1.5s; width: 4450px;"><div class="owl-item cloned" style="width: 605.602px; margin-right: 30px;"><div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie orchestrates our ocean and inland partners as one network. End-to-end visibility and disciplined 3PL coordination cut exceptions and keep our lanes on schedule.</p>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie keeps our fleet moving with reliable ship spare logistics and clear updates from hub to onboard delivery. Their Dubai team understands vessel urgency.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
                                             <img src="{{ theme_asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
@@ -239,11 +293,11 @@
                                         </div>
                                         <div class="flex-grow-1 ms-4">
                                             <h3 class="h4 text-white">Gemma Krischock</h3>
-                                            <span class="text-white opacity8">Supply Chain Director</span>
+                                            <span class="text-white opacity8">Fleet Logistics Director</span>
                                         </div>
                                     </div>
                                 </div></div><div class="owl-item cloned" style="width: 605.602px; margin-right: 30px;"><div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">As our 4PL partner, MarineCaddie integrates systems and manages compliance risk across markets. We reduced landed cost while improving on-time performance—without adding complexity for our teams.</p>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">From customs clearance to port husbandry in India and Singapore, they coordinate what we need so our vessels stay on schedule. Cost-effective and customer-focused.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
                                             <img src="{{ theme_asset('assets/img/avatar/avatar-04.jpg') }}" class="border-radius-50" alt="..." title="...">
@@ -253,11 +307,11 @@
                                         </div>
                                         <div class="flex-grow-1 ms-4">
                                             <h3 class="h4 text-white">Daniel Hester</h3>
-                                            <span class="text-white opacity8">Head of Global Logistics</span>
+                                            <span class="text-white opacity8">Head of Marine Operations</span>
                                         </div>
                                     </div>
                                 </div></div><div class="owl-item active" style="width: 605.602px; margin-right: 30px;"><div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Their maritime operator experience shows in every exception. From customs readiness to warehouse handoffs, we finally have one accountable orchestration layer for our global supply chain.</p>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Their freight forwarding and door-to-deck delivery for critical parts gave us one accountable team across air, ocean, and last mile. Exceptional operational focus.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
                                             <img src="{{ theme_asset('assets/img/avatar/avatar-02.jpg') }}" class="border-radius-50" alt="..." title="...">
@@ -267,11 +321,11 @@
                                         </div>
                                         <div class="flex-grow-1 ms-4">
                                             <h3 class="h4 text-white">Maria Kunze</h3>
-                                            <span class="text-white opacity8">Supply Chain Director</span>
+                                            <span class="text-white opacity8">Technical Purchasing Lead</span>
                                         </div>
                                     </div>
                                 </div></div><div class="owl-item" style="width: 605.602px; margin-right: 30px;"><div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie orchestrates our ocean and inland partners as one network. End-to-end visibility and disciplined 3PL coordination cut exceptions and keep our lanes on schedule.</p>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie keeps our fleet moving with reliable ship spare logistics and clear updates from hub to onboard delivery. Their Dubai team understands vessel urgency.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
                                             <img src="{{ theme_asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
@@ -281,11 +335,11 @@
                                         </div>
                                         <div class="flex-grow-1 ms-4">
                                             <h3 class="h4 text-white">Gemma Krischock</h3>
-                                            <span class="text-white opacity8">Supply Chain Director</span>
+                                            <span class="text-white opacity8">Fleet Logistics Director</span>
                                         </div>
                                     </div>
                                 </div></div><div class="owl-item" style="width: 605.602px; margin-right: 30px;"><div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">As our 4PL partner, MarineCaddie integrates systems and manages compliance risk across markets. We reduced landed cost while improving on-time performance—without adding complexity for our teams.</p>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">From customs clearance to port husbandry in India and Singapore, they coordinate what we need so our vessels stay on schedule. Cost-effective and customer-focused.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
                                             <img src="{{ theme_asset('assets/img/avatar/avatar-04.jpg') }}" class="border-radius-50" alt="..." title="...">
@@ -295,11 +349,11 @@
                                         </div>
                                         <div class="flex-grow-1 ms-4">
                                             <h3 class="h4 text-white">Daniel Hester</h3>
-                                            <span class="text-white opacity8">Head of Global Logistics</span>
+                                            <span class="text-white opacity8">Head of Marine Operations</span>
                                         </div>
                                     </div>
                                 </div></div><div class="owl-item cloned" style="width: 605.602px; margin-right: 30px;"><div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Their maritime operator experience shows in every exception. From customs readiness to warehouse handoffs, we finally have one accountable orchestration layer for our global supply chain.</p>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Their freight forwarding and door-to-deck delivery for critical parts gave us one accountable team across air, ocean, and last mile. Exceptional operational focus.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
                                             <img src="{{ theme_asset('assets/img/avatar/avatar-02.jpg') }}" class="border-radius-50" alt="..." title="...">
@@ -309,11 +363,11 @@
                                         </div>
                                         <div class="flex-grow-1 ms-4">
                                             <h3 class="h4 text-white">Maria Kunze</h3>
-                                            <span class="text-white opacity8">Supply Chain Director</span>
+                                            <span class="text-white opacity8">Technical Purchasing Lead</span>
                                         </div>
                                     </div>
                                 </div></div><div class="owl-item cloned" style="width: 605.602px; margin-right: 30px;"><div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie orchestrates our ocean and inland partners as one network. End-to-end visibility and disciplined 3PL coordination cut exceptions and keep our lanes on schedule.</p>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie keeps our fleet moving with reliable ship spare logistics and clear updates from hub to onboard delivery. Their Dubai team understands vessel urgency.</p>
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 position-relative">
                                             <img src="{{ theme_asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="..." title="...">
@@ -323,7 +377,7 @@
                                         </div>
                                         <div class="flex-grow-1 ms-4">
                                             <h3 class="h4 text-white">Gemma Krischock</h3>
-                                            <span class="text-white opacity8">Supply Chain Director</span>
+                                            <span class="text-white opacity8">Fleet Logistics Director</span>
                                         </div>
                                     </div>
                                 </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ti-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ti-arrow-right"></i></button></div><div class="owl-dots disabled"></div></div>
@@ -351,7 +405,7 @@
                             <img src="{{ theme_asset('assets/img/team/team-01.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Maya Paschke</h3>
-                                <span>Distribution Network Lead</span>
+                                <span>Ship Spare Logistics Lead</span>
                                 <div class="team-icons">
                                     <ul class="list-unstyled ps-0">
                                         <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
@@ -368,7 +422,7 @@
                             <img src="{{ theme_asset('assets/img/team/team-02.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Archie Symes</h3>
-                                <span>4PL Program Director</span>
+                                <span>Marine Operations Director</span>
                                 <div class="team-icons">
                                     <ul class="list-unstyled ps-0">
                                         <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
@@ -385,7 +439,7 @@
                             <img src="{{ theme_asset('assets/img/team/team-03.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Summer Meldrum</h3>
-                                <span>Supply Chain Designer</span>
+                                <span>Freight Forwarding Lead</span>
                                 <div class="team-icons">
                                     <ul class="list-unstyled ps-0">
                                         <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
@@ -436,7 +490,7 @@
                             <img src="{{ theme_asset('assets/img/team/team-06.jpg') }}" alt="..." title="..." class="rounded">
                             <div class="card-body position-relative pb-0 px-0 pt-4">
                                 <h3 class="mb-1 h5">Askalu Isaias</h3>
-                                <span>3PL Coordination Manager</span>
+                                <span>Port Husbandry Manager</span>
                                 <div class="team-icons">
                                     <ul class="list-unstyled ps-0">
                                         <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>

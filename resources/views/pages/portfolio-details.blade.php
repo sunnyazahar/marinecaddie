@@ -2,7 +2,7 @@
 
 @section('title', 'Portfolio Details')
 @section('meta_title', 'Project Details | MarineCaddie Portfolio')
-@section('meta_description', 'Detailed look at a MarineCaddie logistics orchestration engagement—scope, approach, and outcomes for complex supply chain networks.')
+@section('meta_description', 'Detailed look at a MarineCaddie maritime logistics engagement—scope, approach, and outcomes for vessel and cargo support.')
 @section('meta_keywords', 'logistics case study, supply chain project, MarineCaddie portfolio details')
 @section('schema_type', 'WebPage')
 @section('header_class', 'scrollHeader')
@@ -39,14 +39,14 @@
                                     <h2 class="mb-1-9 mb-sm-5 font-weight-800">Orchestrated maritime supply chain program</h2>
                                     <ul class="list-unstyled mb-0">
                                         <li class="border-bottom pb-4 mb-4 display-30"><span class="w-50 text-uppercase d-inline-block text-dark font-weight-600">Published </span> 1 Feb 2026</li>
-                                        <li class="border-bottom pb-4 mb-4 display-30"><span class="w-50 text-uppercase d-inline-block text-dark font-weight-600">Services </span> 4PL Orchestration</li>
+                                        <li class="border-bottom pb-4 mb-4 display-30"><span class="w-50 text-uppercase d-inline-block text-dark font-weight-600">Services </span> Maritime Logistics</li>
                                         <li class="display-30"><span class="w-50 text-uppercase d-inline-block text-dark font-weight-600">Industry </span> Maritime &amp; Global Trade</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-8 mt-4">
                                 <div>
-                                    <p class="wow fadeInUp" data-wow-delay="200ms">This engagement shows how MarineCaddie orchestrates complex maritime and inland logistics as a single 4PL program. We aligned ocean, rail, and warehouse partners under shared milestones, connected ERP and TMS events, and gave the shipper one control view from booking to final delivery.</p>
+                                    <p class="wow fadeInUp" data-wow-delay="200ms">This engagement shows how MarineCaddie supports complex maritime logistics as one accountable partner—aligning ocean freight, customs clearance, inland delivery, and vessel needs so critical cargo moves from booking to onboard delivery with clear updates.</p>
                                     <p class="wow fadeInUp" data-wow-delay="200ms">Through active 3PL performance management and proactive exception handling, the program reduced demurrage exposure, improved documentation readiness, and strengthened on-time performance without adding internal logistics headcount.</p>
                                     <a href="{{ route('how-we-work') }}" class="butn-style01 wow fadeInUp" data-wow-delay="200ms">How We Work</a>
                                 </div>

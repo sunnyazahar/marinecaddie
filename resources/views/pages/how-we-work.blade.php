@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'How We Work')
-@section('meta_title', 'How MarineCaddie Works | Discover, Integrate, Orchestrate')
-@section('meta_description', 'See how MarineCaddie’s 4PL process works: Discover & Design, Integrate Systems & Partners, Orchestrate & Optimize, and Continuous Performance.')
-@section('meta_keywords', 'how 4PL works, supply chain process, logistics orchestration process, MarineCaddie method')
+@section('meta_title', 'How MarineCaddie Works | Ship Spare Logistics Process')
+@section('meta_description', 'See how MarineCaddie moves ship spares end to end: Supplier, Collection, Hub/WH, Documentation, Customs, Carrier, Delivery, On Board, and POD—keeping your fleet moving.')
+@section('meta_keywords', 'ship spare logistics process, maritime logistics process, door to deck delivery, MarineCaddie operations')
 @section('schema_type', 'WebPage')
 @section('header_class', 'scrollHeader')
 
@@ -30,7 +30,8 @@
             <div class="container">
                 <div class="mb-4 text-center wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                     <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Work Process.</span>
-                    <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px w-sm-90 w-md-75 w-lg-65 w-xl-55 w-xxl-45 mx-auto">How MarineCaddie orchestrates your supply chain</h2>
+                    <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px w-sm-90 w-md-75 w-lg-65 w-xl-55 w-xxl-45 mx-auto">Ship spare logistics from supplier to POD</h2>
+                    <p class="mt-3 mb-0 mx-auto w-lg-75">{{ config('company.motto') }} Our operations follow a clear door-to-deck flow: {{ collect(config('company.ship_spare_flow'))->pluck('label')->implode(' → ') }}.</p>
                 </div>
             </div>
             <div class="process-style01 position-relative pt-3">
@@ -44,8 +45,8 @@
                                         <span class="number">01</span>
                                     </div>
                                 </div>
-                                <h3 class="h5 mb-3">Discover &amp; Design</h3>
-                                <p class="mb-0 mx-auto w-95">Map lanes, partners, costs, and constraints—then design a supply chain model built for compliance and on-time delivery.</p>
+                                <h3 class="h5 mb-3">{{ config('company.ship_spare_flow.0.label') }} → {{ config('company.ship_spare_flow.2.label') }}</h3>
+                                <p class="mb-0 mx-auto w-95">Collect from supplier, consolidate at hub/warehouse, and prepare cargo for time-critical movement to the next port call.</p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="350ms" style="visibility: visible; animation-delay: 350ms; animation-name: fadeInUp;">
@@ -56,8 +57,8 @@
                                         <span class="number">02</span>
                                     </div>
                                 </div>
-                                <h3 class="h5 mb-3">Integrate Systems &amp; Partners</h3>
-                                <p class="mb-0 mx-auto w-95">Connect ERP, TMS, and tracking with selected 3PLs so every handoff shares data, SLAs, and clear ownership.</p>
+                                <h3 class="h5 mb-3">{{ config('company.ship_spare_flow.3.label') }} → {{ config('company.ship_spare_flow.5.label') }}</h3>
+                                <p class="mb-0 mx-auto w-95">Complete documentation, manage customs clearance, and book the right carrier—air, ocean, road, express, or hand carry.</p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
@@ -68,8 +69,8 @@
                                         <span class="number">03</span>
                                     </div>
                                 </div>
-                                <h3 class="h5 mb-3">Orchestrate &amp; Optimize</h3>
-                                <p class="mb-0 mx-auto w-95">Run day-to-day execution across freight, warehouse, and distribution—managing exceptions before they reach your customers.</p>
+                                <h3 class="h5 mb-3">{{ config('company.ship_spare_flow.6.label') }} → {{ config('company.ship_spare_flow.8.label') }}</h3>
+                                <p class="mb-0 mx-auto w-95">Receive at destination hub, arrange last-mile delivery, and complete onboard handover so the vessel keeps sailing.</p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="650ms" style="visibility: visible; animation-delay: 650ms; animation-name: fadeInUp;">
@@ -80,8 +81,8 @@
                                         <span class="number">04</span>
                                     </div>
                                 </div>
-                                <h3 class="h5 mb-3">Continuous Performance</h3>
-                                <p class="mb-0 mx-auto w-95">Review scorecards, refine partner mix, and improve network cost, compliance, and reliability over time.</p>
+                                <h3 class="h5 mb-3">{{ config('company.ship_spare_flow.9.label') }} &amp; Follow-Up</h3>
+                                <p class="mb-0 mx-auto w-95">Proof of delivery, shipment reporting, and portal visibility for stock and tracking—closing the loop with clear accountability.</p>
                             </div>
                         </div>
                     </div>
@@ -98,16 +99,16 @@
                         <div>
                             <div class="mb-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                 <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Contact Us.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 text-white">Ready to start orchestrating with MarineCaddie?</h2>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1 text-white">Ready to leave the logistics to MarineCaddie?</h2>
                             </div>
                             <div class="row mt-n1-9 mb-6">
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Coverage</h3>
-                                    <p class="text-white opacity8 mb-0">Global maritime &amp; logistics coverage</p>
+                                    <p class="text-white opacity8 mb-0">{{ config('company.presence') }}</p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Phone</h3>
-                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:+18005550148">(+1) 800 555 0148</a></p>
+                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a></p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Follow us</h3>
@@ -120,12 +121,12 @@
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Email</h3>
-                                    <p class="mb-0 text-white opacity8">Your supply chain, orchestrated.</p>
-                                    <p class="mb-0"><a href="mailto:info@marinecaddie.com" class="text-decoration-underline text-primary text-white-hover">info@marinecaddie.com</a></p>
+                                    <p class="mb-0 text-white opacity8">{{ config('company.motto') }}</p>
+                                    <p class="mb-0"><a href="mailto:{{ config('company.email') }}" class="text-decoration-underline text-primary text-white-hover">{{ config('company.email') }}</a></p>
                                 </div>
                             </div>
                             <div class="contact-text wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                <p class="mb-0">25+ Years</p>
+                                <p class="mb-0">{{ config('company.address.short') }}</p>
                             </div>
                         </div>
                     </div>
@@ -239,13 +240,13 @@
                         <div class="pe-lg-1-9 pe-xxl-12">
                             <div class="mb-4 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                 <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Why Choose Us.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">A 4PL partner built on maritime trust</h2>
+                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">{{ config('company.tagline') }}</h2>
                             </div>
-                            <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms" style="visibility: visible; animation-delay: 150ms; animation-name: fadeInUp;">MarineCaddie combines 25+ years of shipping operator experience with disciplined orchestration—so systems, 3PLs, and trade lanes stay aligned to cost, compliance, and on-time outcomes.</p>
+                            <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms" style="visibility: visible; animation-delay: 150ms; animation-name: fadeInUp;">{{ config('company.who_we_are') }}</p>
                             <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                                 <img src="{{ theme_asset('assets/img/avatar/avatar-08.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow">
                                 <img src="{{ theme_asset('assets/img/avatar/avatar-09.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
-                                <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted by <strong>global trade leaders worldwide.</strong></p>
+                                <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted by <strong>vessel operators worldwide.</strong></p>
                             </div>
                         </div>
                     </div>
@@ -259,8 +260,8 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="px-sm-1-6 px-xl-5 py-1-6">
-                                        <h3 class="h4">Clear Accountability</h3>
-                                        <p class="mb-0">One orchestration owner across partners and lanes.</p>
+                                        <h3 class="h4">{{ config('company.why_choose_us.0.title') }}</h3>
+                                        <p class="mb-0">{{ config('company.why_choose_us.0.text') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -274,8 +275,8 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="px-sm-1-6 px-xl-5 py-1-6">
-                                        <h3 class="h4">Measurable Performance</h3>
-                                        <p class="mb-0">Cost, compliance, and on-time scorecards you can act on.</p>
+                                        <h3 class="h4">{{ config('company.why_choose_us.3.title') }}</h3>
+                                        <p class="mb-0">{{ config('company.why_choose_us.3.text') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -289,8 +290,8 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="px-sm-1-6 px-xl-5 pt-1-6">
-                                        <h3 class="h4">Operator-Grade Expertise</h3>
-                                        <p class="mb-0">Maritime know-how applied to complex global networks.</p>
+                                        <h3 class="h4">{{ config('company.why_choose_us.5.title') }}</h3>
+                                        <p class="mb-0">{{ config('company.why_choose_us.5.text') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +311,7 @@
                             <div class="h4 text-white">
                                 <div class="d-inline-block odometer odometer-auto-theme" data-count="35"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">3</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span></div></div>k
                             </div>
-                            <p class="d-inline-block text-center text-white">Deliveries Completed</p>
+                            <p class="d-inline-block text-center text-white">Shipments Handled</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
@@ -326,7 +327,7 @@
                             <div class="h4">
                                 <div class="d-inline-block odometer odometer-auto-theme" data-count="89"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">8</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">9</span></span></span></span></span></div></div>+
                             </div>
-                            <p>Operational capacity</p>
+                            <p>Network Partners</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">

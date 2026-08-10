@@ -2,7 +2,7 @@
 
 @section('title', 'Blog Details')
 @section('meta_title', 'Article | MarineCaddie Shipping Blog')
-@section('meta_description', 'Read the latest MarineCaddie article on supply chain orchestration, freight performance, and maritime logistics best practices.')
+@section('meta_description', 'Read the latest MarineCaddie article on maritime logistics, freight performance, and ship spare delivery best practices.')
 @section('meta_keywords', 'logistics article, supply chain blog post, MarineCaddie insights')
 @section('og_type', 'article')
 @section('schema_type', 'BlogPosting')

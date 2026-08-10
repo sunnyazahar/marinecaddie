@@ -33,15 +33,15 @@
                         <div class="p-1-6 p-md-2-2 border border-color-light-black rounded">
                             <div class="mb-5">
                                 <h2 class="mb-4 h4">Introduction</h2>
-                                <p>MarineCaddie Shipping (“MarineCaddie,” “we,” “us,” or “our”) respects your privacy. This Privacy Policy explains how we collect, use, and protect personal information when you visit our website, contact our team, or engage our 4PL supply chain orchestration services.</p>
-                                <p class="pb-0">By using our website or submitting information to us, you acknowledge the practices described in this policy. If you do not agree, please discontinue use of the site and contact us with any questions at info@marinecaddie.com.</p>
+                                <p>MarineCaddie Shipping (“MarineCaddie,” “we,” “us,” or “our”) respects your privacy. This Privacy Policy explains how we collect, use, and protect personal information when you visit our website, contact our team, or engage our marine logistics and freight forwarding services.</p>
+                                <p class="pb-0">By using our website or submitting information to us, you acknowledge the practices described in this policy. If you do not agree, please discontinue use of the site and contact us with any questions at ops@marinecaddie.com.</p>
                             </div>
                             <div class="mb-5">
                                 <h2 class="mb-4 h4">Information we collect</h2>
                                 <p>We may collect information you provide directly, such as your name, company, email address, phone number, and message content when you request a quote, subscribe to updates, or ask for support. We may also collect limited technical data such as browser type, device information, and pages visited to help us improve site performance and security.</p>
                                 <ul class="list-style01 list-unstyled mb-4 ps-0">
                                     <li>Contact and inquiry details submitted through forms</li>
-                                    <li>Business context shared for logistics or orchestration discussions</li>
+                                    <li>Business context shared for logistics or maritime service discussions</li>
                                     <li>Website usage and diagnostic information</li>
                                 </ul>
                                 <p class="mb-0">We do not knowingly collect sensitive personal data through this website unless you choose to provide it in a message or attachment.</p>
@@ -53,7 +53,7 @@
                             </div>
                             <div>
                                 <h2 class="mb-4 h4">Your choices and contact</h2>
-                                <p class="mb-0">You may request access, correction, or deletion of personal information we hold about you, subject to applicable law. For privacy requests, email info@marinecaddie.com or call (+1) 800 555 0148. We may update this policy from time to time; the revised version will be posted on this page.</p>
+                                <p class="mb-0">You may request access, correction, or deletion of personal information we hold about you, subject to applicable law. For privacy requests, email ops@marinecaddie.com or call +971 50 5643375. We may update this policy from time to time; the revised version will be posted on this page.</p>
                             </div>
                         </div>
                     </div>
