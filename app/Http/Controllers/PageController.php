@@ -19,6 +19,11 @@ class PageController extends Controller
         return view('pages.about');
     }
 
+    public function missionVision()
+    {
+        return view('pages.mission-vision');
+    }
+
     public function services()
     {
         return view('pages.services');

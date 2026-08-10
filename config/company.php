@@ -24,7 +24,21 @@ return [
 
     'mission' => 'To provide reliable, innovative, and time-critical maritime logistics solutions that keep vessels operating efficiently while delivering exceptional customer service worldwide.',
 
+    'mission_focus' => [
+        'Reliable maritime logistics',
+        'Time-critical execution',
+        'Vessel-first operations',
+        'Exceptional service worldwide',
+    ],
+
     'vision' => 'To become the most trusted global maritime logistics partner, recognized for operational excellence, customer satisfaction, and innovative logistics solutions.',
+
+    'vision_focus' => [
+        'Trusted global partner',
+        'Operational excellence',
+        'Customer satisfaction',
+        'Innovative logistics',
+    ],
 
     'presence' => 'Dubai (UAE) | India | China | Singapore | South Korea | Vietnam | Sri Lanka | UK | Italy | Africa | Netherlands | Germany | USA',
 
@@ -190,6 +204,45 @@ return [
         [
             'title' => 'Customer First',
             'text' => 'Solutions designed around vessel schedules, urgency, and practical constraints.',
+        ],
+    ],
+
+    'team' => [
+        [
+            'name' => 'Maya Paschke',
+            'role' => 'Ship Spare Logistics Lead',
+            'image' => 'assets/img/team/team-01.jpg',
+            'focus' => 'Time-critical door-to-deck spare parts moves.',
+        ],
+        [
+            'name' => 'Archie Symes',
+            'role' => 'Marine Operations Director',
+            'image' => 'assets/img/team/team-02.jpg',
+            'focus' => 'Vessel schedules, routing, and 24/7 ops oversight.',
+        ],
+        [
+            'name' => 'Summer Meldrum',
+            'role' => 'Freight Forwarding Lead',
+            'image' => 'assets/img/team/team-03.jpg',
+            'focus' => 'Air, ocean, and multimodal maritime freight.',
+        ],
+        [
+            'name' => 'Jonathan Lont',
+            'role' => 'Maritime Operations Lead',
+            'image' => 'assets/img/team/team-04.jpg',
+            'focus' => 'Port coordination and onboard delivery alignment.',
+        ],
+        [
+            'name' => 'Asmeret Girmay',
+            'role' => 'Customs & Compliance Advisor',
+            'image' => 'assets/img/team/team-05.jpg',
+            'focus' => 'TP/trans-shipment, import, and export clearance.',
+        ],
+        [
+            'name' => 'Askalu Isaias',
+            'role' => 'Port Husbandry Manager',
+            'image' => 'assets/img/team/team-06.jpg',
+            'focus' => 'Agency and husbandry across key Asian ports.',
         ],
     ],
 

@@ -11,6 +11,7 @@ Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap')
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/home-alt', [PageController::class, 'homeAlt'])->name('home.alt');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/mission-vision', [PageController::class, 'missionVision'])->name('mission-vision');
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/services/air-freight', [PageController::class, 'airFreight'])->name('services.air-freight');
 Route::get('/services/road-freight', [PageController::class, 'roadFreight'])->name('services.road-freight');

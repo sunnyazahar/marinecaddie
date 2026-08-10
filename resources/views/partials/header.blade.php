@@ -113,7 +113,7 @@
                                             <a href="{{ route('about') }}">Who We Are</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('about') }}">About Us</a></li>
-                                                <li><a href="{{ route('about') }}#mission">Our Mission & Vision</a></li>
+                                                <li><a href="{{ route('mission-vision') }}">Our Mission & Vision</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-sub"><span class="submenu-button"></span><a href="{{ route('services') }}">Our Services</a>

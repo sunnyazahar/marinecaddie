@@ -54,10 +54,10 @@
                             </div>
                             <p class="mb-3 lead text-secondary font-weight-600 wow fadeInUp" data-wow-delay="200ms">{{ config('company.tagline') }}</p>
                             <p class="mb-4 wow fadeInUp" data-wow-delay="250ms">{{ config('company.who_we_are') }}</p>
-                            <div class="mb-5">
+                            <div class="mb-5" id="mission">
                                 <div class="d-flex border-bottom pb-1-9 mb-1-9 wow fadeInUp" data-wow-delay="300ms">
                                     <div class="flex-shrink-0 me-4">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-14.png') }}" alt="..." class="w-50px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-14.png') }}" alt="Mission" class="w-50px">
                                     </div>
                                     <div class="flex-grow-1">
                                         <h3 class="h5">Our Mission</h3>
@@ -66,11 +66,12 @@
                                 </div>
                                 <div class="d-flex wow fadeInUp" data-wow-delay="400ms">
                                     <div class="flex-shrink-0 me-4">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-15.png') }}" alt="..." class="w-50px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-15.png') }}" alt="Vision" class="w-50px">
                                     </div>
                                     <div class="flex-grow-1">
                                         <h3 class="h5">Our Vision</h3>
-                                        <p class="mb-0">{{ config('company.vision') }}</p>
+                                        <p class="mb-2">{{ config('company.vision') }}</p>
+                                        <a href="{{ route('mission-vision') }}" class="text-primary font-weight-700">Explore Mission &amp; Vision →</a>
                                     </div>
                                 </div>
                             </div>
@@ -90,22 +91,48 @@
 
         <!-- GLOBAL COVERAGE & PORT HUSBANDRY
         ================================================== -->
-        <section class="pt-0">
+        <section class="about-presence-showcase" id="global-presence">
             <div class="container">
-                <div class="row mt-n1-9">
-                    <div class="col-lg-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="mb-4">
-                            <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Global Coverage</span>
-                            <h2 class="display-5 font-weight-800 mb-3 lh-1 ls-minus-2px">Present where your vessels call</h2>
-                            <p class="mb-0">{{ config('company.brand') }} operates with coverage across {{ config('company.presence') }}. From our base as {{ config('company.legal_name') }} in {{ config('company.address.short') }}, we coordinate maritime logistics support for fleets worldwide.</p>
-                        </div>
+                <div class="row g-4 g-xl-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                        <article class="about-presence-block about-presence-block--coverage">
+                            <span class="about-presence-block__eyebrow">Global Coverage</span>
+                            <h2 class="about-presence-block__title">Present where your vessels call</h2>
+                            <p class="about-presence-block__text">From our base in {{ config('company.address.short') }}, {{ config('company.brand') }} coordinates maritime logistics across a live port and trade network.</p>
+                            <div class="about-presence-regions" aria-label="Global coverage regions">
+                                @foreach(array_map('trim', explode('|', config('company.presence'))) as $region)
+                                <span class="about-presence-regions__chip">{{ $region }}</span>
+                                @endforeach
+                            </div>
+                            <div class="about-presence-block__meta">
+                                <span class="about-presence-block__meta-label">Headquarters</span>
+                                <span class="about-presence-block__meta-value">{{ config('company.legal_name') }} · {{ config('company.address.short') }}</span>
+                            </div>
+                        </article>
                     </div>
-                    <div class="col-lg-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="mb-4">
-                            <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Port Husbandry</span>
-                            <h2 class="display-5 font-weight-800 mb-3 lh-1 ls-minus-2px">Local support at key ports</h2>
-                            <p class="mb-0">Port husbandry services across {{ config('company.port_husbandry_regions') }}—including port agency, crew change, immigration and visa assistance, launch boats, fresh water, bunkering coordination, cash to master, medical assistance, ship chandling, repairs, and dry dock support.</p>
-                        </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="180ms">
+                        <article class="about-presence-block about-presence-block--husbandry">
+                            <span class="about-presence-block__eyebrow">Port Husbandry</span>
+                            <h2 class="about-presence-block__title">Local support at key ports</h2>
+                            <p class="about-presence-block__text">Dedicated husbandry across {{ config('company.port_husbandry_regions') }}—so every call stays efficient from agency to dry dock.</p>
+                            <div class="about-presence-hubs">
+                                @foreach(['India', 'Sri Lanka', 'Indonesia', 'Singapore'] as $hub)
+                                <div class="about-presence-hubs__item">
+                                    <span class="about-presence-hubs__marker" aria-hidden="true"></span>
+                                    <span>{{ $hub }}</span>
+                                </div>
+                                @endforeach
+                            </div>
+                            <ul class="about-presence-services">
+                                @foreach(config('company.port_husbandry') as $service)
+                                <li>{{ $service }}</li>
+                                @endforeach
+                            </ul>
+                            <a href="{{ route('services.rail-freight') }}" class="about-presence-block__link">
+                                Explore Port Support
+                                <i class="ti-arrow-top-right" aria-hidden="true"></i>
+                            </a>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -146,33 +173,47 @@
             </div>
         </section>
 
-        <!-- WHY CHOOSE US
+        <!-- WHY CHOOSE US / MOTTO
         ================================================== -->
-        <section class="pt-0">
+        <section class="about-motto-split" id="why-choose-us">
             <div class="container">
-                <div class="mb-1-9 text-center wow fadeInUp" data-wow-delay="100ms">
-                    <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Why Choose Us.</span>
-                    <h2 class="mb-0 display-4 font-weight-800 lh-1 ls-minus-2px w-sm-90 w-md-75 w-lg-65 w-xl-55 mx-auto">{{ config('company.motto') }}</h2>
-                </div>
-                <div class="row mt-n1-9">
-                    @foreach(config('company.why_choose_us') as $index => $item)
-                    <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="{{ 100 + ($index * 50) }}ms">
-                        <div class="border border-color-light-black rounded p-1-9 h-100">
-                            <h3 class="h5 mb-2">{{ $item['title'] }}</h3>
-                            <p class="mb-0">{{ $item['text'] }}</p>
+                <div class="row g-0 about-motto-split__frame align-items-stretch overflow-hidden">
+                    <div class="col-lg-5 about-motto-split__media wow fadeInLeft" data-wow-delay="100ms">
+                        <div class="about-motto-split__visual">
+                            <img src="{{ theme_asset('assets/img/content/logistics-scaled.webp') }}" alt="MarineCaddie maritime logistics operations" title="MarineCaddie maritime logistics operations">
+                            <div class="about-motto-split__visual-overlay" aria-hidden="true"></div>
+                            <div class="about-motto-split__visual-content">
+                                <span class="about-motto-split__eyebrow">Why Choose Us</span>
+                                <h2 class="about-motto-split__headline">{{ config('company.motto') }}</h2>
+                                <p class="about-motto-split__support">{{ config('company.tagline') }} Practical maritime logistics built around vessel urgency.</p>
+                                <a href="{{ route('contact') }}" class="butn-style01 white-hover">Talk to Operations</a>
+                            </div>
                         </div>
                     </div>
-                    @endforeach
-                </div>
-                <div class="row mt-2-9">
-                    <div class="col-lg-8 mx-auto text-center wow fadeInUp" data-wow-delay="100ms">
-                        <p class="mb-2 text-secondary font-weight-600">{{ config('company.legal_name') }}</p>
-                        <p class="mb-1">{{ config('company.address.line1') }}</p>
-                        <p class="mb-3">{{ config('company.address.line2') }}</p>
-                        <p class="mb-0">
-                            <a href="tel:{{ config('company.phone_tel') }}" class="text-primary me-3">{{ config('company.phone_display') }}</a>
-                            <a href="mailto:{{ config('company.email') }}" class="text-primary">{{ config('company.email') }}</a>
-                        </p>
+                    <div class="col-lg-7 about-motto-split__panel wow fadeInRight" data-wow-delay="150ms">
+                        <div class="about-motto-split__panel-inner">
+                            <div class="about-motto-split__list">
+                                @foreach(config('company.why_choose_us') as $index => $item)
+                                <div class="about-motto-split__item">
+                                    <span class="about-motto-split__num">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                                    <div class="about-motto-split__item-body">
+                                        <h3 class="about-motto-split__item-title">{{ $item['title'] }}</h3>
+                                        <p class="about-motto-split__item-text">{{ $item['text'] }}</p>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            <div class="about-motto-split__office">
+                                <div>
+                                    <span class="about-motto-split__office-label">{{ config('company.legal_name') }}</span>
+                                    <p class="mb-0">{{ config('company.address.line1') }}<br>{{ config('company.address.line2') }}</p>
+                                </div>
+                                <div class="about-motto-split__office-links">
+                                    <a href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a>
+                                    <a href="mailto:{{ config('company.email') }}">{{ config('company.email') }}</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -389,119 +430,36 @@
 
         <!-- TEAM
         ================================================== -->
-        <section>
+        <section class="about-team-showcase" id="our-team">
             <div class="container">
-                <div class="row mt-n1-9">
-                    <div class="col-xl-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="pe-lg-6">
-                            <div class="mb-4">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Team.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">Specialists behind every shipment</h2>
+                <div class="row align-items-end mb-1-9 mb-lg-2-5">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="100ms">
+                        <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Team</span>
+                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-secondary">Specialists behind every shipment</h2>
+                        <p class="lead mb-0 w-lg-90">Experienced operators across ship spares, freight, customs, and port husbandry—coordinated around vessel urgency.</p>
+                    </div>
+                    <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
+                        <a href="{{ route('contact') }}" class="butn-style01">Work With Our Team</a>
+                    </div>
+                </div>
+
+                <div class="about-team-overlap">
+                    @foreach(config('company.team') as $index => $member)
+                    <article class="about-team-panel wow fadeInUp" data-wow-delay="{{ 100 + ($index * 60) }}ms">
+                        <div class="about-team-panel__media">
+                            <img src="{{ theme_asset($member['image']) }}" alt="{{ $member['name'] }}, {{ $member['role'] }}" title="{{ $member['name'] }}">
+                            <div class="about-team-panel__shade" aria-hidden="true"></div>
+                            <div class="about-team-panel__reveal">
+                                <span class="about-team-panel__role">{{ $member['role'] }}</span>
+                                <p class="about-team-panel__focus">{{ $member['focus'] }}</p>
+                            </div>
+                            <div class="about-team-panel__nameplate">
+                                <h3 class="about-team-panel__name">{{ $member['name'] }}</h3>
+                                <span class="about-team-panel__hint">View role</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="150ms">
-                        <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ theme_asset('assets/img/team/team-01.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="card-body position-relative pb-0 px-0 pt-4">
-                                <h3 class="mb-1 h5">Maya Paschke</h3>
-                                <span>Ship Spare Logistics Lead</span>
-                                <div class="team-icons">
-                                    <ul class="list-unstyled ps-0">
-                                        <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-instagram"></i></a></li>
-                                    </ul> 
-                                    <span><i class="ti-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ theme_asset('assets/img/team/team-02.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="card-body position-relative pb-0 px-0 pt-4">
-                                <h3 class="mb-1 h5">Archie Symes</h3>
-                                <span>Marine Operations Director</span>
-                                <div class="team-icons">
-                                    <ul class="list-unstyled ps-0">
-                                        <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-instagram"></i></a></li>
-                                    </ul> 
-                                    <span><i class="ti-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="250ms">
-                        <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ theme_asset('assets/img/team/team-03.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="card-body position-relative pb-0 px-0 pt-4">
-                                <h3 class="mb-1 h5">Summer Meldrum</h3>
-                                <span>Freight Forwarding Lead</span>
-                                <div class="team-icons">
-                                    <ul class="list-unstyled ps-0">
-                                        <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-instagram"></i></a></li>
-                                    </ul> 
-                                    <span><i class="ti-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ theme_asset('assets/img/team/team-04.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="card-body position-relative pb-0 px-0 pt-4">
-                                <h3 class="mb-1 h5">Jonathan Lont</h3>
-                                <span>Maritime Operations Lead</span>
-                                <div class="team-icons">
-                                    <ul class="list-unstyled ps-0">
-                                        <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-instagram"></i></a></li>
-                                    </ul> 
-                                    <span><i class="ti-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="350ms">
-                        <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ theme_asset('assets/img/team/team-05.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="card-body position-relative pb-0 px-0 pt-4">
-                                <h3 class="mb-1 h5">Asmeret Girmay</h3>
-                                <span>Customs &amp; Compliance Advisor</span>
-                                <div class="team-icons">
-                                    <ul class="list-unstyled ps-0">
-                                        <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-instagram"></i></a></li>
-                                    </ul> 
-                                    <span><i class="ti-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="card card-style02 border-0 image-hover">
-                            <img src="{{ theme_asset('assets/img/team/team-06.jpg') }}" alt="..." title="..." class="rounded">
-                            <div class="card-body position-relative pb-0 px-0 pt-4">
-                                <h3 class="mb-1 h5">Askalu Isaias</h3>
-                                <span>Port Husbandry Manager</span>
-                                <div class="team-icons">
-                                    <ul class="list-unstyled ps-0">
-                                        <li><a href="{{ route('about') }}#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ route('about') }}#"><i class="ti-instagram"></i></a></li>
-                                    </ul> 
-                                    <span><i class="ti-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
+                    @endforeach
                 </div>
             </div>
         </section>

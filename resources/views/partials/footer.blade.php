@@ -60,6 +60,7 @@
                 <h3 class="mc-footer__heading">Company</h3>
                 <ul class="mc-footer__links">
                     <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ route('mission-vision') }}">Mission &amp; Vision</a></li>
                     <li><a href="{{ route('how-we-work') }}">How We Work</a></li>
                     <li><a href="{{ route('faq') }}">FAQ</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
