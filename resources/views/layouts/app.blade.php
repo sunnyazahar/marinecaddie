@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}">
-    <link href="{{ theme_asset('assets/css/styles.css') }}?v=20260811navmega1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.css') }}?v=20260811toggleright1" rel="stylesheet">
     @stack('styles')
 </head>
 <body>

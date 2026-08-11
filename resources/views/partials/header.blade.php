@@ -37,6 +37,91 @@
                 background: transparent !important;
                 box-shadow: none !important;
             }
+            @media (max-width: 991.98px) {
+                header.header-style1,
+                header.header-style1.scrollHeader,
+                header .navbar-default,
+                header.scrollHeader .navbar-default,
+                header .navbar-header-custom,
+                header .menu_area,
+                header .navbar-collapse,
+                header .navbar-collapse.show {
+                    background: #ffffff !important;
+                    background-color: #ffffff !important;
+                    background-image: none !important;
+                }
+                header .navbar-brand.logochange {
+                    background: #ffffff !important;
+                    border-radius: 0 !important;
+                    padding: 4px 6px !important;
+                }
+                header .navbar-brand.logochange img#logo.site-logo {
+                    width: 168px !important;
+                    max-width: 58vw !important;
+                }
+                /* Align hamburger with logo on one row */
+                header .menu_area > .navbar {
+                    display: flex !important;
+                    flex-wrap: wrap;
+                    align-items: center !important;
+                    justify-content: flex-start;
+                    position: relative !important;
+                    min-height: 58px;
+                    padding-right: 52px !important;
+                    gap: 0;
+                }
+                header .navbar-header-custom {
+                    display: flex !important;
+                    align-items: center !important;
+                    flex: 1 1 auto;
+                    min-width: 0;
+                    padding: 4px 0 !important;
+                    max-width: calc(100% - 8px);
+                }
+                /* Desktop-only attr-nav still reserves space via theme margin — hide it on mobile */
+                header .attr-nav {
+                    display: none !important;
+                }
+                header .navbar-toggler,
+                header .navbar-toggler.bg-primary {
+                    position: absolute !important;
+                    top: 50% !important;
+                    right: 0 !important;
+                    left: auto !important;
+                    transform: translateY(-50%);
+                    margin: 0 !important;
+                    align-self: center !important;
+                    width: 42px !important;
+                    height: 42px !important;
+                    min-width: 42px;
+                    flex: 0 0 42px;
+                    border-radius: 4px !important;
+                    background: #F7941D !important;
+                    z-index: 20;
+                }
+                header .navbar-toggler:before {
+                    top: 50% !important;
+                    right: 11px !important;
+                    width: 18px !important;
+                    margin-top: -1px;
+                }
+                header .navbar-toggler:after {
+                    top: 50% !important;
+                    right: 11px !important;
+                    width: 18px !important;
+                    height: 14px !important;
+                    margin-top: -7px;
+                    border-top-width: 2px !important;
+                    border-bottom-width: 2px !important;
+                }
+                header .navbar-toggler.menu-opened:before,
+                header .navbar-toggler.menu-opened:after {
+                    top: 50% !important;
+                    margin-top: -1px;
+                    height: 2px !important;
+                    width: 18px !important;
+                }
+            }
             @media (min-width: 576px) {
                 header .navbar-brand.logochange {
                     padding: 5px 10px !important;

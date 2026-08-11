@@ -55,6 +55,75 @@
     padding-top: 0.15rem;
     padding-bottom: 0.15rem;
   }
+  /* Solid white mobile header (open + closed) */
+  header.header-style1,
+  header.header-style1.scrollHeader,
+  header.header-style1 .navbar-default,
+  header.header-style1.scrollHeader .navbar-default,
+  header.header-style1 .navbar-header-custom,
+  header.header-style1 .menu_area,
+  header.header-style1 .navbar-collapse,
+  header.header-style1 .navbar-collapse.collapsing,
+  header.header-style1 .navbar-collapse.show {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+  }
+  header.header-style1 .navbar-brand.logochange {
+    background: #ffffff !important;
+    border-radius: 0 !important;
+  }
+  /* Align menu toggle with logo — pinned to far right */
+  header.header-style1 .menu_area > .navbar {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center !important;
+    justify-content: flex-start;
+    position: relative !important;
+    min-height: 58px;
+    padding-right: 52px !important;
+  }
+  header.header-style1 .navbar-header-custom {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  header.header-style1 .attr-nav {
+    display: none !important;
+  }
+  header.header-style1 .navbar-toggler {
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: translateY(-50%);
+    margin: 0 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 4px !important;
+    z-index: 20;
+  }
+  header.header-style1 .navbar-toggler:before {
+    top: 50% !important;
+    right: 11px !important;
+    width: 18px !important;
+    margin-top: -1px;
+  }
+  header.header-style1 .navbar-toggler:after {
+    top: 50% !important;
+    right: 11px !important;
+    width: 18px !important;
+    height: 14px !important;
+    margin-top: -7px;
+  }
+  header.header-style1 .navbar-toggler.menu-opened:before,
+  header.header-style1 .navbar-toggler.menu-opened:after {
+    top: 50% !important;
+    margin-top: -1px;
+    height: 2px !important;
+    width: 18px !important;
+  }
 }
 
 
