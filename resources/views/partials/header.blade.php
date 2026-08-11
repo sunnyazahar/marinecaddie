@@ -117,7 +117,7 @@
                                     @endphp
                                     <ul class="navbar-nav ms-auto" id="nav" style="">
                                         <li class="{{ $navHome ? 'current active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
-                                        <li class="has-sub{{ $navWho ? ' current active' : '' }}"><span class="submenu-button"></span>
+                                        <li class="has-sub{{ $navWho ? ' current active' : '' }}">
                                             <a href="{{ route('about') }}">Who We Are</a>
                                             <ul class="sub-menu sub-menu--icons">
                                                 <li class="{{ $navAbout ? 'current active' : '' }}">
@@ -138,7 +138,8 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="has-sub has-mega{{ $navServices ? ' current active' : '' }}"><span class="submenu-button"></span><a href="{{ route('services') }}">Our Services</a>
+                                        <li class="has-sub has-mega{{ $navServices ? ' current active' : '' }}">
+                                            <a href="{{ route('services') }}">Our Services</a>
                                             @php
                                                 $navServicesConfig = config('company.services', []);
                                                 $navCurrentSlug = request()->routeIs('services.show') ? request()->route('slug') : null;
@@ -182,6 +183,15 @@
                                         </li>
                                         <li class="js-nav-why" data-nav-hash="why-choose-us"><a href="{{ route('about') }}#why-choose-us">Why MarineCaddie ?</a></li>
                                         <li class="{{ $navContact ? 'current active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+                                        <li class="nav-mobile-ctas d-xl-none">
+                                            <div class="header-attr-actions header-attr-actions--mobile">
+                                                <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 sm white-hover" data-open-quote="quote">Get Quote</a>
+                                                <a href="#" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login">
+                                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                                    <span>myCADDIE</span>
+                                                </a>
+                                            </div>
+                                        </li>
                                     </ul>
                                     <!-- end menu area -->
 

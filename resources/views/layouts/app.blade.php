@@ -21,11 +21,11 @@
     <link rel="manifest" href="{{ theme_asset('assets/img/logos/site.webmanifest') }}?v=mc3">
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260811spaceg">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260811nounpper1">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}">
-    <link href="{{ theme_asset('assets/css/styles.css') }}?v=20260811mappinnavy1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.css') }}?v=20260811navmega1" rel="stylesheet">
     @stack('styles')
 </head>
 <body>
@@ -48,6 +48,7 @@
     <script src="{{ theme_asset('assets/js/main.js') }}"></script>
     <script src="{{ theme_asset('assets/js/plugins.js') }}"></script>
     <script src="{{ theme_asset('assets/js/scripts.js') }}"></script>
+    <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260811navmega2"></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260811quote2"></script>
     @stack('scripts')
 </body>
