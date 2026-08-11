@@ -21,8 +21,15 @@
                 <div class="row align-items-center justify-content-center min-vh-100">
                     <div class="col-lg-11 col-xl-10 col-xxl-8 text-center py-5">
                         <div class="text-center">
-                            <h1 class="display-1 font-weight-800 lh-1 mb-3 text-white ls-minus-2px">{{ config('company.headline') }}</h1>
-                            <p class="lead text-white mb-0 opacity9">{{ config('company.motto') }}</p>
+                            <h1 class="display-1 font-weight-800 lh-1 mb-0 text-white ls-minus-2px">{{ config('company.headline') }}</h1>
+                            <div class="hero-motto-ticker" aria-label="{{ config('company.motto') }}">
+                                <div class="hero-motto-ticker__track">
+                                    <span class="hero-motto-ticker__item">{{ config('company.motto') }}</span>
+                                    <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
+                                    <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
+                                    <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -55,11 +62,11 @@
                 <div class="row align-items-end mb-1-9 mb-lg-2-9">
                     <div class="col-lg-7 wow fadeInUp" data-wow-delay="100ms">
                         <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Ship Spare Logistics</span>
-                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-white">Door-to-deck. On time. 24/7.</h2>
-                        <p class="lead text-white opacity9 mb-0 w-lg-90">{{ config('company.motto') }} We move time-critical ship spares from supplier to vessel with full documentation, customs, carrier, and last-mile onboard delivery.</p>
+                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-secondary">Door-to-deck. On time. 24/7.</h2>
+                        <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} We move time-critical ship spares from supplier to vessel with full documentation, customs, carrier, and last-mile onboard delivery.</p>
                     </div>
                     <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
-                        <a href="{{ route('services.logistic-solution') }}" class="butn-style01 white-hover">Explore Ship Spares</a>
+                        <a href="{{ route('services.show', 'ship-spares-logistics') }}" class="butn-style01">Explore Ship Spares</a>
                     </div>
                 </div>
 
@@ -101,7 +108,7 @@
                         <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} Practical port agency and husbandry coordination so every call stays efficient—from crew change to dry dock assistance.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
-                        <a href="{{ route('services.rail-freight') }}" class="butn-style01">Explore Port Support</a>
+                        <a href="{{ route('services.show', 'vessel-husbandry') }}" class="butn-style01">Explore Port Support</a>
                     </div>
                 </div>
 
@@ -175,7 +182,7 @@
                                                     </text>
                                                 </g>
                                             </svg>
-                                            <div class="about-icon"><img src="{{ theme_asset('assets/img/content/animated-logo.png') }}" alt="MarineCaddie" title="MarineCaddie" class="w-60px"></div>
+                                            <div class="about-icon"><img src="{{ theme_asset('assets/img/logos/favicon.svg') }}?v=mc3" alt="MarineCaddie" title="MarineCaddie" class="w-60px" width="60" height="60"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +203,7 @@
                         <div class="pe-lg-1-9 pe-xxl-12">
                             <div class="mb-4 wow fadeInUp" data-wow-delay="100ms">
                                 <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Why Choose Us.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">{{ config('company.motto') }}</h2>
+                                <h2 class="display-4 mb-0 lh-1" style="color: #fb8845; font-weight: 700; letter-spacing: 0.06em;">{{ config('company.motto') }}</h2>
                             </div>
                             <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms">{{ config('company.who_we_are') }} We combine responsive 24/7 coordination, global reach, operational focus, IT systems, cost-effective planning, and a customer-first approach on every vessel call.</p>
                             <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
@@ -537,7 +544,7 @@
                     '@type' => 'Organization',
                     'name' => config('seo.organization.name'),
                 ],
-                'url' => !empty($service['route']) ? route($service['route']) : route('services'),
+                'url' => !empty($service['slug']) ? route('services.show', $service['slug']) : route('services'),
             ],
         ];
     }

@@ -24,7 +24,75 @@ return [
         'map_query' => 'Al Safi Building, Tower 1, Deira, Dubai, United Arab Emirates',
     ],
 
-    'who_we_are' => 'We are a specialized marine logistics and freight forwarding company providing time-critical ship spare logistics, customs clearance, vessel husbandry, transportation, and end-to-end maritime support services across global ports.',
+    /*
+    | Contact “Get to know us” office cards.
+    */
+    'offices' => [
+        [
+            'label' => 'Head Office',
+            'title' => 'Dubai, UAE',
+            'address' => "Unit No. 204 – 224, Al Safi Building, Tower 1\nDeira, Dubai, United Arab Emirates",
+            'phone' => '+971 50 5643375',
+            'phone_tel' => '+971505643375',
+            'email' => 'ops@marinecaddie.com',
+            'map_query' => 'Al Safi Building, Tower 1, Deira, Dubai, United Arab Emirates',
+        ],
+        [
+            'label' => 'India Desk',
+            'title' => 'India',
+            'address' => "Port husbandry & logistics coordination across major Indian ports.\nCoverage aligned to vessel calls nationwide.",
+            'phone' => '+971 50 5643375',
+            'phone_tel' => '+971505643375',
+            'email' => 'ops@marinecaddie.com',
+            'map_query' => null,
+        ],
+        [
+            'label' => 'Asia Network',
+            'title' => 'China | Singapore | Korea | Vietnam',
+            'address' => "Regional partners for spare logistics, freight, and port support.\nCoordinated through our Dubai operations desk.",
+            'phone' => '+971 50 5643375',
+            'phone_tel' => '+971505643375',
+            'email' => 'ops@marinecaddie.com',
+            'map_query' => null,
+        ],
+        [
+            'label' => 'Global Reach',
+            'title' => 'Europe | Africa | Americas',
+            'address' => "UK, Italy, Netherlands, Germany, USA, Sri Lanka & Africa corridors.\nOne desk for time-critical maritime coordination.",
+            'phone' => '+971 50 5643375',
+            'phone_tel' => '+971505643375',
+            'email' => 'ops@marinecaddie.com',
+            'map_query' => null,
+        ],
+    ],
+
+    /*
+    | World-map pins for contact “Global Coverage”.
+    */
+    'presence_map' => [
+        ['label' => 'USA', 'city' => 'Los Angeles', 'lat' => 34.0522, 'lng' => -118.2437],
+        ['label' => 'USA', 'city' => 'New York', 'lat' => 40.7128, 'lng' => -74.0060],
+        ['label' => 'UK', 'city' => 'London', 'lat' => 51.5074, 'lng' => -0.1278],
+        ['label' => 'Netherlands', 'city' => 'Amsterdam', 'lat' => 52.3676, 'lng' => 4.9041],
+        ['label' => 'Germany', 'city' => 'Hamburg', 'lat' => 53.5511, 'lng' => 9.9937],
+        ['label' => 'Italy', 'city' => 'Genoa', 'lat' => 44.4056, 'lng' => 8.9463],
+        ['label' => 'Africa', 'city' => 'Cape Town', 'lat' => -33.9249, 'lng' => 18.4241],
+        ['label' => 'Egypt', 'city' => 'Cairo', 'lat' => 30.0444, 'lng' => 31.2357],
+        ['label' => 'Dubai (UAE)', 'city' => 'Dubai', 'lat' => 25.2727936, 'lng' => 55.3053340, 'hq' => true],
+        ['label' => 'India', 'city' => 'New Delhi', 'lat' => 28.6139, 'lng' => 77.2090],
+        ['label' => 'India', 'city' => 'Mumbai', 'lat' => 19.0760, 'lng' => 72.8777],
+        ['label' => 'India', 'city' => 'Chennai', 'lat' => 13.0827, 'lng' => 80.2707],
+        ['label' => 'Sri Lanka', 'city' => 'Colombo', 'lat' => 6.9271, 'lng' => 79.8612],
+        ['label' => 'Indonesia', 'city' => 'Jakarta', 'lat' => -6.2088, 'lng' => 106.8456],
+        ['label' => 'Indonesia', 'city' => 'Surabaya', 'lat' => -7.2575, 'lng' => 112.7521],
+        ['label' => 'Vietnam', 'city' => 'Ho Chi Minh City', 'lat' => 10.8231, 'lng' => 106.6297],
+        ['label' => 'Singapore', 'city' => 'Singapore', 'lat' => 1.3521, 'lng' => 103.8198],
+        ['label' => 'China', 'city' => 'Shanghai', 'lat' => 31.2304, 'lng' => 121.4737],
+        ['label' => 'South Korea', 'city' => 'Busan', 'lat' => 35.1796, 'lng' => 129.0756],
+        ['label' => 'Osaka', 'city' => 'Osaka', 'lat' => 34.6937, 'lng' => 135.5023],
+    ],
+
+    'who_we_are' => 'Global reach, local support offering local expertise and communication in your language.',
 
     'mission' => 'To provide reliable, innovative, and time-critical maritime logistics solutions that keep vessels operating efficiently while delivering exceptional customer service worldwide.',
 
@@ -44,7 +112,29 @@ return [
         'Innovative logistics',
     ],
 
-    'presence' => 'Dubai (UAE) | India | China | Singapore | South Korea | Vietnam | Sri Lanka | UK | Italy | Africa | Netherlands | Germany | USA',
+    'presence' => 'Dubai (UAE) | India | China | Singapore | South Korea | Vietnam | Sri Lanka | Indonesia | Japan | UK | Italy | Africa | Egypt | Netherlands | Germany | USA',
+
+    /*
+    | Our Presence cards (contact page): country header + cities below.
+    */
+    'presence_locations' => [
+        ['country' => 'UAE (HQ)', 'cities' => ['Dubai'], 'flag' => 'ae'],
+        ['country' => 'India', 'cities' => ['New Delhi', 'Mumbai', 'Chennai'], 'flag' => 'in'],
+        ['country' => 'China', 'cities' => ['Shanghai'], 'flag' => 'cn'],
+        ['country' => 'Singapore', 'cities' => ['Singapore'], 'flag' => 'sg'],
+        ['country' => 'South Korea', 'cities' => ['Busan', 'Incheon'], 'flag' => 'kr'],
+        ['country' => 'Vietnam', 'cities' => ['Ho Chi Minh City'], 'flag' => 'vn'],
+        ['country' => 'Sri Lanka', 'cities' => ['Colombo'], 'flag' => 'lk'],
+        ['country' => 'Indonesia', 'cities' => ['Jakarta'], 'flag' => 'id'],
+        ['country' => 'Japan', 'cities' => ['Osaka'], 'flag' => 'jp'],
+        ['country' => 'UK', 'cities' => ['London'], 'flag' => 'gb'],
+        ['country' => 'Italy', 'cities' => ['Genoa'], 'flag' => 'it'],
+        ['country' => 'Africa', 'cities' => ['Cape Town'], 'flag' => 'za'],
+        ['country' => 'Egypt', 'cities' => ['Suez', 'Cairo'], 'flag' => 'eg'],
+        ['country' => 'Netherlands', 'cities' => ['Amsterdam', 'Rotterdam'], 'flag' => 'nl'],
+        ['country' => 'Germany', 'cities' => ['Hamburg'], 'flag' => 'de'],
+        ['country' => 'USA', 'cities' => ['Los Angeles', 'Houston', 'New York'], 'flag' => 'us'],
+    ],
 
     'port_husbandry_regions' => 'India, Sri Lanka, Indonesia & Singapore',
 
@@ -53,96 +143,96 @@ return [
             'title' => 'Marine Logistics',
             'excerpt' => 'End-to-end vessel support—from ship spares and onboard delivery to agency, husbandry, crew, and port coordination.',
             'image' => 'assets/img/services/service-01.jpg',
-            'route' => 'services.logistic-solution',
+            'slug' => 'ship-spares-logistics',
             'items' => [
-                'Ship Spares Logistics',
-                'Onboard Delivery',
-                'Ship Agency Support',
-                'Vessel Husbandry',
-                'Crew Logistics',
-                'Port Coordination',
+                ['label' => 'Ship Spares Logistics', 'slug' => 'ship-spares-logistics'],
+                ['label' => 'Onboard Delivery', 'slug' => 'onboard-delivery'],
+                ['label' => 'Ship Agency Support', 'slug' => 'ship-agency-support'],
+                ['label' => 'Vessel Husbandry', 'slug' => 'vessel-husbandry'],
+                ['label' => 'Crew Logistics', 'slug' => 'crew-logistics'],
+                ['label' => 'Port Coordination', 'slug' => 'port-coordination'],
             ],
         ],
         'freight_forwarding' => [
             'title' => 'Freight Forwarding',
             'excerpt' => 'Air, ocean, and road moves with express courier, hand carry, and multimodal options built for maritime urgency.',
             'image' => 'assets/img/services/service-03.jpg',
-            'route' => 'services.ocean-freight',
+            'slug' => 'ocean-freight',
             'items' => [
-                'Air Freight',
-                'Ocean Freight',
-                'Road Transportation',
-                'Express Courier',
-                'Hand Carry',
-                'Multimodal Transport',
+                ['label' => 'Air Freight', 'slug' => 'air-freight'],
+                ['label' => 'Ocean Freight', 'slug' => 'ocean-freight'],
+                ['label' => 'Road Transportation', 'slug' => 'road-transportation'],
+                ['label' => 'Express Courier', 'slug' => 'express-courier'],
+                ['label' => 'Hand Carry', 'slug' => 'hand-carry'],
+                ['label' => 'Multimodal Transport', 'slug' => 'multimodal-transport'],
             ],
         ],
         'customs_clearance' => [
             'title' => 'Customs Clearance',
             'excerpt' => 'TP/trans-shipment, import and export clearance, duty exemption support, and practical customs consulting.',
             'image' => 'assets/img/services/service-04.jpg',
-            'route' => 'services.warehousing',
+            'slug' => 'import-clearance',
             'items' => [
-                'TP Trans-shipment Clearance',
-                'Import Clearance',
-                'Export Clearance',
-                'Duty Exemption',
-                'Customs Consulting',
+                ['label' => 'TP Trans-shipment Clearance', 'slug' => 'tp-trans-shipment-clearance'],
+                ['label' => 'Import Clearance', 'slug' => 'import-clearance'],
+                ['label' => 'Export Clearance', 'slug' => 'export-clearance'],
+                ['label' => 'Duty Exemption', 'slug' => 'duty-exemption'],
+                ['label' => 'Customs Consulting', 'slug' => 'customs-consulting'],
             ],
         ],
         'special_projects' => [
             'title' => 'Special Projects',
             'excerpt' => 'Complex and out-of-gauge moves—OOG, dangerous goods, heavy lift, break bulk, and project cargo handling.',
             'image' => 'assets/img/services/service-06.jpg',
-            'route' => 'contact',
+            'slug' => 'project-cargo',
             'items' => [
-                'OOG Cargo',
-                'Dangerous Goods',
-                'Heavy Lift',
-                'Break Bulk',
-                'Project Cargo',
+                ['label' => 'OOG Cargo', 'slug' => 'oog-cargo'],
+                ['label' => 'Dangerous Goods', 'slug' => 'dangerous-goods'],
+                ['label' => 'Heavy Lift', 'slug' => 'heavy-lift'],
+                ['label' => 'Break Bulk', 'slug' => 'break-bulk'],
+                ['label' => 'Project Cargo', 'slug' => 'project-cargo'],
             ],
         ],
     ],
 
     /*
-    | Detail service pages (legacy freight URLs remapped to maritime offerings).
+    | Featured service teasers (homepage/services listings).
     */
     'service_pages' => [
         [
             'title' => 'Air Freight',
             'excerpt' => 'Time-critical air freight with express courier and hand-carry options.',
-            'route' => 'services.air-freight',
+            'slug' => 'air-freight',
             'image' => 'assets/img/services/service-01.jpg',
         ],
         [
             'title' => 'Road Transportation',
             'excerpt' => 'Port-to-warehouse and last-mile road moves for vessel delivery points.',
-            'route' => 'services.road-freight',
+            'slug' => 'road-transportation',
             'image' => 'assets/img/services/service-02.jpg',
         ],
         [
             'title' => 'Ocean Freight',
             'excerpt' => 'FCL, LCL, and multimodal ocean lanes aligned to vessel schedules.',
-            'route' => 'services.ocean-freight',
+            'slug' => 'ocean-freight',
             'image' => 'assets/img/services/service-03.jpg',
         ],
         [
             'title' => 'Customs Clearance',
             'excerpt' => 'TP/trans-shipment, import/export clearance, and duty exemption support.',
-            'route' => 'services.warehousing',
+            'slug' => 'import-clearance',
             'image' => 'assets/img/services/service-04.jpg',
         ],
         [
             'title' => 'Ship Spares Logistics',
             'excerpt' => '24/7 door-to-deck spare parts logistics with customs and last-mile support.',
-            'route' => 'services.logistic-solution',
+            'slug' => 'ship-spares-logistics',
             'image' => 'assets/img/services/service-05.jpg',
         ],
         [
             'title' => 'Vessel Husbandry / Port Support',
             'excerpt' => 'Port agency and husbandry across India, Sri Lanka, Indonesia & Singapore.',
-            'route' => 'services.rail-freight',
+            'slug' => 'vessel-husbandry',
             'image' => 'assets/img/services/service-06.jpg',
         ],
     ],

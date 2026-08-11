@@ -29,34 +29,40 @@ class PageController extends Controller
         return view('pages.services');
     }
 
-    public function airFreight()
+    public function serviceShow(string $slug)
     {
-        return view('pages.air-freight');
-    }
+        $catalog = config('services_catalog', []);
 
-    public function roadFreight()
-    {
-        return view('pages.road-freight');
-    }
+        if (! isset($catalog[$slug])) {
+            abort(404);
+        }
 
-    public function oceanFreight()
-    {
-        return view('pages.ocean-freight');
-    }
+        $service = $catalog[$slug];
+        $service['slug'] = $slug;
 
-    public function warehousing()
-    {
-        return view('pages.warehousing');
-    }
+        $siblings = collect($catalog)
+            ->filter(fn (array $item) => ($item['category'] ?? '') === ($service['category'] ?? ''))
+            ->map(function (array $item, string $itemSlug) {
+                $item['slug'] = $itemSlug;
 
-    public function logisticSolution()
-    {
-        return view('pages.logistic-solution');
-    }
+                return $item;
+            })
+            ->values()
+            ->all();
 
-    public function railFreight()
-    {
-        return view('pages.rail-freight');
+        $related = [];
+        foreach ($service['related'] ?? [] as $relatedSlug) {
+            if (isset($catalog[$relatedSlug])) {
+                $related[] = array_merge($catalog[$relatedSlug], ['slug' => $relatedSlug]);
+            }
+        }
+
+        return view('pages.service-show', [
+            'service' => $service,
+            'siblings' => $siblings,
+            'related' => $related,
+            'catalog' => $catalog,
+        ]);
     }
 
     public function howWeWork()

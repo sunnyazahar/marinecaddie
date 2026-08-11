@@ -15,12 +15,17 @@ class SitemapController extends Controller
             ['loc' => route('about'), 'priority' => '0.9', 'changefreq' => 'monthly'],
             ['loc' => route('mission-vision'), 'priority' => '0.85', 'changefreq' => 'monthly'],
             ['loc' => route('services'), 'priority' => '0.9', 'changefreq' => 'weekly'],
-            ['loc' => route('services.air-freight'), 'priority' => '0.8', 'changefreq' => 'monthly'],
-            ['loc' => route('services.road-freight'), 'priority' => '0.8', 'changefreq' => 'monthly'],
-            ['loc' => route('services.ocean-freight'), 'priority' => '0.8', 'changefreq' => 'monthly'],
-            ['loc' => route('services.warehousing'), 'priority' => '0.8', 'changefreq' => 'monthly'],
-            ['loc' => route('services.logistic-solution'), 'priority' => '0.8', 'changefreq' => 'monthly'],
-            ['loc' => route('services.rail-freight'), 'priority' => '0.8', 'changefreq' => 'monthly'],
+        ];
+
+        foreach (array_keys(config('services_catalog', [])) as $slug) {
+            $urls[] = [
+                'loc' => route('services.show', $slug),
+                'priority' => '0.8',
+                'changefreq' => 'monthly',
+            ];
+        }
+
+        $urls = array_merge($urls, [
             ['loc' => route('how-we-work'), 'priority' => '0.8', 'changefreq' => 'monthly'],
             ['loc' => route('faq'), 'priority' => '0.7', 'changefreq' => 'monthly'],
             ['loc' => route('portfolio'), 'priority' => '0.7', 'changefreq' => 'monthly'],
@@ -28,7 +33,7 @@ class SitemapController extends Controller
             ['loc' => route('contact'), 'priority' => '0.8', 'changefreq' => 'monthly'],
             ['loc' => route('privacy-policy'), 'priority' => '0.3', 'changefreq' => 'yearly'],
             ['loc' => route('terms'), 'priority' => '0.3', 'changefreq' => 'yearly'],
-        ];
+        ]);
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";

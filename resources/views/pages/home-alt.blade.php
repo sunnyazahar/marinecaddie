@@ -177,10 +177,10 @@
                                         <span class="display-20 lh-1 d-inline-block letter-spacing-0 font-weight-700 text-white">01</span>
                                     </div>
                                     <div class="services_item-inner-bottom">
-                                        <h3 class="h4 text-uppercase lh-sm"><a href="{{ route('services.air-freight') }}" class="text-white">Air Freight</a></h3>
+                                        <h3 class="h4 text-uppercase lh-sm"><a href="{{ route('services.show', 'air-freight') }}" class="text-white">Air Freight</a></h3>
                                         <div class="services-item-sub-title"><p class="mb-3">It is the transportation of goods by aircraft, providing the fastest option.</p></div>
                                         <div class="services-button-01">
-                                            <a href="{{ route('services.air-freight') }}" class="services-link">
+                                            <a href="{{ route('services.show', 'air-freight') }}" class="services-link">
                                                 <span class="ti-arrow-right"></span>
                                             </a>
                                         </div>

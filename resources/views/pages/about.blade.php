@@ -128,7 +128,7 @@
                                 <li>{{ $service }}</li>
                                 @endforeach
                             </ul>
-                            <a href="{{ route('services.rail-freight') }}" class="about-presence-block__link">
+                            <a href="{{ route('services.show', 'vessel-husbandry') }}" class="about-presence-block__link">
                                 Explore Port Support
                                 <i class="ti-arrow-top-right" aria-hidden="true"></i>
                             </a>
@@ -426,53 +426,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- TEAM
-        ================================================== -->
-        <section class="about-team-showcase" id="our-team">
-            <div class="container">
-                <div class="row align-items-end mb-1-9 mb-lg-2-5">
-                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="100ms">
-                        <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Team</span>
-                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-secondary">Specialists behind every shipment</h2>
-                        <p class="lead mb-0 w-lg-90">Experienced operators across ship spares, freight, customs, and port husbandry—coordinated around vessel urgency.</p>
-                    </div>
-                    <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
-                        <a href="{{ route('contact') }}" class="butn-style01">Work With Our Team</a>
-                    </div>
-                </div>
-
-                <div class="about-team-overlap">
-                    @foreach(config('company.team') as $index => $member)
-                    <article class="about-team-panel wow fadeInUp" data-wow-delay="{{ 100 + ($index * 60) }}ms">
-                        <div class="about-team-panel__media">
-                            <img src="{{ theme_asset($member['image']) }}" alt="{{ $member['name'] }}, {{ $member['role'] }}" title="{{ $member['name'] }}">
-                            <div class="about-team-panel__shade" aria-hidden="true"></div>
-                            <div class="about-team-panel__reveal">
-                                <span class="about-team-panel__role">{{ $member['role'] }}</span>
-                                <p class="about-team-panel__focus">{{ $member['focus'] }}</p>
-                            </div>
-                            <div class="about-team-panel__nameplate">
-                                <h3 class="about-team-panel__name">{{ $member['name'] }}</h3>
-                                <span class="about-team-panel__hint">View role</span>
-                            </div>
-                        </div>
-                    </article>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
-        <!-- CALL TO ACTION
-        ================================================== -->
-        <section class="py-22 py-md-24 video-banner secondary-overlay" data-overlay-dark="8" style="background-image: url({{ theme_asset('assets/img/banner/video-cover.jpg') }});">
-            <div class="banner-video" aria-hidden="true">
-                <video autoplay muted loop playsinline preload="auto" poster="{{ theme_asset('assets/img/banner/video-cover.jpg') }}">
-                    <source src="{{ theme_asset('assets/video/cargo-ship-loading-port.mp4') }}" type="video/mp4">
-                </video>
-            </div>
-            <div class="container py-xl-8 position-relative z-index-9"></div>
         </section>
 
         <!-- FOOTER

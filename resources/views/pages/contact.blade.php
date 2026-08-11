@@ -8,20 +8,16 @@
 @section('header_class', 'scrollHeader')
 
 @php
-    $mapLat = (float) config('company.address.lat');
-    $mapLng = (float) config('company.address.lng');
-    $mapZoom = (int) config('company.address.map_zoom', 15);
     $mapQuery = rawurlencode(config('company.address.map_query'));
-    $osmLink = "https://www.openstreetmap.org/?mlat={$mapLat}&mlon={$mapLng}#map={$mapZoom}/{$mapLat}/{$mapLng}";
     $googleLink = "https://www.google.com/maps/search/?api=1&query={$mapQuery}";
-    // Google embed with English labels (OSM default shows local Arabic names in Dubai)
-    $mapEmbed = "https://maps.google.com/maps?q={$mapQuery}&hl=en&z={$mapZoom}&output=embed";
+    $presenceMap = config('company.presence_map', []);
+    $presenceLocations = config('company.presence_locations', []);
 @endphp
 
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section contact-page-banner top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/contact-banner.jpg') }}?v=mc4" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/contact-banner.jpg') }}?v=mc4&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -35,38 +31,62 @@
             </div>
         </section>
 
-        <!-- INTRO + QUICK CONTACTS
+        <!-- GET TO KNOW US / OFFICES
         ================================================== -->
-        <section class="contact-intro">
+        <section class="contact-know" id="get-to-know-us">
             <div class="container">
-                <div class="row justify-content-center text-center mb-1-9 mb-lg-2-5">
-                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <p class="contact-intro__brand">{{ config('company.brand') }}</p>
-                        <h2 class="contact-intro__title display-4 font-weight-800 lh-1 ls-minus-2px mb-3">Talk to operations</h2>
-                        <p class="contact-intro__text lead mb-0 mx-auto">{{ config('company.motto') }} Reach us for ship spare logistics, freight, customs clearance, or vessel husbandry.</p>
+                <div class="contact-know__top">
+                    <div class="contact-know__intro wow fadeInUp" data-wow-delay="100ms">
+                        <span class="contact-know__eyebrow">Get to know us</span>
+                        <div class="contact-know__heading">
+                            <span class="contact-know__icon">
+                                <img
+                                    src="{{ theme_asset('assets/img/icons/support-headset.png') }}?v=1"
+                                    alt="MarineCaddie customer support — contact our offices worldwide"
+                                    title="Contact MarineCaddie support"
+                                    width="56"
+                                    height="56"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </span>
+                            <h2 class="contact-know__title">Contact our offices around the world.</h2>
+                        </div>
+                        <p class="contact-know__text">{{ config('company.who_we_are') }}</p>
                     </div>
                 </div>
-                <div class="contact-quick">
-                    <a href="tel:{{ config('company.phone_tel') }}" class="contact-quick__card wow fadeInUp" data-wow-delay="120ms">
-                        <span class="contact-quick__label">Phone</span>
-                        <strong class="contact-quick__value">{{ config('company.phone_display') }}</strong>
-                        <span class="contact-quick__hint">Call operations</span>
-                    </a>
-                    <a href="mailto:{{ config('company.email') }}" class="contact-quick__card wow fadeInUp" data-wow-delay="180ms">
-                        <span class="contact-quick__label">Email</span>
-                        <strong class="contact-quick__value">{{ config('company.email') }}</strong>
-                        <span class="contact-quick__hint">24/7 coordination</span>
-                    </a>
-                    <div class="contact-quick__card wow fadeInUp" data-wow-delay="240ms">
-                        <span class="contact-quick__label">Office</span>
-                        <strong class="contact-quick__value">{{ config('company.address.short') }}</strong>
-                        <span class="contact-quick__hint">{{ config('company.legal_name') }}</span>
-                    </div>
-                    <a href="{{ config('company.website') }}" class="contact-quick__card wow fadeInUp" data-wow-delay="300ms" target="_blank" rel="noopener">
-                        <span class="contact-quick__label">Web</span>
-                        <strong class="contact-quick__value">marinecaddie.com</strong>
-                        <span class="contact-quick__hint">{{ config('company.tagline') }}</span>
-                    </a>
+            </div>
+        </section>
+
+        <!-- OUR PRESENCE
+        ================================================== -->
+        <section class="contact-presence" id="our-presence" aria-labelledby="our-presence-title">
+            <div class="container">
+                <div class="contact-presence__head wow fadeInUp" data-wow-delay="100ms">
+                    <h2 class="contact-presence__title" id="our-presence-title">Overview of all our presence</h2>
+                </div>
+                <div class="contact-presence__grid">
+                    @foreach($presenceLocations as $index => $place)
+                        @php
+                            $country = trim($place['country'] ?? ($place['label'] ?? ''));
+                            $cities = array_values(array_filter($place['cities'] ?? []));
+                            $citiesLabel = implode(' | ', $cities);
+                            $flag = strtolower((string) ($place['flag'] ?? ''));
+                        @endphp
+                        <article class="contact-presence-card wow fadeInUp" data-wow-delay="{{ 80 + (($index % 8) * 40) }}ms">
+                            <div class="contact-presence-card__header">
+                                @if($flag !== '')
+                                    <span class="contact-presence-card__flag" aria-hidden="true">
+                                        <img src="{{ theme_asset('assets/img/flags/' . $flag . '.svg') }}" alt="" width="28" height="21" loading="lazy">
+                                    </span>
+                                @endif
+                                <h3 class="contact-presence-card__title">{{ $country }}</h3>
+                            </div>
+                            @if($citiesLabel !== '')
+                                <div class="contact-presence-card__cities">{{ $citiesLabel }}</div>
+                            @endif
+                        </article>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -155,10 +175,6 @@
                                     <strong>24/7 operations support</strong>
                                 </li>
                             </ul>
-                            <div class="contact-side__actions">
-                                <a href="{{ $googleLink }}" class="butn-style01" target="_blank" rel="noopener">Open in Google Maps</a>
-                                <a href="{{ $osmLink }}" class="contact-side__link" target="_blank" rel="noopener">View on OpenStreetMap</a>
-                            </div>
                         </div>
                         <div class="contact-side__note">
                             <p class="mb-0">{{ config('company.who_we_are') }}</p>
@@ -168,49 +184,146 @@
             </div>
         </section>
 
-        <!-- MAP
+        <!-- WORLD MAP — PDF Global Coverage coordinates
         ================================================== -->
-        <section class="contact-map" aria-label="Office location map">
+        <section class="contact-map" aria-label="MarineCaddie global presence map">
             <div class="contact-map__frame" data-map-lock>
-                <iframe
-                    title="MarineCaddie office map — {{ config('company.address.short') }}"
-                    src="{{ $mapEmbed }}"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    allowfullscreen
-                    tabindex="-1"
-                ></iframe>
+                <div
+                    id="mc-world-map"
+                    class="contact-map__leaflet"
+                    role="application"
+                    aria-label="Interactive world map of MarineCaddie presence"
+                ></div>
                 <button type="button" class="contact-map__lock" data-map-unlock aria-label="Click to interact with map">
                     <span>Click to interact with map</span>
                 </button>
-                <div class="contact-map__chip">
-                    <span class="contact-map__chip-label">Our office</span>
-                    <strong>{{ config('company.address.line1') }}</strong>
-                    <span>{{ config('company.address.line2') }}</span>
-                    <a href="{{ $googleLink }}" target="_blank" rel="noopener">Get directions →</a>
-                </div>
             </div>
         </section>
 @endsection
 
+@push('styles')
+<link rel="stylesheet" href="{{ theme_asset('assets/vendor/leaflet/leaflet.css') }}?v=194">
+<style>
+/* Ensure Leaflet root (same element as #mc-world-map) fills the frame */
+#mc-world-map.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #d6e0ea;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+</style>
+@endpush
+
 @push('scripts')
+<script src="{{ theme_asset('assets/vendor/leaflet/leaflet.js') }}?v=194"></script>
+<script type="application/json" id="mc-presence-map-data">@json($presenceMap)</script>
 <script>
 (function () {
-    document.querySelectorAll('[data-map-lock]').forEach(function (wrap) {
-        var unlock = wrap.querySelector('[data-map-unlock]');
-        var iframe = wrap.querySelector('iframe');
-        if (!unlock || !iframe) return;
+    var wrap = document.querySelector('.contact-map [data-map-lock]');
+    var unlock = wrap && wrap.querySelector('[data-map-unlock]');
+    var el = document.getElementById('mc-world-map');
+    if (!wrap || !el || typeof L === 'undefined') {
+        if (el) el.innerHTML = '<p style="color:#fff;padding:2rem;text-align:center;margin:0;">Map failed to load. Please refresh.</p>';
+        return;
+    }
 
+    var locations = [];
+    var dataEl = document.getElementById('mc-presence-map-data');
+    try {
+        locations = JSON.parse((dataEl && dataEl.textContent) || '[]');
+    } catch (e) {
+        locations = [];
+    }
+
+    var map = L.map(el, {
+        scrollWheelZoom: false,
+        zoomControl: true,
+        attributionControl: true,
+        worldCopyJump: true,
+        minZoom: 1,
+        maxZoom: 10,
+        zoomSnap: 0.25,
+        zoomDelta: 0.5,
+    });
+
+    // Light, high-contrast basemap so continents read clearly (dark Carto looked blank)
+    var tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19,
+    });
+    tiles.on('tileerror', function () {
+        if (map._mcFallbackTiles) return;
+        map._mcFallbackTiles = true;
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap',
+            maxZoom: 19,
+        }).addTo(map);
+    });
+    tiles.addTo(map);
+
+    function makePinIcon(isHq) {
+        return L.divIcon({
+            className: 'mc-map-pin-wrap' + (isHq ? ' is-hq' : ''),
+            html: '<span class="mc-map-pin' + (isHq ? ' mc-map-pin--hq' : '') + '" aria-hidden="true"><span class="mc-map-pin__dot"></span></span>',
+            iconSize: isHq ? [36, 48] : [30, 40],
+            iconAnchor: isHq ? [18, 48] : [15, 40],
+            popupAnchor: [0, isHq ? -42 : -36],
+        });
+    }
+
+    var bounds = [];
+    locations.forEach(function (loc) {
+        if (loc.lat == null || loc.lng == null) return;
+        var latlng = [Number(loc.lat), Number(loc.lng)];
+        bounds.push(latlng);
+        var isHq = !!loc.hq;
+        var title = (loc.label || '') + (loc.city ? ' · ' + loc.city : '');
+        var popup = '<strong>' + (loc.label || 'Presence') + '</strong>' +
+            (loc.city ? '<br><span>' + loc.city + '</span>' : '') +
+            (isHq ? '<br><em>Head Office</em>' : '');
+        L.marker(latlng, {
+            icon: makePinIcon(isHq),
+            title: title,
+            riseOnHover: true,
+            zIndexOffset: isHq ? 500 : 100,
+        }).addTo(map).bindPopup(popup);
+    });
+
+    if (bounds.length) {
+        // Tightest zoom that still keeps every presence pin in frame
+        map.fitBounds(bounds, {
+            paddingTopLeft: [20, 24],
+            paddingBottomRight: [20, 96],
+            maxZoom: 6,
+            animate: false,
+        });
+    } else {
+        map.setView([20, 40], 3);
+    }
+
+    function refreshSize() {
+        map.invalidateSize(true);
+    }
+    setTimeout(refreshSize, 50);
+    setTimeout(refreshSize, 300);
+    setTimeout(refreshSize, 800);
+    window.addEventListener('resize', refreshSize);
+
+    if (unlock) {
         unlock.addEventListener('click', function () {
             wrap.classList.add('is-unlocked');
-            iframe.focus();
+            map.scrollWheelZoom.enable();
+            map.dragging.enable();
+            refreshSize();
         });
+    }
 
-        document.addEventListener('click', function (e) {
-            if (!wrap.contains(e.target)) {
-                wrap.classList.remove('is-unlocked');
-            }
-        });
+    document.addEventListener('click', function (e) {
+        if (!wrap.contains(e.target)) {
+            wrap.classList.remove('is-unlocked');
+            map.scrollWheelZoom.disable();
+        }
     });
 })();
 </script>

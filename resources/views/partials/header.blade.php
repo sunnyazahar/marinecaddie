@@ -107,34 +107,96 @@
                                     <div class="navbar-toggler bg-primary"></div>
 
                                     <!-- menu area -->
+                                    @php
+                                        $navHome = request()->routeIs('home');
+                                        $navAbout = request()->routeIs('about');
+                                        $navMission = request()->routeIs('mission-vision');
+                                        $navWho = $navAbout || $navMission;
+                                        $navServices = request()->routeIs('services', 'services.*');
+                                        $navContact = request()->routeIs('contact');
+                                    @endphp
                                     <ul class="navbar-nav ms-auto" id="nav" style="">
-                                        <li class="current"><a href="{{ route('home') }}">Home</a></li>
-                                        <li class="has-sub"><span class="submenu-button"></span>
+                                        <li class="{{ $navHome ? 'current active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+                                        <li class="has-sub{{ $navWho ? ' current active' : '' }}"><span class="submenu-button"></span>
                                             <a href="{{ route('about') }}">Who We Are</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('about') }}">About Us</a></li>
-                                                <li><a href="{{ route('mission-vision') }}">Our Mission & Vision</a></li>
+                                            <ul class="sub-menu sub-menu--icons">
+                                                <li class="{{ $navAbout ? 'current active' : '' }}">
+                                                    <a href="{{ route('about') }}">
+                                                        <span class="nav-svc-icon" aria-hidden="true">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M9 14h.01"/><path d="M15 14h.01"/></svg>
+                                                        </span>
+                                                        <span class="nav-svc-label">About Us</span>
+                                                    </a>
+                                                </li>
+                                                <li class="{{ $navMission ? 'current active' : '' }}">
+                                                    <a href="{{ route('mission-vision') }}">
+                                                        <span class="nav-svc-icon" aria-hidden="true">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 6.5L7 17l2.5-6.5L16 8z"/><circle cx="12" cy="12" r="1.5"/></svg>
+                                                        </span>
+                                                        <span class="nav-svc-label">Our Mission &amp; Vision</span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li class="has-sub"><span class="submenu-button"></span><a href="{{ route('services') }}">Our Services</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('services.logistic-solution') }}">Ship Spares Logistics</a></li>
-                                                <li><a href="{{ route('services.air-freight') }}">Air Freight</a></li>
-                                                <li><a href="{{ route('services.ocean-freight') }}">Ocean Freight</a></li>
-                                                <li><a href="{{ route('services.road-freight') }}">Road Transportation</a></li>
-                                                <li><a href="{{ route('services.warehousing') }}">Customs Clearance</a></li>
-                                                <li><a href="{{ route('services.rail-freight') }}">Vessel Husbandry</a></li>
+                                        <li class="has-sub has-mega{{ $navServices ? ' current active' : '' }}"><span class="submenu-button"></span><a href="{{ route('services') }}">Our Services</a>
+                                            @php
+                                                $navServicesConfig = config('company.services', []);
+                                                $navCurrentSlug = request()->routeIs('services.show') ? request()->route('slug') : null;
+                                            @endphp
+                                            <ul class="sub-menu sub-menu--mega">
+                                                @foreach($navServicesConfig as $svcKey => $svc)
+                                                    @php
+                                                        $catSlug = $svc['slug'] ?? null;
+                                                        $catHref = $catSlug
+                                                            ? route('services.show', $catSlug)
+                                                            : route('services');
+                                                        $itemSlugs = collect($svc['items'] ?? [])->map(function ($item) {
+                                                            return is_array($item) ? ($item['slug'] ?? null) : null;
+                                                        })->filter()->values()->all();
+                                                        $catActive = $navCurrentSlug && (in_array($navCurrentSlug, $itemSlugs, true) || $navCurrentSlug === $catSlug);
+                                                    @endphp
+                                                    <li class="nav-mega-col{{ $catActive ? ' current active' : '' }}">
+                                                        <a href="{{ $catHref }}" class="nav-mega-col__title">
+                                                            @include('partials.nav-service-icon', ['name' => $svcKey, 'size' => 'md'])
+                                                            <span class="nav-mega-col__num">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                                                            <span class="nav-mega-col__title-text">{{ $svc['title'] }}</span>
+                                                        </a>
+                                                        @foreach(($svc['items'] ?? []) as $item)
+                                                            @php
+                                                                $itemLabel = is_array($item) ? ($item['label'] ?? '') : $item;
+                                                                $itemSlug = is_array($item) ? ($item['slug'] ?? null) : null;
+                                                                $itemHref = $itemSlug
+                                                                    ? route('services.show', $itemSlug)
+                                                                    : route('services');
+                                                                $itemActive = $navCurrentSlug && $itemSlug && $navCurrentSlug === $itemSlug;
+                                                            @endphp
+                                                            <a href="{{ $itemHref }}" class="nav-mega-col__item{{ $itemActive ? ' is-active' : '' }}">
+                                                                @include('partials.nav-service-icon', ['name' => $itemLabel, 'size' => 'sm'])
+                                                                <span class="nav-mega-col__label">{{ $itemLabel }}</span>
+                                                            </a>
+                                                        @endforeach
+                                                        <a href="{{ $catHref }}" class="nav-mega-col__more">Explore {{ $svc['title'] }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('about') }}#network">Network</a></li>
-                                        <li><a href="{{ route('contact') }}">Contact</a></li>
+                                        <li class="js-nav-why" data-nav-hash="why-choose-us"><a href="{{ route('about') }}#why-choose-us">Why MarineCaddie ?</a></li>
+                                        <li class="{{ $navContact ? 'current active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                                     </ul>
                                     <!-- end menu area -->
 
                                     <!-- start attribute navigation -->
                                     <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
-                                        <ul>
-                                            <li class="d-none d-xl-inline-block"><a href="{{ route('contact') }}" class="butn-style01 sm white-hover">Get Quote</a></li>
+                                        <ul class="header-attr-actions">
+                                            <li class="d-none d-xl-inline-block">
+                                                <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 sm white-hover" data-open-quote="quote">Get Quote</a>
+                                            </li>
+                                            <li class="d-none d-xl-inline-block">
+                                                <a href="#" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login">
+                                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                                    <span>myCADDIE</span>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <!-- end attribute navigation -->
@@ -146,3 +208,17 @@
             </div>
 
         </header>
+        <script>
+            (function () {
+                var why = document.querySelector('#nav .js-nav-why');
+                if (!why) return;
+                var hash = (why.getAttribute('data-nav-hash') || 'why-choose-us').replace(/^#/, '');
+                function syncWhyNav() {
+                    var onWhy = window.location.hash === '#' + hash;
+                    why.classList.toggle('current', onWhy);
+                    why.classList.toggle('active', onWhy);
+                }
+                syncWhyNav();
+                window.addEventListener('hashchange', syncWhyNav);
+            })();
+        </script>

@@ -8,10 +8,9 @@
             @php
                 $index = $loop->iteration;
                 $delay = 100 + (($loop->index % 4) * 80);
-                $href = !empty($service['route']) ? route($service['route']) : route('services');
-                if (!empty($service['anchor'])) {
-                    $href .= '#' . $service['anchor'];
-                }
+                $href = !empty($service['slug'])
+                    ? route('services.show', $service['slug'])
+                    : route('services');
             @endphp
             <div class="col-md-6 wow fadeInUp" data-wow-delay="{{ $delay }}ms" id="service-{{ $key }}">
                 <article class="services-category">
@@ -27,7 +26,17 @@
                         @if(!empty($service['items']))
                             <ul class="services-category__list">
                                 @foreach($service['items'] as $item)
-                                    <li>{{ $item }}</li>
+                                    @php
+                                        $itemLabel = is_array($item) ? ($item['label'] ?? '') : $item;
+                                        $itemSlug = is_array($item) ? ($item['slug'] ?? null) : null;
+                                    @endphp
+                                    <li>
+                                        @if($itemSlug)
+                                            <a href="{{ route('services.show', $itemSlug) }}">{{ $itemLabel }}</a>
+                                        @else
+                                            {{ $itemLabel }}
+                                        @endif
+                                    </li>
                                 @endforeach
                             </ul>
                         @endif

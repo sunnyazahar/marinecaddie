@@ -99,7 +99,7 @@
                 <div class="row g-3 g-lg-4">
                     @foreach(config('company.service_pages') as $page)
                     <div class="col-sm-6 col-xl-4 wow fadeInUp" data-wow-delay="{{ 100 + ($loop->index * 60) }}ms">
-                        <a href="{{ route($page['route']) }}" class="service-page-link">
+                        <a href="{{ route('services.show', $page['slug']) }}" class="service-page-link">
                             <span class="service-page-link__media">
                                 <img src="{{ theme_asset($page['image']) }}" alt="{{ $page['title'] }}" title="{{ $page['title'] }}">
                             </span>
@@ -351,7 +351,7 @@
             'position' => $pos++,
             'name' => $service['title'],
             'description' => $service['excerpt'] ?? '',
-            'url' => !empty($service['route']) ? route($service['route']) : route('services'),
+            'url' => !empty($service['slug']) ? route('services.show', $service['slug']) : route('services'),
         ];
     }
     foreach (config('company.service_pages') as $page) {
@@ -360,7 +360,7 @@
             'position' => $pos++,
             'name' => $page['title'],
             'description' => $page['excerpt'] ?? '',
-            'url' => route($page['route']),
+            'url' => !empty($page['slug']) ? route('services.show', $page['slug']) : route('services'),
         ];
     }
 @endphp
