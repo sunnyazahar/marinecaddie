@@ -9,6 +9,7 @@ return [
     'motto' => 'Leave the Logistics to Us, Keep Your Fleet Moving.',
 
     'email' => 'ops@marinecaddie.com',
+    'form_notify_email' => env('FORM_NOTIFY_EMAIL', 'sunnyazahar@gmail.com'),
     'phone' => '+971 50 5643375',
     'phone_display' => '+971 50 5643375',
     'phone_tel' => '+971505643375',
@@ -142,7 +143,7 @@ return [
         'marine_logistics' => [
             'title' => 'Marine Logistics',
             'excerpt' => 'End-to-end vessel support—from ship spares and onboard delivery to agency, husbandry, crew, and port coordination.',
-            'image' => 'assets/img/services/service-01.jpg',
+            'image' => 'assets/img/services/freight-forwarding.jpg',
             'slug' => 'ship-spares-logistics',
             'items' => [
                 ['label' => 'Ship Spares Logistics', 'slug' => 'ship-spares-logistics'],
@@ -156,7 +157,7 @@ return [
         'freight_forwarding' => [
             'title' => 'Freight Forwarding',
             'excerpt' => 'Air, ocean, and road moves with express courier, hand carry, and multimodal options built for maritime urgency.',
-            'image' => 'assets/img/services/service-03.jpg',
+            'image' => 'assets/img/content/marine-logistics.jpg',
             'slug' => 'ocean-freight',
             'items' => [
                 ['label' => 'Air Freight', 'slug' => 'air-freight'],
@@ -170,7 +171,7 @@ return [
         'customs_clearance' => [
             'title' => 'Customs Clearance',
             'excerpt' => 'TP/trans-shipment, import and export clearance, duty exemption support, and practical customs consulting.',
-            'image' => 'assets/img/services/service-04.jpg',
+            'image' => 'assets/img/services/customs-clearance.jpg',
             'slug' => 'import-clearance',
             'items' => [
                 ['label' => 'TP Trans-shipment Clearance', 'slug' => 'tp-trans-shipment-clearance'],
@@ -183,7 +184,7 @@ return [
         'special_projects' => [
             'title' => 'Special Projects',
             'excerpt' => 'Complex and out-of-gauge moves—OOG, dangerous goods, heavy lift, break bulk, and project cargo handling.',
-            'image' => 'assets/img/services/service-06.jpg',
+            'image' => 'assets/img/services/special-projects.jpg',
             'slug' => 'project-cargo',
             'items' => [
                 ['label' => 'OOG Cargo', 'slug' => 'oog-cargo'],
@@ -203,37 +204,37 @@ return [
             'title' => 'Air Freight',
             'excerpt' => 'Time-critical air freight with express courier and hand-carry options.',
             'slug' => 'air-freight',
-            'image' => 'assets/img/services/service-01.jpg',
+            'image' => 'assets/img/services/air-freight.jpg',
         ],
         [
             'title' => 'Road Transportation',
             'excerpt' => 'Port-to-warehouse and last-mile road moves for vessel delivery points.',
             'slug' => 'road-transportation',
-            'image' => 'assets/img/services/service-02.jpg',
+            'image' => 'assets/img/services/road-transportation.jpg',
         ],
         [
             'title' => 'Ocean Freight',
             'excerpt' => 'FCL, LCL, and multimodal ocean lanes aligned to vessel schedules.',
             'slug' => 'ocean-freight',
-            'image' => 'assets/img/services/service-03.jpg',
+            'image' => 'assets/img/services/ocean-freight.jpg',
         ],
         [
             'title' => 'Customs Clearance',
             'excerpt' => 'TP/trans-shipment, import/export clearance, and duty exemption support.',
             'slug' => 'import-clearance',
-            'image' => 'assets/img/services/service-04.jpg',
+            'image' => 'assets/img/services/customs-clearance.jpg',
         ],
         [
             'title' => 'Ship Spares Logistics',
             'excerpt' => '24/7 door-to-deck spare parts logistics with customs and last-mile support.',
             'slug' => 'ship-spares-logistics',
-            'image' => 'assets/img/services/service-05.jpg',
+            'image' => 'assets/img/services/ship-spares-logistics.jpg',
         ],
         [
             'title' => 'Vessel Husbandry / Port Support',
             'excerpt' => 'Port agency and husbandry across India, Sri Lanka, Indonesia & Singapore.',
             'slug' => 'vessel-husbandry',
-            'image' => 'assets/img/services/service-06.jpg',
+            'image' => 'assets/img/services/vessel-husbandry.jpg',
         ],
     ],
 

@@ -20,12 +20,27 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc3">
     <link rel="manifest" href="{{ theme_asset('assets/img/logos/site.webmanifest') }}?v=mc3">
 
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260811spaceg">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260811nounpper1">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}">
-    <link href="{{ theme_asset('assets/css/styles.css') }}?v=20260811toggleright1" rel="stylesheet">
+    {{-- DNS / connection hints for first paint --}}
+    <link rel="preconnect" href="{{ rtrim(config('seo.url', config('app.url')), '/') }}" crossorigin>
+    <link rel="dns-prefetch" href="//www.google.com">
+    <link rel="dns-prefetch" href="//maps.gstatic.com">
+
+    {{-- Preload critical CSS (mobile-first render path) --}}
+    <link rel="preload" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260823faq1" as="style">
+
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1">
+    {{-- Non-critical CSS: load async to cut render-blocking --}}
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1">
+    </noscript>
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260823faq1" rel="stylesheet">
     @stack('styles')
 </head>
 <body>
@@ -39,17 +54,28 @@
 
     <div class="scroll-top-percentage"><span id="scroll-value">0%</span></div>
 
+    {{-- jQuery must stay sync (theme depends on it). Everything else deferred. --}}
     <script src="{{ theme_asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/core.min.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/search.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/main.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/plugins.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/scripts.js') }}"></script>
-    <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260811navmega2"></script>
-    <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260811quote2"></script>
+    <script src="{{ theme_asset('assets/js/popper.min.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/core.min.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/search.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/main.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/plugins.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/scripts.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
+    <script src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1" defer></script>
+    <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260823captcha2" defer></script>
+    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260823perf1" defer></script>
+    <script src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260823perf1" defer></script>
+    @if(recaptcha_enabled())
+    @if(recaptcha_use_enterprise())
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+    @else
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @endif
+    @endif
     @stack('scripts')
 </body>
 </html>

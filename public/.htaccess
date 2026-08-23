@@ -5,6 +5,13 @@
 
     RewriteEngine On
 
+    # Serve WebP when the client accepts it and a sibling .webp exists
+    RewriteCond %{HTTP_ACCEPT} image/webp [NC]
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} ^(.*)\.(jpe?g|png)$ [NC]
+    RewriteCond %1.webp -f
+    RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=ACCEPT_WEBP:1,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -23,3 +30,96 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# Vary for WebP negotiation
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpe?g|png)$">
+        Header append Vary Accept
+    </FilesMatch>
+</IfModule>
+
+# Gzip (Brotli is usually enabled at Hostinger/CDN edge)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
+    AddOutputFilterByType DEFLATE application/json application/ld+json application/xml
+    AddOutputFilterByType DEFLATE application/rss+xml application/atom+xml image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf font/otf font/woff font/woff2 application/font-woff application/vnd.ms-fontobject
+</IfModule>
+
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json application/ld+json
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml font/woff2
+</IfModule>
+
+# Browser caching for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 7 days"
+
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/ld+json "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Long-cache immutable assets (use ?v= cache-bust when files change)
+    <FilesMatch "\.(css|js|woff2?|ttf|otf|eot|svg|jpe?g|png|gif|webp|avif|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # HTML / dynamic PHP responses must revalidate
+    <FilesMatch "\.(html?|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+
+    # Security / performance-friendly defaults
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # Keep Vary for compressed responses
+    <IfModule mod_deflate.c>
+        Header append Vary Accept-Encoding
+    </IfModule>
+</IfModule>
+
+# Dynamic Gzip/Brotli above is enough; do not rewrite to raw .gz/.br without
+# Content-Encoding (would corrupt CSS/JS in the browser).
+
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/avif .avif
+    AddType font/woff2 .woff2
+</IfModule>
+
+# Disable ETag collision with long Cache-Control on static files
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|woff2?|jpe?g|png|webp|avif|svg|ico)$">
+        Header unset ETag
+    </FilesMatch>
+</IfModule>
+FileETag None

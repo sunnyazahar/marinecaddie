@@ -29,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_webp('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item cloned" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_webp('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_webp('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item active" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_webp('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_webp('assets/img/banner/slide-03.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/slide-03.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item cloned" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_webp('assets/img/banner/slide-01.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/slide-01.jpg') }}&quot;);"></div>
                 </div></div><div class="owl-item cloned" style="width: 1785px;"><div class="item text-center">
                     <div class="container d-table position-relative z-index-9">
                         <div class="d-table-cell align-middle">
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_asset('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
+                    <div class="bg-img cover-background secondary-overlay" data-overlay-dark="75" data-background="{{ theme_webp('assets/img/banner/slide-02.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/slide-02.jpg') }}&quot;);"></div>
                 </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ti-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ti-arrow-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
         </section>
 
@@ -531,7 +531,9 @@
                             <div class="mb-3">
                                 <h2 class="ls-minus-2px display-4 font-weight-800 lh-1 mb-1-9">Get in touch</h2>
                             </div>
-                            <form class="contact quform" action="#" method="post" enctype="multipart/form-data" onclick="">
+                            <form class="mc-contact-form" action="{{ route('contact.store') }}" method="post" novalidate>
+                                @csrf
+                                <input type="hidden" name="form_source" value="Home alt page">
                                 <div class="quform-elements">
                                     <div class="row">
 
@@ -592,25 +594,15 @@
 
                                         <!-- Begin Captcha element -->
                                         <div class="col-md-12">
-                                            <div class="quform-element">
-                                                <div class="form-group">
-                                                    <div class="quform-input">
-                                                        <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Type the below word">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="quform-captcha">
-                                                        <div class="quform-captcha-inner">
-                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="quform-element form-group">
+                                                @include('partials.recaptcha')
                                             </div>
                                         </div>
                                         <!-- End Captcha element -->
 
                                         <!-- Begin Submit button -->
                                         <div class="col-md-12">
+                                            <div class="mc-contact-form__status" role="alert" aria-live="polite" hidden></div>
                                             <div class="quform-submit-inner">
                                                 <button class="butn-style03 w-100 border-0" type="submit">Send Message</button>
                                             </div>

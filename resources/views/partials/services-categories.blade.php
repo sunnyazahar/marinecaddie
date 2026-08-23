@@ -15,7 +15,12 @@
             <div class="col-md-6 wow fadeInUp" data-wow-delay="{{ $delay }}ms" id="service-{{ $key }}">
                 <article class="services-category">
                     <div class="services-category__media">
-                        <img src="{{ theme_asset($service['image'] ?? 'assets/img/services/service-01.jpg') }}" alt="{{ $service['title'] }}" title="{{ $service['title'] }}">
+                        @include('partials.responsive-img', [
+                            'path' => $service['image'] ?? 'assets/img/services/service-01.jpg',
+                            'alt' => $service['title'],
+                            'title' => $service['title'],
+                            'lazy' => true,
+                        ])
                         <span class="services-category__num">{{ str_pad($index, 2, '0', STR_PAD_LEFT) }}</span>
                     </div>
                     <div class="services-category__body">

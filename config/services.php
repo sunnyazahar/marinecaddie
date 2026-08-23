@@ -35,4 +35,18 @@ return [
         ],
     ],
 
+    /*
+    | Google reCAPTCHA
+    | Classic v2: site_key + secret_key → siteverify API
+    | Enterprise: site_key + project_id + api_key → CreateAssessment API
+    | https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+    */
+    'recaptcha' => [
+        'site_key' => env('RECAPTCHA_SITE_KEY', ''),
+        'secret_key' => env('RECAPTCHA_SECRET_KEY', ''),
+        'project_id' => env('RECAPTCHA_PROJECT_ID', ''),
+        'api_key' => env('RECAPTCHA_API_KEY', ''),
+        'min_score' => (float) env('RECAPTCHA_MIN_SCORE', 0.5),
+    ],
+
 ];

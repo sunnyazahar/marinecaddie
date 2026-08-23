@@ -16,10 +16,9 @@
         $description = config('seo.default_description');
     }
 
+    // Keywords are reference-only in config (array). Only output meta if a page
+    // explicitly sets a string via @section('meta_keywords').
     $keywords = trim($__env->yieldContent('meta_keywords', ''));
-    if ($keywords === '') {
-        $keywords = config('seo.default_keywords');
-    }
 
     $robots = trim($__env->yieldContent('meta_robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'));
     $canonical = trim($__env->yieldContent('canonical', ''));
@@ -30,13 +29,61 @@
     $ogType = trim($__env->yieldContent('og_type', 'website'));
     $ogImagePath = trim($__env->yieldContent('og_image', ''));
     $ogImage = $ogImagePath !== '' ? $ogImagePath : theme_asset(config('seo.og_image'));
-    $ogImageAlt = trim($__env->yieldContent('og_image_alt', $siteName . ' — maritime logistics'));
+    $ogImageAlt = trim($__env->yieldContent('og_image_alt', $siteName . ' — marine logistics & ship agency'));
 
-    $org = config('seo.organization');
-    $orgUrl = $org['url'] ?: config('app.url');
-    $orgLogo = theme_asset($org['logo']);
+    $org = config('seo.organization', []);
+    $orgUrl = rtrim($org['url'] ?? config('seo.url') ?? config('app.url'), '/');
+    $orgLogo = theme_asset($org['logo'] ?? 'assets/img/logos/logo.svg');
+    $inLanguage = config('seo.language', 'en') === 'en' ? 'en-US' : config('seo.language', 'en');
     $schemaType = trim($__env->yieldContent('schema_type', 'WebPage'));
     $serviceName = trim($__env->yieldContent('service_name', $pageTitle));
+
+    $orgNode = [
+        '@type' => ['Organization', 'ProfessionalService'],
+        '@id' => $orgUrl . '/#organization',
+        'name' => $org['name'] ?? $siteName,
+        'legalName' => $org['legal_name'] ?? ($org['name'] ?? $siteName),
+        'url' => $orgUrl,
+        'logo' => [
+            '@type' => 'ImageObject',
+            'url' => $orgLogo,
+        ],
+        'image' => $ogImage,
+        'email' => $org['email'] ?? null,
+        'telephone' => $org['telephone'] ?? null,
+        'description' => $org['description'] ?? config('seo.default_description'),
+        'areaServed' => $org['area_served'] ?? 'Worldwide',
+        'knowsAbout' => $org['knows_about'] ?? [],
+        'sameAs' => array_values(array_filter($org['same_as'] ?? [])),
+        'priceRange' => '$$',
+        'contactPoint' => [
+            '@type' => 'ContactPoint',
+            'telephone' => $org['telephone'] ?? null,
+            'contactType' => 'customer service',
+            'email' => $org['email'] ?? null,
+            'availableLanguage' => ['English'],
+            'areaServed' => $org['area_served'] ?? 'Worldwide',
+        ],
+    ];
+
+    if (! empty($org['address']) && is_array($org['address'])) {
+        $orgNode['address'] = array_filter([
+            '@type' => 'PostalAddress',
+            'streetAddress' => $org['address']['streetAddress'] ?? null,
+            'addressLocality' => $org['address']['addressLocality'] ?? null,
+            'addressRegion' => $org['address']['addressRegion'] ?? null,
+            'postalCode' => $org['address']['postalCode'] ?? null,
+            'addressCountry' => $org['address']['addressCountry'] ?? null,
+        ], fn ($v) => $v !== null && $v !== '');
+    }
+
+    if (! empty($org['geo']['latitude']) && ! empty($org['geo']['longitude'])) {
+        $orgNode['geo'] = [
+            '@type' => 'GeoCoordinates',
+            'latitude' => $org['geo']['latitude'],
+            'longitude' => $org['geo']['longitude'],
+        ];
+    }
 
     $breadcrumbItems = [
         ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => route('home')],
@@ -62,16 +109,18 @@
 
 <title>{{ $fullTitle }}</title>
 <meta name="description" content="{{ $description }}">
+@if($keywords !== '')
 <meta name="keywords" content="{{ $keywords }}">
+@endif
 <meta name="author" content="{{ $siteName }}">
 <meta name="robots" content="{{ $robots }}">
 <meta name="googlebot" content="{{ $robots }}">
-<meta name="theme-color" content="{{ config('seo.theme_color', '#0a2e4d') }}">
+<meta name="theme-color" content="{{ config('seo.theme_color', '#042158') }}">
 <meta name="format-detection" content="telephone=yes">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <link rel="canonical" href="{{ $canonical }}">
-<link rel="alternate" hreflang="en" href="{{ $canonical }}">
+<link rel="alternate" hreflang="{{ config('seo.language', 'en') }}" href="{{ $canonical }}">
 <link rel="alternate" hreflang="x-default" href="{{ $canonical }}">
 
 {{-- Open Graph --}}
@@ -99,51 +148,27 @@
 {!! json_encode([
     '@context' => 'https://schema.org',
     '@graph' => array_values(array_filter([
-        [
-            '@type' => ['Organization', 'ProfessionalService'],
-            '@id' => rtrim($orgUrl, '/') . '/#organization',
-            'name' => $org['name'],
-            'legalName' => $org['legal_name'] ?? $org['name'],
-            'url' => $orgUrl,
-            'logo' => [
-                '@type' => 'ImageObject',
-                'url' => $orgLogo,
-            ],
-            'image' => $ogImage,
-            'email' => $org['email'],
-            'telephone' => $org['telephone'],
-            'description' => $org['description'],
-            'areaServed' => $org['area_served'] ?? 'Worldwide',
-            'knowsAbout' => $org['knows_about'] ?? [],
-            'sameAs' => array_values(array_filter($org['same_as'] ?? [])),
-            'priceRange' => '$$',
-            'contactPoint' => [
-                '@type' => 'ContactPoint',
-                'telephone' => $org['telephone'],
-                'contactType' => 'customer service',
-                'email' => $org['email'],
-                'availableLanguage' => ['English'],
-            ],
-        ],
+        $orgNode,
         [
             '@type' => 'WebSite',
-            '@id' => rtrim($orgUrl, '/') . '/#website',
+            '@id' => $orgUrl . '/#website',
             'url' => $orgUrl,
             'name' => $siteName,
+            'alternateName' => 'MarineCaddie',
             'description' => config('seo.default_description'),
-            'publisher' => ['@id' => rtrim($orgUrl, '/') . '/#organization'],
-            'inLanguage' => 'en-US',
+            'publisher' => ['@id' => $orgUrl . '/#organization'],
+            'inLanguage' => $inLanguage,
         ],
         [
-            '@type' => in_array($schemaType, ['Service', 'FAQPage'], true) ? 'WebPage' : $schemaType,
+            '@type' => in_array($schemaType, ['Service', 'FAQPage', 'BlogPosting'], true) ? 'WebPage' : $schemaType,
             '@id' => $canonical . '#webpage',
             'url' => $canonical,
             'name' => $fullTitle,
             'description' => $description,
-            'isPartOf' => ['@id' => rtrim($orgUrl, '/') . '/#website'],
-            'about' => ['@id' => rtrim($orgUrl, '/') . '/#organization'],
+            'isPartOf' => ['@id' => $orgUrl . '/#website'],
+            'about' => ['@id' => $orgUrl . '/#organization'],
             'breadcrumb' => ['@id' => $canonical . '#breadcrumb'],
-            'inLanguage' => 'en-US',
+            'inLanguage' => $inLanguage,
             'primaryImageOfPage' => [
                 '@type' => 'ImageObject',
                 'url' => $ogImage,
@@ -160,9 +185,9 @@
             'name' => $serviceName !== '' ? $serviceName : $pageTitle,
             'description' => $description,
             'url' => $canonical,
-            'provider' => ['@id' => rtrim($orgUrl, '/') . '/#organization'],
+            'provider' => ['@id' => $orgUrl . '/#organization'],
             'areaServed' => $org['area_served'] ?? 'Worldwide',
-            'serviceType' => 'Logistics',
+            'serviceType' => 'Marine logistics',
         ] : null,
     ])),
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}

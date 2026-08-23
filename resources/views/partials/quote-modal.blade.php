@@ -168,6 +168,10 @@
                 </div>
             </div>
 
+            <div class="mc-quote__recaptcha-wrap" data-quote-recaptcha>
+                @include('partials.recaptcha', ['id' => 'mcQuoteRecaptcha'])
+            </div>
+
             <div class="mc-quote__status" data-quote-status hidden role="status" aria-live="polite"></div>
         </form>
     </div>

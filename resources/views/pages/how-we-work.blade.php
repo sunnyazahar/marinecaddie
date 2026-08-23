@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
 @section('title', 'How We Work')
-@section('meta_title', 'How MarineCaddie Works | Ship Spare Logistics Process')
-@section('meta_description', 'See how MarineCaddie moves ship spares end to end: Supplier, Collection, Hub/WH, Documentation, Customs, Carrier, Delivery, On Board, and POD—keeping your fleet moving.')
-@section('meta_keywords', 'ship spare logistics process, maritime logistics process, door to deck delivery, MarineCaddie operations')
+@section('meta_title', 'How MarineCaddie Works | Ship Spare Process')
+@section('meta_description', 'See MarineCaddie’s door-to-deck ship spare process: supplier, collection, hub, documentation, customs, carrier, delivery, onboard handover, and POD.')
 @section('schema_type', 'WebPage')
 @section('header_class', 'scrollHeader')
 
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_webp('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -135,7 +134,9 @@
                             <div class="mb-3">
                                 <h2 class="ls-minus-2px display-4 font-weight-800 lh-1 mb-1-9">Get in touch</h2>
                             </div>
-                            <form class="contact quform" action="#" method="post" enctype="multipart/form-data" onclick="">
+                            <form class="mc-contact-form" action="{{ route('contact.store') }}" method="post" novalidate>
+                                @csrf
+                                <input type="hidden" name="form_source" value="How We Work page">
                                 <div class="quform-elements">
                                     <div class="row">
 
@@ -196,25 +197,15 @@
 
                                         <!-- Begin Captcha element -->
                                         <div class="col-md-12">
-                                            <div class="quform-element">
-                                                <div class="form-group">
-                                                    <div class="quform-input">
-                                                        <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Type the below word">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="quform-captcha">
-                                                        <div class="quform-captcha-inner">
-                                                            <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="..." title="...">
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="quform-element form-group">
+                                                @include('partials.recaptcha')
                                             </div>
                                         </div>
                                         <!-- End Captcha element -->
 
                                         <!-- Begin Submit button -->
                                         <div class="col-md-12">
+                                            <div class="mc-contact-form__status" role="alert" aria-live="polite" hidden></div>
                                             <div class="quform-submit-inner">
                                                 <button class="butn-style03 w-100 border-0" type="submit">Send Message</button>
                                             </div>
@@ -243,11 +234,7 @@
                                 <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">{{ config('company.tagline') }}</h2>
                             </div>
                             <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms" style="visibility: visible; animation-delay: 150ms; animation-name: fadeInUp;">{{ config('company.who_we_are') }}</p>
-                            <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
-                                <img src="{{ theme_asset('assets/img/avatar/avatar-08.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow">
-                                <img src="{{ theme_asset('assets/img/avatar/avatar-09.jpg') }}" alt="..." title="..." class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
-                                <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted by <strong>vessel operators worldwide.</strong></p>
-                            </div>
+                            <p class="text-secondary font-weight-600 mb-0 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">Trusted by <strong>vessel operators worldwide.</strong></p>
                         </div>
                     </div>
                     <div class="col-lg-6 mt-2-9 wow fadeInUp" data-wow-delay="250ms" style="visibility: visible; animation-delay: 250ms; animation-name: fadeInUp;">

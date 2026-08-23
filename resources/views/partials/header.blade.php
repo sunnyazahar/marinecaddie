@@ -257,7 +257,6 @@
                                                                 $itemActive = $navCurrentSlug && $itemSlug && $navCurrentSlug === $itemSlug;
                                                             @endphp
                                                             <a href="{{ $itemHref }}" class="nav-mega-col__item{{ $itemActive ? ' is-active' : '' }}">
-                                                                @include('partials.nav-service-icon', ['name' => $itemLabel, 'size' => 'sm'])
                                                                 <span class="nav-mega-col__label">{{ $itemLabel }}</span>
                                                             </a>
                                                         @endforeach
@@ -271,7 +270,7 @@
                                         <li class="nav-mobile-ctas d-xl-none">
                                             <div class="header-attr-actions header-attr-actions--mobile">
                                                 <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 sm white-hover" data-open-quote="quote">Get Quote</a>
-                                                <a href="#" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login">
+                                                <a href="https://portal.marinecaddie.com/" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login" target="_blank" rel="noopener noreferrer">
                                                     <i class="fas fa-user" aria-hidden="true"></i>
                                                     <span>myCADDIE</span>
                                                 </a>
@@ -287,7 +286,7 @@
                                                 <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 sm white-hover" data-open-quote="quote">Get Quote</a>
                                             </li>
                                             <li class="d-none d-xl-inline-block">
-                                                <a href="#" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login">
+                                                <a href="https://portal.marinecaddie.com/" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login" target="_blank" rel="noopener noreferrer">
                                                     <i class="fas fa-user" aria-hidden="true"></i>
                                                     <span>myCADDIE</span>
                                                 </a>

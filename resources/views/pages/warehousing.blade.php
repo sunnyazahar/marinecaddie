@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
 @section('title', 'Customs Clearance')
-@section('meta_title', 'Customs Clearance | TP, Import/Export & Duty Support | MarineCaddie')
+@section('meta_title', 'Customs Clearance | Import, Export & TP | MarineCaddie')
 @section('meta_description', 'MarineCaddie customs clearance—TP/trans-shipment, import and export clearance, duty exemption support, and customs consulting for maritime cargo.')
-@section('meta_keywords', 'customs clearance, TP trans-shipment, import export clearance, duty exemption, maritime customs')
 @section('schema_type', 'Service')
 @section('header_class', 'scrollHeader')
 
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_webp('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -116,7 +115,7 @@
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show" role="region" aria-labelledby="headingOne" data-bs-parent="#accordionWarehousing">
-                                        <div class="card-body">{{ implode(', ', config('company.services.customs_clearance.items')) }}—delivered with attention to maritime urgency and documentation quality.</div>
+                                        <div class="card-body">{{ collect(config('company.services.customs_clearance.items'))->pluck('label')->implode(', ') }}—delivered with attention to maritime urgency and documentation quality.</div>
                                     </div>
                                 </div>
                                 <div class="card wow fadeInUp" data-wow-delay="200ms">

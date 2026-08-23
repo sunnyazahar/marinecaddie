@@ -17,7 +17,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section contact-page-banner top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/contact-banner.jpg') }}?v=mc4" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/contact-banner.jpg') }}?v=mc4&quot;);">
+        <section class="page-title-section contact-page-banner top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_webp('assets/img/banner/contact-banner.jpg') }}?v=mc4" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/contact-banner.jpg') }}?v=mc4&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -102,7 +102,9 @@
                             <h2 class="contact-form-panel__title">Tell us about your vessel need</h2>
                             <p class="contact-form-panel__text mb-0">Share shipment details, port call timing, or cargo type—our team will respond promptly.</p>
                         </div>
-                        <form class="contact quform contact-form" action="#" method="post" enctype="multipart/form-data">
+                        <form class="mc-contact-form contact-form" action="{{ route('contact.store') }}" method="post" novalidate>
+                            @csrf
+                            <input type="hidden" name="form_source" value="Contact page">
                             <div class="quform-elements">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -146,6 +148,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                        <div class="quform-element form-group">
+                                            @include('partials.recaptcha')
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mc-contact-form__status" role="alert" aria-live="polite" hidden></div>
                                         <div class="quform-submit-inner">
                                             <button class="butn-style01 w-100 border-0" type="submit">Send Message</button>
                                         </div>

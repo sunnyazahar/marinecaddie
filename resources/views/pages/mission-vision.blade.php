@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
 @section('title', 'Our Mission & Vision')
-@section('meta_title', 'Mission & Vision | MarineCaddie Shipping LLC')
-@section('meta_description', 'Discover MarineCaddie’s mission and vision: reliable, time-critical maritime logistics that keep vessels moving, and a commitment to becoming the most trusted global maritime logistics partner.')
-@section('meta_keywords', 'MarineCaddie mission, MarineCaddie vision, maritime logistics partner, ship spare logistics values, Dubai marine logistics')
+@section('meta_title', 'Mission & Vision | MarineCaddie Shipping')
+@section('meta_description', 'MarineCaddie’s mission: keep vessels moving with reliable, time-critical maritime logistics. Our vision: be the most trusted global marine logistics partner.')
 @section('schema_type', 'AboutPage')
 @section('header_class', 'scrollHeader')
 
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_webp('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\RobotsController;
@@ -31,6 +32,7 @@ Route::get('/portfolio/details', [PageController::class, 'portfolioDetails'])->n
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/blog/details', [PageController::class, 'blogDetails'])->name('blog.details');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/quote', [QuoteController::class, 'store'])->name('quote.store');
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/terms', [PageController::class, 'terms'])->name('terms');

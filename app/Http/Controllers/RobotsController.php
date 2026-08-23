@@ -8,7 +8,8 @@ class RobotsController extends Controller
 {
     public function index(): Response
     {
-        $sitemap = url('/sitemap.xml');
+        $base = rtrim((string) (config('seo.url') ?: config('seo.organization.url') ?: config('app.url')), '/');
+        $sitemap = $base.'/sitemap.xml';
 
         $content = implode("\n", [
             'User-agent: *',
@@ -16,8 +17,10 @@ class RobotsController extends Controller
             '',
             '# Thin / alternate templates — keep crawl budget on primary pages',
             'Disallow: /home-alt',
+            'Disallow: /blog/details',
+            'Disallow: /portfolio/details',
             '',
-            'Sitemap: ' . $sitemap,
+            'Sitemap: '.$sitemap,
             '',
         ]);
 

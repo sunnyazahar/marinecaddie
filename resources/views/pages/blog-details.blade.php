@@ -3,15 +3,15 @@
 @section('title', 'Blog Details')
 @section('meta_title', 'Article | MarineCaddie Shipping Blog')
 @section('meta_description', 'Read the latest MarineCaddie article on maritime logistics, freight performance, and ship spare delivery best practices.')
-@section('meta_keywords', 'logistics article, supply chain blog post, MarineCaddie insights')
+@section('meta_robots', 'noindex, follow')
 @section('og_type', 'article')
-@section('schema_type', 'BlogPosting')
+@section('schema_type', 'WebPage')
 @section('header_class', 'scrollHeader')
 
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_asset('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_webp('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/page-title.jpg') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -176,7 +176,10 @@
                                 <h3 class="h4 mb-3">Leave a reply</h3>
 
                                 <!-- Form -->
-                                <form>
+                                <form class="mc-contact-form" action="{{ route('contact.store') }}" method="post" novalidate>
+                                    @csrf
+                                    <input type="hidden" name="form_type" value="blog_reply">
+                                    <input type="hidden" name="form_source" value="Blog — Leave a reply">
                                     <div class="row">
                                         <div class="form-group">
                                             <textarea name="reply" rows="6" class="form-control h-100" placeholder="Your Reply"></textarea>
@@ -193,6 +196,8 @@
                                         </div>
                                     </div>
                                     <div>
+                                        @include('partials.recaptcha')
+                                        <div class="mc-contact-form__status" role="alert" aria-live="polite" hidden></div>
                                         <button class="butn-style01 border-0 md" type="submit">Leave Reply</button>
                                     </div>
                                 </form>

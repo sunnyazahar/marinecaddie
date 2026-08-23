@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\URL;
 
 class SitemapController extends Controller
 {
     public function index(): Response
     {
         $lastmod = now()->toAtomString();
+        $base = rtrim((string) (config('seo.url') ?: config('app.url')), '/');
+
+        // Force absolute www URLs in sitemap regardless of request host
+        URL::forceRootUrl($base);
 
         $urls = [
             ['loc' => route('home'), 'priority' => '1.0', 'changefreq' => 'weekly'],
@@ -35,15 +40,15 @@ class SitemapController extends Controller
             ['loc' => route('terms'), 'priority' => '0.3', 'changefreq' => 'yearly'],
         ]);
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
 
         foreach ($urls as $url) {
             $xml .= "  <url>\n";
-            $xml .= '    <loc>' . e($url['loc']) . "</loc>\n";
-            $xml .= '    <lastmod>' . $lastmod . "</lastmod>\n";
-            $xml .= '    <changefreq>' . $url['changefreq'] . "</changefreq>\n";
-            $xml .= '    <priority>' . $url['priority'] . "</priority>\n";
+            $xml .= '    <loc>'.e($url['loc'])."</loc>\n";
+            $xml .= '    <lastmod>'.$lastmod."</lastmod>\n";
+            $xml .= '    <changefreq>'.$url['changefreq']."</changefreq>\n";
+            $xml .= '    <priority>'.$url['priority']."</priority>\n";
             $xml .= "  </url>\n";
         }
 

@@ -1,19 +1,18 @@
 @extends('layouts.app')
 
-@section('title', 'Maritime Logistics & Freight Forwarding')
-@section('meta_title', 'MarineCaddie | Maritime Logistics & Ship Spares')
-@section('meta_description', 'Time-critical ship spare logistics, customs clearance, vessel husbandry, freight forwarding and special projects at global ports.')
-@section('meta_keywords', 'MarineCaddie, maritime logistics, ship spare logistics, freight forwarding, customs clearance, vessel husbandry, port husbandry, special projects, door to deck, Dubai')
+@section('title', 'Marine Logistics & Freight Forwarding')
+@section('meta_title', config('seo.home_title'))
+@section('meta_description', config('seo.home_description'))
 @section('schema_type', 'WebPage')
-@section('og_image_alt', 'MarineCaddie maritime logistics and ship spare services')
+@section('og_image_alt', 'MarineCaddie ship spare logistics and marine agency services')
 @section('header_class', 'scrollHeader')
 
 @section('content')
 <!-- BANNER
         ================================================== -->
-        <section class="p-0 top-position1 full-screen secondary-overlay video-banner" data-overlay-dark="8" style="background-image: url({{ theme_asset('assets/img/banner/video-cover.jpg') }});">
+        <section class="p-0 top-position1 full-screen secondary-overlay video-banner" data-overlay-dark="8" style="background-image: url({{ theme_webp('assets/img/banner/video-cover.jpg') }});">
             <div class="banner-video" aria-hidden="true">
-                <video autoplay muted loop playsinline preload="auto" poster="{{ theme_asset('assets/img/banner/video-cover.jpg') }}">
+                <video autoplay muted loop playsinline preload="metadata" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}">
                     <source src="{{ theme_asset('assets/video/aerial top view of cargo ship in import export bus FPHBK69.mp4') }}" type="video/mp4">
                 </video>
             </div>
@@ -171,7 +170,13 @@
                                 <div class="col-md-12 col-lg-12 text-center text-md-start wow fadeInUp" data-wow-delay="100ms">
                                     <div class="about-circle">
                                         <div class="image-hover">
-                                            <img src="{{ theme_asset('assets/img/content/logistics-scaled.webp') }}" alt="Marine logistics and cargo operations" title="Marine logistics and cargo operations" class="rounded">
+                                            @include('partials.responsive-img', [
+                                                'path' => 'assets/img/content/marine-logistics.jpg',
+                                                'alt' => 'Marine logistics and cargo operations',
+                                                'title' => 'Marine logistics and cargo operations',
+                                                'class' => 'rounded',
+                                                'lazy' => true,
+                                            ])
                                         </div>
                                         <div class="about-text rotating d-none d-md-block">
                                             <svg viewBox="0 0 200 200">
@@ -188,117 +193,6 @@
                                 </div>
                                 
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHY-CHOOSE-US
-        ================================================== -->
-        <section class="home-section home-section--why bg-light">
-            <div class="container">
-                <div class="row mt-n2-9 align-items-center">
-                    <div class="col-lg-6 mt-2-9">
-                        <div class="pe-lg-1-9 pe-xxl-12">
-                            <div class="mb-4 wow fadeInUp" data-wow-delay="100ms">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Why Choose Us.</span>
-                                <h2 class="display-4 mb-0 lh-1" style="color: #fb8845; font-weight: 700; letter-spacing: 0.06em;">{{ config('company.motto') }}</h2>
-                            </div>
-                            <p class="mb-1-9 wow fadeInUp" data-wow-delay="150ms">{{ config('company.who_we_are') }} We combine responsive 24/7 coordination, global reach, operational focus, IT systems, cost-effective planning, and a customer-first approach on every vessel call.</p>
-                            <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
-                                <img src="{{ theme_asset('assets/img/avatar/avatar-08.jpg') }}" alt="MarineCaddie operations team" title="MarineCaddie operations team" class="rounded-circle border border-width-4 border-white shadow">
-                                <img src="{{ theme_asset('assets/img/avatar/avatar-09.jpg') }}" alt="MarineCaddie team member" title="MarineCaddie team member" class="rounded-circle border border-width-4 border-white shadow w-60px me-3 ms-minus-20">
-                                <p class="text-secondary font-weight-600 text-decoration-underline mb-0">Trusted by <strong>vessel operators worldwide.</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-2-9 wow fadeInUp" data-wow-delay="250ms">
-                        <div class="border-bottom border-color-light-black mb-4 mb-sm-0">
-                            <div class="row g-0">
-                                <div class="col-sm-3 border-sm-end">
-                                    <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-03.png') }}" alt="" title="Responsive support" class="w-60px">
-                                    </div>
-                                </div>
-                                <div class="col-sm-9">
-                                    <div class="px-sm-1-6 px-xl-5 py-1-6">
-                                        <h3 class="h4">{{ config('company.why_choose_us.0.title') }}</h3>
-                                        <p class="mb-0">{{ config('company.why_choose_us.0.text') }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-bottom border-color-light-black mb-4 mb-sm-0">
-                            <div class="row g-0">
-                                <div class="col-sm-3 border-sm-end">
-                                    <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-04.png') }}" alt="" title="Global reach" class="w-60px">
-                                    </div>
-                                </div>
-                                <div class="col-sm-9">
-                                    <div class="px-sm-1-6 px-xl-5 py-1-6">
-                                        <h3 class="h4">{{ config('company.why_choose_us.1.title') }}</h3>
-                                        <p class="mb-0">{{ config('company.why_choose_us.1.text') }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="row g-0">
-                                <div class="col-sm-3 border-sm-end">
-                                    <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-05.png') }}" alt="" title="Operational focus" class="w-60px">
-                                    </div>
-                                </div>
-                                <div class="col-sm-9">
-                                    <div class="px-sm-1-6 px-xl-5 pt-1-6">
-                                        <h3 class="h4">{{ config('company.why_choose_us.2.title') }}</h3>
-                                        <p class="mb-0">{{ config('company.why_choose_us.2.text') }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- COUNTER
-        ================================================== -->
-        <section class="pt-0 pb-0 counter-style01 home-section home-section--counter">
-            <div class="container">
-                <div class="row g-0 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 bg-primary border-top border-primary">
-                            <div class="h4 text-white">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="35"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span></div></div>k
-                            </div>
-                            <p class="d-inline-block text-center text-white">Shipments Handled</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 border-lg-end border-top">
-                            <div class="h4">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="25"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span></div></div>+
-                            </div>
-                            <p>Years of Experience</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 border-sm-end border-lg-top">
-                            <div class="h4">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="89"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span></div></div>+
-                            </div>
-                            <p>Network Partners</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 border-sm-top">
-                            <div class="h4">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="98"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span></div></div>+
-                            </div>
-                            <p>On-Time Delivery Rate</p>
                         </div>
                     </div>
                 </div>
@@ -322,9 +216,9 @@
             </div>
             <div class="container-fluid p-sm-0">
                 <div class="row g-0 portfolio-gallery wow fadeInUp" data-wow-delay="200ms">
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_asset('assets/img/portfolio/portfolio-09.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ship Spares Air&lt;/a&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ship Spares Air&lt;/a&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_asset('assets/img/portfolio/portfolio-09.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/portfolio/portfolio-09.jpg') }}&quot;);"><img src="{{ theme_asset('assets/img/portfolio/portfolio-09.jpg') }}" alt="Ship spares air logistics" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" alt="Ship spares air logistics" class="d-none"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ship Spares Air</a></h3>
                                 <p class="text-white opacity7">Time-critical airlift of vessel spares—hand carry, customs, and door-to-deck delivery coordinated 24/7.</p>
@@ -332,9 +226,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_asset('assets/img/portfolio/portfolio-10.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ocean Freight&lt;a/&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ocean Freight&lt;a/&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_asset('assets/img/portfolio/portfolio-10.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/portfolio/portfolio-10.jpg') }}&quot;);"><img src="{{ theme_asset('assets/img/portfolio/portfolio-10.jpg') }}" alt="Ocean freight logistics" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" alt="Ocean freight logistics at container port" class="d-none"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ocean Freight</a></h3>
                                 <p class="text-white opacity7">Maritime freight programs balancing cost, schedule integrity, and customs-ready documentation across global ports.</p>
@@ -342,9 +236,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_asset('assets/img/portfolio/portfolio-11.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Special Projects&lt;/a&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Special Projects&lt;/a&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_asset('assets/img/portfolio/portfolio-11.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/portfolio/portfolio-11.jpg') }}&quot;);"><img src="{{ theme_asset('assets/img/portfolio/portfolio-11.jpg') }}" alt="Special projects cargo handling" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" alt="Special projects cargo handling" class="d-none"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Special Projects</a></h3>
                                 <p class="text-white opacity7">OOG, dangerous goods, heavy lift, break bulk, and project cargo handled with strict local coordination.</p>
@@ -352,9 +246,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_asset('assets/img/portfolio/portfolio-12.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Hub &amp; Warehousing&lt;/a&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Hub &amp; Warehousing&lt;/a&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_asset('assets/img/portfolio/portfolio-12.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/portfolio/portfolio-12.jpg') }}&quot;);"><img src="{{ theme_asset('assets/img/portfolio/portfolio-12.jpg') }}" alt="Hub and warehousing operations" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" alt="Hub and warehousing operations" class="d-none"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Hub &amp; Warehousing</a></h3>
                                 <p class="text-white opacity7">Hub and warehouse nodes supporting stock management, consolidation, and last-mile vessel delivery.</p>
@@ -394,7 +288,9 @@
                         <div class="pe-xl-2-9">
                             <div class="bg-white shadow p-1-9 p-sm-2-6 ps-lg-5 rounded">
                                 <h3 class="h2 mb-3">Send us message</h3>
-                                <form class="contact quform" action="#" method="post" enctype="multipart/form-data" onclick="">
+                                <form class="mc-contact-form" action="{{ route('contact.store') }}" method="post" novalidate>
+                                    @csrf
+                                    <input type="hidden" name="form_source" value="Home page — Send us message">
                                     <div class="quform-elements">
                                         <div class="row">
                                             <div class="col-md-6">
@@ -438,22 +334,12 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="quform-element">
-                                                    <div class="form-group">
-                                                        <div class="quform-input">
-                                                            <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Type the below word">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="quform-captcha">
-                                                            <div class="quform-captcha-inner">
-                                                                <img src="{{ theme_asset('assets/images/courier-new-light.png') }}" alt="Security captcha" title="Security captcha">
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <div class="quform-element form-group">
+                                                    @include('partials.recaptcha')
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
+                                                <div class="mc-contact-form__status" role="alert" aria-live="polite" hidden></div>
                                                 <div class="quform-submit-inner">
                                                     <button class="butn-style01 border-0 md" type="submit">Send Message</button>
                                                 </div>
@@ -475,47 +361,6 @@
                                 <div>
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie took ownership of our urgent ship-spare moves. We finally have clear milestones, door-to-deck coordination, and fewer customs surprises at destination.</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ theme_asset('assets/img/avatar/avatar-03.jpg') }}" class="border-radius-50" alt="Gemma Krischock" title="Gemma Krischock" width="80" height="80">
-                                            <div class="testimonials-quote">
-                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="" title="Quote">
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-4">
-                                            <h3 class="h4 text-white">Gemma Krischock</h3>
-                                            <span class="text-white opacity8">Logistics Coordinator</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Their operations team is responsive around the clock. Port husbandry and freight forwarding stayed aligned with our vessel schedule—practical coordination, not just bookings.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ theme_asset('assets/img/avatar/avatar-04.jpg') }}" class="border-radius-50" alt="Daniel Hester" title="Daniel Hester" width="80" height="80">
-                                            <div class="testimonials-quote">
-                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="" title="Quote">
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-4">
-                                            <h3 class="h4 text-white">Daniel Hester</h3>
-                                            <span class="text-white opacity8">Technical Superintendent</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Customs clearance and last-mile delivery to the ship were smooth. Online tracking and stock visibility via their portal made oversight far easier for our team ashore.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 position-relative">
-                                            <img src="{{ theme_asset('assets/img/avatar/avatar-02.jpg') }}" class="border-radius-50" alt="Maria Kunze" title="Maria Kunze" width="80" height="80">
-                                            <div class="testimonials-quote">
-                                                <img src="{{ theme_asset('assets/img/icons/quote-01.png') }}" alt="" title="Quote">
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-4">
-                                            <h3 class="h4 text-white">Maria Kunze</h3>
-                                            <span class="text-white opacity8">Purchasing Manager</span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

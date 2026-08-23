@@ -7,7 +7,7 @@
 @section('canonical', route('services.show', $service['slug']))
 @section('schema_type', 'Service')
 @section('service_name', $service['title'])
-@section('og_image', theme_asset($service['hero_image']))
+@section('og_image', theme_webp($service['hero_image']))
 @section('og_image_alt', $service['title'] . ' — MarineCaddie')
 @section('header_class', 'scrollHeader')
 

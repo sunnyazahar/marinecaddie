@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Validation\ValidationException;
 
 class QuoteController extends Controller
 {
     public function store(Request $request)
     {
+        $request->validate(recaptcha_request_rules());
+
         $type = $request->input('request_type', 'information');
 
         if ($type === 'quote') {
@@ -33,23 +32,25 @@ class QuoteController extends Controller
                 'q_privacy.accepted' => 'Please agree to the privacy policy.',
             ]);
 
-            $payload = [
-                'Type' => 'Quote request',
-                'Name' => $data['q_name'],
-                'Company' => $data['q_company'],
-                'Address' => $data['q_address'] ?? '',
-                'Email' => $data['q_email'],
-                'Phone' => $data['q_phone'],
-                'Service' => $data['q_service'],
-                'Origin' => $data['q_origin'],
-                'Destination' => $data['q_destination'],
-                'Vessel' => $data['q_vessel'] ?? '',
-                'Urgency' => $data['q_urgency'] ?? '',
-                'Cargo' => $data['q_cargo'],
-                'Remarks' => $data['q_remarks'] ?? '',
+            $fields = [
+                ['label' => 'Request type', 'value' => 'Quote request'],
+                ['label' => 'Name', 'value' => $data['q_name']],
+                ['label' => 'Company', 'value' => $data['q_company']],
+                ['label' => 'Address', 'value' => $data['q_address'] ?? ''],
+                ['label' => 'Email', 'value' => $data['q_email']],
+                ['label' => 'Phone', 'value' => $data['q_phone']],
+                ['label' => 'Service needed', 'value' => $data['q_service']],
+                ['label' => 'Origin / Port', 'value' => $data['q_origin']],
+                ['label' => 'Destination / Port', 'value' => $data['q_destination']],
+                ['label' => 'Vessel name', 'value' => $data['q_vessel'] ?? ''],
+                ['label' => 'Timing / urgency', 'value' => $data['q_urgency'] ?? ''],
+                ['label' => 'Cargo details', 'value' => $data['q_cargo']],
+                ['label' => 'Additional remarks', 'value' => $data['q_remarks'] ?? ''],
             ];
             $subject = 'Quote request — '.$data['q_name'].' / '.$data['q_company'];
             $replyTo = $data['q_email'];
+            $replyName = $data['q_name'];
+            $source = 'Get Quote modal — Quote (3-step)';
         } else {
             $data = $request->validate([
                 'request_type' => 'required|in:information',
@@ -63,38 +64,21 @@ class QuoteController extends Controller
                 'privacy.accepted' => 'Please agree to the privacy policy.',
             ]);
 
-            $payload = [
-                'Type' => 'Information request',
-                'Name' => $data['name'],
-                'Company' => $data['company'] ?? '',
-                'Email' => $data['email'],
-                'Phone' => $data['phone'],
-                'Remarks' => $data['remarks'] ?? '',
+            $fields = [
+                ['label' => 'Request type', 'value' => 'Information request'],
+                ['label' => 'Name', 'value' => $data['name']],
+                ['label' => 'Company', 'value' => $data['company'] ?? ''],
+                ['label' => 'Email', 'value' => $data['email']],
+                ['label' => 'Phone', 'value' => $data['phone']],
+                ['label' => 'Remarks', 'value' => $data['remarks'] ?? ''],
             ];
             $subject = 'Information request — '.$data['name'];
             $replyTo = $data['email'];
+            $replyName = $data['name'];
+            $source = 'Get Quote modal — Information';
         }
 
-        $lines = [];
-        foreach ($payload as $key => $value) {
-            $lines[] = $key.': '.(is_string($value) ? $value : json_encode($value));
-        }
-        $body = implode("\n", $lines);
-
-        Log::channel('single')->info('Quote/info request', $payload);
-
-        $to = config('company.email', 'ops@marinecaddie.com');
-
-        try {
-            Mail::raw($body, function ($message) use ($to, $subject, $replyTo) {
-                $message->to($to)
-                    ->subject($subject)
-                    ->replyTo($replyTo);
-            });
-        } catch (\Throwable $e) {
-            Log::warning('Quote mail failed: '.$e->getMessage(), $payload);
-            // Still accept the submission locally when mail is not configured
-        }
+        send_form_notification($subject, $fields, $replyTo, $replyName, $source);
 
         if ($request->expectsJson() || $request->ajax()) {
             return response()->json([

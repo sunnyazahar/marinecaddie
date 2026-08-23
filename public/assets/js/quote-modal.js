@@ -12,6 +12,7 @@
     var nextBtn = modal.querySelector('[data-quote-next]');
     var submitBtn = modal.querySelector('[data-quote-submit]');
     var stepField = document.getElementById('mcQuoteStepField');
+    var recaptchaWrap = modal.querySelector('[data-quote-recaptcha]');
     var openers = document.querySelectorAll('[data-open-quote]');
     var lastFocus = null;
     var step = 1;
@@ -20,6 +21,57 @@
         2: 'Step 2 of 3 - Shipment details',
         3: 'Step 3 of 3 - Review & send',
     };
+
+    function hasRecaptcha() {
+        return !!(recaptchaWrap && recaptchaWrap.querySelector('.g-recaptcha'));
+    }
+
+    function recaptchaApi() {
+        if (typeof grecaptcha === 'undefined') return null;
+        if (grecaptcha.enterprise && typeof grecaptcha.enterprise.getResponse === 'function') {
+            return grecaptcha.enterprise;
+        }
+        return grecaptcha;
+    }
+
+    function getRecaptchaToken() {
+        if (!hasRecaptcha()) return '';
+        var api = recaptchaApi();
+        if (api && typeof api.getResponse === 'function') {
+            try {
+                return api.getResponse() || '';
+            } catch (err) {
+                return '';
+            }
+        }
+        var field = form.querySelector('[name="g-recaptcha-response"]');
+        return field ? (field.value || '') : '';
+    }
+
+    function resetRecaptcha() {
+        if (!hasRecaptcha()) return;
+        var api = recaptchaApi();
+        if (api && typeof api.reset === 'function') {
+            try { api.reset(); } catch (err) { /* ignore */ }
+        }
+    }
+
+    function syncRecaptchaVisibility() {
+        if (!recaptchaWrap || !hasRecaptcha()) return;
+        if (mode() === 'information') {
+            var infoCopy = infoPanel && infoPanel.querySelector('.mc-quote__footer-copy');
+            if (infoCopy) {
+                infoCopy.appendChild(recaptchaWrap);
+            }
+            recaptchaWrap.hidden = false;
+            return;
+        }
+        var quoteFooter = quotePanel && quotePanel.querySelector('.mc-quote__footer--quote');
+        if (quoteFooter && quoteFooter.parentNode) {
+            quoteFooter.parentNode.insertBefore(recaptchaWrap, quoteFooter);
+        }
+        recaptchaWrap.hidden = step !== 3;
+    }
 
     function mode() {
         var checked = form.querySelector('input[name="request_type"]:checked');
@@ -64,6 +116,7 @@
         if (isQuote) {
             setStep(1);
         }
+        syncRecaptchaVisibility();
         clearStatus();
     }
 
@@ -94,6 +147,7 @@
         // On steps 1-2, disable step-3 privacy so information validation doesn't clash — privacy only required on send
         var qPrivacy = document.getElementById('q_privacy');
         if (qPrivacy) qPrivacy.disabled = step !== 3;
+        syncRecaptchaVisibility();
     }
 
     function fieldVal(id) {
@@ -138,6 +192,7 @@
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Please enter a valid email.';
         if (!phone) return 'Please enter your phone number.';
         if (!privacy || !privacy.checked) return 'Please agree to the privacy policy.';
+        if (hasRecaptcha() && !getRecaptchaToken()) return 'Please complete the reCAPTCHA.';
         return '';
     }
 
@@ -157,6 +212,7 @@
         if (n === 3) {
             var p = document.getElementById('q_privacy');
             if (!p || !p.checked) return 'Please agree to the privacy policy.';
+            if (hasRecaptcha() && !getRecaptchaToken()) return 'Please complete the reCAPTCHA.';
         }
         return '';
     }
@@ -254,6 +310,10 @@
         }
 
         var fd = new FormData(form);
+        var captchaToken = getRecaptchaToken();
+        if (captchaToken) {
+            fd.set('g-recaptcha-response', captchaToken);
+        }
         // Strip disabled / irrelevant fields already handled by disabled attrs
         var btn = mode() === 'information'
             ? form.querySelector('[data-mode-panel="information"] button[type="submit"]')
@@ -281,6 +341,7 @@
                 if (result.ok && result.data && result.data.ok) {
                     showStatus(result.data.message || 'Thank you. We will respond within one business day.', false);
                     form.reset();
+                    resetRecaptcha();
                     // restore default mode radio after reset
                     var infoRadio = form.querySelector('input[name="request_type"][value="information"]');
                     if (infoRadio) infoRadio.checked = true;
@@ -288,6 +349,7 @@
                     setTimeout(closeModal, 1800);
                     return;
                 }
+                resetRecaptcha();
                 if (result.data && result.data.errors) {
                     var first = Object.values(result.data.errors)[0];
                     showStatus(Array.isArray(first) ? first[0] : String(first), true);
@@ -297,6 +359,7 @@
             })
             .catch(function () {
                 if (btn) btn.disabled = false;
+                resetRecaptcha();
                 showStatus('Network error. Please try again.', true);
             });
     });
