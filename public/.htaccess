@@ -114,6 +114,16 @@
     AddType image/webp .webp
     AddType image/avif .avif
     AddType font/woff2 .woff2
+    AddType application/xml .xml
+    AddType text/plain .txt
+</IfModule>
+
+# Prefer static crawl files (avoid PHP 500s blocking Googlebot)
+<IfModule mod_headers.c>
+    <FilesMatch "^(robots\.txt|sitemap\.xml)$">
+        Header set Cache-Control "public, max-age=3600"
+        Header set X-Robots-Tag "noindex"
+    </FilesMatch>
 </IfModule>
 
 # Disable ETag collision with long Cache-Control on static files

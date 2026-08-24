@@ -8,7 +8,7 @@ class SitemapController extends Controller
 {
     public function index(): Response
     {
-        $lastmod = now()->utc()->toAtomString();
+        $lastmod = gmdate('Y-m-d\TH:i:s\Z');
         $base = rtrim((string) (config('seo.url') ?: config('app.url')), '/');
 
         $entries = [
