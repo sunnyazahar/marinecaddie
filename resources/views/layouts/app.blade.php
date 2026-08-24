@@ -26,18 +26,21 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <link rel="preload" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1" as="style">
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824logo1" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824cls1" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1" as="style">
+    @if(request()->routeIs('home'))
+    <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" fetchpriority="high">
+    @endif
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1">
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824logo1" rel="stylesheet">
+    {{-- plugins.css must stay sync: Owl/Bootstrap layout; async caused CLS ~0.65 --}}
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824cls1" rel="stylesheet">
 
-    {{-- 565KB plugins.css was render-blocking — load async --}}
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1">

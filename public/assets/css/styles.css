@@ -3,10 +3,16 @@
 .kenburns-banner{position:relative;overflow:hidden;background-position:center;background-size:cover;animation:kenburns-zoom 18s ease-in-out infinite alternate}
 @keyframes kenburns-zoom{0%{background-size:100%}100%{background-size:120%}}
 
-.video-banner{position:relative;overflow:hidden;background-position:center;background-size:cover;background-repeat:no-repeat}
+.video-banner{position:relative;overflow:hidden;background-position:center;background-size:cover;background-repeat:no-repeat;min-height:100vh;min-height:100dvh}
+.video-banner.full-screen,.full-screen.video-banner{min-height:100vh;min-height:100dvh}
 .video-banner .banner-video{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .video-banner .banner-video video{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:0;transform:translate(-50%,-50%);object-fit:cover}
 .video-banner>[class*="container"]{position:relative;z-index:2}
+
+/* Owl defaults to display:none until JS — reserve first slide to avoid CLS */
+.owl-carousel{display:block!important}
+.owl-carousel:not(.owl-loaded){overflow:hidden}
+.owl-carousel:not(.owl-loaded)>:not(:first-child){display:none!important}
 
 /* Site logo — responsive (mobile smaller, desktop larger) */
 .navbar-brand.logochange {

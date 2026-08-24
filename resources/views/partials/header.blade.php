@@ -196,7 +196,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0 current">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=logo5" alt="MarineCaddie"></a>
+                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=logo5" width="221" height="42" alt="MarineCaddie"></a>
                                         <!-- end logo -->
                                     </div>
 
