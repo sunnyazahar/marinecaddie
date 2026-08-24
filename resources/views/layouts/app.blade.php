@@ -29,15 +29,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc3">
     <link rel="manifest" href="{{ theme_asset('assets/img/logos/site.webmanifest') }}?v=mc3">
 
-    {{-- DNS / connection hints for first paint --}}
+    {{-- DNS / connection hints for first paint (absolute hosts — avoid protocol-relative URLs) --}}
+    @unless(in_array(request()->getHost(), ['localhost', '127.0.0.1', '::1'], true))
     <link rel="preconnect" href="{{ rtrim(config('seo.url', config('app.url')), '/') }}" crossorigin>
-    <link rel="dns-prefetch" href="//www.google.com">
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//maps.gstatic.com">
+    @endunless
+    <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://maps.gstatic.com">
 
     {{-- Preload critical CSS (mobile-first render path) --}}
     <link rel="preload" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1" as="style">
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260823faq1" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824logo1" as="style">
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1">
@@ -50,7 +52,7 @@
         <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1">
     </noscript>
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260823faq1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824logo1" rel="stylesheet">
     @stack('styles')
 </head>
 <body>
@@ -71,15 +73,15 @@
     <script src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/core.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/search.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/main.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/plugins.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/scripts.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/main.js') }}?v=20260824console1" defer></script>
+    <script src="{{ theme_asset('assets/js/plugins.js') }}?v=20260824console1" defer></script>
+    <script src="{{ theme_asset('assets/js/scripts.js') }}?v=20260824console1" defer></script>
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
     <script src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260823captcha2" defer></script>
     <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260823perf1" defer></script>
-    <script src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260823perf1" defer></script>
-    @if(recaptcha_enabled())
+    <script src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260824console1" defer></script>
+    @if(recaptcha_should_load())
     @if(recaptcha_use_enterprise())
     <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
     @else

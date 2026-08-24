@@ -1,5 +1,5 @@
 {{-- Google reCAPTCHA v2 checkbox (Classic or Enterprise) --}}
-@if(recaptcha_enabled())
+@if(recaptcha_should_load())
 <div class="mc-recaptcha" @if(!empty($id)) id="{{ $id }}" @endif>
     <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}" data-action="submit"></div>
     <noscript>

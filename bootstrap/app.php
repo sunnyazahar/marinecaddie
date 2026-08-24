@@ -13,6 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->append(\App\Http\Middleware\FixAssetUrls::class);
+
+        // HTML minify / page-speed (SEO-safe whitespace + comment stripping)
+        $middleware->appendToGroup('web', [
+            \VinkiusLabs\LaravelPageSpeed\Middleware\RemoveComments::class,
+            \VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

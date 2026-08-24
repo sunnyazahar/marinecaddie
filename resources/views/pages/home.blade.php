@@ -361,6 +361,20 @@
                                 <div>
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie took ownership of our urgent ship-spare moves. We finally have clear milestones, door-to-deck coordination, and fewer customs surprises at destination.</p>
                                     <div class="d-flex align-items-center">
+                                        <div>
+                                            <h4 class="text-white h5 mb-0">Operations Manager</h4>
+                                            <span class="text-primary">Shipowner, Mediterranean</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Port calls are smoother because one team handles agency, husbandry, and spare delivery. We get status without chasing five vendors.</p>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <h4 class="text-white h5 mb-0">Fleet Superintendent</h4>
+                                            <span class="text-primary">Technical management, Dubai</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,8 @@
 'use strict';
 jQuery(function($) {
-	$('form.quform').Quform();
+	if (typeof $.fn.Quform === 'function') {
+		$('form.quform').Quform();
+	}
 
 	// Tooltips
 	if(window.tippy) {
@@ -12,7 +14,9 @@ jQuery(function($) {
 	}
 
 	// Changes subject to a text field when 'Other' is chosen
-	$('#subject').replaceSelectWithTextInput({ onValue: 'Other' });
+	if (typeof $.fn.replaceSelectWithTextInput === 'function') {
+		$('#subject').replaceSelectWithTextInput({ onValue: 'Other' });
+	}
 });
 
 (function ($) {
@@ -56,7 +60,9 @@ jQuery(function($) {
 			]);
 		}
 
-		$.preloadImages(images);
+		if (typeof $.preloadImages === 'function') {
+			$.preloadImages(images);
+		}
 	});
 })(jQuery);
 

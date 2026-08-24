@@ -14,37 +14,36 @@
   align-items: center;
   padding-top: 0.35rem;
   padding-bottom: 0.35rem;
-  max-width: min(70vw, 220px);
+  max-width: none;
+  overflow: visible;
 }
 .navbar-brand.logochange .site-logo,
 .navbar-brand.logochange #logo {
-  height: 52px !important;
-  max-height: 52px !important;
+  height: 42px !important;
+  max-height: 42px !important;
   width: auto !important;
-  max-width: 100% !important;
+  max-width: none !important;
   object-fit: contain;
 }
 @media (min-width: 576px) {
-  .navbar-brand.logochange { max-width: 260px; }
   .navbar-brand.logochange .site-logo,
   .navbar-brand.logochange #logo {
-    height: 68px !important;
-    max-height: 68px !important;
+    height: 48px !important;
+    max-height: 48px !important;
   }
 }
 @media (min-width: 992px) {
-  .navbar-brand.logochange { max-width: 300px; }
   .navbar-brand.logochange .site-logo,
   .navbar-brand.logochange #logo {
-    height: 90px !important;
-    max-height: 90px !important;
+    height: 54px !important;
+    max-height: 54px !important;
   }
 }
 @media (min-width: 1200px) {
   .navbar-brand.logochange .site-logo,
   .navbar-brand.logochange #logo {
-    height: 110px !important;
-    max-height: 110px !important;
+    height: 58px !important;
+    max-height: 58px !important;
   }
 }
 @media (max-width: 991.98px) {

@@ -21,10 +21,6 @@
       ts: Date.now(),
     };
 
-    if (typeof console !== 'undefined' && console.info) {
-      console.info('[CWV]', body.name, body.value, body.rating);
-    }
-
     // Google Analytics 4 (if gtag present)
     if (typeof window.gtag === 'function') {
       window.gtag('event', body.name, {

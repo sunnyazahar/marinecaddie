@@ -13,18 +13,20 @@
                 background: #ffffff !important;
                 box-shadow: none !important;
                 filter: none !important;
-                padding: 4px 8px !important;
-                border-radius: 0 0 6px 0 !important;
+                padding: 6px 10px !important;
+                border-radius: 0 0 8px 0 !important;
                 line-height: 0 !important;
                 display: inline-flex !important;
                 align-items: center !important;
                 overflow: visible !important;
+                max-width: none !important;
+                width: auto !important;
             }
             header .navbar-brand.logochange img#logo.site-logo {
-                width: 210px !important;
-                max-width: 72vw !important;
-                height: auto !important;
-                max-height: none !important;
+                width: auto !important;
+                height: 42px !important;
+                max-height: 42px !important;
+                max-width: none !important;
                 object-fit: contain !important;
                 object-position: left center !important;
                 background: transparent !important;
@@ -36,6 +38,7 @@
                 padding: 0 !important;
                 background: transparent !important;
                 box-shadow: none !important;
+                overflow: visible !important;
             }
             @media (max-width: 991.98px) {
                 header.header-style1,
@@ -53,11 +56,14 @@
                 header .navbar-brand.logochange {
                     background: #ffffff !important;
                     border-radius: 0 !important;
-                    padding: 4px 6px !important;
+                    padding: 4px 8px !important;
+                    max-width: none !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    width: 168px !important;
-                    max-width: 58vw !important;
+                    width: auto !important;
+                    height: 40px !important;
+                    max-height: 40px !important;
+                    max-width: none !important;
                 }
                 /* Align hamburger with logo on one row */
                 header .menu_area > .navbar {
@@ -124,30 +130,35 @@
             }
             @media (min-width: 576px) {
                 header .navbar-brand.logochange {
-                    padding: 5px 10px !important;
+                    padding: 6px 12px !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    width: 250px !important;
-                    max-width: 250px !important;
-                    max-height: none !important;
+                    height: 48px !important;
+                    max-height: 48px !important;
+                    width: auto !important;
+                    max-width: none !important;
                 }
             }
             @media (min-width: 992px) {
+                header .navbar-header-custom {
+                    flex: 0 0 auto !important;
+                    min-width: auto !important;
+                }
                 header .navbar-brand.logochange {
                     padding: 6px 12px !important;
                     border-radius: 0 0 8px 0 !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
-                    width: 300px !important;
-                    max-width: 300px !important;
-                    max-height: none !important;
+                    height: 54px !important;
+                    max-height: 54px !important;
+                    width: auto !important;
+                    max-width: none !important;
                 }
             }
             @media (min-width: 1200px) {
                 header .navbar-brand.logochange img#logo.site-logo {
-                    width: 340px !important;
-                    max-width: 340px !important;
-                    max-height: none !important;
+                    height: 58px !important;
+                    max-height: 58px !important;
                 }
             }
             /* Footer logo stays transparent on dark footer */
@@ -185,7 +196,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0 current">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg4" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=nobg4" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=nobg4" alt="MarineCaddie"></a>
+                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=logo5" alt="MarineCaddie"></a>
                                         <!-- end logo -->
                                     </div>
 

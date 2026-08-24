@@ -9,16 +9,17 @@ if (! function_exists('theme_asset')) {
     function theme_asset(string $path): string
     {
         $path = ltrim(str_replace('\\', '/', $path), '/');
+        $encoded = implode('/', array_map('rawurlencode', explode('/', $path)));
 
         if (! app()->runningInConsole()) {
             $host = request()->getHost();
 
             if ($host !== '' && ! in_array($host, ['localhost', '127.0.0.1'], true)) {
-                return rtrim(request()->getSchemeAndHttpHost(), '/') . '/' . $path;
+                return rtrim(request()->getSchemeAndHttpHost(), '/') . '/' . $encoded;
             }
         }
 
-        return asset($path);
+        return asset($encoded);
     }
 }
 
@@ -75,6 +76,14 @@ if (! function_exists('recaptcha_enabled')) {
     function recaptcha_enabled(): bool
     {
         return filled(config('services.recaptcha.site_key'));
+    }
+}
+
+if (! function_exists('recaptcha_should_load')) {
+    /** Render widget + Google script when a site key exists. */
+    function recaptcha_should_load(): bool
+    {
+        return recaptcha_enabled();
     }
 }
 
