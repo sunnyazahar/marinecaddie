@@ -3,7 +3,7 @@
 @section('title', 'Contact')
 @section('meta_title', 'Contact MarineCaddie Shipping | Dubai Ops Team')
 @section('meta_description', 'Contact MarineCaddie Shipping LLC in Deira, Dubai. Email ops@marinecaddie.com or call +971 50 5643375 for ship spares, freight, customs, and port husbandry.')
-@section('meta_keywords', 'contact MarineCaddie, Dubai shipping company, maritime logistics contact, ops@marinecaddie.com, Al Safi Building Deira')
+@section('meta_keywords', 'contact MarineCaddie, Dubai shipping company, maritime logistics contact, ops@marinecaddie.com, Deira Dubai')
 @section('schema_type', 'ContactPage')
 @section('header_class', 'scrollHeader')
 
@@ -168,7 +168,7 @@
                         <div class="contact-side__card">
                             <span class="contact-side__eyebrow">Visit</span>
                             <h3 class="contact-side__title">{{ config('company.legal_name') }}</h3>
-                            <p class="contact-side__address mb-1-9">{{ config('company.address.line1') }}<br>{{ config('company.address.line2') }}</p>
+                            <p class="contact-side__address mb-1-9">{{ config('company.address.line2') }}</p>
                             <ul class="contact-side__list">
                                 <li>
                                     <span>Phone</span>
@@ -225,114 +225,5 @@
 @push('scripts')
 <script src="{{ theme_asset('assets/vendor/leaflet/leaflet.js') }}?v=194"></script>
 <script type="application/json" id="mc-presence-map-data">@json($presenceMap)</script>
-<script>
-(function () {
-    var wrap = document.querySelector('.contact-map [data-map-lock]');
-    var unlock = wrap && wrap.querySelector('[data-map-unlock]');
-    var el = document.getElementById('mc-world-map');
-    if (!wrap || !el || typeof L === 'undefined') {
-        if (el) el.innerHTML = '<p style="color:#fff;padding:2rem;text-align:center;margin:0;">Map failed to load. Please refresh.</p>';
-        return;
-    }
-
-    var locations = [];
-    var dataEl = document.getElementById('mc-presence-map-data');
-    try {
-        locations = JSON.parse((dataEl && dataEl.textContent) || '[]');
-    } catch (e) {
-        locations = [];
-    }
-
-    var map = L.map(el, {
-        scrollWheelZoom: false,
-        zoomControl: true,
-        attributionControl: true,
-        worldCopyJump: true,
-        minZoom: 1,
-        maxZoom: 10,
-        zoomSnap: 0.25,
-        zoomDelta: 0.5,
-    });
-
-    // Light, high-contrast basemap so continents read clearly (dark Carto looked blank)
-    var tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19,
-    });
-    tiles.on('tileerror', function () {
-        if (map._mcFallbackTiles) return;
-        map._mcFallbackTiles = true;
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap',
-            maxZoom: 19,
-        }).addTo(map);
-    });
-    tiles.addTo(map);
-
-    function makePinIcon(isHq) {
-        return L.divIcon({
-            className: 'mc-map-pin-wrap' + (isHq ? ' is-hq' : ''),
-            html: '<span class="mc-map-pin' + (isHq ? ' mc-map-pin--hq' : '') + '" aria-hidden="true"><span class="mc-map-pin__dot"></span></span>',
-            iconSize: isHq ? [36, 48] : [30, 40],
-            iconAnchor: isHq ? [18, 48] : [15, 40],
-            popupAnchor: [0, isHq ? -42 : -36],
-        });
-    }
-
-    var bounds = [];
-    locations.forEach(function (loc) {
-        if (loc.lat == null || loc.lng == null) return;
-        var latlng = [Number(loc.lat), Number(loc.lng)];
-        bounds.push(latlng);
-        var isHq = !!loc.hq;
-        var title = (loc.label || '') + (loc.city ? ' · ' + loc.city : '');
-        var popup = '<strong>' + (loc.label || 'Presence') + '</strong>' +
-            (loc.city ? '<br><span>' + loc.city + '</span>' : '') +
-            (isHq ? '<br><em>Head Office</em>' : '');
-        L.marker(latlng, {
-            icon: makePinIcon(isHq),
-            title: title,
-            riseOnHover: true,
-            zIndexOffset: isHq ? 500 : 100,
-        }).addTo(map).bindPopup(popup);
-    });
-
-    if (bounds.length) {
-        // Tightest zoom that still keeps every presence pin in frame
-        map.fitBounds(bounds, {
-            paddingTopLeft: [20, 24],
-            paddingBottomRight: [20, 96],
-            maxZoom: 6,
-            animate: false,
-        });
-    } else {
-        map.setView([20, 40], 3);
-    }
-
-    function refreshSize() {
-        map.invalidateSize(true);
-    }
-    setTimeout(refreshSize, 50);
-    setTimeout(refreshSize, 300);
-    setTimeout(refreshSize, 800);
-    window.addEventListener('resize', refreshSize);
-
-    if (unlock) {
-        unlock.addEventListener('click', function () {
-            wrap.classList.add('is-unlocked');
-            map.scrollWheelZoom.enable();
-            map.dragging.enable();
-            refreshSize();
-        });
-    }
-
-    document.addEventListener('click', function (e) {
-        if (!wrap.contains(e.target)) {
-            wrap.classList.remove('is-unlocked');
-            map.scrollWheelZoom.disable();
-        }
-    });
-})();
-</script>
+<script src="{{ theme_asset('assets/js/contact-map.js') }}?v=20260824map1" defer></script>
 @endpush

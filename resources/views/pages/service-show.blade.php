@@ -12,7 +12,7 @@
 @section('header_class', 'scrollHeader')
 
 @section('content')
-        <section class="svc-page-hero" style="--svc-hero-image: url({{ theme_asset($service['hero_image']) }});">
+        <section class="svc-page-hero" style="--svc-hero-image: url({{ theme_webp($service['hero_image']) }});">
             <div class="svc-page-hero__shade" aria-hidden="true"></div>
             <div class="container position-relative">
                 <nav class="svc-page-crumbs" aria-label="Breadcrumb">

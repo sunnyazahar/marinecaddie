@@ -90,12 +90,12 @@ return array (
     'meta_keywords' => 'onboard delivery, ship delivery, vessel last mile, launch delivery, MarineCaddie',
     'excerpt' => 'Precise last-mile handover to the vessel—timed to berth, anchorage, or terminal windows.',
     'intro' => 'Getting cargo to the port is only half the job. Our onboard delivery teams align with ship agents, launch services, and terminal rules so consignments reach the Master or chief engineer as planned.',
-    'hero_image' => 'assets/img/services/freight-forwarding.jpg',
+    'hero_image' => 'assets/img/services/onboard-delivery.jpg',
     'gallery' => 
     array (
-      0 => 'assets/img/services/service-detail-02.jpg',
-      1 => 'assets/img/services/service-detail-03.jpg',
-      2 => 'assets/img/services/service-detail-01.jpg',
+      0 => 'assets/img/services/onboard-delivery.jpg',
+      1 => 'assets/img/services/service-detail-02.jpg',
+      2 => 'assets/img/services/service-detail-03.jpg',
     ),
     'highlights' => 
     array (
