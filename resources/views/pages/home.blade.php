@@ -12,9 +12,8 @@
         ================================================== -->
         <section class="p-0 top-position1 full-screen secondary-overlay video-banner" data-overlay-dark="8" style="background-image: url({{ theme_webp('assets/img/banner/video-cover.jpg') }});">
             <div class="banner-video" aria-hidden="true">
-                <video autoplay muted loop playsinline preload="metadata" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}">
-                    <source src="{{ theme_asset('assets/video/aerial top view of cargo ship in import export bus FPHBK69.mp4') }}" type="video/mp4">
-                </video>
+                {{-- src injected on desktop only (perf-lazy.js) so mobile never downloads the MP4 --}}
+                <video muted loop playsinline preload="none" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/aerial top view of cargo ship in import export bus FPHBK69.mp4') }}"></video>
             </div>
             <div class="container d-flex flex-column pt-5 pb-2 py-sm-8 py-md-0 position-relative z-index-9">
                 <div class="row align-items-center justify-content-center min-vh-100">
@@ -281,7 +280,7 @@
 
         <!-- TESTIMONIAL
         ================================================== -->
-        <section class="bg-img cover-background secondary-overlay parallax home-section home-section--cta" data-overlay-dark="9" data-background="{{ theme_asset('assets/img/bg/bg-05.jpg') }}" style="background-image: url(&quot;{{ theme_asset('assets/img/bg/bg-05.jpg') }}&quot;);">
+        <section class="bg-img cover-background secondary-overlay parallax home-section home-section--cta" data-overlay-dark="9" data-background="{{ theme_webp('assets/img/bg/bg-05.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/bg/bg-05.jpg') }}&quot;);">
             <div class="container">
                 <div class="row align-items-center mt-n1-9">
                     <div class="col-lg-6 mt-1-9">

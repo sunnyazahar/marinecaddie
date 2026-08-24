@@ -218,6 +218,9 @@
     }
 
     function openModal(preferredMode) {
+        if (typeof window.mcLoadRecaptcha === 'function') {
+            window.mcLoadRecaptcha();
+        }
         lastFocus = document.activeElement;
         modal.hidden = false;
         modal.setAttribute('aria-hidden', 'false');

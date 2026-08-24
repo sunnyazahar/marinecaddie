@@ -4,8 +4,7 @@ jQuery(function($) {
 		$('form.quform').Quform();
 	}
 
-	// Tooltips
-	if(window.tippy) {
+	if (window.tippy) {
 		$('.quform-tooltip').each(function () {
 			tippy(this, {
 				theme: 'quform'
@@ -13,7 +12,6 @@ jQuery(function($) {
 		});
 	}
 
-	// Changes subject to a text field when 'Other' is chosen
 	if (typeof $.fn.replaceSelectWithTextInput === 'function') {
 		$('#subject').replaceSelectWithTextInput({ onValue: 'Other' });
 	}
@@ -21,7 +19,6 @@ jQuery(function($) {
 
 (function ($) {
 	$(window).on('load', function () {
-		// Preload images
 		var images = [
 			'assets/images/close.png',
 			'assets/images/success.png',
@@ -29,7 +26,6 @@ jQuery(function($) {
 			'assets/images/default-loading.gif'
 		];
 
-		// Preload images for any active themes
 		if ($('.quform-theme-light-light, .quform-theme-light-rounded').length) {
 			images = images.concat([
 				'quform/themes/light/images/button-active-bg-rep.png',
@@ -66,40 +62,85 @@ jQuery(function($) {
 	});
 })(jQuery);
 
-/* MarineCaddie — dynamic center fill for scrolling ticker text */
+/* MarineCaddie — ticker fill only while visible (avoid permanent rAF CPU) */
 (function () {
+	var sections = null;
+	var rafId = 0;
+	var running = false;
+
 	function updateScrollTextFill() {
-		var sections = document.querySelectorAll('.scroll-section--dynamic');
-		if (!sections.length) {
+		rafId = 0;
+		if (!sections || !sections.length) {
+			running = false;
 			return;
 		}
 
 		var fillLine = window.innerWidth * 0.42;
+		var anyVisible = false;
 
-		sections.forEach(function (section) {
+		for (var s = 0; s < sections.length; s++) {
+			var section = sections[s];
 			var texts = section.querySelectorAll('.scroll-text');
-			texts.forEach(function (el) {
+			for (var i = 0; i < texts.length; i++) {
+				var el = texts[i];
 				var rect = el.getBoundingClientRect();
 				if (rect.bottom < 0 || rect.top > window.innerHeight) {
 					el.style.setProperty('--fill', '0px');
 					el.classList.remove('is-active');
-					return;
+					continue;
 				}
-
+				anyVisible = true;
 				var filled = Math.min(rect.width, Math.max(0, fillLine - rect.left));
 				el.style.setProperty('--fill', filled + 'px');
 				el.classList.toggle('is-active', filled > rect.width * 0.55);
-			});
-		});
+			}
+		}
 
-		window.requestAnimationFrame(updateScrollTextFill);
+		if (anyVisible && running) {
+			rafId = window.requestAnimationFrame(updateScrollTextFill);
+		} else {
+			running = false;
+		}
+	}
+
+	function start() {
+		if (running) return;
+		running = true;
+		if (!rafId) {
+			rafId = window.requestAnimationFrame(updateScrollTextFill);
+		}
+	}
+
+	function stop() {
+		running = false;
+		if (rafId) {
+			window.cancelAnimationFrame(rafId);
+			rafId = 0;
+		}
+	}
+
+	function init() {
+		sections = document.querySelectorAll('.scroll-section--dynamic');
+		if (!sections.length) return;
+
+		if ('IntersectionObserver' in window) {
+			var io = new IntersectionObserver(function (entries) {
+				var visible = entries.some(function (e) { return e.isIntersecting; });
+				if (visible) start();
+				else stop();
+			}, { rootMargin: '80px 0px' });
+			for (var i = 0; i < sections.length; i++) {
+				io.observe(sections[i]);
+			}
+		} else {
+			start();
+			window.addEventListener('scroll', start, { passive: true });
+		}
 	}
 
 	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', function () {
-			window.requestAnimationFrame(updateScrollTextFill);
-		});
+		document.addEventListener('DOMContentLoaded', init);
 	} else {
-		window.requestAnimationFrame(updateScrollTextFill);
+		init();
 	}
 })();
