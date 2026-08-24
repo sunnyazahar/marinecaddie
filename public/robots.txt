@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Thin / alternate templates — keep crawl budget on primary pages
+Disallow: /home-alt
+Disallow: /blog/details
+Disallow: /portfolio/details
+
+Sitemap: https://www.marinecaddie.com/sitemap.xml
