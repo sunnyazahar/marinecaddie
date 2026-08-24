@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKP2ZD4ZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XQKP2ZD4ZN');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +32,7 @@
     {{-- DNS / connection hints for first paint --}}
     <link rel="preconnect" href="{{ rtrim(config('seo.url', config('app.url')), '/') }}" crossorigin>
     <link rel="dns-prefetch" href="//www.google.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//maps.gstatic.com">
 
     {{-- Preload critical CSS (mobile-first render path) --}}
