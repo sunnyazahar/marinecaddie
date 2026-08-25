@@ -20,22 +20,23 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc8">
     <link rel="manifest" href="{{ theme_asset('assets/img/logos/site.webmanifest') }}?v=mc8">
 
-    @unless(in_array(request()->getHost(), ['localhost', '127.0.0.1', '::1'], true))
-    <link rel="preconnect" href="{{ rtrim(config('seo.url', config('app.url')), '/') }}" crossorigin>
-    @endunless
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-    <link rel="preload" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1" as="style">
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824cls1" as="style">
-    <link rel="preload" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1" as="style">
+    {{-- LCP: heading font + hero poster --}}
+    <link rel="preload" href="{{ theme_asset('assets/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ theme_asset('assets/fonts/plus-jakarta-sans/plus-jakarta-sans-normal-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
     @if(request()->routeIs('home'))
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" fetchpriority="high">
     @endif
 
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/critical.css') }}?v=20260825perf1">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1">
-    {{-- plugins.css must stay sync: Owl/Bootstrap layout; async caused CLS ~0.65 --}}
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260823perf1">
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260824cls1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825perf1" rel="stylesheet">
+    {{-- plugins.css deferred: critical.css + styles cover header/hero to limit CLS --}}
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825perf1" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825perf1">
+    </noscript>
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
@@ -58,8 +59,8 @@
 
     <div class="scroll-top-percentage"><span id="scroll-value">0%</span></div>
 
-    {{-- Interactive critical path --}}
-    <script src="{{ theme_asset('assets/js/jquery.min.js') }}"></script>
+    {{-- All deferred (order preserved); unblocks first paint vs sync jQuery --}}
+    <script src="{{ theme_asset('assets/js/jquery.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/popper.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/bootstrap.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/core.min.js') }}" defer></script>
@@ -97,9 +98,9 @@
           document.head.appendChild(s);
         };
         if ('requestIdleCallback' in window) {
-          requestIdleCallback(boot, { timeout: 4000 });
+          requestIdleCallback(boot, { timeout: 8000 });
         } else {
-          setTimeout(boot, 1500);
+          setTimeout(boot, 3500);
         }
       });
     </script>
