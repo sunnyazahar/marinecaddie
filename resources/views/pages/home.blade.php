@@ -11,19 +11,17 @@
 <!-- BANNER
         ================================================== -->
         <section class="p-0 top-position1 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8">
-            {{-- Real LCP image; inline absolute styles keep it out of document flow (CLS-safe) --}}
-            <picture class="mc-hero-lcp" aria-hidden="true" style="position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;pointer-events:none;margin:0;padding:0;border:0">
-                <source media="(min-width: 992px)" srcset="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" type="image/webp">
-                <img
-                    src="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4"
-                    alt=""
-                    width="640"
-                    height="300"
-                    fetchpriority="high"
-                    decoding="async"
-                    style="position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;border:0;margin:0;padding:0"
-                >
-            </picture>
+            {{-- CSS background only — desktop CLS ~1 with <picture>/<img>; keep poster as bg + preload --}}
+            <style>
+                .mc-hero {
+                    background-image: url('{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4');
+                }
+                @media (min-width: 992px) {
+                    .mc-hero {
+                        background-image: url('{{ theme_webp('assets/img/banner/video-cover.jpg') }}');
+                    }
+                }
+            </style>
             <div class="banner-video" aria-hidden="true">
                 <video muted loop playsinline webkit-playsinline preload="none" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp2" data-mc-hero-src-mobile="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=m1"></video>
             </div>
