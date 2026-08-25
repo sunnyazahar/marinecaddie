@@ -27,17 +27,17 @@
     <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls5" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls6" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
     <style>{!! file_get_contents(public_path('assets/css/critical.css')) !!}</style>
     {{-- styles.min stays blocking to keep CLS ~0; fonts load async with correct relative URLs --}}
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls5" rel="stylesheet">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls5" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls5" media="print" onload="this.media='all'">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls6" rel="stylesheet">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls6" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls6" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls5">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls5">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls6">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls6">
     </noscript>
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
@@ -76,7 +76,7 @@
 
     {{-- After window load — owl/WOW/theme + extras (was blocking mobile TBT ~1.5s) --}}
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/core.min.js') }}"></script>
-    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/main.js') }}?v=20260825a11y1"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/main.js') }}?v=20260825cls6"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/search.js') }}"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/plugins.js') }}?v=20260824console1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260824console1"></script>

@@ -10,7 +10,7 @@
 @section('content')
 <!-- BANNER
         ================================================== -->
-        <section class="p-0 top-position1 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8" style="min-height:100vh;min-height:100dvh">
+        <section class="p-0 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8" style="min-height:100vh;min-height:100dvh">
             {{-- CSS background — responsive poster; inline min-height locks CLS --}}
             <style>
                 .mc-hero {

@@ -51,10 +51,15 @@ header.header-style1 .navbar-header-custom{
 }
 @media (min-width:576px){.navbar-brand.logochange img,.navbar-brand.logochange #logo{height:48px}}
 @media (min-width:992px){
-  /* Do NOT position:fixed here — home starts as fixedHeader; scrollHeader is added on scroll by JS.
-     Early fixed + later unfixed was causing desktop CLS ~1. */
+  /* Home uses fixedHeader (in-flow). Reserve height; do not position:fixed here —
+     plugins + main.js toggling fixed/unfixed caused desktop CLS ~1. */
   .navbar-brand.logochange img,.navbar-brand.logochange #logo{height:54px}
   header.header-style1{min-height:70px}
+}
+/* Kill theme header slide-in even before styles.min finishes applying */
+header.scrollHeader .navbar-default,
+header.header-style1 .navbar-default{
+  animation:none!important;margin-top:0!important
 }
 /* Mobile header row */
 @media (max-width:991.98px){
@@ -88,10 +93,11 @@ header.header-style1 .navbar-header-custom{
   content:"";position:absolute;inset:0;z-index:1;
   background:rgba(4,33,88,.82)
 }
-/* Must match plugins.css from first paint — deferred plugins was applying
-   margin-top:-100/-130px late and causing desktop CLS ~1 */
+/* Inner pages: match plugins.css from first paint (deferred plugins used to jump these). */
 .top-position1{position:relative;margin-top:-100px}
 @media (min-width:992px){.top-position1{margin-top:-130px}}
+/* Home hero stays in-flow under the white header — never take the -100/-130px pull. */
+.mc-hero,.video-banner.mc-hero{margin-top:0!important}
 h1.display-1,.display-1.font-weight-800,.main-wrapper h1.display-1{
   margin:0;
   color:#fff!important;

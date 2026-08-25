@@ -22,6 +22,14 @@ header.header-style1{
 /* Lock top-position1 before deferred plugins.css (same values as plugins) */
 .top-position1{position:relative;margin-top:-100px}
 @media (min-width:992px){.top-position1{margin-top:-130px}}
+.mc-hero,.video-banner.mc-hero{margin-top:0!important}
+
+header.header-style1 .navbar-default,
+header.header-style1.scrollHeader .navbar-default,
+header.scrollHeader .navbar-default{
+  animation:none!important;
+  margin-top:0!important;
+}
 
 /* Owl defaults to display:none until JS — reserve first slide to avoid CLS */
 .owl-carousel{display:block!important}
