@@ -144,3 +144,30 @@ jQuery(function($) {
 		init();
 	}
 })();
+
+/* Owl carousel nav: remove presentation role + name buttons */
+(function ($) {
+	function labelOwlNav($root) {
+		$root.find('.owl-prev').each(function () {
+			this.removeAttribute('role');
+			if (!this.getAttribute('aria-label')) {
+				this.setAttribute('aria-label', 'Previous slide');
+			}
+		});
+		$root.find('.owl-next').each(function () {
+			this.removeAttribute('role');
+			if (!this.getAttribute('aria-label')) {
+				this.setAttribute('aria-label', 'Next slide');
+			}
+		});
+	}
+
+	$(function () {
+		$('.owl-carousel').each(function () {
+			labelOwlNav($(this));
+		});
+		$(document).on('initialized.owl.carousel refreshed.owl.carousel', '.owl-carousel', function () {
+			labelOwlNav($(this));
+		});
+	});
+})(jQuery);

@@ -709,9 +709,9 @@
   font-size: clamp(2.4rem, 6vw, 4.75rem) !important;
   line-height: 1.05 !important;
   letter-spacing: -0.02em;
-  color: transparent;
+  color: #042158;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.5px #F7941D;
+  -webkit-text-stroke: 1.5px #042158;
   paint-order: stroke fill;
   overflow: visible !important;
   transition: none !important;
@@ -725,8 +725,8 @@
   max-width: var(--fill, 0px);
   overflow: hidden;
   white-space: nowrap;
-  color: #F7941D;
-  -webkit-text-fill-color: #F7941D;
+  color: #B45309;
+  -webkit-text-fill-color: #B45309;
   -webkit-text-stroke: 0;
   transition: none !important;
   pointer-events: none;
@@ -735,7 +735,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #F7941D;
+  color: #B45309;
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   line-height: 1;
   transform: translateY(0.05em);
@@ -3805,12 +3805,7 @@ html.mc-quote-open body {
   text-transform: none !important;
 }
 
-/* Mobile CWV: skip autoplay video bandwidth; poster/WebP background remains */
-@media (max-width: 991.98px) {
-  .video-banner .banner-video {
-    display: none !important;
-  }
-}
+/* Hero video plays on mobile too (muted + playsinline); poster remains as fallback */
 
 /* ===== About page layout ===== */
 .about-page-banner .about-page-banner__eyebrow {

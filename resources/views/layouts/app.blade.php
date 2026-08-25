@@ -29,10 +29,10 @@
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" fetchpriority="high">
     @endif
 
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/critical.css') }}?v=20260825perf1">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260823perf1">
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825perf1" rel="stylesheet">
-    {{-- plugins.css deferred: critical.css + styles cover header/hero to limit CLS --}}
+    {{-- Inline critical + fonts to cut 2 render-blocking requests --}}
+    <style>{!! file_get_contents(public_path('assets/css/critical-bundle.css')) !!}</style>
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825mobilevid1" rel="stylesheet">
+    {{-- plugins.css deferred: critical CSS covers header/hero to limit CLS --}}
     <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825perf1" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825perf1">
@@ -51,7 +51,9 @@
 <body>
     <div class="main-wrapper">
         @include('partials.header')
-        @yield('content')
+        <main id="main-content">
+            @yield('content')
+        </main>
         @include('partials.footer')
     </div>
 
@@ -59,20 +61,20 @@
 
     <div class="scroll-top-percentage"><span id="scroll-value">0%</span></div>
 
-    {{-- All deferred (order preserved); unblocks first paint vs sync jQuery --}}
+    {{-- All deferred (order preserved); scrollbar before main.js to avoid console error --}}
     <script src="{{ theme_asset('assets/js/jquery.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/popper.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/core.min.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/main.js') }}?v=20260824console1" defer></script>
-    <script src="{{ theme_asset('assets/js/scripts.js') }}?v=20260824perf2" defer></script>
+    <script src="{{ theme_asset('assets/js/main.js') }}?v=20260825a11y1" defer></script>
+    <script src="{{ theme_asset('assets/js/scripts.js') }}?v=20260825a11y1" defer></script>
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
     <script src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260824perf2" defer></script>
-    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260824perf2" defer></script>
+    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825mobilevid1" defer></script>
 
     {{-- After window load — lower TBT without breaking CTAs --}}
-    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/search.js') }}"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/plugins.js') }}?v=20260824console1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260824console1"></script>

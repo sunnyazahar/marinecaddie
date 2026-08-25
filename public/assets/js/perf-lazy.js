@@ -1,5 +1,5 @@
 /**
- * Performance helpers: lazy images + desktop-only hero video.
+ * Performance helpers: lazy images + hero video (muted / playsinline).
  */
 (function () {
   'use strict';
@@ -26,18 +26,23 @@
     var src = video.getAttribute('data-mc-hero-src');
     if (!src) return;
 
-    // Mobile CSS hides the video; never download the multi-MB MP4 there.
-    if (window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return;
     }
 
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Skip on explicit data-saver / very slow connections
+    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) {
       return;
     }
 
     function attachAndPlay() {
       if (video.getAttribute('data-mc-hero-loaded')) return;
       video.setAttribute('data-mc-hero-loaded', '1');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+      video.muted = true;
+      video.defaultMuted = true;
       var source = document.createElement('source');
       source.src = src;
       source.type = 'video/mp4';

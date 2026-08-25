@@ -12,8 +12,8 @@
         ================================================== -->
         <section class="p-0 top-position1 full-screen secondary-overlay video-banner" data-overlay-dark="8" style="background-image: url({{ theme_webp('assets/img/banner/video-cover.jpg') }});">
             <div class="banner-video" aria-hidden="true">
-                {{-- src injected on desktop only (perf-lazy.js) so mobile never downloads the MP4 --}}
-                <video muted loop playsinline preload="none" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/aerial top view of cargo ship in import export bus FPHBK69.mp4') }}"></video>
+                {{-- src injected by perf-lazy.js (muted + playsinline; skips save-data / reduced-motion) --}}
+                <video muted loop playsinline webkit-playsinline preload="none" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/aerial top view of cargo ship in import export bus FPHBK69.mp4') }}"></video>
             </div>
             <div class="container d-flex flex-column pt-5 pb-2 py-sm-8 py-md-0 position-relative z-index-9">
                 <div class="row align-items-center justify-content-center min-vh-100">
@@ -254,12 +254,12 @@
         ================================================== -->
         <section class="pb-1-9 pb-sm-2-9 pt-2 home-section home-section--ticker">
             <div class="container-fluid px-0">
-                <div class="scroll-section scroll-section--dynamic">
+                <div class="scroll-section scroll-section--dynamic" aria-hidden="true">
                     <div class="scroll-track pause-on-hover scroll-left scroll-speed-4">
                         <div class="scroll-group">
                             @include('partials.scroll-ticker')
                         </div>
-                        <div class="scroll-group" aria-hidden="true">
+                        <div class="scroll-group">
                             @include('partials.scroll-ticker')
                         </div>
                     </div>
@@ -275,7 +275,7 @@
                     <div class="col-lg-6 mt-1-9">
                         <div class="pe-xl-2-9">
                             <div class="bg-white shadow p-1-9 p-sm-2-6 ps-lg-5 rounded">
-                                <h3 class="h2 mb-3">Send us message</h3>
+                                <h2 class="h2 mb-3">Send us message</h2>
                                 <form class="mc-contact-form" action="{{ route('contact.store') }}" method="post" novalidate>
                                     @csrf
                                     <input type="hidden" name="form_source" value="Home page — Send us message">
@@ -345,12 +345,12 @@
                                 <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Testimonial.</span>
                                 <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px text-white">What clients say about MarineCaddie</h2>
                             </div>
-                            <div class="testimonial-carousel-two owl-carousel" data-owl="{&quot;loop&quot;:true,&quot;responsiveClass&quot;:true,&quot;autoplay&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;nav&quot;:true,&quot;navText&quot;:[&quot;&lt;i class=\&quot;ti-arrow-left\&quot;&gt;&lt;/i&gt;&quot;,&quot;&lt;i class=\&quot;ti-arrow-right\&quot;&gt;&lt;/i&gt;&quot;],&quot;dots&quot;:false,&quot;center&quot;:false,&quot;smartSpeed&quot;:1500,&quot;margin&quot;:30,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1}}}">
+                            <div class="testimonial-carousel-two owl-carousel" data-owl="{&quot;loop&quot;:true,&quot;responsiveClass&quot;:true,&quot;autoplay&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;nav&quot;:true,&quot;navText&quot;:[&quot;&lt;i class=\&quot;ti-arrow-left\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;/i&gt;&quot;,&quot;&lt;i class=\&quot;ti-arrow-right\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;/i&gt;&quot;],&quot;dots&quot;:false,&quot;center&quot;:false,&quot;smartSpeed&quot;:1500,&quot;margin&quot;:30,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1}}}">
                                 <div>
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">MarineCaddie took ownership of our urgent ship-spare moves. We finally have clear milestones, door-to-deck coordination, and fewer customs surprises at destination.</p>
                                     <div class="d-flex align-items-center">
                                         <div>
-                                            <h4 class="text-white h5 mb-0">Operations Manager</h4>
+                                            <p class="text-white h5 mb-0 fw-bold">Operations Manager</p>
                                             <span class="text-primary">Shipowner, Mediterranean</span>
                                         </div>
                                     </div>
@@ -359,7 +359,7 @@
                                     <p class="text-white mb-1-9 display-27 display-xl-26 opacity8">Port calls are smoother because one team handles agency, husbandry, and spare delivery. We get status without chasing five vendors.</p>
                                     <div class="d-flex align-items-center">
                                         <div>
-                                            <h4 class="text-white h5 mb-0">Fleet Superintendent</h4>
+                                            <p class="text-white h5 mb-0 fw-bold">Fleet Superintendent</p>
                                             <span class="text-primary">Technical management, Dubai</span>
                                         </div>
                                     </div>
