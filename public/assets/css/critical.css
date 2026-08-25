@@ -131,9 +131,10 @@ header.header-style1 .navbar-default{
   border:0;transform:translate(-50%,-50%);object-fit:cover
 }
 .video-banner>[class*=container]{position:relative;z-index:2}
-.secondary-overlay[data-overlay-dark]:before{
+/* Hero only — heavy overlay made the video look like a solid blue plate */
+.mc-hero.secondary-overlay[data-overlay-dark]:before{
   content:"";position:absolute;inset:0;z-index:1;
-  background:rgba(4,33,88,.82)
+  background:#042158;opacity:.3
 }
 /* Inner pages: match plugins.css from first paint (deferred plugins used to jump these). */
 .top-position1{position:relative;margin-top:-100px}

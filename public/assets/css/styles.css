@@ -919,6 +919,19 @@ header.scrollHeader .navbar-default{
 .home-section--cta {
   padding-top: 5.5rem;
   padding-bottom: 5.5rem;
+  position: relative;
+}
+.home-section--cta.secondary-overlay[data-overlay-dark]:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #000c1f !important;
+  opacity: 0.82 !important;
+}
+.home-section--cta > .container {
+  position: relative;
+  z-index: 2;
 }
 .home-section--cta .testimonials-quote {
   position: absolute;
@@ -4231,7 +4244,7 @@ html.mc-quote-open body {
 }
 .about-cta-band__title {
   margin: 0 0 0.9rem;
-  color: #fff;
+  color: #fff !important;
   font-size: clamp(1.65rem, 3vw, 2.35rem);
   font-weight: 800;
   line-height: 1.2;

@@ -11,9 +11,10 @@
 <!-- BANNER
         ================================================== -->
         <section class="p-0 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8" style="min-height:100vh;min-height:100dvh">
-            {{-- CSS background — responsive poster; inline min-height locks CLS --}}
+            {{-- Poster only as decode fallback; video starts immediately (no delayed blue plate) --}}
             <style>
                 .mc-hero {
+                    background-color: transparent;
                     background-image: url('{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4');
                 }
                 @media (min-width: 992px) {
@@ -23,7 +24,34 @@
                 }
             </style>
             <div class="banner-video" aria-hidden="true">
-                <video muted loop playsinline webkit-playsinline preload="none" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp2" data-mc-hero-src-mobile="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=m1"></video>
+                <video id="mc-hero-video" muted loop playsinline webkit-playsinline autoplay preload="auto"></video>
+                <script>
+                  (function () {
+                    var v = document.getElementById('mc-hero-video');
+                    if (!v) return;
+                    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                      v.removeAttribute('autoplay');
+                      return;
+                    }
+                    var mobile = @json(theme_asset('assets/video/hero-banner-mobile.mp4') . '?v=m2');
+                    var desktop = @json(theme_asset('assets/video/hero-banner.mp4') . '?v=sharp3');
+                    var isMobile = window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches;
+                    v.poster = isMobile
+                      ? @json(theme_asset('assets/img/banner/video-cover-mobile.webp') . '?v=lcp4')
+                      : @json(theme_webp('assets/img/banner/video-cover.jpg'));
+                    var s = document.createElement('source');
+                    s.src = isMobile ? mobile : desktop;
+                    s.type = 'video/mp4';
+                    v.appendChild(s);
+                    v.muted = true;
+                    v.defaultMuted = true;
+                    v.setAttribute('playsinline', '');
+                    v.setAttribute('webkit-playsinline', '');
+                    v.load();
+                    var p = v.play();
+                    if (p && typeof p.catch === 'function') p.catch(function () {});
+                  })();
+                </script>
             </div>
             <div class="container d-flex flex-column pt-5 pb-2 py-sm-8 py-md-0 position-relative z-index-9">
                 <div class="row align-items-center justify-content-center min-vh-100">

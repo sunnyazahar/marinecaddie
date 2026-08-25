@@ -184,9 +184,9 @@
         ================================================== -->
         <section class="about-cta-band bg-img cover-background secondary-overlay" data-overlay-dark="9" data-background="{{ theme_webp('assets/img/bg/bg-05.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/bg/bg-05.jpg') }}&quot;);">
             <div class="container">
-                <div class="about-cta-band__inner text-center wow fadeInUp" data-wow-delay="100ms">
+                <div class="about-cta-band__inner text-center text-white wow fadeInUp" data-wow-delay="100ms">
                     <span class="about-cta-band__eyebrow">Ready when your vessel is</span>
-                    <h2 class="about-cta-band__title">{{ config('company.motto') }}</h2>
+                    <h2 class="about-cta-band__title text-white">{{ config('company.motto') }}</h2>
                     <p class="about-cta-band__text">Share shipment details, port timing, or cargo type—our Dubai desk responds promptly.</p>
                     <div class="about-cta-band__actions">
                         <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 white-hover" data-open-quote="quote">Get a Quote</a>

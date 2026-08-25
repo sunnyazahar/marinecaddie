@@ -24,48 +24,22 @@
 
     {{-- Responsive hero preloads (wrong size = wasted bandwidth + desktop CLS risk) --}}
     @if(request()->routeIs('home'))
+    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=m2" as="video" type="video/mp4" media="(max-width: 991.98px)">
+    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp3" as="video" type="video/mp4" media="(min-width: 992px)">
     <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls12" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825css4" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
     <style>{!! file_get_contents(public_path('assets/css/critical.css')) !!}</style>
-    {{-- styles.min stays blocking to keep CLS ~0; other CSS after load so hero LCP wins bandwidth --}}
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls12" rel="stylesheet">
-    <noscript>
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls12">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls12">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1">
-    </noscript>
-    <script>
-      (function () {
-        var sheets = [
-          ['{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls12', 1600],
-          ['{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls12', 2400],
-          ['{{ theme_asset('assets/css/search.css') }}?v=20260823perf1', 3200],
-          ['{{ theme_asset('assets/css/base.css') }}?v=20260823perf1', 3200],
-          ['{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1', 3200]
-        ];
-        function inject(href) {
-          var l = document.createElement('link');
-          l.rel = 'stylesheet';
-          l.href = href;
-          document.head.appendChild(l);
-        }
-        function start() {
-          for (var i = 0; i < sheets.length; i++) {
-            (function (href, delay) {
-              setTimeout(function () { inject(href); }, delay);
-            })(sheets[i][0], sheets[i][1]);
-          }
-        }
-        if (document.readyState === 'complete') start();
-        else window.addEventListener('load', start);
-      })();
-    </script>
+    {{-- All theme CSS in head — delayed inject after load caused visible FOUC --}}
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825css4" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825css1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825css1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1" rel="stylesheet">
     @stack('styles')
 </head>
 <body>
@@ -86,7 +60,7 @@
     <script src="{{ theme_asset('assets/js/jquery.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260824perf2" defer></script>
-    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825cls10" defer></script>
+    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825video1" defer></script>
 
     {{-- After window load — bootstrap stack + theme (was ~110KB early parse on mobile) --}}
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/popper.min.js') }}"></script>
