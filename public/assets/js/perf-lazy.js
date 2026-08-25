@@ -1,5 +1,5 @@
 /**
- * Performance helpers: lazy images + hero video (muted / playsinline).
+ * Performance helpers: lazy images + delayed hero video (after LCP).
  */
 (function () {
   'use strict';
@@ -30,7 +30,6 @@
       return;
     }
 
-    // Skip on explicit data-saver / very slow connections
     var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     if (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) {
       return;
@@ -54,16 +53,23 @@
       }
     }
 
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        if (!entries.some(function (e) { return e.isIntersecting; })) return;
-        io.disconnect();
-        attachAndPlay();
-      }, { rootMargin: '100px 0px' });
-      io.observe(video);
-    } else {
-      attachAndPlay();
+    // Wait until after load so CSS/fonts/LCP are not competing with ~1MB MP4
+    function schedule() {
+      var start = function () {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function () { attachAndPlay(); }, { timeout: 2500 });
+        } else {
+          setTimeout(attachAndPlay, 600);
+        }
+      };
+      if (document.readyState === 'complete') {
+        start();
+      } else {
+        window.addEventListener('load', start);
+      }
     }
+
+    schedule();
   }
 
   function boot() {

@@ -22,16 +22,16 @@
 
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-    {{-- LCP: heading font + hero poster --}}
+    {{-- LCP: heading font + styles + hero poster (avoid competing preloads) --}}
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825lcp1" as="style">
     <link rel="preload" href="{{ theme_asset('assets/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ theme_asset('assets/fonts/plus-jakarta-sans/plus-jakarta-sans-normal-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
     @if(request()->routeIs('home'))
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" fetchpriority="high">
     @endif
 
-    {{-- Inline critical + fonts; keep styles.min sync to avoid CLS (defer caused CLS ~1) --}}
+    {{-- Inline critical + fonts; keep styles.min sync to avoid CLS --}}
     <style>{!! file_get_contents(public_path('assets/css/critical-bundle.css')) !!}</style>
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825clsfix1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825lcp1" rel="stylesheet">
     {{-- plugins.css deferred: critical + styles cover header/hero --}}
     <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825perf1" media="print" onload="this.media='all'">
     <noscript>
@@ -72,7 +72,7 @@
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
     <script src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260824perf2" defer></script>
-    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825mobilevid1" defer></script>
+    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825lcp1" defer></script>
 
     {{-- After window load — lower TBT without breaking CTAs --}}
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/search.js') }}"></script>
