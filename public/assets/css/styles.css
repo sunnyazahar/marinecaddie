@@ -161,19 +161,6 @@ header.scrollHeader .navbar-default{
     height: 2px !important;
     width: 18px !important;
   }
-  header.header-style1 #nav{
-    display:none;
-    width:100%;
-    flex-basis:100%;
-    order:3;
-    background:#fff;
-    margin:0;
-    padding:0;
-    list-style:none;
-  }
-  header.header-style1 #nav.open{
-    display:block;
-  }
 }
 
 

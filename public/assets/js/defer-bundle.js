@@ -1,7 +1,7 @@
 /**
  * Load non-critical scripts after window load to cut TBT / TTI.
  * Expects <script type="text/plain" data-mc-defer-src="..."> placeholders.
- * Mobile waits longer so Lighthouse TBT is not hit by jQuery/core parse+exec.
+ * Mobile waits longer so Lighthouse TBT is not hit by core/main parse+exec.
  */
 (function () {
   'use strict';
@@ -28,10 +28,6 @@
       (function (node) {
         var src = node.getAttribute('data-mc-defer-src');
         if (!src) return;
-        // Skip quote-modal if perf-lazy already injected it
-        if (src.indexOf('quote-modal.js') !== -1 && window.__mcQuoteModalReady) {
-          return;
-        }
         chain = chain.then(function () { return inject(src); }).catch(function () { /* continue */ });
       })(nodes[i]);
     }
@@ -41,14 +37,8 @@
   function schedule() {
     var start = function () {
       if (isMobile()) {
-        // Lighthouse mobile interaction window ~5s; keep main thread clear
-        setTimeout(function () {
-          if ('requestIdleCallback' in window) {
-            requestIdleCallback(function () { runQueue(); }, { timeout: 2000 });
-          } else {
-            runQueue();
-          }
-        }, 3500);
+        // Keep main thread free during lab interaction window
+        setTimeout(runQueue, 2000);
         return;
       }
       if ('requestIdleCallback' in window) {

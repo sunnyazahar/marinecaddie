@@ -1,9 +1,6 @@
 /**
- * Performance helpers (no jQuery):
- * - lazy images / [data-background]
- * - delayed hero video (after LCP)
- * - early mobile nav toggle until theme core.min binds
- * - lazy-load quote-modal.js on first Get Quote click
+ * Performance helpers: lazy images/backgrounds + delayed hero video (after LCP).
+ * Mobile uses a smaller MP4 and longer idle delay to cut TBT/LCP contention.
  */
 (function () {
   'use strict';
@@ -113,111 +110,10 @@
     schedule();
   }
 
-  /** Mobile hamburger until theme core.min multitoggle takes over */
-  function earlyMobileNav() {
-    var toggler = document.querySelector('header .navbar-toggler');
-    var nav = document.getElementById('nav');
-    if (!toggler || !nav) return;
-
-    toggler.setAttribute('role', 'button');
-    toggler.setAttribute('aria-label', 'Toggle navigation');
-    toggler.setAttribute('tabindex', '0');
-
-    function themeOwnsNav() {
-      return !!document.querySelector('#nav .submenu-button');
-    }
-
-    function toggle() {
-      if (themeOwnsNav()) return;
-      var open = !nav.classList.contains('open');
-      nav.classList.toggle('open', open);
-      nav.style.display = open ? 'block' : 'none';
-      toggler.classList.toggle('menu-opened', open);
-      toggler.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }
-
-    var handoff = setInterval(function () {
-      if (!themeOwnsNav()) return;
-      clearInterval(handoff);
-      nav.classList.remove('open');
-      nav.style.removeProperty('display');
-    }, 400);
-    setTimeout(function () { clearInterval(handoff); }, 20000);
-
-    toggler.addEventListener('click', function (e) {
-      if (themeOwnsNav()) return;
-      e.preventDefault();
-      e.stopPropagation();
-      toggle();
-    });
-
-    toggler.addEventListener('keydown', function (e) {
-      if (themeOwnsNav()) return;
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle();
-      }
-    });
-  }
-
-  /** Load quote-modal.js on first Get Quote interaction */
-  function lazyQuoteModal() {
-    var srcNode = document.querySelector('script[data-mc-quote-src]');
-    var src = srcNode && srcNode.getAttribute('data-mc-quote-src');
-    if (!src) return;
-
-    var loading = null;
-
-    function inject() {
-      if (window.__mcQuoteModalReady) return Promise.resolve();
-      if (loading) return loading;
-      loading = new Promise(function (resolve, reject) {
-        var s = document.createElement('script');
-        s.src = src;
-        s.onload = function () {
-          window.__mcQuoteModalReady = true;
-          resolve();
-        };
-        s.onerror = reject;
-        document.body.appendChild(s);
-      });
-      return loading;
-    }
-
-    document.addEventListener('click', function (e) {
-      var btn = e.target && e.target.closest && e.target.closest('[data-open-quote]');
-      if (!btn) return;
-      if (window.__mcQuoteModalReady) return;
-      e.preventDefault();
-      e.stopPropagation();
-      var mode = btn.getAttribute('data-open-quote') || 'quote';
-      inject().then(function () {
-        if (typeof window.mcOpenQuote === 'function') {
-          window.mcOpenQuote(mode);
-        }
-      }).catch(function () {
-        window.location.href = btn.getAttribute('href') || '/contact?quote=1';
-      });
-    }, true);
-
-    // Prefetch after load / idle so first click is fast
-    function prefetch() {
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(function () { inject(); }, { timeout: isMobile() ? 6000 : 3000 });
-      } else {
-        setTimeout(function () { inject(); }, isMobile() ? 4000 : 1500);
-      }
-    }
-    if (document.readyState === 'complete') prefetch();
-    else window.addEventListener('load', prefetch);
-  }
-
   function boot() {
     enhanceImages();
     lazyBackgrounds();
     loadHeroVideo();
-    earlyMobileNav();
-    lazyQuoteModal();
   }
 
   if (document.readyState === 'loading') {

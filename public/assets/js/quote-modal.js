@@ -1,6 +1,4 @@
 (function () {
-    window.__mcQuoteModalReady = true;
-
     var modal = document.getElementById('mcQuoteModal');
     if (!modal) return;
 
@@ -253,11 +251,6 @@
             openModal(btn.getAttribute('data-open-quote') || 'information');
         });
     });
-
-    // Used by perf-lazy.js after on-demand script inject
-    window.mcOpenQuote = function (mode) {
-        openModal(mode || 'information');
-    };
 
     // Close only via explicit close control — not backdrop / outside click
     modal.querySelectorAll('[data-quote-close]').forEach(function (el) {
