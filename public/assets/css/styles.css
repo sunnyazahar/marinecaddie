@@ -9,6 +9,16 @@
 .video-banner .banner-video video{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:0;transform:translate(-50%,-50%);object-fit:cover}
 .video-banner>[class*="container"]{position:relative;z-index:2}
 
+/* Kill theme header slide-in — margin-top:-150px animation caused desktop CLS ~1 */
+header.scrollHeader .navbar-default,
+header.header-style1.scrollHeader .navbar-default{
+  animation:none!important;
+  margin-top:0!important;
+}
+header.header-style1{
+  min-height:70px;
+}
+
 /* Owl defaults to display:none until JS — reserve first slide to avoid CLS */
 .owl-carousel{display:block!important}
 .owl-carousel:not(.owl-loaded){overflow:hidden}

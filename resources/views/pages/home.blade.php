@@ -5,13 +5,13 @@
 @section('meta_description', config('seo.home_description'))
 @section('schema_type', 'WebPage')
 @section('og_image_alt', 'MarineCaddie ship spare logistics and marine agency services')
-@section('header_class', 'scrollHeader')
+@section('header_class', 'fixedHeader')
 
 @section('content')
 <!-- BANNER
         ================================================== -->
-        <section class="p-0 top-position1 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8">
-            {{-- CSS background only — desktop CLS ~1 with <picture>/<img>; keep poster as bg + preload --}}
+        <section class="p-0 top-position1 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8" style="min-height:100vh;min-height:100dvh">
+            {{-- CSS background — responsive poster; inline min-height locks CLS --}}
             <style>
                 .mc-hero {
                     background-image: url('{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4');

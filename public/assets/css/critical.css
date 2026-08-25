@@ -51,10 +51,10 @@ header.header-style1 .navbar-header-custom{
 }
 @media (min-width:576px){.navbar-brand.logochange img,.navbar-brand.logochange #logo{height:48px}}
 @media (min-width:992px){
-  /* Reserve header height while navbar is fixed — prevents desktop CLS ~1 */
-  header.header-style1.scrollHeader{min-height:72px}
-  header.scrollHeader .navbar-default{position:fixed;top:0;left:0;width:100%;background:#fff!important}
+  /* Do NOT position:fixed here — home starts as fixedHeader; scrollHeader is added on scroll by JS.
+     Early fixed + later unfixed was causing desktop CLS ~1. */
   .navbar-brand.logochange img,.navbar-brand.logochange #logo{height:54px}
+  header.header-style1{min-height:70px}
 }
 /* Mobile header row */
 @media (max-width:991.98px){
