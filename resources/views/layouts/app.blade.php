@@ -24,8 +24,8 @@
 
     {{-- Responsive hero preloads (wrong size = wasted bandwidth + desktop CLS risk) --}}
     @if(request()->routeIs('home'))
-    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=m2" as="video" type="video/mp4" media="(max-width: 991.98px)">
-    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp3" as="video" type="video/mp4" media="(min-width: 992px)">
+    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=full1080" as="video" type="video/mp4" media="(max-width: 991.98px)">
+    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=full1080" as="video" type="video/mp4" media="(min-width: 992px)">
     <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif

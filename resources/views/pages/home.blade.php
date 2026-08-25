@@ -33,8 +33,8 @@
                       v.removeAttribute('autoplay');
                       return;
                     }
-                    var mobile = @json(theme_asset('assets/video/hero-banner-mobile.mp4') . '?v=m2');
-                    var desktop = @json(theme_asset('assets/video/hero-banner.mp4') . '?v=sharp3');
+                    var mobile = @json(theme_asset('assets/video/hero-banner-mobile.mp4') . '?v=full1080');
+                    var desktop = @json(theme_asset('assets/video/hero-banner.mp4') . '?v=full1080');
                     var isMobile = window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches;
                     v.poster = isMobile
                       ? @json(theme_asset('assets/img/banner/video-cover-mobile.webp') . '?v=lcp4')
