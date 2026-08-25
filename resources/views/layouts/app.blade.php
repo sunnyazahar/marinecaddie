@@ -27,15 +27,15 @@
     <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls10" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls12" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
     <style>{!! file_get_contents(public_path('assets/css/critical.css')) !!}</style>
     {{-- styles.min stays blocking to keep CLS ~0; other CSS after load so hero LCP wins bandwidth --}}
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls10" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls12" rel="stylesheet">
     <noscript>
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls10">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls10">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls12">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls12">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1">
@@ -43,8 +43,8 @@
     <script>
       (function () {
         var sheets = [
-          ['{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls10', 1600],
-          ['{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls10', 2400],
+          ['{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls12', 1600],
+          ['{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls12', 2400],
           ['{{ theme_asset('assets/css/search.css') }}?v=20260823perf1', 3200],
           ['{{ theme_asset('assets/css/base.css') }}?v=20260823perf1', 3200],
           ['{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1', 3200]

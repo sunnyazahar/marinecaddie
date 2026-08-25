@@ -36,6 +36,16 @@ a{text-decoration:none;color:inherit}
 .font-weight-800{font-weight:800!important}
 .ls-minus-2px{letter-spacing:-2px}
 .w-100{width:100%!important}
+/* Bootstrap xl display utils — live in deferred plugins.css; without these,
+   .d-none keeps Get Quote/myCADDIE hidden until load+1.6s → desktop CLS ~0.18 */
+@media (min-width:1200px){
+  .d-xl-none{display:none!important}
+  .d-xl-inline-block{display:inline-block!important}
+  .d-xl-block{display:block!important}
+  .d-xl-flex{display:flex!important}
+  .align-items-xl-center{align-items:center!important}
+  .ms-xl-auto{margin-left:auto!important}
+}
 
 /* Header — white bar, reserved height */
 header.header-style1{position:relative;z-index:1040}
@@ -69,6 +79,19 @@ header.header-style1 .navbar-header-custom{
     position:absolute!important;left:-9999px!important;top:100%;
     margin:0;z-index:1000
   }
+  /* Attr CTAs paint with first frame (not after deferred Bootstrap) */
+  header .attr-nav{
+    display:flex!important;align-items:center;float:none;margin-left:auto
+  }
+  header .attr-nav>ul.header-attr-actions{
+    display:flex!important;align-items:center;gap:.75rem;margin:0;padding:0;list-style:none
+  }
+  header .attr-nav .butn-style01,
+  .butn-style01{
+    display:inline-block;background:#F7941D;color:#fff!important;font-weight:700;
+    font-size:14px;line-height:1.4;padding:10px 26px;border-radius:3px;border:0
+  }
+  header .attr-nav .header-mycaddie{display:inline-flex!important;align-items:center;gap:.45rem}
 }
 /* Kill theme header slide-in even before styles.min finishes applying */
 header.scrollHeader .navbar-default,
