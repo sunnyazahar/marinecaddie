@@ -248,7 +248,7 @@
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ship Spares Air</a></h3>
                                 <p class="text-white opacity7">Time-critical airlift of vessel spares—hand carry, customs, and door-to-deck delivery coordinated 24/7.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-right link-arrow"></i></a></div>
+                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Ship Spares Air details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -258,7 +258,7 @@
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ocean Freight</a></h3>
                                 <p class="text-white opacity7">Maritime freight programs balancing cost, schedule integrity, and customs-ready documentation across global ports.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-right link-arrow"></i></a></div>
+                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Ocean Freight details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Special Projects</a></h3>
                                 <p class="text-white opacity7">OOG, dangerous goods, heavy lift, break bulk, and project cargo handled with strict local coordination.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-right link-arrow"></i></a></div>
+                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Special Projects details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -278,7 +278,7 @@
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Hub &amp; Warehousing</a></h3>
                                 <p class="text-white opacity7">Hub and warehouse nodes supporting stock management, consolidation, and last-mile vessel delivery.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-right link-arrow"></i></a></div>
+                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Hub and Warehousing details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
                     </div>

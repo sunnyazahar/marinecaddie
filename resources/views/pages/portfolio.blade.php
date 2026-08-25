@@ -40,7 +40,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">Air Transport</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">Freight Wave</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">Special Transport</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">Warehouse Inventory</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">OnTime Freight</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">Logistic Services</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">Road Transportation</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                                     <h2 class="h5 mb-0"><a href="{{ route('portfolio.details') }}">Security For Cargo</a></h2>
                                 </div>
                                 <div class="icon">
-                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link"><i class="ti-arrow-top-right"></i></a>
+                                    <a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View portfolio details"><i class="ti-arrow-top-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
