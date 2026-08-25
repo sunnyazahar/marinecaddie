@@ -24,19 +24,19 @@
 
     {{-- LCP first: hero poster only (do not compete with fonts). Never block paint on fonts. --}}
     @if(request()->routeIs('home'))
-    <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" fetchpriority="high">
     @endif
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825lcp3" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825lcp4" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
     <style>{!! file_get_contents(public_path('assets/css/critical.css')) !!}</style>
     {{-- styles.min stays blocking to keep CLS ~0; fonts load async with correct relative URLs --}}
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825lcp3" rel="stylesheet">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825lcp3" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825lcp3" media="print" onload="this.media='all'">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825lcp4" rel="stylesheet">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825lcp4" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825lcp4" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825lcp3">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825lcp3">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825lcp4">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825lcp4">
     </noscript>
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
@@ -71,7 +71,7 @@
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
     <script src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260824perf2" defer></script>
-    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825mobtbt1" defer></script>
+    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825lcp4" defer></script>
 
     {{-- After window load — owl/WOW/theme + extras (was blocking mobile TBT ~1.5s) --}}
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/core.min.js') }}"></script>

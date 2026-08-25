@@ -1,5 +1,5 @@
 /**
- * Performance helpers: lazy images + delayed hero video (after LCP).
+ * Performance helpers: lazy images/backgrounds + delayed hero video (after LCP).
  * Mobile uses a smaller MP4 and longer idle delay to cut TBT/LCP contention.
  */
 (function () {
@@ -21,6 +21,36 @@
       }
       img.setAttribute('loading', 'lazy');
       img.setAttribute('decoding', 'async');
+    }
+  }
+
+  /** Defer [data-background] until near viewport — frees bandwidth for LCP */
+  function lazyBackgrounds() {
+    var nodes = document.querySelectorAll('[data-background]');
+    if (!nodes.length) return;
+
+    function apply(el) {
+      var url = el.getAttribute('data-background');
+      if (!url || el.getAttribute('data-mc-bg-loaded')) return;
+      el.setAttribute('data-mc-bg-loaded', '1');
+      el.style.backgroundImage = 'url("' + url + '")';
+    }
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (!entries[i].isIntersecting) continue;
+          apply(entries[i].target);
+          io.unobserve(entries[i].target);
+        }
+      }, { rootMargin: '180px 0px', threshold: 0.01 });
+      for (var j = 0; j < nodes.length; j++) io.observe(nodes[j]);
+    } else {
+      var run = function () {
+        for (var k = 0; k < nodes.length; k++) apply(nodes[k]);
+      };
+      if (document.readyState === 'complete') run();
+      else window.addEventListener('load', run);
     }
   }
 
@@ -82,6 +112,7 @@
 
   function boot() {
     enhanceImages();
+    lazyBackgrounds();
     loadHeroVideo();
   }
 

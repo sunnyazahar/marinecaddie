@@ -11,19 +11,20 @@
 <!-- BANNER
         ================================================== -->
         <section class="p-0 top-position1 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8">
-            {{-- CSS background only — <img>/picture caused mobile CLS ~0.6 --}}
-            <style>
-                .mc-hero {
-                    background-image: url('{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}');
-                }
-                @media (min-width: 992px) {
-                    .mc-hero {
-                        background-image: url('{{ theme_webp('assets/img/banner/video-cover.jpg') }}');
-                    }
-                }
-            </style>
+            {{-- Real LCP image; inline absolute styles keep it out of document flow (CLS-safe) --}}
+            <picture class="mc-hero-lcp" aria-hidden="true" style="position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;pointer-events:none;margin:0;padding:0;border:0">
+                <source media="(min-width: 992px)" srcset="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" type="image/webp">
+                <img
+                    src="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4"
+                    alt=""
+                    width="640"
+                    height="300"
+                    fetchpriority="high"
+                    decoding="async"
+                    style="position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;border:0;margin:0;padding:0"
+                >
+            </picture>
             <div class="banner-video" aria-hidden="true">
-                {{-- No poster attr — avoids a second fetch; CSS background + preload is the LCP image --}}
                 <video muted loop playsinline webkit-playsinline preload="none" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp2" data-mc-hero-src-mobile="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=m1"></video>
             </div>
             <div class="container d-flex flex-column pt-5 pb-2 py-sm-8 py-md-0 position-relative z-index-9">
@@ -217,7 +218,7 @@
                 <div class="row g-0 portfolio-gallery wow fadeInUp" data-wow-delay="200ms">
                     <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ship Spares Air&lt;/a&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" alt="Ship spares air logistics" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ship Spares Air</a></h3>
                                 <p class="text-white opacity7">Time-critical airlift of vessel spares—hand carry, customs, and door-to-deck delivery coordinated 24/7.</p>
@@ -227,7 +228,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ocean Freight&lt;a/&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" alt="Ocean freight logistics at container port" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ocean Freight</a></h3>
                                 <p class="text-white opacity7">Maritime freight programs balancing cost, schedule integrity, and customs-ready documentation across global ports.</p>
@@ -237,7 +238,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Special Projects&lt;/a&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" alt="Special projects cargo handling" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Special Projects</a></h3>
                                 <p class="text-white opacity7">OOG, dangerous goods, heavy lift, break bulk, and project cargo handled with strict local coordination.</p>
@@ -247,7 +248,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Hub &amp; Warehousing&lt;/a&gt;&lt;/h4&gt;">
                         <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}&quot;);"><img src="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" alt="Hub and warehousing operations" class="d-none"></div>
+                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}"></div>
                             <div class="content-box">
                                 <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Hub &amp; Warehousing</a></h3>
                                 <p class="text-white opacity7">Hub and warehouse nodes supporting stock management, consolidation, and last-mile vessel delivery.</p>
@@ -280,7 +281,7 @@
 
         <!-- TESTIMONIAL
         ================================================== -->
-        <section class="bg-img cover-background secondary-overlay parallax home-section home-section--cta" data-overlay-dark="9" data-background="{{ theme_webp('assets/img/bg/bg-05.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/bg/bg-05.jpg') }}&quot;);">
+        <section class="bg-img cover-background secondary-overlay parallax home-section home-section--cta" data-overlay-dark="9" data-background="{{ theme_webp('assets/img/bg/bg-05.jpg') }}">
             <div class="container">
                 <div class="row align-items-center mt-n1-9">
                     <div class="col-lg-6 mt-1-9">
