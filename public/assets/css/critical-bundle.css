@@ -117,6 +117,8 @@ header.header-style1 .navbar-default{
 @media (min-width:992px){.top-position1{margin-top:-130px}}
 /* Home hero stays in-flow under the white header — never take the -100/-130px pull. */
 .mc-hero,.video-banner.mc-hero{margin-top:0!important}
+/* plugins.css (deferred) owns .top-search{display:none} — without this, orange search flashes before video */
+.top-search{display:none}
 h1.display-1,.display-1.font-weight-800,.main-wrapper h1.display-1{
   margin:0;
   color:#fff!important;
