@@ -27,27 +27,45 @@
     <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls9" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls10" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
     <style>{!! file_get_contents(public_path('assets/css/critical.css')) !!}</style>
-    {{-- styles.min stays blocking to keep CLS ~0; fonts load async with correct relative URLs --}}
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls9" rel="stylesheet">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls9" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls9" media="print" onload="this.media='all'">
+    {{-- styles.min stays blocking to keep CLS ~0; other CSS after load so hero LCP wins bandwidth --}}
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls10" rel="stylesheet">
     <noscript>
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls9">
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls9">
-    </noscript>
-
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
-    <noscript>
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls10">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls10">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1">
         <link rel="stylesheet" href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1">
     </noscript>
+    <script>
+      (function () {
+        var sheets = [
+          ['{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls10', 1600],
+          ['{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825cls10', 2400],
+          ['{{ theme_asset('assets/css/search.css') }}?v=20260823perf1', 3200],
+          ['{{ theme_asset('assets/css/base.css') }}?v=20260823perf1', 3200],
+          ['{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1', 3200]
+        ];
+        function inject(href) {
+          var l = document.createElement('link');
+          l.rel = 'stylesheet';
+          l.href = href;
+          document.head.appendChild(l);
+        }
+        function start() {
+          for (var i = 0; i < sheets.length; i++) {
+            (function (href, delay) {
+              setTimeout(function () { inject(href); }, delay);
+            })(sheets[i][0], sheets[i][1]);
+          }
+        }
+        if (document.readyState === 'complete') start();
+        else window.addEventListener('load', start);
+      })();
+    </script>
     @stack('styles')
 </head>
 <body>
@@ -63,20 +81,21 @@
 
     <div class="scroll-top-percentage"><span id="scroll-value">0%</span></div>
 
-    {{-- Critical interactivity only; heavy theme JS after load (cuts mobile TBT) --}}
+    {{-- Early: jquery + tiny helpers only. Bootstrap/etc after load cuts mobile TBT
+         without the CLS regression from deferring jquery itself. --}}
     <script src="{{ theme_asset('assets/js/jquery.min.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/popper.min.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/bootstrap.min.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/scripts.js') }}?v=20260825a11y1" defer></script>
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
-    <script src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260824perf2" defer></script>
-    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825cls9" defer></script>
+    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825cls10" defer></script>
 
-    {{-- After window load — owl/WOW/theme + extras (was blocking mobile TBT ~1.5s) --}}
+    {{-- After window load — bootstrap stack + theme (was ~110KB early parse on mobile) --}}
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/popper.min.js') }}"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/bootstrap.min.js') }}"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/scripts.js') }}?v=20260825a11y1"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/core.min.js') }}"></script>
-    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/main.js') }}?v=20260825cls9"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/main.js') }}?v=20260825cls10"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/search.js') }}"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/plugins.js') }}?v=20260824console1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260824console1"></script>
@@ -84,7 +103,7 @@
     <meta name="mc-recaptcha" content="1" data-mode="{{ recaptcha_use_enterprise() ? 'enterprise' : 'classic' }}">
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/recaptcha-lazy.js') }}?v=20260824perf2"></script>
     @endif
-    <script src="{{ theme_asset('assets/js/defer-bundle.js') }}?v=20260825cls9" defer></script>
+    <script src="{{ theme_asset('assets/js/defer-bundle.js') }}?v=20260825cls10" defer></script>
 
     <script>
       window.addEventListener('load', function () {
