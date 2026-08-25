@@ -105,4 +105,9 @@ h1.display-1,.display-1.font-weight-800,.main-wrapper h1.display-1{
 .owl-carousel{display:block!important;min-height:1px}
 .owl-carousel:not(.owl-loaded){overflow:hidden}
 .owl-carousel:not(.owl-loaded)>:not(:first-child){display:none!important}
-.home-section{min-height:2rem}
+.home-section,.our-services-home{min-height:2rem}
+@media (max-width:991.98px){
+  .our-services-home,.home-section--about,.home-section--why,.home-section--cta{
+    padding-top:3.5rem;padding-bottom:3.25rem
+  }
+}
