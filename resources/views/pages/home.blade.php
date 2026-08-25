@@ -10,10 +10,22 @@
 @section('content')
 <!-- BANNER
         ================================================== -->
-        <section class="p-0 top-position1 full-screen secondary-overlay video-banner" data-overlay-dark="8" style="background-image: url({{ theme_webp('assets/img/banner/video-cover.jpg') }});">
+        <section class="p-0 top-position1 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8">
+            {{-- Real <img> LCP (CSS backgrounds are often discovered late / score poorly on mobile) --}}
+            <picture class="mc-hero-poster" aria-hidden="true">
+                <source media="(min-width: 992px)" srcset="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" type="image/webp">
+                <img
+                    src="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}"
+                    alt=""
+                    width="800"
+                    height="375"
+                    fetchpriority="high"
+                    decoding="async"
+                >
+            </picture>
             <div class="banner-video" aria-hidden="true">
                 {{-- src injected by perf-lazy.js (muted + playsinline; skips save-data / reduced-motion) --}}
-                <video muted loop playsinline webkit-playsinline preload="none" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp2" data-mc-hero-src-mobile="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=m1"></video>
+                <video muted loop playsinline webkit-playsinline preload="none" poster="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp2" data-mc-hero-src-mobile="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=m1"></video>
             </div>
             <div class="container d-flex flex-column pt-5 pb-2 py-sm-8 py-md-0 position-relative z-index-9">
                 <div class="row align-items-center justify-content-center min-vh-100">
