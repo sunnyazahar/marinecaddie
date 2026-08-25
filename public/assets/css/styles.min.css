@@ -2535,6 +2535,7 @@ body {
 }
 @media (min-width: 992px) {
   #nav .sub-menu--mega {
+    position: absolute !important;
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.35rem 1rem;
@@ -2555,6 +2556,25 @@ body {
     pointer-events: auto;
     margin-top: 0 !important;
     transition: none !important;
+  }
+  /* Horizontal top-level nav before deferred plugins.css float rules */
+  header.header-style1 #nav{
+    display:flex !important;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    align-items:center;
+    width:auto;
+    flex-basis:auto;
+  }
+  header.header-style1 #nav > li{
+    display:block;
+    position:relative;
+  }
+  header.header-style1 .navbar-toggler{
+    display:none !important;
+  }
+  header.header-style1 #nav .sub-menu--icons{
+    position:absolute !important;
   }
 }
 #nav .sub-menu--mega > .nav-mega-col {
