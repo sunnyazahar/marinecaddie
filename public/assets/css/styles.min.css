@@ -1000,7 +1000,7 @@ header.scrollHeader .navbar-default{
 }
 .about-motto-split__headline {
   margin: 0 0 1rem;
-  color: #fff;
+  color: #fff !important;
   font-size: clamp(1.55rem, 2.6vw, 2.15rem);
   font-weight: 800;
   line-height: 1.2;
@@ -1168,7 +1168,7 @@ header.scrollHeader .navbar-default{
   letter-spacing: -0.02em;
 }
 .about-presence-block--coverage .about-presence-block__title {
-  color: #fff;
+  color: #fff !important;
 }
 .about-presence-block__text {
   margin: 0 0 1.4rem;
@@ -1603,7 +1603,7 @@ header.scrollHeader .navbar-default{
 }
 .mv-panel--mission .mv-panel__heading,
 .mv-panel--mission .mv-panel__statement {
-  color: #fff;
+  color: #fff !important;
 }
 .mv-panel--mission .mv-panel__statement {
   opacity: 0.92;
@@ -2371,24 +2371,25 @@ body {
 .main-wrapper .display-5,
 .main-wrapper .display-6,
 .main-wrapper .page-title-section h1,
-.main-wrapper [class*="__title"],
-.main-wrapper [class*="__heading"],
 .main-wrapper .services-category__title,
 .main-wrapper .service-page-link__title,
-.main-wrapper .mv-panel__heading,
 .main-wrapper .mv-commit__title,
-.main-wrapper .mv-cta__title,
 .main-wrapper .contact-form-panel__title,
 .main-wrapper .contact-side__title,
 .main-wrapper .contact-intro__title,
 .main-wrapper .mv-intro__title,
 .main-wrapper .about-presence-block__title,
-.main-wrapper .about-motto-split__headline,
 .main-wrapper .mc-footer__heading {
   font-family: var(--mc-font-heading) !important;
   font-weight: 700 !important;
   letter-spacing: -0.02em;
-  color: #343739 !important; /* rgb(52, 55, 57) */
+  color: #343739 !important;
+}
+.main-wrapper [class*="__title"],
+.main-wrapper [class*="__heading"] {
+  font-family: var(--mc-font-heading) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
 }
 .main-wrapper h1.text-white,
 .main-wrapper h2.text-white,
@@ -2414,6 +2415,45 @@ body {
 .main-wrapper .text-white h5,
 .main-wrapper .text-white h6 {
   color: #fff !important;
+}
+.main-wrapper .about-motto-split__headline,
+.main-wrapper h2.about-motto-split__headline,
+.main-wrapper .about-cta-band__title,
+.main-wrapper h2.about-cta-band__title,
+.main-wrapper .services-cta-band__title,
+.main-wrapper h2.services-cta-band__title,
+.main-wrapper .mv-cta__title,
+.main-wrapper h2.mv-cta__title,
+.main-wrapper .mv-cta__text,
+.main-wrapper .mv-panel--mission .mv-panel__heading,
+.main-wrapper .mv-panel--mission h3.mv-panel__heading,
+.main-wrapper .mv-panel--mission .mv-panel__statement,
+.main-wrapper .mv-panel--mission .mv-panel__focus li,
+.main-wrapper .svc-page-hero__title,
+.main-wrapper .svc-page-cta__title,
+.main-wrapper .faq-page-banner__title,
+.main-wrapper .faq-page-banner h1,
+.main-wrapper .page-title-section h1,
+.main-wrapper .secondary-overlay h1,
+.main-wrapper .secondary-overlay h2,
+.main-wrapper .secondary-overlay h3,
+.main-wrapper .video-banner h1,
+.main-wrapper .mc-hero h1,
+.main-wrapper .services-page-banner__title,
+.main-wrapper .services-page-banner h1,
+.main-wrapper .services-why__title,
+.main-wrapper h2.services-why__title,
+.main-wrapper .about-presence-block--coverage .about-presence-block__title,
+.main-wrapper .svc-page-aside__card:not(.svc-page-aside__card--related) .svc-page-aside__title,
+.main-wrapper .svc-page-aside__card:not(.svc-page-aside__card--related) h2.svc-page-aside__title,
+.main-wrapper .about-cta-band__text,
+.main-wrapper .services-cta-band__text,
+.main-wrapper .about-motto-split__support {
+  color: #fff !important;
+}
+.main-wrapper .svc-page-aside__card--related .svc-page-aside__title,
+.main-wrapper .svc-page-aside__card--related h2.svc-page-aside__title {
+  color: #042158 !important;
 }
 .main-wrapper h1.text-primary,
 .main-wrapper h2.text-primary,
@@ -2588,6 +2628,37 @@ body {
   }
   header.header-style1 #nav .sub-menu--icons{
     position:absolute !important;
+  }
+  #nav > li.has-sub:not(.has-mega):hover > .sub-menu,
+  #nav > li.has-sub:not(.has-mega):focus-within > .sub-menu {
+    left: auto !important;
+    opacity: 1 !important;
+    visibility: visible;
+    pointer-events: auto;
+    margin-top: 0 !important;
+  }
+  /* Classic text dropdown (Who We Are) — not the icon list */
+  #nav > li.has-sub:not(.has-mega) > .sub-menu {
+    min-width: 220px;
+    padding: 10px 0;
+    background: #fff !important;
+    border-radius: 4px;
+    box-shadow: 0 12px 28px rgba(4, 33, 88, 0.14);
+    border-top: 3px solid #F7941D;
+  }
+  #nav > li.has-sub:not(.has-mega) > .sub-menu > li > a {
+    display: block !important;
+    padding: 10px 18px !important;
+    color: #042158 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    white-space: nowrap;
+  }
+  #nav > li.has-sub:not(.has-mega) > .sub-menu > li > a:hover,
+  #nav > li.has-sub:not(.has-mega) > .sub-menu > li.current > a,
+  #nav > li.has-sub:not(.has-mega) > .sub-menu > li.active > a {
+    color: #F7941D !important;
   }
 }
 #nav .sub-menu--mega > .nav-mega-col {
@@ -3127,6 +3198,12 @@ button.butn-style01,
   color: inherit !important;
   font-size: 1.15rem !important;
   font-weight: 700 !important;
+}
+.svc-page-aside__card:not(.svc-page-aside__card--related) .svc-page-aside__title {
+  color: #fff !important;
+}
+.svc-page-aside__card--related .svc-page-aside__title {
+  color: #042158 !important;
 }
 .svc-page-aside__list {
   list-style: none;
@@ -4655,10 +4732,17 @@ header.header-style1.scrollHeader .navbar-default {
 .services-why__intro {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 2.5rem 2.25rem;
+  justify-content: flex-start;
   background: #042158;
   color: #fff;
+}
+/* Beat Bootstrap .row.g-0 > * padding-left/right: 0 (plugins.css loads after styles) */
+.services-why__frame .row > .services-why__intro {
+  padding: 2.75rem 2.5rem 3rem !important;
+}
+.services-why__frame .row > .services-why__grid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .services-why__eyebrow {
   display: block;
@@ -4670,7 +4754,7 @@ header.header-style1.scrollHeader .navbar-default {
 }
 .services-why__title {
   margin: 0 0 0.85rem;
-  color: #fff;
+  color: #fff !important;
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   font-weight: 800;
   line-height: 1.25;
@@ -4880,6 +4964,9 @@ header.header-style1.scrollHeader .navbar-default {
   }
   .services-why__intro {
     padding: 2rem 1.35rem;
+  }
+  .services-why__frame .row > .services-why__intro {
+    padding: 2.15rem 1.5rem 2.35rem !important;
   }
   .services-why__item {
     padding: 1.25rem 1.2rem;

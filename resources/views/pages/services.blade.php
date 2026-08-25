@@ -141,7 +141,7 @@
                     <div class="row g-0 align-items-stretch">
                         <div class="col-lg-5 services-why__intro wow fadeInLeft" data-wow-delay="100ms">
                             <span class="services-why__eyebrow">Why MarineCaddie</span>
-                            <h2 class="services-why__title">{{ config('company.motto') }}</h2>
+                            <h2 class="services-why__title text-white">{{ config('company.motto') }}</h2>
                             <p class="services-why__text">{{ config('company.mission') }}</p>
                             <p class="services-why__trust mb-0">Trusted across <strong>{{ config('company.address.short') }}</strong> and global ports.</p>
                         </div>
@@ -167,7 +167,7 @@
             <div class="container">
                 <div class="services-cta-band__inner text-center wow fadeInUp" data-wow-delay="100ms">
                     <span class="services-cta-band__eyebrow">Let's work together</span>
-                    <h2 class="services-cta-band__title">Need ship spares, freight, or customs support?</h2>
+                    <h2 class="services-cta-band__title text-white">Need ship spares, freight, or customs support?</h2>
                     <p class="services-cta-band__text">Talk with our Dubai operations desk about your next vessel call, urgent spare move, or project cargo requirement.</p>
                     <div class="services-cta-band__actions">
                         <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 white-hover" data-open-quote="quote">Get a Quote</a>

@@ -48,7 +48,7 @@
                         </div>
                         <div class="mv-panel__body">
                             <span class="mv-panel__eyebrow">Our Mission</span>
-                            <h3 class="mv-panel__heading">Keep vessels operating. Deliver exceptional service.</h3>
+                            <h3 class="mv-panel__heading text-white">Keep vessels operating. Deliver exceptional service.</h3>
                             <p class="mv-panel__statement">{{ config('company.mission') }}</p>
                             <ul class="mv-panel__focus">
                                 @foreach (config('company.mission_focus') as $item)
@@ -107,7 +107,7 @@
                 <div class="mv-cta__band wow fadeInUp" data-wow-delay="100ms">
                     <div class="mv-cta__copy">
                         <p class="mv-cta__eyebrow mb-2">Ready when your vessel is</p>
-                        <h2 class="mv-cta__title mb-2">{{ config('company.motto') }}</h2>
+                        <h2 class="mv-cta__title text-white mb-2">{{ config('company.motto') }}</h2>
                         <p class="mv-cta__text mb-0">Talk to operations about ship spares, customs, freight, or port husbandry anywhere your fleet calls.</p>
                     </div>
                     <div class="mv-cta__actions">

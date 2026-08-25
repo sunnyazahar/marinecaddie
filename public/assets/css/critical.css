@@ -79,6 +79,10 @@ header.header-style1 .navbar-header-custom{
     position:absolute!important;left:-9999px!important;top:100%;
     margin:0;z-index:1000
   }
+  header #nav>li.has-sub:not(.has-mega):hover>.sub-menu,
+  header #nav>li.has-sub:not(.has-mega):focus-within>.sub-menu{
+    left:auto!important;opacity:1;visibility:visible;pointer-events:auto
+  }
   /* Attr CTAs paint with first frame (not after deferred Bootstrap) */
   header .attr-nav{
     display:flex!important;align-items:center;float:none;margin-left:auto

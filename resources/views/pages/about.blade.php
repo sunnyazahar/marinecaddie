@@ -105,7 +105,7 @@
                             <div class="about-motto-split__visual-overlay" aria-hidden="true"></div>
                             <div class="about-motto-split__visual-content">
                                 <span class="about-motto-split__eyebrow">Why Choose Us</span>
-                                <h2 class="about-motto-split__headline">{{ config('company.motto') }}</h2>
+                                <h2 class="about-motto-split__headline text-white">{{ config('company.motto') }}</h2>
                                 <p class="about-motto-split__support">{{ config('company.tagline') }} Practical maritime logistics built around vessel urgency.</p>
                                 <a href="{{ route('contact') }}" class="butn-style01 white-hover">Talk to Operations</a>
                             </div>

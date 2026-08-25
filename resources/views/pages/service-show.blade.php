@@ -121,7 +121,7 @@
                     <div class="col-lg-4">
                         <aside class="svc-page-aside">
                             <div class="svc-page-aside__card">
-                                <h2 class="svc-page-aside__title">{{ $service['category_title'] }}</h2>
+                                <h2 class="svc-page-aside__title text-white">{{ $service['category_title'] }}</h2>
                                 <ul class="svc-page-aside__list">
                                     @foreach($siblings as $sibling)
                                         <li class="{{ $sibling['slug'] === $service['slug'] ? 'is-active' : '' }}">
@@ -162,7 +162,7 @@
         <section class="svc-page-cta">
             <div class="container text-center">
                 <p class="svc-page-cta__eyebrow">{{ config('company.tagline') }}</p>
-                <h2 class="svc-page-cta__title">{{ config('company.motto') }}</h2>
+                <h2 class="svc-page-cta__title text-white">{{ config('company.motto') }}</h2>
                 <p class="svc-page-cta__text">Tell us the vessel, port, and timeline—we’ll propose the fastest compliant path.</p>
                 <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01" data-open-quote="quote">Get Quote</a>
             </div>

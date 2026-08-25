@@ -260,23 +260,9 @@
                                         <li class="{{ $navHome ? 'current active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
                                         <li class="has-sub{{ $navWho ? ' current active' : '' }}">
                                             <a href="{{ route('about') }}">Who We Are</a>
-                                            <ul class="sub-menu sub-menu--icons">
-                                                <li class="{{ $navAbout ? 'current active' : '' }}">
-                                                    <a href="{{ route('about') }}">
-                                                        <span class="nav-svc-icon" aria-hidden="true">
-                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M9 14h.01"/><path d="M15 14h.01"/></svg>
-                                                        </span>
-                                                        <span class="nav-svc-label">About Us</span>
-                                                    </a>
-                                                </li>
-                                                <li class="{{ $navMission ? 'current active' : '' }}">
-                                                    <a href="{{ route('mission-vision') }}">
-                                                        <span class="nav-svc-icon" aria-hidden="true">
-                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 6.5L7 17l2.5-6.5L16 8z"/><circle cx="12" cy="12" r="1.5"/></svg>
-                                                        </span>
-                                                        <span class="nav-svc-label">Our Mission &amp; Vision</span>
-                                                    </a>
-                                                </li>
+                                            <ul class="sub-menu">
+                                                <li class="{{ $navAbout ? 'current active' : '' }}"><a href="{{ route('about') }}">About Us</a></li>
+                                                <li class="{{ $navMission ? 'current active' : '' }}"><a href="{{ route('mission-vision') }}">Our Mission &amp; Vision</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-sub has-mega{{ $navServices ? ' current active' : '' }}">
