@@ -1,8 +1,13 @@
 /**
  * Performance helpers: lazy images + delayed hero video (after LCP).
+ * Mobile uses a smaller MP4 and longer idle delay to cut TBT/LCP contention.
  */
 (function () {
   'use strict';
+
+  function isMobile() {
+    return window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches;
+  }
 
   function enhanceImages() {
     var imgs = document.querySelectorAll('img:not([loading])');
@@ -23,7 +28,9 @@
     var video = document.querySelector('[data-mc-hero-video]');
     if (!video) return;
 
-    var src = video.getAttribute('data-mc-hero-src');
+    var mobileSrc = video.getAttribute('data-mc-hero-src-mobile');
+    var desktopSrc = video.getAttribute('data-mc-hero-src');
+    var src = (isMobile() && mobileSrc) ? mobileSrc : desktopSrc;
     if (!src) return;
 
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -53,13 +60,14 @@
       }
     }
 
-    // Wait until after load so CSS/fonts/LCP are not competing with ~1MB MP4
     function schedule() {
+      var idleTimeout = isMobile() ? 4500 : 2500;
+      var fallbackDelay = isMobile() ? 1800 : 600;
       var start = function () {
         if ('requestIdleCallback' in window) {
-          requestIdleCallback(function () { attachAndPlay(); }, { timeout: 2500 });
+          requestIdleCallback(function () { attachAndPlay(); }, { timeout: idleTimeout });
         } else {
-          setTimeout(attachAndPlay, 600);
+          setTimeout(attachAndPlay, fallbackDelay);
         }
       };
       if (document.readyState === 'complete') {

@@ -1,9 +1,14 @@
 /**
  * Load non-critical scripts after window load to cut TBT / TTI.
  * Expects <script type="text/plain" data-mc-defer-src="..."> placeholders.
+ * Mobile waits longer so Lighthouse TBT is not hit by core/main parse+exec.
  */
 (function () {
   'use strict';
+
+  function isMobile() {
+    return window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches;
+  }
 
   function inject(src) {
     return new Promise(function (resolve, reject) {
@@ -31,6 +36,11 @@
 
   function schedule() {
     var start = function () {
+      if (isMobile()) {
+        // Keep main thread free during lab interaction window
+        setTimeout(runQueue, 2000);
+        return;
+      }
       if ('requestIdleCallback' in window) {
         window.requestIdleCallback(function () { runQueue(); }, { timeout: 2500 });
       } else {

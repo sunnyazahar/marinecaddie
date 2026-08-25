@@ -61,20 +61,20 @@
 
     <div class="scroll-top-percentage"><span id="scroll-value">0%</span></div>
 
-    {{-- All deferred (order preserved); scrollbar before main.js to avoid console error --}}
+    {{-- Critical interactivity only; heavy theme JS after load (cuts mobile TBT) --}}
     <script src="{{ theme_asset('assets/js/jquery.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/popper.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/bootstrap.min.js') }}" defer></script>
     <script src="{{ theme_asset('assets/js/jquery.scrollbar.min.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/core.min.js') }}" defer></script>
-    <script src="{{ theme_asset('assets/js/main.js') }}?v=20260825a11y1" defer></script>
     <script src="{{ theme_asset('assets/js/scripts.js') }}?v=20260825a11y1" defer></script>
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
     <script src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260824perf2" defer></script>
-    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825lcp1" defer></script>
+    <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825mobtbt1" defer></script>
 
-    {{-- After window load — lower TBT without breaking CTAs --}}
+    {{-- After window load — owl/WOW/theme + extras (was blocking mobile TBT ~1.5s) --}}
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/core.min.js') }}"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/main.js') }}?v=20260825a11y1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/search.js') }}"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/plugins.js') }}?v=20260824console1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260824console1"></script>
@@ -82,7 +82,7 @@
     <meta name="mc-recaptcha" content="1" data-mode="{{ recaptcha_use_enterprise() ? 'enterprise' : 'classic' }}">
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/recaptcha-lazy.js') }}?v=20260824perf2"></script>
     @endif
-    <script src="{{ theme_asset('assets/js/defer-bundle.js') }}?v=20260824perf3" defer></script>
+    <script src="{{ theme_asset('assets/js/defer-bundle.js') }}?v=20260825mobtbt1" defer></script>
 
     <script>
       window.addEventListener('load', function () {
