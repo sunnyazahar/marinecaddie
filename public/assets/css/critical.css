@@ -74,6 +74,11 @@ header.header-style1 .navbar-default{
     position:absolute!important;top:50%;right:0;transform:translateY(-50%);
     width:42px;height:42px;margin:0;border:0;border-radius:4px;background:#F7941D!important;padding:0;cursor:pointer
   }
+  /* Keep menu collapsed from first paint — FOUC list was causing mobile CLS ~0.5 */
+  header #nav{
+    display:none;width:100%;flex-basis:100%;order:3;background:#fff;margin:0;padding:0;list-style:none
+  }
+  header #nav.open{display:block}
 }
 
 /* Hero LCP — paint without waiting for styles.min */

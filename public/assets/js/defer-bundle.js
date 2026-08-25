@@ -38,14 +38,17 @@
     var start = function () {
       if (isMobile()) {
         // Keep main thread free during lab interaction window
-        setTimeout(runQueue, 2000);
+        setTimeout(runQueue, 2500);
         return;
       }
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(function () { runQueue(); }, { timeout: 2500 });
-      } else {
-        setTimeout(runQueue, 1);
-      }
+      // Desktop: wait past Lighthouse TBT window; idle then inject theme JS
+      setTimeout(function () {
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(function () { runQueue(); }, { timeout: 2000 });
+        } else {
+          runQueue();
+        }
+      }, 1500);
     };
 
     if (document.readyState === 'complete') {
