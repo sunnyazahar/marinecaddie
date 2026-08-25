@@ -29,9 +29,12 @@
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" fetchpriority="high">
     @endif
 
-    {{-- Inline critical + fonts to cut 2 render-blocking requests --}}
+    {{-- Inline critical + fonts to cut render-blocking; full styles deferred --}}
     <style>{!! file_get_contents(public_path('assets/css/critical-bundle.css')) !!}</style>
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825mobilevid1" rel="stylesheet">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825vid2" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825vid2">
+    </noscript>
     {{-- plugins.css deferred: critical CSS covers header/hero to limit CLS --}}
     <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825perf1" media="print" onload="this.media='all'">
     <noscript>
