@@ -13,7 +13,7 @@
         <section class="p-0 top-position1 full-screen secondary-overlay video-banner" data-overlay-dark="8" style="background-image: url({{ theme_webp('assets/img/banner/video-cover.jpg') }});">
             <div class="banner-video" aria-hidden="true">
                 {{-- src injected by perf-lazy.js (muted + playsinline; skips save-data / reduced-motion) --}}
-                <video muted loop playsinline webkit-playsinline preload="none" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/hero-banner.mp4') }}"></video>
+                <video muted loop playsinline webkit-playsinline preload="none" poster="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" data-mc-hero-video data-mc-hero-src="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=sharp2"></video>
             </div>
             <div class="container d-flex flex-column pt-5 pb-2 py-sm-8 py-md-0 position-relative z-index-9">
                 <div class="row align-items-center justify-content-center min-vh-100">

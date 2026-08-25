@@ -42,7 +42,7 @@
                 </ul>
                 <div class="mc-footer__follow">
                     <span class="mc-footer__follow-label">Follow Us On:</span>
-                    <a href="{{ route('home') }}#" class="mc-footer__social-link" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/marinec/" class="mc-footer__social-link" aria-label="MarineCaddie on LinkedIn" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
