@@ -55,6 +55,20 @@ header.header-style1 .navbar-header-custom{
      plugins + main.js toggling fixed/unfixed caused desktop CLS ~1. */
   .navbar-brand.logochange img,.navbar-brand.logochange #logo{height:54px}
   header.header-style1{min-height:70px}
+  /* Desktop nav must match plugins.css from first paint — deferred plugins was
+     pulling mega menus out of flow late (visibility:hidden still occupies space). */
+  header .navbar-toggler{display:none!important}
+  header #nav{
+    display:flex!important;flex-direction:row;flex-wrap:nowrap;align-items:center;
+    list-style:none;margin:0;padding:0;width:auto;flex-basis:auto
+  }
+  header #nav>li{display:block;position:relative;margin-left:10px;float:none}
+  header #nav .sub-menu,
+  header #nav .sub-menu--mega,
+  header #nav .sub-menu--icons{
+    position:absolute!important;left:-9999px!important;top:100%;
+    margin:0;z-index:1000
+  }
 }
 /* Kill theme header slide-in even before styles.min finishes applying */
 header.scrollHeader .navbar-default,

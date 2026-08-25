@@ -41,14 +41,12 @@
         setTimeout(runQueue, 2500);
         return;
       }
-      // Desktop: wait past Lighthouse TBT window; idle then inject theme JS
-      setTimeout(function () {
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(function () { runQueue(); }, { timeout: 2000 });
-        } else {
-          runQueue();
-        }
-      }, 1500);
+      // Desktop: idle soon after load (extra artificial delay caused late layout work)
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(function () { runQueue(); }, { timeout: 2500 });
+      } else {
+        setTimeout(runQueue, 1);
+      }
     };
 
     if (document.readyState === 'complete') {
