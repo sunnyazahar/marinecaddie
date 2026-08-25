@@ -88,7 +88,10 @@ header.header-style1 .navbar-header-custom{
   content:"";position:absolute;inset:0;z-index:1;
   background:rgba(4,33,88,.82)
 }
-.top-position1{position:relative}
+/* Must match plugins.css from first paint — deferred plugins was applying
+   margin-top:-100/-130px late and causing desktop CLS ~1 */
+.top-position1{position:relative;margin-top:-100px}
+@media (min-width:992px){.top-position1{margin-top:-130px}}
 h1.display-1,.display-1.font-weight-800,.main-wrapper h1.display-1{
   margin:0;
   color:#fff!important;

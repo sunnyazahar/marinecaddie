@@ -19,6 +19,10 @@ header.header-style1{
   min-height:70px;
 }
 
+/* Lock top-position1 before deferred plugins.css (same values as plugins) */
+.top-position1{position:relative;margin-top:-100px}
+@media (min-width:992px){.top-position1{margin-top:-130px}}
+
 /* Owl defaults to display:none until JS — reserve first slide to avoid CLS */
 .owl-carousel{display:block!important}
 .owl-carousel:not(.owl-loaded){overflow:hidden}
