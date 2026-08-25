@@ -23,18 +23,23 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     {{-- LCP: styles (blocking) + hero poster + heading font — never defer styles.min (CLS ~1) --}}
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls2" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825font1" as="style">
     <link rel="preload" href="{{ theme_asset('assets/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
     @if(request()->routeIs('home'))
     <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}" as="image" type="image/webp" fetchpriority="high">
     @endif
 
-    {{-- Inline critical + fonts; keep styles.min sync to avoid CLS --}}
-    <style>{!! file_get_contents(public_path('assets/css/critical-bundle.css')) !!}</style>
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825cls2" rel="stylesheet">
-    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls2" media="print" onload="this.media='all'">
+    {{-- Inline critical + fonts; rewrite font URLs (relative ../fonts breaks when CSS is inlined) --}}
+    @php
+        $mcCriticalCss = file_get_contents(public_path('assets/css/critical-bundle.css'));
+        $mcFontsBase = rtrim(theme_asset('assets/fonts'), '/') . '/';
+        $mcCriticalCss = str_replace("url('../fonts/", "url('" . $mcFontsBase, $mcCriticalCss);
+    @endphp
+    <style>{!! $mcCriticalCss !!}</style>
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825font1" rel="stylesheet">
+    <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825font1" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825cls2">
+        <link rel="stylesheet" href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825font1">
     </noscript>
 
     <link rel="stylesheet" href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" media="print" onload="this.media='all'">
