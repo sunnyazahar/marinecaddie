@@ -9,16 +9,16 @@
 
     @include('partials.seo')
 
-    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon.svg') }}?v=mc3" type="image/svg+xml">
-    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon-32x32.png') }}?v=mc3" type="image/png" sizes="32x32">
-    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon-16x16.png') }}?v=mc3" type="image/png" sizes="16x16">
-    <link rel="shortcut icon" href="{{ theme_asset('assets/img/logos/favicon.ico') }}?v=mc3" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc3">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ theme_asset('assets/img/logos/apple-touch-icon-57x57.png') }}?v=mc3">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ theme_asset('assets/img/logos/apple-touch-icon-72x72.png') }}?v=mc3">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ theme_asset('assets/img/logos/apple-touch-icon-114x114.png') }}?v=mc3">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc3">
-    <link rel="manifest" href="{{ theme_asset('assets/img/logos/site.webmanifest') }}?v=mc3">
+    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon.svg') }}?v=mc6" type="image/svg+xml">
+    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon-32x32.png') }}?v=mc6" type="image/png" sizes="32x32">
+    <link rel="icon" href="{{ theme_asset('assets/img/logos/favicon-16x16.png') }}?v=mc6" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="{{ theme_asset('assets/img/logos/favicon.ico') }}?v=mc6" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc6">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ theme_asset('assets/img/logos/apple-touch-icon-57x57.png') }}?v=mc6">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ theme_asset('assets/img/logos/apple-touch-icon-72x72.png') }}?v=mc6">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ theme_asset('assets/img/logos/apple-touch-icon-114x114.png') }}?v=mc6">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ theme_asset('assets/img/logos/apple-touch-icon-180x180.png') }}?v=mc6">
+    <link rel="manifest" href="{{ theme_asset('assets/img/logos/site.webmanifest') }}?v=mc6">
 
     @unless(in_array(request()->getHost(), ['localhost', '127.0.0.1', '::1'], true))
     <link rel="preconnect" href="{{ rtrim(config('seo.url', config('app.url')), '/') }}" crossorigin>

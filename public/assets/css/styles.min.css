@@ -52,15 +52,7 @@
     max-height: 58px !important;
   }
 }
-@media (max-width: 991.98px) {
-  .navbar-header-custom {
-    padding: 6px 0 !important;
-  }
-  .navbar-default .container-fluid {
-    padding-top: 0.15rem;
-    padding-bottom: 0.15rem;
-  }
-  /* Solid white mobile header (open + closed) */
+  /* Solid white header (all breakpoints) */
   header.header-style1,
   header.header-style1.scrollHeader,
   header.header-style1 .navbar-default,
@@ -74,8 +66,26 @@
     background-color: #ffffff !important;
     background-image: none !important;
   }
+  header.menu_area-light .navbar-nav > li > a,
+  header.menu_area-light.scrollHeader .navbar-nav > li > a {
+    color: #042158 !important;
+  }
+  header.menu_area-light .navbar-nav li.current > a,
+  header.menu_area-light .navbar-nav li.active > a,
+  header.menu_area-light.scrollHeader .navbar-nav li.current > a,
+  header.menu_area-light.scrollHeader .navbar-nav li.active > a {
+    color: #F7941D !important;
+  }
+@media (max-width: 991.98px) {
+  .navbar-header-custom {
+    padding: 6px 0 !important;
+  }
+  .navbar-default .container-fluid {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+  }
   header.header-style1 .navbar-brand.logochange {
-    background: #ffffff !important;
+    background: transparent !important;
     border-radius: 0 !important;
   }
   /* Align menu toggle with logo — pinned to far right */
@@ -2661,12 +2671,20 @@ body {
 }
 /* Header attribute actions */
 .header-attr-actions {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.attr-nav > ul.header-attr-actions > li {
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+.attr-nav > ul.header-attr-actions > li > a.butn-style01 {
+  padding: 10px 26px !important;
 }
 .header-mycaddie {
   display: inline-flex !important;

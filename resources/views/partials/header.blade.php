@@ -1,7 +1,64 @@
 <!-- HEADER
         ================================================== -->
         <style>
-            /* Tight white plate + wider logo; no shadow / header border */
+            /* Always-white header bar (desktop + mobile, top + scrolled) */
+            header.header-style1,
+            header.header-style1.scrollHeader,
+            header.header-style1 .navbar-default,
+            header.header-style1.scrollHeader .navbar-default,
+            header.header-style1 .navbar-header-custom,
+            header.header-style1 .menu_area,
+            header.header-style1 .navbar-collapse,
+            header.header-style1 .navbar-collapse.collapsing,
+            header.header-style1 .navbar-collapse.show {
+                background: #ffffff !important;
+                background-color: #ffffff !important;
+                background-image: none !important;
+            }
+            /* Dark nav links on white (overrides menu_area-light white text) */
+            header.menu_area-light .navbar-nav > li > a,
+            header.menu_area-light.scrollHeader .navbar-nav > li > a {
+                color: #042158 !important;
+            }
+            header.menu_area-light .navbar-nav > li > a:hover,
+            header.menu_area-light .navbar-nav > li.has-sub > a:hover,
+            header.menu_area-light.scrollHeader .navbar-nav > li > a:hover,
+            header.menu_area-light.scrollHeader .navbar-nav > li.has-sub > a:hover {
+                color: #F7941D !important;
+            }
+            header.menu_area-light .navbar-nav li.current > a,
+            header.menu_area-light .navbar-nav li.active > a,
+            header.menu_area-light.scrollHeader .navbar-nav li.current > a,
+            header.menu_area-light.scrollHeader .navbar-nav li.active > a {
+                color: #F7941D !important;
+            }
+            header.menu_area-light .navbar > ul > li.has-sub > a:after,
+            header.menu_area-light.scrollHeader .navbar > ul > li.has-sub > a:after {
+                border-color: transparent #042158 #042158 transparent !important;
+            }
+            header.menu_area-light .navbar > ul > li.has-sub > a:hover:after,
+            header.menu_area-light .navbar > ul > li.current > a:after,
+            header.menu_area-light.scrollHeader .navbar > ul > li.has-sub > a:hover:after,
+            header.menu_area-light.scrollHeader .navbar > ul > li.current > a:after {
+                border-color: transparent #F7941D #F7941D transparent !important;
+            }
+            /* Space between Get Quote + myCADDIE */
+            header .attr-nav > ul.header-attr-actions {
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.75rem !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            header .attr-nav > ul.header-attr-actions > li {
+                margin: 0 !important;
+                padding: 0 !important;
+                float: none !important;
+            }
+            header .attr-nav > ul.header-attr-actions > li > a.butn-style01 {
+                padding: 10px 26px !important;
+            }
+            /* Tight logo; no shadow / header border */
             header .navbar-default,
             header .navbar-default.border-bottom,
             header .navbar-default.border-color-light-white {
@@ -10,11 +67,11 @@
                 box-shadow: none !important;
             }
             header .navbar-brand.logochange {
-                background: #ffffff !important;
+                background: transparent !important;
                 box-shadow: none !important;
                 filter: none !important;
                 padding: 6px 10px !important;
-                border-radius: 0 0 8px 0 !important;
+                border-radius: 0 !important;
                 line-height: 0 !important;
                 display: inline-flex !important;
                 align-items: center !important;
@@ -41,20 +98,8 @@
                 overflow: visible !important;
             }
             @media (max-width: 991.98px) {
-                header.header-style1,
-                header.header-style1.scrollHeader,
-                header .navbar-default,
-                header.scrollHeader .navbar-default,
-                header .navbar-header-custom,
-                header .menu_area,
-                header .navbar-collapse,
-                header .navbar-collapse.show {
-                    background: #ffffff !important;
-                    background-color: #ffffff !important;
-                    background-image: none !important;
-                }
                 header .navbar-brand.logochange {
-                    background: #ffffff !important;
+                    background: transparent !important;
                     border-radius: 0 !important;
                     padding: 4px 8px !important;
                     max-width: none !important;
@@ -146,7 +191,7 @@
                 }
                 header .navbar-brand.logochange {
                     padding: 6px 12px !important;
-                    border-radius: 0 0 8px 0 !important;
+                    border-radius: 0 !important;
                 }
                 header .navbar-brand.logochange img#logo.site-logo {
                     height: 54px !important;

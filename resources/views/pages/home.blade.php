@@ -177,17 +177,6 @@
                                                 'lazy' => true,
                                             ])
                                         </div>
-                                        <div class="about-text rotating d-none d-md-block">
-                                            <svg viewBox="0 0 200 200">
-                                                <path id="textPath" d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0" transform="translate(100,100)" fill="none" stroke-width="0"></path>
-                                                <g font-size="20.8px">
-                                                    <text text-anchor="start">
-                                                        <textpath class="coloring" xlink:href="#textPath" startOffset="0%"> smart caddies * smarter logistics * MarineCaddie * </textpath>
-                                                    </text>
-                                                </g>
-                                            </svg>
-                                            <div class="about-icon"><img src="{{ theme_asset('assets/img/logos/favicon.svg') }}?v=mc3" alt="MarineCaddie" title="MarineCaddie" class="w-60px" width="60" height="60"></div>
-                                        </div>
                                     </div>
                                 </div>
                                 
