@@ -10,7 +10,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/robots.txt', [RobotsController::class, 'index'])->name('robots');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/favicon.ico', function () {
-    $path = public_path('assets/img/logos/favicon.ico');
+    $path = public_path('favicon.ico');
+    if (! is_file($path)) {
+        $path = public_path('assets/img/logos/favicon-48.ico');
+    }
 
     return response()->file($path, [
         'Content-Type' => 'image/x-icon',
