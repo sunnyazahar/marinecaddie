@@ -29,8 +29,6 @@ class SitemapController extends Controller
         $entries = array_merge($entries, [
             ['path' => '/how-we-work', 'priority' => '0.8', 'changefreq' => 'monthly'],
             ['path' => '/faq', 'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['path' => '/portfolio', 'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['path' => '/blog', 'priority' => '0.6', 'changefreq' => 'weekly'],
             ['path' => '/contact', 'priority' => '0.8', 'changefreq' => 'monthly'],
             ['path' => '/privacy-policy', 'priority' => '0.3', 'changefreq' => 'yearly'],
             ['path' => '/terms', 'priority' => '0.3', 'changefreq' => 'yearly'],

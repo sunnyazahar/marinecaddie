@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Canonical host: apex → www (301)
+    RewriteCond %{HTTP_HOST} ^marinecaddie\.com$ [NC]
+    RewriteRule ^ https://www.marinecaddie.com%{REQUEST_URI} [L,R=301]
+
     # Browsers request /favicon.ico by default (48×48 for Google Search)
     RewriteRule ^favicon\.ico$ assets/img/logos/favicon-48.ico [L]
 
@@ -66,6 +70,9 @@
     ExpiresByType application/javascript "access plus 1 year"
     ExpiresByType text/javascript "access plus 1 year"
 
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
@@ -88,7 +95,7 @@
 
 <IfModule mod_headers.c>
     # Long-cache immutable assets (use ?v= cache-bust when files change)
-    <FilesMatch "\.(css|js|woff2?|ttf|otf|eot|svg|jpe?g|png|gif|webp|avif|ico)$">
+    <FilesMatch "\.(css|js|woff2?|ttf|otf|eot|svg|jpe?g|png|gif|webp|avif|ico|mp4|webm)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 
@@ -131,7 +138,7 @@
 
 # Disable ETag collision with long Cache-Control on static files
 <IfModule mod_headers.c>
-    <FilesMatch "\.(css|js|woff2?|jpe?g|png|webp|avif|svg|ico)$">
+    <FilesMatch "\.(css|js|woff2?|jpe?g|png|webp|avif|svg|ico|mp4|webm)$">
         Header unset ETag
     </FilesMatch>
 </IfModule>

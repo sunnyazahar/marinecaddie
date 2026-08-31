@@ -10,19 +10,14 @@ Artisan::command('inspire', function () {
 
 Artisan::command('indexnow:submit {--dry-run : Print payload without posting}', function () {
     $key = '509b3b93b4e049619ce65b70e55997c8';
-    $host = 'www.marinecaddie.com';
+    $host = parse_url((string) config('seo.url', 'https://www.marinecaddie.com'), PHP_URL_HOST) ?: 'www.marinecaddie.com';
     $keyLocation = "https://{$host}/{$key}.txt";
-    $sitemapPath = public_path('sitemap.xml');
 
-    if (! is_file($sitemapPath)) {
-        $this->error('public/sitemap.xml not found.');
-
-        return 1;
-    }
-
-    $xml = @simplexml_load_file($sitemapPath);
+    $controller = app(\App\Http\Controllers\SitemapController::class);
+    $response = $controller->index();
+    $xml = @simplexml_load_string($response->getContent());
     if ($xml === false) {
-        $this->error('Could not parse sitemap.xml.');
+        $this->error('Could not parse dynamic sitemap.xml.');
 
         return 1;
     }

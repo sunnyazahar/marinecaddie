@@ -12,6 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->prepend(\App\Http\Middleware\ForceCanonicalHost::class);
         $middleware->append(\App\Http\Middleware\FixAssetUrls::class);
 
         // HTML minify — preserve script/style (Page Speed CollapseWhitespace breaks // comments)

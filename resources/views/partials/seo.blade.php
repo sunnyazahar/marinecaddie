@@ -1,24 +1,27 @@
 {{-- Primary SEO, Open Graph, Twitter, and JSON-LD --}}
 @php
+    // @section('name', $value) auto-escapes; decode once before {{ }} output.
+    $decodeSection = static fn (string $value): string => html_entity_decode(trim($value), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
     $siteName = config('seo.site_name', config('app.name', 'MarineCaddie Shipping'));
     $separator = config('seo.title_separator', ' | ');
     $defaultTitle = config('seo.default_title');
-    $pageTitle = trim($__env->yieldContent('title', ''));
-    $fullTitle = trim($__env->yieldContent('meta_title', ''));
+    $pageTitle = $decodeSection($__env->yieldContent('title', ''));
+    $fullTitle = $decodeSection($__env->yieldContent('meta_title', ''));
     if ($fullTitle === '') {
         $fullTitle = $pageTitle !== ''
             ? $pageTitle . $separator . $siteName
             : $defaultTitle . $separator . $siteName;
     }
 
-    $description = trim($__env->yieldContent('meta_description', ''));
+    $description = $decodeSection($__env->yieldContent('meta_description', ''));
     if ($description === '') {
         $description = config('seo.default_description');
     }
 
     // Keywords are reference-only in config (array). Only output meta if a page
     // explicitly sets a string via @section('meta_keywords').
-    $keywords = trim($__env->yieldContent('meta_keywords', ''));
+    $keywords = $decodeSection($__env->yieldContent('meta_keywords', ''));
 
     $robots = trim($__env->yieldContent('meta_robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'));
     $canonical = trim($__env->yieldContent('canonical', ''));
@@ -29,14 +32,42 @@
     $ogType = trim($__env->yieldContent('og_type', 'website'));
     $ogImagePath = trim($__env->yieldContent('og_image', ''));
     $ogImage = $ogImagePath !== '' ? $ogImagePath : theme_asset(config('seo.og_image'));
-    $ogImageAlt = trim($__env->yieldContent('og_image_alt', $siteName . ' — marine logistics & ship agency'));
+    $ogImageAlt = $decodeSection($__env->yieldContent('og_image_alt', $siteName . ' — marine logistics & ship agency'));
 
     $org = config('seo.organization', []);
     $orgUrl = rtrim($org['url'] ?? config('seo.url') ?? config('app.url'), '/');
     $orgLogo = theme_asset($org['logo'] ?? 'assets/img/logos/logo.svg');
     $inLanguage = config('seo.language', 'en') === 'en' ? 'en-US' : config('seo.language', 'en');
     $schemaType = trim($__env->yieldContent('schema_type', 'WebPage'));
-    $serviceName = trim($__env->yieldContent('service_name', $pageTitle));
+    $serviceName = $decodeSection($__env->yieldContent('service_name', $pageTitle));
+
+    $webPageType = in_array($schemaType, ['Service', 'BlogPosting'], true)
+        ? 'WebPage'
+        : ($schemaType !== '' ? $schemaType : 'WebPage');
+
+    $webPageNode = [
+        '@type' => $webPageType,
+        '@id' => $canonical . '#webpage',
+        'url' => $canonical,
+        'name' => $fullTitle,
+        'description' => $description,
+        'isPartOf' => ['@id' => $orgUrl . '/#website'],
+        'about' => ['@id' => $orgUrl . '/#organization'],
+        'breadcrumb' => ['@id' => $canonical . '#breadcrumb'],
+        'inLanguage' => $inLanguage,
+        'primaryImageOfPage' => [
+            '@type' => 'ImageObject',
+            'url' => $ogImage,
+        ],
+    ];
+
+    $faqSchemaRaw = trim($__env->yieldPushContent('faq_schema', ''));
+    if ($faqSchemaRaw !== '') {
+        $faqMainEntity = json_decode($faqSchemaRaw, true);
+        if (is_array($faqMainEntity)) {
+            $webPageNode['mainEntity'] = $faqMainEntity;
+        }
+    }
 
     $orgNode = [
         '@type' => ['Organization', 'ProfessionalService'],
@@ -132,8 +163,8 @@
 <meta property="og:url" content="{{ $canonical }}">
 <meta property="og:image" content="{{ $ogImage }}">
 <meta property="og:image:alt" content="{{ $ogImageAlt }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="{{ config('seo.og_image_width', 1920) }}">
+<meta property="og:image:height" content="{{ config('seo.og_image_height', 1000) }}">
 
 {{-- Twitter Card --}}
 <meta name="twitter:card" content="summary_large_image">
@@ -159,21 +190,7 @@
             'publisher' => ['@id' => $orgUrl . '/#organization'],
             'inLanguage' => $inLanguage,
         ],
-        [
-            '@type' => in_array($schemaType, ['Service', 'FAQPage', 'BlogPosting'], true) ? 'WebPage' : $schemaType,
-            '@id' => $canonical . '#webpage',
-            'url' => $canonical,
-            'name' => $fullTitle,
-            'description' => $description,
-            'isPartOf' => ['@id' => $orgUrl . '/#website'],
-            'about' => ['@id' => $orgUrl . '/#organization'],
-            'breadcrumb' => ['@id' => $canonical . '#breadcrumb'],
-            'inLanguage' => $inLanguage,
-            'primaryImageOfPage' => [
-                '@type' => 'ImageObject',
-                'url' => $ogImage,
-            ],
-        ],
+        $webPageNode,
         [
             '@type' => 'BreadcrumbList',
             '@id' => $canonical . '#breadcrumb',

@@ -4,8 +4,8 @@
 @section('meta_title', 'Logistics Insights Blog | MarineCaddie Shipping')
 @section('meta_description', 'Insights on maritime logistics, ship spare delivery, freight trends, and port operations from MarineCaddie Shipping.')
 @section('meta_keywords', 'logistics blog, maritime logistics news, ship spares insights, freight forwarding')
-@section('meta_robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
-@section('schema_type', 'Blog')
+@section('meta_robots', 'noindex, follow')
+@section('schema_type', 'CollectionPage')
 @section('header_class', 'scrollHeader')
 
 @section('content')

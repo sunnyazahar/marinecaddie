@@ -24,13 +24,12 @@
 
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-    {{-- Responsive hero preloads (wrong size = wasted bandwidth + desktop CLS risk) --}}
+    {{-- Responsive hero preloads (poster only — video preload steals LCP bandwidth) --}}
     @if(request()->routeIs('home'))
-    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner-mobile.mp4') }}?v=full1080" as="video" type="video/mp4" media="(max-width: 991.98px)">
-    <link rel="preload" href="{{ theme_asset('assets/video/hero-banner.mp4') }}?v=full1080" as="video" type="video/mp4" media="(min-width: 992px)">
     <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif
+    <link rel="preload" href="{{ theme_asset('assets/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825css12" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
@@ -39,9 +38,14 @@
     <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825css12" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825css1" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825css1" rel="stylesheet">
-    <link href="{{ theme_asset('assets/css/search.css') }}?v=20260823perf1" rel="stylesheet">
-    <link href="{{ theme_asset('assets/css/base.css') }}?v=20260823perf1" rel="stylesheet">
-    <link href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260823perf1" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/search.css') }}?v=20260831perf1" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="{{ theme_asset('assets/css/base.css') }}?v=20260831perf1" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260831perf1" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="{{ theme_asset('assets/css/search.css') }}?v=20260831perf1" rel="stylesheet">
+        <link href="{{ theme_asset('assets/css/base.css') }}?v=20260831perf1" rel="stylesheet">
+        <link href="{{ theme_asset('assets/css/scrollbar.css') }}?v=20260831perf1" rel="stylesheet">
+    </noscript>
     @stack('styles')
 </head>
 <body>
@@ -71,7 +75,7 @@
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/scripts.js') }}?v=20260825a11y1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/contact-form.js') }}?v=20260823faq1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/core.min.js') }}"></script>
-    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/main.js') }}?v=20260825cls10"></script>
+    <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/main.js') }}?v=20260831perf1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/search.js') }}"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/plugins.js') }}?v=20260824console1"></script>
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/web-vitals-report.js') }}?v=20260824console1"></script>

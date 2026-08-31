@@ -28,7 +28,10 @@ class AppServiceProvider extends ServiceProvider
 
         // Live host (Hostinger): always use the real domain for assets — never localhost.
         if ($host !== '' && ! in_array($host, ['localhost', '127.0.0.1'], true)) {
-            $origin = rtrim(request()->getSchemeAndHttpHost(), '/');
+            $origin = rtrim((string) config('seo.url', request()->getSchemeAndHttpHost()), '/');
+            if ($origin === '') {
+                $origin = rtrim(request()->getSchemeAndHttpHost(), '/');
+            }
 
             config([
                 'app.url' => $origin,
@@ -36,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
             ]);
 
             URL::forceRootUrl($origin);
-            URL::forceScheme(request()->isSecure() ? 'https' : request()->getScheme());
+            URL::forceScheme('https');
             URL::useAssetOrigin($origin);
 
             return;

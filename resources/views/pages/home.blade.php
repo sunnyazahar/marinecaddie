@@ -183,7 +183,7 @@
                         <p class="mb-4 wow fadeInUp" data-wow-delay="150ms">{{ config('company.who_we_are') }}</p>
                         <div class="d-flex mb-1-9 wow fadeInUp" data-wow-delay="200ms">
                             <div class="flex-shrink-0 me-4">
-                                <img src="{{ theme_asset('assets/img/icons/icon-01.png') }}" alt="" title="Ship spare logistics" class="w-65px">
+                                <img src="{{ theme_asset('assets/img/icons/icon-01.png') }}" alt="Ship spare logistics icon" title="Ship spare logistics" class="w-65px" width="65" height="65">
                             </div>
                             <div class="flex-grow-1">
                                 <h3 class="mb-2 h5">Ship Spare Logistics</h3>
@@ -192,7 +192,7 @@
                         </div>
                         <div class="d-flex mb-2-5 wow fadeInUp" data-wow-delay="250ms">
                             <div class="flex-shrink-0 me-4">
-                                <img src="{{ theme_asset('assets/img/icons/icon-02.png') }}" alt="" title="Global port network" class="w-65px">
+                                <img src="{{ theme_asset('assets/img/icons/icon-02.png') }}" alt="Global port network icon" title="Global port network" class="w-65px" width="65" height="65">
                             </div>
                             <div class="flex-grow-1">
                                 <h3 class="mb-2 h5">Global Port Network</h3>
@@ -242,7 +242,7 @@
             </div>
             <div class="container-fluid p-sm-0">
                 <div class="row g-0 portfolio-gallery wow fadeInUp" data-wow-delay="200ms">
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ship Spares Air&lt;/a&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Ship Spares Air&lt;/h4&gt;">
                         <div class="portfolio-box">
                             <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}"></div>
                             <div class="content-box">
@@ -252,7 +252,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Ocean Freight&lt;a/&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Ocean Freight&lt;/h4&gt;">
                         <div class="portfolio-box">
                             <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}"></div>
                             <div class="content-box">
@@ -262,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Special Projects&lt;/a&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Special Projects&lt;/h4&gt;">
                         <div class="portfolio-box">
                             <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}"></div>
                             <div class="content-box">
@@ -272,7 +272,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;&lt;a href=&#39;portfolio-details.html&#39; class=&#39;text-white&#39;&gt;Hub &amp; Warehousing&lt;/a&gt;&lt;/h4&gt;">
+                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Hub &amp; Warehousing&lt;/h4&gt;">
                         <div class="portfolio-box">
                             <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}"></div>
                             <div class="content-box">

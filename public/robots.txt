@@ -3,7 +3,9 @@ Allow: /
 
 # Thin / alternate templates — keep crawl budget on primary pages
 Disallow: /home-alt
+Disallow: /blog
 Disallow: /blog/details
+Disallow: /portfolio
 Disallow: /portfolio/details
 
 Sitemap: https://www.marinecaddie.com/sitemap.xml

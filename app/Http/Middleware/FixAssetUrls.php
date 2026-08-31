@@ -14,7 +14,10 @@ class FixAssetUrls
         $host = $request->getHost();
 
         if ($host !== '' && ! in_array($host, ['localhost', '127.0.0.1'], true)) {
-            $origin = rtrim($request->getSchemeAndHttpHost(), '/');
+            $origin = rtrim((string) config('seo.url', $request->getSchemeAndHttpHost()), '/');
+            if ($origin === '') {
+                $origin = rtrim($request->getSchemeAndHttpHost(), '/');
+            }
 
             config([
                 'app.url' => $origin,
@@ -22,7 +25,7 @@ class FixAssetUrls
             ]);
 
             URL::forceRootUrl($origin);
-            URL::forceScheme($request->getScheme());
+            URL::forceScheme('https');
             URL::useAssetOrigin($origin);
         }
 

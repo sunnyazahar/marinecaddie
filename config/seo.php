@@ -68,6 +68,10 @@ return [
 
     'og_image' => 'assets/img/banner/slide-01.webp',
 
+    'og_image_width' => 1920,
+
+    'og_image_height' => 1000,
+
     'theme_color' => '#042158',
 
     'url' => 'https://www.marinecaddie.com',
@@ -98,7 +102,9 @@ return [
 
         'description' => 'MarineCaddie Shipping LLC is a Dubai-based marine logistics partner for time-critical ship spare logistics, ship & port agency, vessel husbandry, freight forwarding, customs clearance, and door-to-deck delivery worldwide.',
 
-        'same_as' => [],
+        'same_as' => [
+            'https://www.linkedin.com/company/marine/',
+        ],
 
         'area_served' => 'Worldwide',
 
