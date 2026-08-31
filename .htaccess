@@ -4,6 +4,8 @@
     # IndexNow key — static plain text at web root (Bing rejects PHP/session responses)
     RewriteRule ^509b3b93b4e049619ce65b70e55997c8\.txt$ public/509b3b93b4e049619ce65b70e55997c8.txt [L]
 
+    RewriteRule ^sitemap\.xml$ index.php [L]
+
     RewriteRule ^favicon\.ico$ public/favicon.ico [L]
 
     # Serve real files/dirs from /public (assets, etc.)
