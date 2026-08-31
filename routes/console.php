@@ -47,6 +47,20 @@ Artisan::command('indexnow:submit {--dry-run : Print payload without posting}', 
     $this->info('Key location: '.$keyLocation);
     $this->info('URLs: '.count($urls));
 
+    $keyResponse = Http::timeout(20)->get($keyLocation);
+    $keyBody = trim($keyResponse->body());
+    if (! $keyResponse->successful() || $keyBody !== $key) {
+        $this->error("IndexNow key file check failed (HTTP {$keyResponse->status()}).");
+        $this->line('Expected plain-text key at: '.$keyLocation);
+        if ($keyBody !== '' && strlen($keyBody) < 500) {
+            $this->line('Got: '.$keyBody);
+        }
+
+        return 1;
+    }
+
+    $this->info('Key file verified.');
+
     if ($this->option('dry-run')) {
         $this->line(json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
