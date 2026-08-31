@@ -78,35 +78,49 @@ Artisan::command('indexnow:submit {--dry-run : Print payload without posting}', 
     }
 
     $endpoints = [
-        'https://www.bing.com/indexnow',
-        'https://api.indexnow.org/indexnow',
+        'Yandex' => 'https://yandex.com/indexnow',
+        'IndexNow.org' => 'https://api.indexnow.org/indexnow',
+        'Bing' => 'https://www.bing.com/indexnow',
     ];
 
-    $accepted = false;
-    foreach ($endpoints as $endpoint) {
+    $accepted = [];
+    $bingForbidden = false;
+
+    foreach ($endpoints as $label => $endpoint) {
         $response = Http::timeout(30)
             ->acceptJson()
             ->asJson()
             ->post($endpoint, $payload);
 
         $status = $response->status();
-        $this->line($endpoint.' → HTTP '.$status);
+        $this->line("{$label} ({$endpoint}) → HTTP {$status}");
 
         if (in_array($status, [200, 202], true)) {
-            $accepted = true;
-            break;
+            $accepted[] = $label;
+            continue;
         }
 
-        if ($status === 403) {
-            $this->error($response->body() ?: 'Submission forbidden.');
+        $body = (string) $response->body();
+        if ($label === 'Bing' && $status === 403 && str_contains($body, 'UserForbiddedToAccessSite')) {
+            $bingForbidden = true;
+        } elseif ($body !== '') {
+            $this->line($body);
         }
     }
 
-    if ($accepted) {
-        $this->info('URLs submitted successfully.');
-
-        return 0;
+    if ($accepted !== []) {
+        $this->info('URLs submitted successfully to: '.implode(', ', $accepted).'.');
     }
 
-    return 1;
-})->purpose('Submit sitemap URLs to IndexNow (Bing / IndexNow partners)');
+    if ($bingForbidden) {
+        $this->newLine();
+        $this->warn('Bing returned UserForbiddedToAccessSite — your key file is fine, but Bing has not linked this domain to your key yet.');
+        $this->line('Fix (pick one):');
+        $this->line('  1. Verify https://www.marinecaddie.com in Bing Webmaster Tools: https://www.bing.com/webmasters');
+        $this->line('     (Import from Google Search Console is fastest.)');
+        $this->line('  2. After verification, open Bing WMT → IndexNow — it should recognize your key file.');
+        $this->line('  3. Or wait 1–7 days for Bingbot to crawl the key file organically.');
+    }
+
+    return $accepted !== [] ? 0 : 1;
+})->purpose('Submit sitemap URLs to IndexNow (Bing / Yandex / IndexNow partners)');
