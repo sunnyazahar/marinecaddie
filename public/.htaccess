@@ -5,6 +5,9 @@
 
     RewriteEngine On
 
+    # Browsers request /favicon.ico by default (serve even if root favicon.ico missing on deploy)
+    RewriteRule ^favicon\.ico$ assets/img/logos/favicon.ico [L]
+
     # Serve WebP when the client accepts it and a sibling .webp exists
     RewriteCond %{HTTP_ACCEPT} image/webp [NC]
     RewriteCond %{REQUEST_FILENAME} -f

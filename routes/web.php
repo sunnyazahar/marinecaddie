@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/robots.txt', [RobotsController::class, 'index'])->name('robots');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/favicon.ico', function () {
+    $path = public_path('assets/img/logos/favicon.ico');
+
+    return response()->file($path, [
+        'Content-Type' => 'image/x-icon',
+        'Cache-Control' => 'public, max-age=31536000, immutable',
+    ]);
+});
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/home-alt', [PageController::class, 'homeAlt'])->name('home.alt');
