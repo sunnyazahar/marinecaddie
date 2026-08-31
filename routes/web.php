@@ -21,16 +21,6 @@ Route::get('/favicon.ico', function () {
     ]);
 });
 
-Route::get('/509b3b93b4e049619ce65b70e55997c8.txt', function () {
-    $path = public_path('509b3b93b4e049619ce65b70e55997c8.txt');
-    abort_unless(is_file($path), 404);
-
-    return response((string) file_get_contents($path), 200, [
-        'Content-Type' => 'text/plain; charset=UTF-8',
-        'Cache-Control' => 'public, max-age=86400',
-    ]);
-});
-
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/home-alt', [PageController::class, 'homeAlt'])->name('home.alt');
 Route::get('/about', [PageController::class, 'about'])->name('about');

@@ -47,7 +47,9 @@ Artisan::command('indexnow:submit {--dry-run : Print payload without posting}', 
     $this->info('Key location: '.$keyLocation);
     $this->info('URLs: '.count($urls));
 
-    $keyResponse = Http::timeout(20)->get($keyLocation);
+    $keyResponse = Http::timeout(20)
+        ->withHeaders(['User-Agent' => 'Mozilla/5.0 (compatible; bingbot/2.0)'])
+        ->get($keyLocation);
     $keyBody = trim($keyResponse->body());
     if (! $keyResponse->successful() || $keyBody !== $key) {
         $this->error("IndexNow key file check failed (HTTP {$keyResponse->status()}).");
@@ -59,7 +61,15 @@ Artisan::command('indexnow:submit {--dry-run : Print payload without posting}', 
         return 1;
     }
 
-    $this->info('Key file verified.');
+    if ($keyResponse->header('Set-Cookie') || stripos((string) $keyResponse->header('X-Powered-By'), 'php') !== false) {
+        $this->error('Key file is being served by PHP (session cookies detected).');
+        $this->line('IndexNow requires a static .txt file at the site root.');
+        $this->line('Ensure 509b3b93b4e049619ce65b70e55997c8.txt exists in public_html (and public/ on project-root hosts).');
+
+        return 1;
+    }
+
+    $this->info('Key file verified (static).');
 
     if ($this->option('dry-run')) {
         $this->line(json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
@@ -67,21 +77,36 @@ Artisan::command('indexnow:submit {--dry-run : Print payload without posting}', 
         return 0;
     }
 
-    $response = Http::timeout(30)
-        ->acceptJson()
-        ->asJson()
-        ->post('https://api.indexnow.org/indexnow', $payload);
+    $endpoints = [
+        'https://www.bing.com/indexnow',
+        'https://api.indexnow.org/indexnow',
+    ];
 
-    $status = $response->status();
-    $this->line("IndexNow HTTP {$status}");
+    $accepted = false;
+    foreach ($endpoints as $endpoint) {
+        $response = Http::timeout(30)
+            ->acceptJson()
+            ->asJson()
+            ->post($endpoint, $payload);
 
-    if (in_array($status, [200, 202], true)) {
+        $status = $response->status();
+        $this->line($endpoint.' → HTTP '.$status);
+
+        if (in_array($status, [200, 202], true)) {
+            $accepted = true;
+            break;
+        }
+
+        if ($status === 403) {
+            $this->error($response->body() ?: 'Submission forbidden.');
+        }
+    }
+
+    if ($accepted) {
         $this->info('URLs submitted successfully.');
 
         return 0;
     }
-
-    $this->error($response->body() ?: 'Submission failed.');
 
     return 1;
 })->purpose('Submit sitemap URLs to IndexNow (Bing / IndexNow partners)');
