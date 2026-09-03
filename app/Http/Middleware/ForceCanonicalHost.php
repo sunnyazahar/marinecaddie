@@ -19,10 +19,14 @@ class ForceCanonicalHost
         $canonicalHost = parse_url((string) config('seo.url', ''), PHP_URL_HOST);
 
         if (is_string($canonicalHost) && $canonicalHost !== '' && strcasecmp($host, $canonicalHost) !== 0) {
-            return redirect()->to(
-                'https://' . $canonicalHost . $request->getRequestUri(),
-                301
-            );
+            $uri = $request->getRequestUri();
+
+            // Never leak internal /public/… paths into Location headers
+            if (str_starts_with($uri, '/public/') || $uri === '/public') {
+                $uri = substr($uri, strlen('/public')) ?: '/';
+            }
+
+            return redirect()->to('https://'.$canonicalHost.$uri, 301);
         }
 
         return $next($request);

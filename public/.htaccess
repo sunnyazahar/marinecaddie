@@ -5,15 +5,15 @@
 
     RewriteEngine On
 
+    # Canonical host: apex → www FIRST (before any path rewrite)
+    RewriteCond %{HTTP_HOST} ^marinecaddie\.com$ [NC]
+    RewriteRule ^ https://www.marinecaddie.com%{REQUEST_URI} [L,R=301]
+
     # IndexNow ownership key — must bypass Laravel (no session cookies)
     RewriteRule ^509b3b93b4e049619ce65b70e55997c8\.txt$ - [L]
 
     # Always serve sitemap via Laravel (stale static public/sitemap.xml breaks GSC after deploy)
     RewriteRule ^sitemap\.xml$ index.php [L]
-
-    # Canonical host: apex → www (301)
-    RewriteCond %{HTTP_HOST} ^marinecaddie\.com$ [NC]
-    RewriteRule ^ https://www.marinecaddie.com%{REQUEST_URI} [L,R=301]
 
     # Root favicons for Google Search (needs ≥48px PNG at a stable URL)
     RewriteRule ^favicon\.ico$ assets/img/logos/favicon-48.ico [L]

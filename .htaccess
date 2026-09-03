@@ -1,21 +1,29 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Apex → www FIRST (before any rewrite into /public/… — that path must never appear in Location)
+    RewriteCond %{HTTP_HOST} ^marinecaddie\.com$ [NC]
+    RewriteRule ^ https://www.marinecaddie.com%{REQUEST_URI} [L,R=301]
+
+    # Fix leaked /public/… URLs (old favicon redirect mistake)
+    RewriteRule ^public/(.*)$ /$1 [L,R=301]
+
     # IndexNow key — static plain text at web root (Bing rejects PHP/session responses)
-    RewriteRule ^509b3b93b4e049619ce65b70e55997c8\.txt$ public/509b3b93b4e049619ce65b70e55997c8.txt [L]
+    RewriteRule ^509b3b93b4e049619ce65b70e55997c8\.txt$ - [L]
+
+    # Root favicons (files live at project root — do not rewrite via public/)
+    RewriteRule ^favicon\.ico$ - [L]
+    RewriteRule ^favicon-48x48\.png$ - [L]
+    RewriteRule ^favicon-96x96\.png$ - [L]
 
     RewriteRule ^sitemap\.xml$ index.php [L]
-
-    RewriteRule ^favicon\.ico$ public/favicon.ico [L]
-    RewriteRule ^favicon-48x48\.png$ public/favicon-48x48.png [L]
-    RewriteRule ^favicon-96x96\.png$ public/favicon-96x96.png [L]
 
     # Serve real files/dirs from /public (assets, etc.)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} ^/MarineCaddie/(assets|css|js|img|images|fonts|video)/(.*)$ [NC]
     RewriteRule ^(.*)$ public/$1 [L]
 
-    # Shortcut: /MarineCaddie/assets/... -> public/assets/...
+    # Shortcut: /assets/... -> public/assets/... (www only — apex already redirected above)
     RewriteRule ^assets/(.*)$ public/assets/$1 [L]
 
     # Front controller
