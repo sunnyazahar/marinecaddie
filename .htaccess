@@ -7,6 +7,8 @@
     RewriteRule ^sitemap\.xml$ index.php [L]
 
     RewriteRule ^favicon\.ico$ public/favicon.ico [L]
+    RewriteRule ^favicon-48x48\.png$ public/favicon-48x48.png [L]
+    RewriteRule ^favicon-96x96\.png$ public/favicon-96x96.png [L]
 
     # Serve real files/dirs from /public (assets, etc.)
     RewriteCond %{REQUEST_FILENAME} !-f

@@ -21,6 +21,30 @@ Route::get('/favicon.ico', function () {
     ]);
 });
 
+Route::get('/favicon-48x48.png', function () {
+    $path = public_path('favicon-48x48.png');
+    if (! is_file($path)) {
+        $path = public_path('assets/img/logos/favicon-48x48.png');
+    }
+
+    return response()->file($path, [
+        'Content-Type' => 'image/png',
+        'Cache-Control' => 'public, max-age=31536000, immutable',
+    ]);
+});
+
+Route::get('/favicon-96x96.png', function () {
+    $path = public_path('favicon-96x96.png');
+    if (! is_file($path)) {
+        $path = public_path('assets/img/logos/favicon-96x96.png');
+    }
+
+    return response()->file($path, [
+        'Content-Type' => 'image/png',
+        'Cache-Control' => 'public, max-age=31536000, immutable',
+    ]);
+});
+
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/home-alt', [PageController::class, 'homeAlt'])->name('home.alt');
 Route::get('/about', [PageController::class, 'about'])->name('about');

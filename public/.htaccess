@@ -15,8 +15,10 @@
     RewriteCond %{HTTP_HOST} ^marinecaddie\.com$ [NC]
     RewriteRule ^ https://www.marinecaddie.com%{REQUEST_URI} [L,R=301]
 
-    # Browsers request /favicon.ico by default (48×48 for Google Search)
+    # Root favicons for Google Search (needs ≥48px PNG at a stable URL)
     RewriteRule ^favicon\.ico$ assets/img/logos/favicon-48.ico [L]
+    RewriteRule ^favicon-48x48\.png$ assets/img/logos/favicon-48x48.png [L]
+    RewriteRule ^favicon-96x96\.png$ assets/img/logos/favicon-96x96.png [L]
 
     # Serve WebP when the client accepts it and a sibling .webp exists
     RewriteCond %{HTTP_ACCEPT} image/webp [NC]
