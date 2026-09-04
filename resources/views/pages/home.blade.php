@@ -78,8 +78,8 @@
             <div class="container">
                 <div class="row align-items-end mb-1-9 mb-lg-2-5">
                     <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Services</span>
-                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-secondary">{{ config('company.tagline') }}</h2>
+                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">Our Services</h2>
+                        <p class="display-6 font-weight-700 text-primary mb-3 lh-sm ls-minus-1px">{{ config('company.tagline') }}</p>
                         <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} Four core capabilities from our company profile—built around vessel urgency and port realities.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
@@ -97,8 +97,8 @@
             <div class="container position-relative">
                 <div class="row align-items-end mb-1-9 mb-lg-2-9">
                     <div class="col-lg-7 wow fadeInUp" data-wow-delay="100ms">
-                        <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Ship Spare Logistics</span>
-                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-secondary">Door-to-deck. On time. 24/7.</h2>
+                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">Ship Spare Logistics</h2>
+                        <p class="display-6 font-weight-700 text-primary mb-3 lh-sm ls-minus-1px">Door-to-deck. On time. 24/7.</p>
                         <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} We move time-critical ship spares from supplier to vessel with full documentation, customs, carrier, and last-mile onboard delivery.</p>
                     </div>
                     <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
@@ -117,9 +117,9 @@
                     @endforeach
                 </div>
 
-                <div class="ship-spare-flow wow fadeInUp" data-wow-delay="200ms">
-                    <div class="ship-spare-flow__label text-uppercase small letter-spacing-4 font-weight-700 text-primary mb-3">End-to-end logistics flow</div>
-                    <div class="ship-spare-flow__track" role="list">
+                    <div class="ship-spare-flow wow fadeInUp" data-wow-delay="200ms">
+                        <h3 class="h5 font-weight-800 mb-3 lh-sm" style="color:#002D5B !important;font-family:var(--mc-font-heading),'Space Grotesk',sans-serif !important">End-to-end logistics flow</h3>
+                        <div class="ship-spare-flow__track" role="list">
                         @foreach(config('company.ship_spare_flow') as $step)
                         <div class="ship-spare-flow__step" role="listitem">
                             <div class="ship-spare-flow__icon" aria-hidden="true">
@@ -139,8 +139,8 @@
             <div class="container">
                 <div class="row align-items-end mb-1-9 mb-lg-2-5">
                     <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Port Husbandry Services</span>
-                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-secondary">Vessel support in India, Sri Lanka, Indonesia &amp; Singapore</h2>
+                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">Port Husbandry Services</h2>
+                        <p class="display-6 font-weight-700 text-primary mb-3 lh-sm ls-minus-1px">Vessel support in India, Sri Lanka, Indonesia &amp; Singapore</p>
                         <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} Practical port agency and husbandry coordination so every call stays efficient—from crew change to dry dock assistance.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
@@ -177,8 +177,8 @@
                 <div class="row">
                     <div class="col-xl-5 mt-1-9">
                         <div class="mb-4 wow fadeInUp" data-wow-delay="100ms">
-                            <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">About MarineCaddie</span>
-                            <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px">{{ config('company.tagline') }}</h2>
+                            <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">About MarineCaddie</h2>
+                            <p class="display-6 font-weight-700 text-primary mb-0 lh-sm ls-minus-1px">{{ config('company.tagline') }}</p>
                         </div>
                         <p class="mb-4 wow fadeInUp" data-wow-delay="150ms">{{ config('company.who_we_are') }}</p>
                         <div class="d-flex mb-1-9 wow fadeInUp" data-wow-delay="200ms">
@@ -231,8 +231,8 @@
             <div class="container pt-2-9 pb-1-9">
                 <div class="row align-items-end mb-1-9">
                     <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Process</span>
-                        <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px text-white">From enquiry to onboard delivery</h2>
+                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px text-white">Our Process</h2>
+                        <p class="display-5 font-weight-700 mb-3 lh-sm ls-minus-1px" style="color:#F7941D !important">From enquiry to onboard delivery</p>
                         <p class="lead text-white opacity9 mb-0 w-lg-90">See how MarineCaddie moves ship spares, freight, special projects, and hub operations with schedule-first coordination.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
@@ -380,8 +380,8 @@
                     <div class="col-lg-6 mt-1-9">
                         <div class="ps-xl-1-9">
                             <div class="mb-4">
-                                <span class="text-primary text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Our Testimonial.</span>
-                                <h2 class="display-4 font-weight-800 mb-0 lh-1 ls-minus-2px text-white">What clients say about MarineCaddie</h2>
+                                <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px text-white">Our Testimonial</h2>
+                                <p class="display-5 font-weight-700 mb-0 lh-sm ls-minus-1px" style="color:#F7941D !important">What clients say about MarineCaddie</p>
                             </div>
                             <div class="testimonial-carousel-two owl-carousel" data-owl="{&quot;loop&quot;:true,&quot;responsiveClass&quot;:true,&quot;autoplay&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;nav&quot;:true,&quot;navText&quot;:[&quot;&lt;i class=\&quot;ti-arrow-left\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;/i&gt;&quot;,&quot;&lt;i class=\&quot;ti-arrow-right\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;/i&gt;&quot;],&quot;dots&quot;:false,&quot;center&quot;:false,&quot;smartSpeed&quot;:1500,&quot;margin&quot;:30,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1}}}">
                                 <div>
@@ -389,7 +389,7 @@
                                     <div class="d-flex align-items-center">
                                         <div>
                                             <p class="text-white h5 mb-0 fw-bold">Operations Manager</p>
-                                            <span class="text-primary">Shipowner, Mediterranean</span>
+                                            <span class="d-block" style="color:#F7941D !important">Shipowner, Mediterranean</span>
                                         </div>
                                     </div>
                                 </div>
@@ -398,7 +398,7 @@
                                     <div class="d-flex align-items-center">
                                         <div>
                                             <p class="text-white h5 mb-0 fw-bold">Fleet Superintendent</p>
-                                            <span class="text-primary">Technical management, Dubai</span>
+                                            <span class="d-block" style="color:#F7941D !important">Technical management, Dubai</span>
                                         </div>
                                     </div>
                                 </div>

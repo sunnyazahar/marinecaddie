@@ -2408,6 +2408,8 @@ body {
 .main-wrapper .display-2.text-white,
 .main-wrapper .display-3.text-white,
 .main-wrapper .display-4.text-white,
+.main-wrapper .display-5.text-white,
+.main-wrapper .display-6.text-white,
 .main-wrapper .page-title-section h1,
 .main-wrapper .text-white h1,
 .main-wrapper .text-white h2,
@@ -2461,7 +2463,11 @@ body {
 .main-wrapper h3.text-primary,
 .main-wrapper h4.text-primary,
 .main-wrapper h5.text-primary,
-.main-wrapper h6.text-primary {
+.main-wrapper h6.text-primary,
+.main-wrapper .display-5.text-primary,
+.main-wrapper .display-6.text-primary,
+.main-wrapper p.display-5.text-primary,
+.main-wrapper p.display-6.text-primary {
   color: #F7941D !important;
 }
 

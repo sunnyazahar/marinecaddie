@@ -21,12 +21,12 @@
     <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif
     <link rel="preload" href="{{ theme_asset('assets/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825css12" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260904head1" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
     <style>{!! file_get_contents(public_path('assets/css/critical.css')) !!}</style>
     {{-- All theme CSS in head — delayed inject after load caused visible FOUC --}}
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260825css12" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260904head1" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825css1" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825css1" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/search.css') }}?v=20260831perf1" rel="stylesheet" media="print" onload="this.media='all'">

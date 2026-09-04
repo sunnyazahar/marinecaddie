@@ -61,9 +61,9 @@
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="150ms">
                         <div class="about-story__copy">
-                            <span class="text-primary small letter-spacing-4 d-block mb-2 font-weight-700">{{ config('company.legal_name') }}</span>
-                            <h2 class="display-4 font-weight-800 mb-3 lh-1 ls-minus-2px">{{ config('company.headline') }}</h2>
-                            <p class="about-story__tagline">{{ config('company.tagline') }}</p>
+                            <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">{{ config('company.legal_name') }}</h2>
+                            <p class="display-5 font-weight-700 mb-3 lh-sm ls-minus-1px" style="color:#F7941D !important">{{ config('company.headline') }}</p>
+                            <p class="display-6 font-weight-700 mb-3 lh-sm" style="color:#002D5B !important">{{ config('company.tagline') }}</p>
                             <p class="about-story__text mb-4">{{ config('company.who_we_are') }} From ship spares and door-to-deck delivery to freight, customs, and vessel husbandry—we keep fleets moving with schedule-first coordination.</p>
                             <div class="about-story__stats">
                                 <div class="about-story__stat">
@@ -146,8 +146,8 @@
             <div class="container">
                 <div class="row align-items-end mb-1-9">
                     <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <span class="text-primary small letter-spacing-4 d-block mb-2 font-weight-700">What We Do</span>
-                        <h2 class="display-5 font-weight-800 mb-0 lh-1 ls-minus-2px">Four pillars. One accountable desk.</h2>
+                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">What We Do</h2>
+                        <p class="display-5 font-weight-700 mb-0 lh-sm ls-minus-1px" style="color:#F7941D !important">Four pillars. One accountable desk.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
                         <a href="{{ route('services') }}" class="butn-style01">All Services</a>
