@@ -210,20 +210,45 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="{{ theme_asset('assets/vendor/leaflet/leaflet.css') }}?v=194">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.2/dist/maplibre-gl.css">
 <style>
-/* Ensure Leaflet root (same element as #mc-world-map) fills the frame */
-#mc-world-map.leaflet-container {
+#mc-world-map.maplibregl-map {
   width: 100%;
   height: 100%;
-  background: #d6e0ea;
+  background: #f2efe9;
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.contact-map__leaflet .maplibregl-ctrl-attrib {
+  font-size: 0.65rem;
+  background: rgba(4, 33, 88, 0.75);
+  color: rgba(255, 255, 255, 0.65);
+}
+.contact-map__leaflet .maplibregl-ctrl-attrib a {
+  color: #F7941D;
+}
+.contact-map__leaflet .maplibregl-popup-content {
+  border-radius: 0;
+  margin: 0.75rem 0.9rem;
+  font-size: 0.88rem;
+  color: #042158;
+  line-height: 1.45;
+  box-shadow: 0 12px 28px rgba(4, 33, 88, 0.28);
+}
+.contact-map__leaflet .maplibregl-popup-content strong {
+  display: block;
+  font-weight: 800;
+}
+.contact-map__leaflet .maplibregl-popup-content em {
+  color: #F7941D;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.78rem;
 }
 </style>
 @endpush
 
 @push('scripts')
-<script src="{{ theme_asset('assets/vendor/leaflet/leaflet.js') }}?v=194"></script>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.2/dist/maplibre-gl.js"></script>
 <script type="application/json" id="mc-presence-map-data">@json($presenceMap)</script>
-<script src="{{ theme_asset('assets/js/contact-map.js') }}?v=20260824map1" defer></script>
+<script src="{{ theme_asset('assets/js/contact-map.js') }}?v=20260917map7" defer></script>
 @endpush
