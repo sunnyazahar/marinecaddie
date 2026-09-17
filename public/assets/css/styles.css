@@ -1839,8 +1839,9 @@ a.contact-quick__card:hover {
 }
 .contact-form-panel {
   position: relative;
-  overflow: hidden;
-  height: 100%;
+  overflow: visible;
+  height: auto;
+  align-self: start;
   background: #fff;
   border: 1px solid rgba(4, 33, 88, 0.08);
   box-shadow: 0 18px 48px rgba(4, 33, 88, 0.08);
@@ -3790,11 +3791,125 @@ html.mc-quote-open body {
 .mc-quote__field textarea::placeholder {
   color: #a8b4c2;
 }
+.mc-quote__field select.mc-select-native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.mc-select2 {
+  position: relative;
+}
+.mc-select2__control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #d5dde6;
+  border-radius: 4px;
+  background: #fff;
+  color: #042158;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+}
+.mc-select2.is-open .mc-select2__control,
+.mc-select2__control:focus {
+  border-color: #042158;
+  box-shadow: 0 0 0 3px rgba(4, 33, 88, 0.08);
+  outline: none;
+}
+.mc-quote__field:has(select.is-invalid) .mc-select2__control,
+.mc-quote__field:has(select.is-invalid) .mc-select2__control:focus {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.12);
+}
+.mc-select2__rendered.is-placeholder {
+  color: #a8b4c2;
+}
+.mc-select2__arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #6b7a90;
+  flex-shrink: 0;
+}
+.mc-select2__dropdown {
+  position: fixed;
+  z-index: 10060;
+  background: #fff;
+  border: 1px solid #d5dde6;
+  border-radius: 4px;
+  box-shadow: 0 12px 28px rgba(4, 33, 88, 0.16);
+  overflow: hidden;
+}
+.mc-select2__search {
+  display: block;
+  width: calc(100% - 1rem);
+  margin: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #d5dde6;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #042158;
+}
+.mc-select2__search:focus {
+  border-color: #042158;
+  outline: none;
+}
+.mc-select2__results {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+  max-height: 14rem;
+  overflow: auto;
+}
+.mc-select2__option {
+  padding: 0.5rem 0.8rem;
+  color: #042158;
+  cursor: pointer;
+}
+.mc-select2__option.is-active,
+.mc-select2__option:hover {
+  background: #042158;
+  color: #fff;
+}
+.mc-select2__empty {
+  padding: 0.55rem 0.8rem;
+  color: #6b7a90;
+  font-size: 0.88rem;
+}
 .mc-quote__field input:focus,
 .mc-quote__field select:focus,
 .mc-quote__field textarea:focus {
   border-color: #042158;
   box-shadow: 0 0 0 3px rgba(4, 33, 88, 0.08);
+}
+.mc-quote__field input.is-invalid,
+.mc-quote__field select.is-invalid,
+.mc-quote__field textarea.is-invalid,
+.mc-quote__field input.is-invalid:focus,
+.mc-quote__field select.is-invalid:focus,
+.mc-quote__field textarea.is-invalid:focus {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.12);
+}
+.mc-quote .mc-field-error,
+.mc-quote__recaptcha-wrap .mc-field-error {
+  display: block;
+  margin-top: 0.35rem;
+  color: #a93226;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 .mc-quote__footer {
   display: flex;
@@ -3881,6 +3996,19 @@ html.mc-quote-open body {
   background: rgba(192, 57, 43, 0.08);
   color: #a93226;
   border: 1px solid rgba(192, 57, 43, 0.2);
+}
+.mc-contact-form .form-control.is-invalid,
+.mc-contact-form .form-control.is-invalid:focus {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.12);
+}
+.mc-field-error {
+  display: block;
+  margin-top: 0.35rem;
+  color: #a93226;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 @media (max-width: 400px) {
   .mc-recaptcha .g-recaptcha {

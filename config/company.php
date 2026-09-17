@@ -9,7 +9,7 @@ return [
     'motto' => 'Leave the Logistics to Us, Keep Your Fleet Moving.',
 
     'email' => 'ops@marinecaddie.com',
-    'form_notify_email' => env('FORM_NOTIFY_EMAIL', 'sunnyazahar@gmail.com'),
+    'form_notify_email' => env('FORM_NOTIFY_EMAIL', 'ops@marinecaddie.com'),
     'phone' => '+971 50 5643375',
     'phone_display' => '+971 50 5643375',
     'phone_tel' => '+971505643375',

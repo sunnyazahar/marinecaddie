@@ -3,11 +3,10 @@
         'Ship Spare Logistics',
         'Vessel Husbandry',
         'Customs Clearance',
-        'Air Ocean Road',
+        'Air, Ocean, Road',
         'Door to Deck',
         '24/7 Operations',
         'Global Port Network',
-        'Smart Caddies',
     ];
 @endphp
 @foreach($phrases as $phrase)

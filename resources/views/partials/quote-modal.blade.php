@@ -1,16 +1,16 @@
 @php
     $privacyUrl = route('privacy-policy');
     $quoteServices = [
-        'Ship Spares Logistics',
-        'Onboard Delivery',
-        'Ship Agency Support',
-        'Vessel Husbandry',
         'Air Freight',
-        'Ocean Freight',
-        'Road Transportation',
         'Customs Clearance',
+        'Ocean Freight',
+        'Onboard Delivery',
+        'Other',
         'Project Cargo / OOG',
-        'Other / Multi-service',
+        'Road Transportation',
+        'Ship Agency Support',
+        'Ship Spares Logistics',
+        'Vessel Husbandry',
     ];
 @endphp
 
@@ -134,8 +134,8 @@
                             <select id="q_urgency" name="q_urgency">
                                 <option value="">Select</option>
                                 <option value="Standard">Standard</option>
-                                <option value="Urgent">Urgent</option>
                                 <option value="Time-critical / ASAP">Time-critical / ASAP</option>
+                                <option value="Urgent">Urgent</option>
                             </select>
                         </div>
                         <div class="mc-quote__field mc-quote__field--full">

@@ -111,7 +111,8 @@
                                         <div class="quform-element form-group">
                                             <label for="name">Your Name <span class="quform-required">*</span></label>
                                             <div class="quform-input">
-                                                <input class="form-control" id="name" type="text" name="name" placeholder="Full name" required>
+                                                <input class="form-control @error('name') is-invalid @enderror" id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Full name" required>
+                                                @error('name')<div class="mc-field-error" role="alert">{{ $message }}</div>@enderror
                                             </div>
                                         </div>
                                     </div>
@@ -119,7 +120,8 @@
                                         <div class="quform-element form-group">
                                             <label for="email">Your Email <span class="quform-required">*</span></label>
                                             <div class="quform-input">
-                                                <input class="form-control" id="email" type="email" name="email" placeholder="name@company.com" required>
+                                                <input class="form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="name@company.com" required>
+                                                @error('email')<div class="mc-field-error" role="alert">{{ $message }}</div>@enderror
                                             </div>
                                         </div>
                                     </div>
@@ -127,7 +129,8 @@
                                         <div class="quform-element form-group">
                                             <label for="subject">Subject <span class="quform-required">*</span></label>
                                             <div class="quform-input">
-                                                <input class="form-control" id="subject" type="text" name="subject" placeholder="Ship spares / customs / husbandry" required>
+                                                <input class="form-control @error('subject') is-invalid @enderror" id="subject" type="text" name="subject" value="{{ old('subject') }}" placeholder="Ship spares / customs / husbandry" required>
+                                                @error('subject')<div class="mc-field-error" role="alert">{{ $message }}</div>@enderror
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +138,8 @@
                                         <div class="quform-element form-group">
                                             <label for="phone">Contact Number</label>
                                             <div class="quform-input">
-                                                <input class="form-control" id="phone" type="tel" name="phone" placeholder="+971 …">
+                                                <input class="form-control @error('phone') is-invalid @enderror" id="phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="+971 …">
+                                                @error('phone')<div class="mc-field-error" role="alert">{{ $message }}</div>@enderror
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +147,8 @@
                                         <div class="quform-element form-group">
                                             <label for="message">Message <span class="quform-required">*</span></label>
                                             <div class="quform-input">
-                                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Port, vessel schedule, cargo urgency…" required></textarea>
+                                                <textarea class="form-control @error('message') is-invalid @enderror" id="message" name="message" rows="4" placeholder="Port, vessel schedule, cargo urgency…" required>{{ old('message') }}</textarea>
+                                                @error('message')<div class="mc-field-error" role="alert">{{ $message }}</div>@enderror
                                             </div>
                                         </div>
                                     </div>
