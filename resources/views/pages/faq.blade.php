@@ -116,9 +116,9 @@
                             <div class="faq-main__quick">
                                 <h3 class="faq-main__quick-title">Still need help?</h3>
                                 <p class="mb-3">Talk to our operations team for vessel-specific guidance.</p>
-                                <a href="tel:{{ config('company.phone_tel') }}" class="faq-main__phone">
-                                    <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
-                                    {{ config('company.phone_display') }}
+                                <a href="mailto:{{ config('company.email') }}" class="faq-main__phone">
+                                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                    {{ config('company.email') }}
                                 </a>
                                 <a href="{{ route('contact') }}" class="butn-style01 mt-3">Contact Us</a>
                             </div>
@@ -236,7 +236,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="faq-phone" class="form-label">Phone</label>
-                                        <input class="form-control" id="faq-phone" type="tel" name="phone" placeholder="+971 …">
+                                        <input class="form-control" id="faq-phone" type="tel" name="phone" placeholder="Phone number">
                                     </div>
                                     <div class="col-12">
                                         <label for="faq-message" class="form-label">Message <span class="text-primary">*</span></label>
@@ -260,13 +260,6 @@
                                 <div>
                                     <h3 class="faq-contact__info-title">Office</h3>
                                     <p class="mb-0">{{ config('company.address.line1') }}, {{ config('company.address.short') }}</p>
-                                </div>
-                            </div>
-                            <div class="faq-contact__info-card">
-                                <span class="faq-contact__info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
-                                <div>
-                                    <h3 class="faq-contact__info-title">Phone</h3>
-                                    <p class="mb-0"><a href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a></p>
                                 </div>
                             </div>
                             <div class="faq-contact__info-card">

@@ -106,10 +106,6 @@
                                     <p class="text-white opacity8 mb-0">{{ config('company.presence') }}</p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                    <h3 class="h4 text-white">Phone</h3>
-                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a></p>
-                                </div>
-                                <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Follow us</h3>
                                     <ul class="social-icon-style03 list-unstyled">
                                         <li><a href="{{ route('how-we-work') }}#"><i class="ti-facebook"></i></a></li>

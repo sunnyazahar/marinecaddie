@@ -27,7 +27,6 @@
                 <p class="svc-page-hero__excerpt">{{ $service['excerpt'] }}</p>
                 <div class="svc-page-hero__actions">
                     <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01" data-open-quote="quote">Get Quote</a>
-                    <a href="tel:{{ config('company.phone_tel') }}" class="svc-page-hero__ghost">{{ config('company.phone_display') }}</a>
                 </div>
             </div>
         </section>
@@ -136,7 +135,6 @@
 
                             <div class="svc-page-aside__help">
                                 <p class="svc-page-aside__help-label">Need this service?</p>
-                                <a href="tel:{{ config('company.phone_tel') }}" class="svc-page-aside__phone">{{ config('company.phone_display') }}</a>
                                 <a href="mailto:{{ config('company.email') }}" class="svc-page-aside__mail">{{ config('company.email') }}</a>
                                 <a href="{{ route('contact') }}" class="butn-style01 w-100 text-center mt-3">Talk to operations</a>
                             </div>

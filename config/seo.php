@@ -98,8 +98,6 @@ return [
 
         'email' => 'ops@marinecaddie.com',
 
-        'telephone' => '+971-50-5643375',
-
         'description' => 'MarineCaddie Shipping LLC is a Dubai-based marine logistics partner for time-critical ship spare logistics, ship & port agency, vessel husbandry, freight forwarding, customs clearance, and door-to-deck delivery worldwide.',
 
         'same_as' => [

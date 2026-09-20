@@ -53,7 +53,7 @@
                             </div>
                             <div>
                                 <h2 class="mb-4 h4">Your choices and contact</h2>
-                                <p class="mb-0">You may request access, correction, or deletion of personal information we hold about you, subject to applicable law. For privacy requests, email ops@marinecaddie.com or call +971 50 5643375. We may update this policy from time to time; the revised version will be posted on this page.</p>
+                                <p class="mb-0">You may request access, correction, or deletion of personal information we hold about you, subject to applicable law. For privacy requests, email ops@marinecaddie.com. We may update this policy from time to time; the revised version will be posted on this page.</p>
                             </div>
                         </div>
                     </div>

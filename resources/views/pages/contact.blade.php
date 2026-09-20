@@ -2,7 +2,7 @@
 
 @section('title', 'Contact')
 @section('meta_title', 'Contact MarineCaddie Shipping | Dubai Ops Team')
-@section('meta_description', 'Contact MarineCaddie Shipping LLC in Deira, Dubai. Email ops@marinecaddie.com or call +971 50 5643375 for ship spares, freight, customs, and port husbandry.')
+@section('meta_description', 'Contact MarineCaddie Shipping LLC in Deira, Dubai. Email ops@marinecaddie.com for ship spares, freight, customs, and port husbandry.')
 @section('meta_keywords', 'contact MarineCaddie, Dubai shipping company, maritime logistics contact, ops@marinecaddie.com, Deira Dubai')
 @section('schema_type', 'ContactPage')
 @section('header_class', 'scrollHeader')
@@ -138,7 +138,7 @@
                                         <div class="quform-element form-group">
                                             <label for="phone">Contact Number</label>
                                             <div class="quform-input">
-                                                <input class="form-control @error('phone') is-invalid @enderror" id="phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="+971 …">
+                                                <input class="form-control @error('phone') is-invalid @enderror" id="phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="Phone number">
                                                 @error('phone')<div class="mc-field-error" role="alert">{{ $message }}</div>@enderror
                                             </div>
                                         </div>
@@ -175,10 +175,6 @@
                             <h3 class="contact-side__title">{{ config('company.legal_name') }}</h3>
                             <p class="contact-side__address mb-1-9">{{ config('company.address.line2') }}</p>
                             <ul class="contact-side__list">
-                                <li>
-                                    <span>Phone</span>
-                                    <a href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a>
-                                </li>
                                 <li>
                                     <span>Email</span>
                                     <a href="mailto:{{ config('company.email') }}">{{ config('company.email') }}</a>

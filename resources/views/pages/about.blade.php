@@ -130,7 +130,6 @@
                                     <p class="mb-0">{{ config('company.address.line1') }}<br>{{ config('company.address.line2') }}</p>
                                 </div>
                                 <div class="about-motto-split__office-links">
-                                    <a href="tel:{{ config('company.phone_tel') }}">{{ config('company.phone_display') }}</a>
                                     <a href="mailto:{{ config('company.email') }}">{{ config('company.email') }}</a>
                                 </div>
                             </div>
@@ -190,7 +189,6 @@
                     <p class="about-cta-band__text">Share shipment details, port timing, or cargo type—our Dubai desk responds promptly.</p>
                     <div class="about-cta-band__actions">
                         <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 white-hover" data-open-quote="quote">Get a Quote</a>
-                        <a href="tel:{{ config('company.phone_tel') }}" class="about-cta-band__phone">{{ config('company.phone_display') }}</a>
                     </div>
                 </div>
             </div>

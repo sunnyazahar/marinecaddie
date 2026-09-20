@@ -59,7 +59,7 @@
                             </div>
                             <div>
                                 <h2 class="mb-3 h4">06. Changes and contact</h2>
-                                <p class="mb-0">We may revise these Terms &amp; Conditions at any time by posting an updated version on this page. For questions, contact ops@marinecaddie.com or +971 50 5643375.</p>
+                                <p class="mb-0">We may revise these Terms &amp; Conditions at any time by posting an updated version on this page. For questions, contact ops@marinecaddie.com.</p>
                             </div>
                         </div>
                     </div>

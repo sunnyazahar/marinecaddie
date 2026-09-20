@@ -14,7 +14,7 @@
 | Motto | Smart Caddies, Smarter Logistics! |
 | Job of the site | Explain services and capture quote / information requests |
 | Primary CTA | **Get Quote** |
-| Ops desk | ops@marinecaddie.com · +971 50 5643375 · Deira, Dubai |
+| Ops desk | ops@marinecaddie.com · Deira, Dubai |
 
 ---
 

@@ -63,7 +63,6 @@
                                         </div>
                                         <div class="mb-3 text-white h4">How Can We Help?</div>
                                         <ul class="text-center list-unstyled mb-0">
-                                            <li class="text-white mb-2"><i class="fa fa-phone small text-white me-2"></i><a href="tel:{{ config('company.phone_tel') }}" class="text-white">{{ config('company.phone_display') }}</a></li>
                                             <li class="text-white"><i class="fa fa-envelope-open small text-white me-2"></i><a href="mailto:{{ config('company.email') }}" class="text-white">{{ config('company.email') }}</a></li>
                                         </ul>
                                     </div>

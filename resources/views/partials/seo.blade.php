@@ -81,7 +81,6 @@
         ],
         'image' => $ogImage,
         'email' => $org['email'] ?? null,
-        'telephone' => $org['telephone'] ?? null,
         'description' => $org['description'] ?? config('seo.default_description'),
         'areaServed' => $org['area_served'] ?? 'Worldwide',
         'knowsAbout' => $org['knows_about'] ?? [],
@@ -89,7 +88,6 @@
         'priceRange' => '$$',
         'contactPoint' => [
             '@type' => 'ContactPoint',
-            'telephone' => $org['telephone'] ?? null,
             'contactType' => 'customer service',
             'email' => $org['email'] ?? null,
             'availableLanguage' => ['English'],

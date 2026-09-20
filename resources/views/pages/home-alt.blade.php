@@ -377,7 +377,7 @@
                             </div>
                             <div>
                                 <small class="text-white display-28">24/7 Logistics Support</small>
-                                <h3 class="h5 mb-0"><a href="tel:+971505643375" class="text-white">+971 50 5643375</a></h3>
+                                <h3 class="h5 mb-0"><a href="mailto:ops@marinecaddie.com" class="text-white">ops@marinecaddie.com</a></h3>
                             </div>
                         </li>
                     </ul>
@@ -477,7 +477,6 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <h3 class="h4 font-weight-700"><a href="tel:+971505643375" class="text-white text-secondary-hover">+971 50 5643375</a></h3>
                             <h3 class="h4 mb-0 font-weight-700"><a href="mailto:ops@marinecaddie.com" class="text-white text-secondary-hover">ops@marinecaddie.com</a></h3>
                         </div>
                     </div>
@@ -502,9 +501,8 @@
                                     <p class="text-white opacity8 mb-0">Maritime & global logistics coverage worldwide.</p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                    <h3 class="h4 text-white">Phone</h3>
-                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:+971505643375">+971 50 5643375</a></p>
-                                    <p class="mb-0"><a class="text-primary text-white-hover" href="tel:+971505643375">+971 50 5643375</a></p>
+                                    <h3 class="h4 text-white">Email</h3>
+                                    <p class="mb-0"><a class="text-primary text-white-hover" href="mailto:ops@marinecaddie.com">ops@marinecaddie.com</a></p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Follow us</h3>
