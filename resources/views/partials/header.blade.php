@@ -348,8 +348,13 @@
                                                 @foreach($navServicesConfig as $svcKey => $svc)
                                                     @php
                                                         $catSlug = $svc['slug'] ?? null;
-                                                        $catHref = $catSlug
-                                                            ? route('services.show', $catSlug)
+                                                        $catLinkSlug = [
+                                                            'freight_forwarding' => 'air-freight',
+                                                            'customs_clearance' => 'tp-trans-shipment-clearance',
+                                                            'special_projects' => 'oog-cargo',
+                                                        ][$svcKey] ?? $catSlug;
+                                                        $catHref = $catLinkSlug
+                                                            ? route('services.show', $catLinkSlug)
                                                             : route('services');
                                                         $itemSlugs = collect($svc['items'] ?? [])->map(function ($item) {
                                                             return is_array($item) ? ($item['slug'] ?? null) : null;
