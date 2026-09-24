@@ -1,56 +1,62 @@
 /**
- * Reliable mobile accordion for Our Services mega menu.
- * Replaces theme multitoggle handlers that fight mega CSS.
+ * Mobile accordion for Who We Are and Our Services.
+ * Capture phase runs before the theme menumaker (loaded after window load),
+ * which slideToggles the same list twice and leaves it at height 0.
  */
-(function ($) {
+(function () {
   'use strict';
 
   function isMobileNav() {
     return window.matchMedia('(max-width: 991.98px)').matches;
   }
 
-  function dedupeButtons() {
-    $('#nav > li.has-sub').each(function () {
-      $(this).children('.submenu-button').slice(1).remove();
+  function clearSlideStyles(sub) {
+    if (!sub) return;
+    ['display', 'height', 'overflow', 'padding-top', 'padding-bottom', 'margin-top', 'margin-bottom'].forEach(function (prop) {
+      sub.style.removeProperty(prop);
     });
   }
 
-  function toggleMega($li) {
-    var willOpen = !$li.hasClass('active');
-
-    $li.siblings('.has-sub').removeClass('active')
-      .children('.sub-menu').removeClass('open').hide();
-
-    $li.toggleClass('active', willOpen);
-    $li.children('.sub-menu--mega').toggleClass('open', willOpen);
+  function setOpen(li, open) {
+    li.classList.toggle('is-open', open);
+    var link = li.querySelector(':scope > a');
+    if (link) link.setAttribute('aria-expanded', open ? 'true' : 'false');
+    clearSlideStyles(li.querySelector(':scope > .sub-menu'));
   }
 
-  function bindMegaAccordion() {
-    var $buttons = $('#nav > li.has-mega > .submenu-button');
-    var $links = $('#nav > li.has-mega > a');
-    if (!$buttons.length) return;
-
-    // Remove theme inline click handlers, then bind ours.
-    $buttons.off('click').on('click.mcMega', function (e) {
-      if (!isMobileNav()) return;
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      toggleMega($(this).closest('li.has-mega'));
-    });
-
-    $links.off('click.mcMega').on('click.mcMega', function (e) {
-      if (!isMobileNav()) return;
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      toggleMega($(this).closest('li.has-mega'));
-    });
+  function toggle(li) {
+    var open = !li.classList.contains('is-open');
+    var nav = li.parentElement;
+    if (nav) {
+      nav.querySelectorAll(':scope > li.has-sub.is-open').forEach(function (other) {
+        if (other !== li) setOpen(other, false);
+      });
+    }
+    setOpen(li, open);
   }
 
-  $(function () {
-    // Theme core binds on init — run after that.
-    setTimeout(function () {
-      dedupeButtons();
-      bindMegaAccordion();
-    }, 50);
-  });
-})(jQuery);
+  function onNavClick(e) {
+    if (!isMobileNav()) return;
+    if (e.target.closest('.sub-menu')) return;
+
+    var li = e.target.closest('#nav > li.has-sub');
+    if (!li) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    toggle(li);
+  }
+
+  function boot() {
+    var nav = document.getElementById('nav');
+    if (!nav || nav.getAttribute('data-mc-accordion') === '1') return;
+    nav.setAttribute('data-mc-accordion', '1');
+    nav.addEventListener('click', onNavClick, true);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();

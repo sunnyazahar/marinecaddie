@@ -2789,38 +2789,74 @@ body {
   color: #F7941D !important;
 }
 @media (max-width: 991.98px) {
-  #nav > li.has-mega {
+  /* Scroll the open menu inside the screen. The panel is position:absolute,
+     so a long Our Services list would otherwise run off the page. */
+  header.header-style1 #nav.open {
+    max-height: calc(100dvh - 64px);
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+  }
+  header.header-style1 #nav > li.has-sub {
     position: relative;
   }
-  /* Theme multitoggle uses li.active (not li.open). Keep closed unless active. */
-  #nav .sub-menu--mega {
-    width: 100% !important;
-    max-width: none;
-    left: 0 !important;
-    transform: none !important;
-    padding: 0.5rem 0.75rem 0.75rem !important;
-    border-top: 0;
-    box-shadow: none;
+  /* Closed until our accordion adds .is-open. Do not key off .active —
+     that class also means "current page", so the menu stayed stuck. */
+  header.header-style1 #nav > li.has-sub > .sub-menu {
     display: none !important;
     position: relative !important;
+    left: 0 !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    height: auto !important;
     overflow: visible !important;
-    margin: 0 !important;
+    float: none !important;
   }
-  #nav > li.has-mega.active > .sub-menu--mega {
+  header.header-style1 #nav > li.has-sub.is-open > .sub-menu {
     display: block !important;
-    left: 0 !important;
   }
-  #nav .sub-menu--mega > .nav-mega-col {
+  header.header-style1 #nav > li.has-sub.is-open > .submenu-button:before {
+    display: none !important;
+  }
+  header.header-style1 #nav > li.has-sub.is-open > a {
+    color: #F7941D !important;
+  }
+  header.header-style1 #nav > li.has-sub:not(.has-mega) > .sub-menu {
+    padding: 0 !important;
+    background: #f3f3f1 !important;
+    border-top: 0;
+    box-shadow: none;
+  }
+  header.header-style1 #nav > li.has-sub:not(.has-mega) > .sub-menu > li > a {
+    display: block !important;
+    padding: 13px 20px 13px 28px !important;
+    color: #1a1a1a !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    white-space: normal;
+  }
+  header.header-style1 #nav .sub-menu--mega {
+    padding: 0.5rem 0.75rem 0.75rem !important;
+    border-top: 0;
+    box-shadow: none;
+    background: #fff !important;
+  }
+  header.header-style1 #nav .sub-menu--mega > .nav-mega-col {
     display: block;
     border-right: 0;
     border-bottom: 1px solid rgba(4, 33, 88, 0.08);
     padding: 0.65rem 0.25rem;
   }
-  #nav .sub-menu--mega > .nav-mega-col:last-child {
+  header.header-style1 #nav .sub-menu--mega > .nav-mega-col:last-child {
     border-bottom: 0;
   }
 }
