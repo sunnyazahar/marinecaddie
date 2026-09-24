@@ -1,7 +1,7 @@
 <!-- HEADER
         ================================================== -->
         <style>
-            /* Always-white header bar (desktop + mobile, top + scrolled) */
+            /* Dark cinematic chrome (black / silver) */
             header.header-style1,
             header.header-style1.scrollHeader,
             header.header-style1 .navbar-default,
@@ -11,38 +11,77 @@
             header.header-style1 .navbar-collapse,
             header.header-style1 .navbar-collapse.collapsing,
             header.header-style1 .navbar-collapse.show {
-                background: #ffffff !important;
-                background-color: #ffffff !important;
+                background: #0a0a0a !important;
+                background-color: #0a0a0a !important;
                 background-image: none !important;
             }
-            /* Dark nav links on white (overrides menu_area-light white text) */
-            header.menu_area-light .navbar-nav > li > a,
-            header.menu_area-light.scrollHeader .navbar-nav > li > a {
-                color: #042158 !important;
+            @media (min-width: 992px) {
+                header.menu_area-light .navbar-nav > li > a,
+                header.menu_area-light.scrollHeader .navbar-nav > li > a {
+                    color: #c8c8c8 !important;
+                }
+                header.menu_area-light .navbar-nav > li > a:hover,
+                header.menu_area-light .navbar-nav > li.has-sub > a:hover,
+                header.menu_area-light.scrollHeader .navbar-nav > li > a:hover,
+                header.menu_area-light.scrollHeader .navbar-nav > li.has-sub > a:hover {
+                    color: #ffffff !important;
+                }
+                header.menu_area-light .navbar-nav li.current > a,
+                header.menu_area-light .navbar-nav li.active > a,
+                header.menu_area-light.scrollHeader .navbar-nav li.current > a,
+                header.menu_area-light.scrollHeader .navbar-nav li.active > a {
+                    color: #e8e8e8 !important;
+                }
+                header.menu_area-light .navbar > ul > li.has-sub > a:after,
+                header.menu_area-light.scrollHeader .navbar > ul > li.has-sub > a:after {
+                    border-color: transparent #c8c8c8 #c8c8c8 transparent !important;
+                }
+                header.menu_area-light .navbar > ul > li.has-sub > a:hover:after,
+                header.menu_area-light .navbar > ul > li.current > a:after,
+                header.menu_area-light.scrollHeader .navbar > ul > li.has-sub > a:hover:after,
+                header.menu_area-light.scrollHeader .navbar > ul > li.current > a:after {
+                    border-color: transparent #ffffff #ffffff transparent !important;
+                }
             }
-            header.menu_area-light .navbar-nav > li > a:hover,
-            header.menu_area-light .navbar-nav > li.has-sub > a:hover,
-            header.menu_area-light.scrollHeader .navbar-nav > li > a:hover,
-            header.menu_area-light.scrollHeader .navbar-nav > li.has-sub > a:hover {
-                color: #F7941D !important;
+            @media (max-width: 991.98px) {
+                header.header-style1 #nav > li > a,
+                header.header-style1 #nav .sub-menu a,
+                header.header-style1 #nav .nav-mega-col__title,
+                header.header-style1 #nav .nav-mega-col__item,
+                header.header-style1 #nav .nav-mega-col__more,
+                header.header-style1 #nav .nav-mega-col__label {
+                    color: #1a1a1a !important;
+                }
+                header.header-style1 #nav > li.current > a,
+                header.header-style1 #nav > li.active > a,
+                header.header-style1 #nav > li > a:hover,
+                header.header-style1 #nav .sub-menu a:hover,
+                header.header-style1 #nav .sub-menu li.current > a,
+                header.header-style1 #nav .sub-menu li.active > a,
+                header.header-style1 #nav .nav-mega-col__item:hover,
+                header.header-style1 #nav .nav-mega-col__item.is-active,
+                header.header-style1 #nav .nav-mega-col__title:hover,
+                header.header-style1 #nav .nav-mega-col__more:hover {
+                    color: #F7941D !important;
+                }
+                header.header-style1 #nav > li.has-sub > a:after,
+                header.header-style1 #nav > li.current > a:after,
+                header.header-style1 #nav > li.active > a:after {
+                    border-color: transparent #1a1a1a #1a1a1a transparent !important;
+                }
             }
-            header.menu_area-light .navbar-nav li.current > a,
-            header.menu_area-light .navbar-nav li.active > a,
-            header.menu_area-light.scrollHeader .navbar-nav li.current > a,
-            header.menu_area-light.scrollHeader .navbar-nav li.active > a {
-                color: #F7941D !important;
+            /* Cinematic home: header fades in after gates open */
+            body.mc-cinematic-home header.header-style1 {
+                opacity: 0;
+                transition: opacity 0.9s ease 3.4s;
+                pointer-events: none;
             }
-            header.menu_area-light .navbar > ul > li.has-sub > a:after,
-            header.menu_area-light.scrollHeader .navbar > ul > li.has-sub > a:after {
-                border-color: transparent #042158 #042158 transparent !important;
+            body.mc-cinematic-home.mc-gates-open header.header-style1,
+            body.mc-cinematic-home.mc-gates-skip header.header-style1 {
+                opacity: 1;
+                pointer-events: auto;
             }
-            header.menu_area-light .navbar > ul > li.has-sub > a:hover:after,
-            header.menu_area-light .navbar > ul > li.current > a:after,
-            header.menu_area-light.scrollHeader .navbar > ul > li.has-sub > a:hover:after,
-            header.menu_area-light.scrollHeader .navbar > ul > li.current > a:after {
-                border-color: transparent #F7941D #F7941D transparent !important;
-            }
-            /* Space between Get Quote + myCADDIE */
+            /* myCADDIE header action */
             header .attr-nav > ul.header-attr-actions {
                 display: flex !important;
                 align-items: center !important;
@@ -57,6 +96,40 @@
             }
             header .attr-nav > ul.header-attr-actions > li > a.butn-style01 {
                 padding: 10px 26px !important;
+            }
+            /* Hover stays readable: theme turns the label orange on the orange fill */
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:hover,
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:focus,
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:active,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:hover,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:focus,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:active,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:hover,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:focus,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:active {
+                color: #111111 !important;
+                background: #f2f0ea !important;
+                border-color: #f2f0ea !important;
+            }
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:hover i,
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:hover span,
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:focus i,
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:focus span,
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:active i,
+            header.header-style1 .attr-nav > ul > li > a.header-mycaddie:active span,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:hover i,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:hover span,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:focus i,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:focus span,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:active i,
+            header.header-style1.scrollHeader .attr-nav > ul > li > a.header-mycaddie:active span,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:hover i,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:hover span,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:focus i,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:focus span,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:active i,
+            header.header-style1 .nav-mobile-ctas .header-mycaddie:active span {
+                color: #111111 !important;
             }
             /* Tight logo; no shadow / header border */
             header .navbar-default,
@@ -241,7 +314,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0 current">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo="{{ theme_asset('assets/img/logos/logo.svg') }}?v=logo5" data-logo-inner="{{ theme_asset('assets/img/logos/logo-inner.svg') }}?v=logo5" width="221" height="42" alt="MarineCaddie"></a>
+                                        <a href="{{ route('home') }}" class="navbar-brand logochange"><img id="logo" class="site-logo" src="{{ theme_asset('assets/img/logos/marinecaddie-logo-cinematic-wide.png') }}?v=cin2" data-logo="{{ theme_asset('assets/img/logos/marinecaddie-logo-cinematic-wide.png') }}?v=cin2" data-logo-inner="{{ theme_asset('assets/img/logos/marinecaddie-logo-cinematic-wide.png') }}?v=cin2" width="661" height="172" alt="MarineCaddie"></a>
                                         <!-- end logo -->
                                     </div>
 
@@ -311,7 +384,6 @@
                                         <li class="{{ $navContact ? 'current active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                                         <li class="nav-mobile-ctas d-xl-none">
                                             <div class="header-attr-actions header-attr-actions--mobile">
-                                                <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 sm white-hover" data-open-quote="quote">Get Quote</a>
                                                 <a href="https://portal.marinecaddie.com/" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login" target="_blank" rel="noopener noreferrer">
                                                     <i class="fas fa-user" aria-hidden="true"></i>
                                                     <span>myCADDIE</span>
@@ -324,9 +396,6 @@
                                     <!-- start attribute navigation -->
                                     <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
                                         <ul class="header-attr-actions">
-                                            <li class="d-none d-xl-inline-block">
-                                                <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01 sm white-hover" data-open-quote="quote">Get Quote</a>
-                                            </li>
                                             <li class="d-none d-xl-inline-block">
                                                 <a href="https://portal.marinecaddie.com/" class="butn-style01 sm header-mycaddie" aria-label="My Caddie login" target="_blank" rel="noopener noreferrer">
                                                     <i class="fas fa-user" aria-hidden="true"></i>

@@ -48,6 +48,26 @@ if (! function_exists('theme_webp')) {
     }
 }
 
+if (! function_exists('page_banner')) {
+    /**
+     * Page-title banner for the current page name.
+     * Files live in public/assets/img/banner/pages/{key}.jpg (Pexels License, free to use).
+     * Contact keeps its own banner and does not use this helper.
+     */
+    function page_banner(string $key): string
+    {
+        $key = strtolower(trim($key));
+        $key = preg_replace('/[^a-z0-9-]+/', '-', $key) ?: 'page';
+        $rel = 'assets/img/banner/pages/'.$key.'.jpg';
+
+        if (is_file(public_path($rel))) {
+            return theme_webp($rel);
+        }
+
+        return theme_webp('assets/img/banner/page-title.jpg');
+    }
+}
+
 if (! function_exists('theme_image_sources')) {
     /**
      * Build src + optional WebP URL for a public asset path.

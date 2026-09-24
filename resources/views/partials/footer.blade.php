@@ -4,8 +4,10 @@
             <div class="mc-footer__brand-col">
                 <a href="{{ route('home') }}" class="mc-footer__logo-link">
                     <img
-                        src="{{ theme_asset('assets/img/logos/logo.svg') }}?v=footerorig1"
+                        src="{{ theme_asset('assets/img/logos/marinecaddie-logo-cinematic-wide.png') }}?v=cin2"
                         class="mc-footer__logo"
+                        width="661"
+                        height="172"
                         alt="MarineCaddie"
                         title="MarineCaddie"
                     >

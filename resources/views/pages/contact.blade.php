@@ -63,7 +63,7 @@
         <section class="contact-presence" id="our-presence" aria-labelledby="our-presence-title">
             <div class="container">
                 <div class="contact-presence__head wow fadeInUp" data-wow-delay="100ms">
-                    <h2 class="contact-presence__title" id="our-presence-title">Overview of all our presence</h2>
+                    <h2 class="contact-presence__title" id="our-presence-title">Our presence</h2>
                 </div>
                 <div class="contact-presence__grid">
                     @foreach($presenceLocations as $index => $place)
@@ -231,7 +231,7 @@
   border-radius: 0;
   margin: 0.75rem 0.9rem;
   font-size: 0.88rem;
-  color: #042158;
+  color: #111111;
   line-height: 1.45;
   box-shadow: 0 12px 28px rgba(4, 33, 88, 0.28);
 }
@@ -244,6 +244,14 @@
   font-style: normal;
   font-weight: 700;
   font-size: 0.78rem;
+}
+body.mc-cinematic-site #main-content .contact-map__leaflet .maplibregl-popup-content,
+body.mc-cinematic-site #main-content .contact-map__leaflet .maplibregl-popup-content strong,
+body.mc-cinematic-site #main-content .contact-map__leaflet .maplibregl-popup-content span {
+  color: #111111 !important;
+}
+body.mc-cinematic-site #main-content .contact-map__leaflet .maplibregl-popup-content em {
+  color: #F7941D !important;
 }
 </style>
 @endpush

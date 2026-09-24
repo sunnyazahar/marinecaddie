@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarineCaddie email signature</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      color: #f2f0ea;
+      background: #000;
+    }
+    body {
+      min-height: 100vh;
+      padding: 48px 32px 72px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .hint {
+      max-width: 1024px;
+      margin: 0 auto 18px;
+      color: #8a8a86;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .copy {
+      margin-left: 12px;
+      padding: 6px 12px;
+      border: 1px solid #3a3a3a;
+      border-radius: 6px;
+      background: #141414;
+      color: #f2f0ea;
+      font: inherit;
+      font-size: 13px;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+    .copy.is-done {
+      border-color: #6a6a66;
+      color: #d2d2ce;
+    }
+    .sig {
+      max-width: 1024px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 280px;
+      padding: 36px 40px 32px;
+      overflow: hidden;
+      background: #000;
+    }
+    .sig table {
+      position: relative;
+      z-index: 1;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    .sig td {
+      vertical-align: middle;
+    }
+    .name, .role, .company, .addr, .label, .value {
+      outline: none;
+      cursor: text;
+    }
+    .name:focus, .role:focus, .company:focus, .addr:focus, .label:focus, .value:focus {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .name {
+      margin: 0;
+      color: #f2f0ea;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .role {
+      margin: 6px 0 0;
+      color: #9a9a96;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+    .logo {
+      display: block;
+      height: 96px;
+      width: auto;
+      margin-top: 22px;
+    }
+    .rule {
+      width: 46px;
+      padding: 0;
+    }
+    .rule span {
+      display: block;
+      width: 1px;
+      height: 168px;
+      margin: 0 auto;
+      background: rgba(232, 232, 228, 0.45);
+    }
+    .company {
+      margin: 0;
+      color: #f2f0ea;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .addr {
+      margin: 10px 0 0;
+      color: #d2d2ce;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      white-space: nowrap;
+    }
+    .contacts {
+      margin-top: 14px;
+      border-collapse: collapse;
+    }
+    .contacts td {
+      padding: 3px 0;
+      font-size: 15px;
+      line-height: 1.45;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+    .label {
+      width: 96px;
+      min-width: 96px;
+      padding: 3px 16px 3px 0;
+      color: #9a9a96;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .value {
+      color: #f2f0ea;
+      font-weight: 400;
+    }
+    .value a {
+      color: #f2f0ea;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <p class="hint">Click any text to edit. Changes stay in this browser.
+    <button class="copy" type="button" id="copy-signature">Copy signature</button>
+  </p>
+
+  <div class="sig" id="signature">
+    <table role="presentation" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background-color:#000000;">
+      <tr>
+        <td bgcolor="#000000" style="background-color:#000000;">
+          <p class="name" contenteditable="true" spellcheck="false" data-field="name">Shagir Mohammed</p>
+          <p class="role" contenteditable="true" spellcheck="false" data-field="role">Founder &amp; CEO</p>
+          <img class="logo" src="marinecaddie-logo-metal.png" alt="MarineCaddie — Smart Caddies, Smarter Logistics!">
+        </td>
+        <td class="rule" bgcolor="#000000" style="background-color:#000000;"><span></span></td>
+        <td bgcolor="#000000" style="background-color:#000000;">
+          <p class="company" contenteditable="true" spellcheck="false" data-field="company">MarineCaddie Shipping LLC</p>
+          <p class="addr" contenteditable="true" spellcheck="false" data-field="address">Unit No. 204 – 224, Al Safi Building, Tower 1,<br>Deira, Dubai, UAE</p>
+          <table class="contacts" role="presentation" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background-color:#000000;">
+            <tr>
+              <td class="label" contenteditable="true" spellcheck="false" data-field="mob-label">Mob</td>
+              <td class="value" contenteditable="true" spellcheck="false" data-field="mob">+971 50 564 3375</td>
+            </tr>
+            <tr>
+              <td class="label" contenteditable="true" spellcheck="false" data-field="email-label">Email</td>
+              <td class="value" contenteditable="true" spellcheck="false" data-field="email">shagir@marinecaddie.com</td>
+            </tr>
+            <tr>
+              <td class="label" contenteditable="true" spellcheck="false" data-field="group-label">Group Id</td>
+              <td class="value" contenteditable="true" spellcheck="false" data-field="group">ops@marinecaddie.com</td>
+            </tr>
+            <tr>
+              <td class="label" contenteditable="true" spellcheck="false" data-field="web-label">Web</td>
+              <td class="value" contenteditable="true" spellcheck="false" data-field="web">www.marinecaddie.com</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    (function () {
+      var key = "mc-email-signature-v1";
+      var saved = {};
+      try { saved = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) { saved = {}; }
+      var fields = document.querySelectorAll("[data-field]");
+      fields.forEach(function (el) {
+        if (saved[el.dataset.field]) el.innerHTML = saved[el.dataset.field];
+        el.addEventListener("input", function () {
+          if (el.querySelector("a")) el.textContent = el.textContent;
+          var data = {};
+          fields.forEach(function (node) { data[node.dataset.field] = node.innerHTML; });
+          localStorage.setItem(key, JSON.stringify(data));
+        });
+      });
+
+      function field(name) {
+        var el = document.querySelector('[data-field="' + name + '"]');
+        return el ? el.innerHTML : "";
+      }
+
+      var logoReady = "";
+      var copyButton = document.getElementById("copy-signature");
+      copyButton.disabled = true;
+      fetch(new URL("marinecaddie-logo-metal.png", location.href).href)
+        .then(function (response) { return response.blob(); })
+        .then(function (blob) {
+          return new Promise(function (resolve, reject) {
+            var reader = new FileReader();
+            reader.onload = function () { resolve(reader.result); };
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+          });
+        })
+        .then(function (logo) {
+          logoReady = logo;
+          copyButton.disabled = false;
+        })
+        .catch(function () {
+          copyButton.disabled = false;
+          copyButton.textContent = "Logo could not load";
+        });
+
+      function plain(name) {
+        var el = document.querySelector('[data-field="' + name + '"]');
+        return el ? el.textContent.replace(/\u200b/g, "").replace(/\s+/g, " ").trim() : "";
+      }
+
+      function escapeHtml(text) {
+        return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+
+      function keepLine(html) {
+        return String(html).split(/<br\s*\/?>/i).map(function (line) {
+          return "<span style=\"white-space:nowrap;\">" + line.replace(/<[^>]+>/g, "").replace(/ /g, "&nbsp;") + "</span>";
+        }).join("<br>");
+      }
+
+      function linkedValue(name) {
+        var text = plain(name);
+        var href = "";
+        var compact = text.replace(/\s/g, "");
+        if (/^https?:\/\//i.test(text)) href = text;
+        else if (/^www\./i.test(text)) href = "https://" + text;
+        else if (text.indexOf("@") !== -1) href = "mailto:" + compact;
+        else if (/^[+0-9][0-9+\-().\s]{6,}$/.test(text)) href = "tel:" + text.replace(/[^\d+]/g, "");
+        var label = escapeHtml(text).replace(/ /g, "&nbsp;");
+        if (href.indexOf("tel:") === 0 || href.indexOf("mailto:") === 0 || href.indexOf("http") === 0) {
+          label = label.replace(/^([^&;]{2})/, "$1&#8203;");
+        }
+        if (!href) {
+          return "<span style=\"color:#f2f0ea;white-space:nowrap;\">" + label + "</span>";
+        }
+        return "<a href=\"" + escapeHtml(href) + "\" style=\"color:#f2f0ea;text-decoration:none;\"><span style=\"color:#f2f0ea;text-decoration:none;white-space:nowrap;\">" + label + "</span></a>";
+      }
+
+      function signatureHtml(logo) {
+        var cell = "bgcolor=\"#000000\" nowrap";
+        return ""
+          + "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#000000\" style=\"background-color:#000000;border-collapse:collapse;\">"
+          + "<tr><td bgcolor=\"#000000\" style=\"background-color:#000000;padding:28px 32px;font-family:Helvetica,Arial,sans-serif;\">"
+          + "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#000000\" style=\"background-color:#000000;\">"
+          + "<tr>"
+          + "<td " + cell + " style=\"background-color:#000000;vertical-align:middle;white-space:nowrap;font-family:Helvetica,Arial,sans-serif;\">"
+          + "<div style=\"color:#f2f0ea;font-size:22px;font-weight:700;line-height:1.2;white-space:nowrap;font-family:Helvetica,Arial,sans-serif;\">" + keepLine(field("name")) + "</div>"
+          + "<div style=\"color:#9a9a96;font-size:14px;line-height:1.35;margin-top:4px;white-space:nowrap;font-family:Helvetica,Arial,sans-serif;\">" + keepLine(field("role")) + "</div>"
+          + "<img src=\"" + logo + "\" alt=\"MarineCaddie\" width=\"290\" height=\"67\" style=\"display:block;margin-top:14px;border:0;height:67px;width:290px;\">"
+          + "</td>"
+          + "<td bgcolor=\"#000000\" width=\"36\" style=\"background-color:#000000;width:36px;padding:0 16px;\" align=\"center\">"
+          + "<div style=\"width:1px;height:148px;background-color:#8a8a86;font-size:0;line-height:0;\">&nbsp;</div>"
+          + "</td>"
+          + "<td " + cell + " style=\"background-color:#000000;vertical-align:middle;white-space:nowrap;font-family:Helvetica,Arial,sans-serif;\">"
+          + "<div style=\"color:#f2f0ea;font-size:16px;font-weight:700;line-height:1.25;white-space:nowrap;font-family:Helvetica,Arial,sans-serif;\">" + keepLine(field("company")) + "</div>"
+          + "<div style=\"color:#d2d2ce;font-size:13px;line-height:1.45;margin-top:8px;font-family:Helvetica,Arial,sans-serif;\">" + keepLine(field("address")) + "</div>"
+          + "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#000000\" style=\"background-color:#000000;margin-top:14px;\">"
+          + contactRow("mob-label", "mob")
+          + contactRow("email-label", "email")
+          + contactRow("group-label", "group")
+          + contactRow("web-label", "web")
+          + "</table>"
+          + "</td>"
+          + "</tr></table></td></tr></table>";
+      }
+
+      function contactRow(label, value) {
+        return "<tr>"
+          + "<td bgcolor=\"#000000\" nowrap style=\"background-color:#000000;color:#9a9a96;font-size:13px;line-height:1.45;padding:2px 14px 2px 0;white-space:nowrap;font-family:Helvetica,Arial,sans-serif;font-weight:500;\">" + keepLine(field(label)) + "</td>"
+          + "<td bgcolor=\"#000000\" nowrap style=\"background-color:#000000;color:#f2f0ea;font-size:13px;line-height:1.45;padding:2px 0;white-space:nowrap;font-family:Helvetica,Arial,sans-serif;\">" + linkedValue(value) + "</td>"
+          + "</tr>";
+      }
+
+      copyButton.addEventListener("click", function () {
+        if (!logoReady) return;
+        var html = signatureHtml(logoReady);
+        var plain = document.getElementById("signature").innerText.trim();
+        var markCopied = function () {
+          copyButton.textContent = "Copied with logo";
+          copyButton.classList.add("is-done");
+          setTimeout(function () {
+            copyButton.textContent = "Copy signature";
+            copyButton.classList.remove("is-done");
+          }, 1800);
+        };
+        var writeRich = function () {
+          return navigator.clipboard.write([
+            new ClipboardItem({
+              "text/html": new Blob([html], { type: "text/html" }),
+              "text/plain": new Blob([plain], { type: "text/plain" })
+            })
+          ]);
+        };
+        var copySelection = function () {
+          var onCopy = function (event) {
+            event.preventDefault();
+            event.clipboardData.setData("text/html", html);
+            event.clipboardData.setData("text/plain", plain);
+          };
+          document.addEventListener("copy", onCopy, true);
+          var holder = document.createElement("div");
+          holder.setAttribute("contenteditable", "true");
+          holder.innerHTML = html;
+          holder.style.position = "fixed";
+          holder.style.left = "0";
+          holder.style.top = "0";
+          document.body.appendChild(holder);
+          var range = document.createRange();
+          range.selectNodeContents(holder);
+          var selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          var copied = document.execCommand("copy");
+          document.removeEventListener("copy", onCopy, true);
+          selection.removeAllRanges();
+          holder.remove();
+          return copied;
+        };
+        if (navigator.clipboard && window.ClipboardItem) {
+          writeRich().then(markCopied).catch(function () {
+            if (copySelection()) markCopied();
+            else copyButton.textContent = "Copy blocked";
+          });
+          return;
+        }
+        if (copySelection()) markCopied();
+        else copyButton.textContent = "Copy blocked";
+      });
+    })();
+  </script>
+</body>
+</html>

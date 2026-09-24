@@ -17,16 +17,16 @@
 
     {{-- Responsive hero preloads (poster only — video preload steals LCP bandwidth) --}}
     @if(request()->routeIs('home'))
-    <link rel="preload" href="{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
-    <link rel="preload" href="{{ theme_webp('assets/img/banner/video-cover.jpg') }}" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
+    <link rel="preload" href="{{ theme_asset('assets/img/banner/hero-pexels-poster-mobile.webp') }}?v=pexels4" as="image" type="image/webp" media="(max-width: 991.98px)" fetchpriority="high">
+    <link rel="preload" href="{{ theme_webp('assets/img/banner/hero-pexels-poster.jpg') }}?v=pexels4" as="image" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
     @endif
     <link rel="preload" href="{{ theme_asset('assets/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260917quote3" as="style">
+    <link rel="preload" href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260923cin10" as="style">
 
     {{-- Inline layout-critical only (no @font-face — those 404 when inlined via ../fonts) --}}
     <style>{!! file_get_contents(public_path('assets/css/critical.css')) !!}</style>
     {{-- All theme CSS in head — delayed inject after load caused visible FOUC --}}
-    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260917quote3" rel="stylesheet">
+    <link href="{{ theme_asset('assets/css/styles.min.css') }}?v=20260923cin10" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/plugins.css') }}?v=20260825css1" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/fonts-local.css') }}?v=20260825css1" rel="stylesheet">
     <link href="{{ theme_asset('assets/css/search.css') }}?v=20260831perf1" rel="stylesheet" media="print" onload="this.media='all'">
@@ -39,7 +39,7 @@
     </noscript>
     @stack('styles')
 </head>
-<body>
+<body class="{{ request()->routeIs('home') ? 'mc-cinematic-home' : 'mc-cinematic-site' }}">
     <div class="main-wrapper">
         @include('partials.header')
         <main id="main-content">
@@ -59,6 +59,9 @@
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260823perf1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260917quote3" defer></script>
     <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825video1" defer></script>
+    @if(request()->routeIs('home'))
+    <script src="{{ theme_asset('assets/js/home-gate.js') }}?v=20260923cin10" defer></script>
+    @endif
 
     {{-- After window load — bootstrap stack + theme (was ~110KB early parse on mobile) --}}
     <script type="text/plain" data-mc-defer-src="{{ theme_asset('assets/js/popper.min.js') }}"></script>

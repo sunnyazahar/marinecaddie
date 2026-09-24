@@ -8,22 +8,26 @@
 @section('header_class', 'fixedHeader')
 
 @section('content')
-<!-- BANNER
-        ================================================== -->
-        <section class="p-0 full-screen secondary-overlay video-banner mc-hero" data-overlay-dark="8" style="min-height:100vh;min-height:100dvh">
-            {{-- Poster only as decode fallback; video starts immediately (no delayed blue plate) --}}
+@php
+    $services = config('company.services', []);
+@endphp
+{{-- Cinematic gate stage — height reserved from first paint (CLS-safe) --}}
+<section class="mc-cinematic" id="mc-cinematic" aria-label="MarineCaddie">
+    <div class="mc-cinematic__stage">
+        {{-- Ocean layer (existing hero video / poster) --}}
+        <div class="mc-cinematic__ocean mc-hero secondary-overlay" data-overlay-dark="7" aria-hidden="true">
             <style>
-                .mc-hero {
-                    background-color: transparent;
-                    background-image: url('{{ theme_asset('assets/img/banner/video-cover-mobile.webp') }}?v=lcp4');
+                .mc-cinematic__ocean.mc-hero {
+                    background-color: #000;
+                    background-image: url('{{ theme_asset('assets/img/banner/hero-pexels-poster-mobile.webp') }}?v=pexels4');
                 }
                 @media (min-width: 992px) {
-                    .mc-hero {
-                        background-image: url('{{ theme_webp('assets/img/banner/video-cover.jpg') }}');
+                    .mc-cinematic__ocean.mc-hero {
+                        background-image: url('{{ theme_webp('assets/img/banner/hero-pexels-poster.jpg') }}?v=pexels4');
                     }
                 }
             </style>
-            <div class="banner-video" aria-hidden="true">
+            <div class="banner-video">
                 <video id="mc-hero-video" muted loop playsinline webkit-playsinline autoplay preload="auto"></video>
                 <script>
                   (function () {
@@ -33,12 +37,12 @@
                       v.removeAttribute('autoplay');
                       return;
                     }
-                    var mobile = @json(theme_asset('assets/video/hero-banner-mobile.mp4') . '?v=full1080');
-                    var desktop = @json(theme_asset('assets/video/hero-banner.mp4') . '?v=full1080');
+                    var mobile = @json(theme_asset('assets/video/hero-pexels-mobile.mp4') . '?v=pexels4');
+                    var desktop = @json(theme_asset('assets/video/hero-pexels.mp4') . '?v=pexels4');
                     var isMobile = window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches;
                     v.poster = isMobile
-                      ? @json(theme_asset('assets/img/banner/video-cover-mobile.webp') . '?v=lcp4')
-                      : @json(theme_webp('assets/img/banner/video-cover.jpg'));
+                      ? @json(theme_asset('assets/img/banner/hero-pexels-poster-mobile.webp') . '?v=pexels4')
+                      : @json(theme_webp('assets/img/banner/hero-pexels-poster.jpg') . '?v=pexels4');
                     var s = document.createElement('source');
                     s.src = isMobile ? mobile : desktop;
                     s.type = 'video/mp4';
@@ -53,293 +57,81 @@
                   })();
                 </script>
             </div>
-            <div class="container d-flex flex-column pt-5 pb-2 py-sm-8 py-md-0 position-relative z-index-9">
-                <div class="row align-items-center justify-content-center min-vh-100">
-                    <div class="col-lg-11 col-xl-10 col-xxl-8 text-center py-5">
-                        <div class="text-center">
-                            <h1 class="display-1 font-weight-800 lh-1 mb-0 text-white ls-minus-2px">{{ config('company.headline') }}</h1>
-                            <div class="hero-motto-ticker" aria-label="{{ config('company.motto') }}">
-                                <div class="hero-motto-ticker__track">
-                                    <span class="hero-motto-ticker__item">{{ config('company.motto') }}</span>
-                                    <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
-                                    <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
-                                    <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <!-- SERVICE
-        ================================================== -->
-        <section class="our-services-home home-section" id="our-services">
+        <div class="mc-cinematic__gates" aria-hidden="true">
+            <div class="mc-cinematic__gate mc-cinematic__gate--left">
+                <img class="mc-cinematic__scene" src="{{ theme_webp('assets/img/banner/gate-scene.jpg') }}?v=real6" width="1728" height="1152" alt="">
+                <span class="mc-cinematic__gate-word">Marine</span>
+            </div>
+            <div class="mc-cinematic__gate mc-cinematic__gate--right">
+                <img class="mc-cinematic__scene" src="{{ theme_webp('assets/img/banner/gate-scene.jpg') }}?v=real6" width="1728" height="1152" alt="">
+                <span class="mc-cinematic__gate-word">Caddie</span>
+            </div>
+        </div>
+
+        {{-- Brand + service hub, anchored low so the sky stays open --}}
+        <div class="mc-cinematic__hub">
+            <div class="mc-cinematic__brand">
+                <p class="mc-cinematic__kicker">{{ config('company.tagline') }}</p>
+                <h1 class="mc-cinematic__headline">{{ config('company.headline') }}</h1>
+                <p class="mc-cinematic__motto">{{ config('company.motto') }}</p>
+            </div>
+
+            <nav class="mc-cinematic__services" aria-label="Select a service">
+                @foreach($services as $key => $service)
+                    @php
+                        $href = $key === 'freight_forwarding'
+                            ? route('services.show', 'air-freight')
+                            : (!empty($service['slug'])
+                                ? route('services.show', $service['slug'])
+                                : route('services'));
+                        $short = match ($key) {
+                            'freight_forwarding' => 'Freight',
+                            'customs_clearance' => 'Customs',
+                            default => $service['title'],
+                        };
+                        $icon = match ($key) {
+                            'marine_logistics' => 'vessel-husbandry',
+                            'freight_forwarding' => 'ocean-freight',
+                            'customs_clearance' => 'customs',
+                            default => 'ship-spares',
+                        };
+                    @endphp
+                    <a href="{{ $href }}" class="mc-cinematic__service" data-service="{{ $key }}">
+                        <span class="mc-cinematic__service-ico">
+                            <img src="{{ theme_webp('assets/img/nav-icons/'.$icon.'.png') }}" width="40" height="40" alt="">
+                        </span>
+                        <span class="mc-cinematic__service-num">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                        <span class="mc-cinematic__service-title">{{ $short }}</span>
+                        <span class="mc-cinematic__service-hint">{{ \Illuminate\Support\Str::limit($service['excerpt'] ?? '', 72) }}</span>
+                    </a>
+                @endforeach
+            </nav>
+
+            <div class="mc-cinematic__cta">
+                <a href="{{ route('services') }}" class="mc-cinematic__all">View all services</a>
+            </div>
+        </div>
+
+        <div class="mc-cinematic-trust" aria-label="Why MarineCaddie">
             <div class="container">
-                <div class="row align-items-end mb-1-9 mb-lg-2-5">
-                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">Our Services</h2>
-                        <p class="display-6 font-weight-700 text-primary mb-3 lh-sm ls-minus-1px">{{ config('company.tagline') }}</p>
-                        <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} Four core capabilities from our company profile—built around vessel urgency and port realities.</p>
-                    </div>
-                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
-                        <a href="{{ route('services') }}" class="butn-style01">View All Services</a>
-                    </div>
-                </div>
-                @include('partials.services-categories', ['variant' => 'home'])
+                <ul class="mc-cinematic-trust__list">
+                    <li>
+                        <span class="mc-cinematic-trust__label">24/7</span>
+                        <span class="mc-cinematic-trust__text">Round-the-clock vessel support</span>
+                    </li>
+                    <li>
+                        <span class="mc-cinematic-trust__label">Door-to-deck</span>
+                        <span class="mc-cinematic-trust__text">Spares to the vessel, on schedule</span>
+                    </li>
+                    <li>
+                        <span class="mc-cinematic-trust__label">Global ports</span>
+                        <span class="mc-cinematic-trust__text">Coverage where your fleet calls</span>
+                    </li>
+                </ul>
             </div>
-        </section>
-
-        <!-- SHIP SPARE LOGISTICS
-        ================================================== -->
-        <section class="ship-spare-showcase position-relative overflow-hidden home-section" id="ship-spares">
-            <div class="ship-spare-showcase__glow" aria-hidden="true"></div>
-            <div class="container position-relative">
-                <div class="row align-items-end mb-1-9 mb-lg-2-9">
-                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="100ms">
-                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">Ship Spare Logistics</h2>
-                        <p class="display-6 font-weight-700 text-primary mb-3 lh-sm ls-minus-1px">Door-to-deck. On time. 24/7.</p>
-                        <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} We move time-critical ship spares from supplier to vessel with full documentation, customs, carrier, and last-mile onboard delivery.</p>
-                    </div>
-                    <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
-                        <a href="{{ route('services.show', 'ship-spares-logistics') }}" class="butn-style01">Explore Ship Spares</a>
-                    </div>
-                </div>
-
-                <div class="row g-4 g-xl-5 mb-2-5 mb-lg-3">
-                    @foreach(config('company.ship_spare_logistics') as $index => $capability)
-                    <div class="col-6 col-md-4 col-xl-2 wow fadeInUp" data-wow-delay="{{ 100 + ($index * 50) }}ms">
-                        <div class="ship-spare-capability h-100">
-                            <span class="ship-spare-capability__num">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
-                            <h3 class="ship-spare-capability__title">{{ $capability }}</h3>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-
-                    <div class="ship-spare-flow wow fadeInUp" data-wow-delay="200ms">
-                        <h3 class="h5 font-weight-800 mb-3 lh-sm" style="color:#002D5B !important;font-family:var(--mc-font-heading),'Space Grotesk',sans-serif !important">End-to-end logistics flow</h3>
-                        <div class="ship-spare-flow__track" role="list">
-                        @foreach(config('company.ship_spare_flow') as $step)
-                        <div class="ship-spare-flow__step" role="listitem">
-                            <div class="ship-spare-flow__icon" aria-hidden="true">
-                                @include('partials.ship-spare-icons', ['icon' => $step['icon']])
-                            </div>
-                            <div class="ship-spare-flow__name">{{ $step['label'] }}</div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORT HUSBANDRY
-        ================================================== -->
-        <section class="port-husbandry-showcase home-section" id="port-husbandry">
-            <div class="container">
-                <div class="row align-items-end mb-1-9 mb-lg-2-5">
-                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">Port Husbandry Services</h2>
-                        <p class="display-6 font-weight-700 text-primary mb-3 lh-sm ls-minus-1px">Vessel support in India, Sri Lanka, Indonesia &amp; Singapore</p>
-                        <p class="lead mb-0 w-lg-90">{{ config('company.motto') }} Practical port agency and husbandry coordination so every call stays efficient—from crew change to dry dock assistance.</p>
-                    </div>
-                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
-                        <a href="{{ route('services.show', 'vessel-husbandry') }}" class="butn-style01">Explore Port Support</a>
-                    </div>
-                </div>
-
-                <div class="port-husbandry-regions wow fadeInUp" data-wow-delay="150ms">
-                    @foreach(['India', 'Sri Lanka', 'Indonesia', 'Singapore'] as $region)
-                    <div class="port-husbandry-regions__item">
-                        <span class="port-husbandry-regions__marker" aria-hidden="true"></span>
-                        <span class="port-husbandry-regions__name">{{ $region }}</span>
-                    </div>
-                    @endforeach
-                </div>
-
-                <div class="row g-3 g-lg-4 mt-1-6">
-                    @foreach(config('company.port_husbandry') as $index => $service)
-                    <div class="col-sm-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="{{ 100 + ($index * 40) }}ms">
-                        <div class="port-husbandry-service">
-                            <span class="port-husbandry-service__num">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
-                            <h3 class="port-husbandry-service__title">{{ $service }}</h3>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT
-        ================================================== -->
-        <section class="about-style01 home-section home-section--about" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-5 mt-1-9">
-                        <div class="mb-4 wow fadeInUp" data-wow-delay="100ms">
-                            <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px" style="color:#002D5B !important">About MarineCaddie</h2>
-                            <p class="display-6 font-weight-700 text-primary mb-0 lh-sm ls-minus-1px">{{ config('company.tagline') }}</p>
-                        </div>
-                        <p class="mb-4 wow fadeInUp" data-wow-delay="150ms">{{ config('company.who_we_are') }}</p>
-                        <div class="d-flex mb-1-9 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="flex-shrink-0 me-4">
-                                <img src="{{ theme_asset('assets/img/icons/icon-01.png') }}" alt="Ship spare logistics icon" title="Ship spare logistics" class="w-65px" width="65" height="65">
-                            </div>
-                            <div class="flex-grow-1">
-                                <h3 class="mb-2 h5">Ship Spare Logistics</h3>
-                                <p class="mb-0">24/7 time-critical shipments with hand carry, door-to-deck delivery, customs clearance, and last-mile coordination.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-2-5 wow fadeInUp" data-wow-delay="250ms">
-                            <div class="flex-shrink-0 me-4">
-                                <img src="{{ theme_asset('assets/img/icons/icon-02.png') }}" alt="Global port network icon" title="Global port network" class="w-65px" width="65" height="65">
-                            </div>
-                            <div class="flex-grow-1">
-                                <h3 class="mb-2 h5">Global Port Network</h3>
-                                <p class="mb-0">End-to-end maritime support across {{ config('company.presence') }}.</p>
-                            </div>
-                        </div>
-                        <a href="{{ route('about') }}" class="butn-style01 wow fadeInUp" data-wow-delay="300ms">About Us</a>
-                    </div>
-                    <div class="col-xl-7 mt-1-9">
-                        <div class="ps-xl-4">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12 text-center text-md-start wow fadeInUp" data-wow-delay="100ms">
-                                    <div class="about-circle">
-                                        <div class="image-hover">
-                                            @include('partials.responsive-img', [
-                                                'path' => 'assets/img/content/marine-logistics.jpg',
-                                                'alt' => 'Marine logistics and cargo operations',
-                                                'title' => 'Marine logistics and cargo operations',
-                                                'class' => 'rounded',
-                                                'lazy' => true,
-                                            ])
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO
-        ================================================== -->
-        <section class="bg-secondary portfolio-style02 pb-0 pt-0 overflow-visible home-section home-section--process" id="process">
-            <div class="container pt-2-9 pb-1-9">
-                <div class="row align-items-end mb-1-9">
-                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="100ms">
-                        <h2 class="display-4 font-weight-800 mb-2 lh-1 ls-minus-2px text-white">Our Process</h2>
-                        <p class="display-5 font-weight-700 mb-3 lh-sm ls-minus-1px" style="color:#F7941D !important">From enquiry to onboard delivery</p>
-                        <p class="lead text-white opacity9 mb-0 w-lg-90">See how MarineCaddie moves ship spares, freight, special projects, and hub operations with schedule-first coordination.</p>
-                    </div>
-                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="150ms">
-                        <a href="{{ route('how-we-work') }}" class="butn-style01 white-hover">How We Work</a>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid p-sm-0">
-                <div class="row g-0 portfolio-gallery wow fadeInUp" data-wow-delay="200ms">
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Ship Spares Air&lt;/h4&gt;">
-                        <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ship-spares-air.jpg') }}"></div>
-                            <div class="content-box">
-                                <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ship Spares Air</a></h3>
-                                <p class="text-white opacity7">Time-critical airlift of vessel spares—hand carry, customs, and door-to-deck delivery coordinated 24/7.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Ship Spares Air details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Ocean Freight&lt;/h4&gt;">
-                        <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/ocean-freight.jpg') }}"></div>
-                            <div class="content-box">
-                                <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Ocean Freight</a></h3>
-                                <p class="text-white opacity7">Maritime freight programs balancing cost, schedule integrity, and customs-ready documentation across global ports.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Ocean Freight details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Special Projects&lt;/h4&gt;">
-                        <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/special-projects.jpg') }}"></div>
-                            <div class="content-box">
-                                <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Special Projects</a></h3>
-                                <p class="text-white opacity7">OOG, dangerous goods, heavy lift, break bulk, and project cargo handled with strict local coordination.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Special Projects details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3" data-src="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}" data-sub-html="&lt;h4 class=&#39;text-white&#39;&gt;Hub &amp; Warehousing&lt;/h4&gt;">
-                        <div class="portfolio-box">
-                            <div class="bg-img" data-background="{{ theme_webp('assets/img/portfolio/hub-warehousing.jpg') }}"></div>
-                            <div class="content-box">
-                                <h3 class="h3 mb-2"><a href="{{ route('portfolio.details') }}">Hub &amp; Warehousing</a></h3>
-                                <p class="text-white opacity7">Hub and warehouse nodes supporting stock management, consolidation, and last-mile vessel delivery.</p>
-                                <div class="link text-end"><a href="{{ route('portfolio.details') }}" class="portfolio-link" aria-label="View Hub and Warehousing details"><i class="ti-arrow-right link-arrow" aria-hidden="true"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    
-
-<!-- ANIMATION-LINE
-        ================================================== -->
-        <section class="pb-1-9 pb-sm-2-9 pt-2 home-section home-section--ticker">
-            <div class="container-fluid px-0">
-                <div class="scroll-section scroll-section--dynamic" aria-hidden="true">
-                    <div class="scroll-track pause-on-hover scroll-left scroll-speed-4">
-                        <div class="scroll-group">
-                            @include('partials.scroll-ticker')
-                        </div>
-                        <div class="scroll-group">
-                            @include('partials.scroll-ticker')
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- FOOTER
-        ================================================== -->
+        </div>
+    </div>
+</section>
 @endsection
-
-@push('structured_data')
-@php
-    $homeServices = [];
-    $i = 1;
-    foreach (config('company.services') as $service) {
-        $homeServices[] = [
-            '@type' => 'ListItem',
-            'position' => $i++,
-            'item' => [
-                '@type' => 'Service',
-                'name' => $service['title'],
-                'description' => $service['excerpt'] ?? '',
-                'provider' => [
-                    '@type' => 'Organization',
-                    'name' => config('seo.organization.name'),
-                ],
-                'url' => !empty($service['slug']) ? route('services.show', $service['slug']) : route('services'),
-            ],
-        ];
-    }
-@endphp
-<script type="application/ld+json">
-{!! json_encode([
-    '@context' => 'https://schema.org',
-    '@type' => 'ItemList',
-    'name' => 'MarineCaddie core services',
-    'itemListOrder' => 'https://schema.org/ItemListOrderAscending',
-    'numberOfItems' => count($homeServices),
-    'itemListElement' => $homeServices,
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
-</script>
-@endpush

@@ -7,12 +7,12 @@
 @section('canonical', route('services.show', $service['slug']))
 @section('schema_type', 'Service')
 @section('service_name', $service['title'])
-@section('og_image', theme_webp($service['hero_image']))
+@section('og_image', page_banner($service['slug']))
 @section('og_image_alt', $service['title'] . ' — MarineCaddie')
 @section('header_class', 'scrollHeader')
 
 @section('content')
-        <section class="svc-page-hero" style="--svc-hero-image: url({{ theme_webp($service['hero_image']) }});">
+        <section class="svc-page-hero" style="--svc-hero-image: url('{{ page_banner($service['slug']) }}');">
             <div class="svc-page-hero__shade" aria-hidden="true"></div>
             <div class="container position-relative">
                 <nav class="svc-page-crumbs" aria-label="Breadcrumb">

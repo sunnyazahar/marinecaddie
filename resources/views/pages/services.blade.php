@@ -16,7 +16,7 @@
 
         <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background services-page-banner" data-background="{{ theme_webp('assets/img/banner/page-title.jpg') }}" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/page-title.jpg') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background services-page-banner" data-background="{{ page_banner('services') }}" style="background-image: url(&quot;{{ page_banner('services') }}&quot;);">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-xl-6">
