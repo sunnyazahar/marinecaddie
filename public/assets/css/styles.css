@@ -4091,6 +4091,41 @@ html.mc-quote-open body {
   background: #fdecee;
   color: #b42318;
 }
+.mc-quote__done {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.75rem 0.25rem 0.5rem;
+}
+.mc-quote__done[hidden] {
+  display: none !important;
+}
+.mc-quote__done-kicker {
+  margin: 0;
+  color: #F7941D;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mc-quote__done-title {
+  margin: 0;
+  color: #111111;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.mc-quote__done-text {
+  margin: 0 0 0.35rem;
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+body.mc-cinematic-site .mc-quote__done-title,
+body.mc-cinematic-site .mc-quote__done-text {
+  color: #f4f2ec !important;
+}
 @media (max-width: 575.98px) {
   .mc-quote__dialog {
     padding: 1.5rem 1.15rem 1.25rem;

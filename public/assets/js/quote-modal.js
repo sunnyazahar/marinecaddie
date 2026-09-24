@@ -7,6 +7,8 @@
     var quotePanel = modal.querySelector('[data-mode-panel="quote"]');
     var stepLabel = modal.querySelector('[data-quote-step-label]');
     var statusEl = modal.querySelector('[data-quote-status]');
+    var doneEl = modal.querySelector('[data-quote-done]');
+    var doneText = modal.querySelector('[data-quote-done-text]');
     var reviewEl = modal.querySelector('[data-quote-review]');
     var backBtn = modal.querySelector('[data-quote-back]');
     var nextBtn = modal.querySelector('[data-quote-next]');
@@ -95,6 +97,7 @@
         statusEl.textContent = msg;
         statusEl.classList.toggle('is-error', !!isError);
         statusEl.classList.toggle('is-ok', !isError);
+        statusEl.scrollIntoView({ block: 'nearest' });
     }
 
     function clearStatus() {
@@ -102,6 +105,19 @@
         statusEl.hidden = true;
         statusEl.textContent = '';
         statusEl.classList.remove('is-error', 'is-ok');
+    }
+
+    function showDone(message) {
+        if (doneText) doneText.textContent = message;
+        if (form) form.hidden = true;
+        if (doneEl) doneEl.hidden = false;
+        var dialog = modal.querySelector('.mc-quote__dialog');
+        if (dialog) dialog.scrollTop = 0;
+    }
+
+    function hideDone() {
+        if (doneEl) doneEl.hidden = true;
+        if (form) form.hidden = false;
     }
 
     function syncMode() {
@@ -348,6 +364,7 @@
             if (radio) radio.checked = true;
         }
         syncMode();
+        hideDone();
         clearStatus();
         setTimeout(function () {
             var first = modal.querySelector('input[name="request_type"]:checked') || modal.querySelector('input, button');
@@ -359,6 +376,7 @@
         modal.hidden = true;
         modal.setAttribute('aria-hidden', 'true');
         document.documentElement.classList.remove('mc-quote-open');
+        hideDone();
         clearStatus();
         if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
@@ -470,14 +488,12 @@
             .then(function (result) {
                 if (btn) btn.disabled = false;
                 if (result.ok && result.data && result.data.ok) {
-                    showStatus(result.data.message || 'Thank you. We will respond within one business day.', false);
                     form.reset();
                     resetRecaptcha();
-                    // restore default mode radio after reset
                     var infoRadio = form.querySelector('input[name="request_type"][value="information"]');
                     if (infoRadio) infoRadio.checked = true;
                     syncMode();
-                    setTimeout(closeModal, 1800);
+                    showDone(result.data.message || 'Thank you. We will respond within one business day.');
                     return;
                 }
                 resetRecaptcha();

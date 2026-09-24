@@ -23,6 +23,13 @@
 
         <h2 class="mc-quote__title visually-hidden" id="mcQuoteTitle">Get a quote or request information</h2>
 
+        <div class="mc-quote__done" data-quote-done hidden>
+            <p class="mc-quote__done-kicker">Request received</p>
+            <h3 class="mc-quote__done-title">Thank you</h3>
+            <p class="mc-quote__done-text" data-quote-done-text>We will respond within one business day.</p>
+            <button type="button" class="mc-quote__btn" data-quote-close>Close</button>
+        </div>
+
         <form class="mc-quote__form" id="mcQuoteForm" action="{{ route('quote.store') }}" method="post" novalidate>
             @csrf
             <input type="hidden" name="quote_step" id="mcQuoteStepField" value="1">
