@@ -5846,6 +5846,21 @@ body.mc-gates-skip .mc-cinematic__gate--right {
   right: 0;
   left: auto;
 }
+/* Phone doors are tall. Cover was slicing the ship and the golf hole.
+   Fit the whole plate to the screen width so nothing is cropped. */
+@media (max-width: 991.98px) {
+  body.mc-cinematic-home .mc-cinematic__stage {
+    min-height: calc(100dvh - 70px);
+    min-height: calc(100svh - 70px);
+  }
+  .mc-cinematic__scene {
+    top: 0;
+    width: calc(100% / 0.52);
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
 .mc-cinematic__gate::after {
   content: "";
   position: absolute;
