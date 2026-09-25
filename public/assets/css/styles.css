@@ -2258,8 +2258,8 @@ a.contact-quick__card:hover {
 :root {
   --mc-content-font-size: 1rem;
   --mc-content-line-height: 1.65;
-  --mc-font-body: 'Plus Jakarta Sans', sans-serif;
-  --mc-font-heading: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  --mc-font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --mc-font-heading: 'Outfit', 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
 }
 
 body,

@@ -25,9 +25,6 @@
                 <p class="svc-page-hero__eyebrow">{{ $service['category_title'] }}</p>
                 <h1 class="svc-page-hero__title">{{ $service['title'] }}</h1>
                 <p class="svc-page-hero__excerpt">{{ $service['excerpt'] }}</p>
-                <div class="svc-page-hero__actions">
-                    <a href="{{ route('contact') }}?quote=1&mode=quote" class="butn-style01" data-open-quote="quote">Get Quote</a>
-                </div>
             </div>
         </section>
 
@@ -43,9 +40,11 @@
                 <div class="svc-page-trust__grid">
                     @foreach($trustItems as $trust)
                         <div class="svc-page-trust__item">
-                            <span class="svc-page-trust__num">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
-                            <h2 class="svc-page-trust__label">{{ $trust['label'] }}</h2>
-                            <p>{{ $trust['text'] }}</p>
+                            <span class="svc-page-trust__num" aria-hidden="true">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                            <div class="svc-page-trust__body">
+                                <h2 class="svc-page-trust__label">{{ $trust['label'] }}</h2>
+                                <p>{{ $trust['text'] }}</p>
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -54,16 +53,30 @@
 
         <section class="svc-page-main">
             <div class="container">
-                <div class="row g-4 g-xl-5">
-                    <div class="col-lg-8">
-                        <article class="svc-page-panel wow fadeInUp" data-wow-delay="100ms">
-                            <h2 class="svc-page-panel__heading">Overview</h2>
-                            <p class="svc-page-panel__lead">{{ $service['intro'] }}</p>
-                            @foreach($service['body'] ?? [] as $paragraph)
-                                <p class="svc-page-panel__body">{{ $paragraph }}</p>
-                            @endforeach
-                        </article>
+                <div class="svc-page-layout">
+                    <article class="svc-page-panel svc-page-panel--lead wow fadeInUp" data-wow-delay="100ms">
+                        <h2 class="svc-page-panel__heading">Overview</h2>
+                        <p class="svc-page-panel__lead">{{ $service['intro'] }}</p>
+                        @foreach($service['body'] ?? [] as $paragraph)
+                            <p class="svc-page-panel__body">{{ $paragraph }}</p>
+                        @endforeach
+                    </article>
 
+                    <div class="svc-page-aside__card svc-page-aside__card--nav wow fadeInUp" data-wow-delay="100ms">
+                        <h2 class="svc-page-aside__title text-white">{{ $service['category_title'] }}</h2>
+                        <ul class="svc-page-aside__list">
+                            @foreach($siblings as $sibling)
+                                <li class="{{ $sibling['slug'] === $service['slug'] ? 'is-active' : '' }}">
+                                    <a href="{{ route('services.show', $sibling['slug']) }}">
+                                        {{ $sibling['title'] }}
+                                        <i class="ti-arrow-top-right" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                    <div class="svc-page-layout__rest">
                         <article class="svc-page-panel wow fadeInUp" data-wow-delay="150ms">
                             <h2 class="svc-page-panel__heading">What you get</h2>
                             <ul class="svc-page-highlights">
@@ -141,42 +154,26 @@
                         @endif
                     </div>
 
-                    <div class="col-lg-4">
-                        <aside class="svc-page-aside">
-                            <div class="svc-page-aside__card">
-                                <h2 class="svc-page-aside__title text-white">{{ $service['category_title'] }}</h2>
-                                <ul class="svc-page-aside__list">
-                                    @foreach($siblings as $sibling)
-                                        <li class="{{ $sibling['slug'] === $service['slug'] ? 'is-active' : '' }}">
-                                            <a href="{{ route('services.show', $sibling['slug']) }}">
-                                                {{ $sibling['title'] }}
-                                                <i class="ti-arrow-top-right" aria-hidden="true"></i>
-                                            </a>
+                    <aside class="svc-page-aside">
+                        <div class="svc-page-aside__help">
+                            <p class="svc-page-aside__help-label">Need this service?</p>
+                            <a href="mailto:{{ config('company.email') }}" class="svc-page-aside__mail">{{ config('company.email') }}</a>
+                            <a href="{{ route('contact') }}" class="butn-style01 w-100 text-center mt-3">Talk to operations</a>
+                        </div>
+
+                        @if(!empty($related))
+                            <div class="svc-page-aside__card svc-page-aside__card--related">
+                                <h2 class="svc-page-aside__title">Related services</h2>
+                                <ul class="svc-page-aside__related">
+                                    @foreach($related as $rel)
+                                        <li>
+                                            <a href="{{ route('services.show', $rel['slug']) }}">{{ $rel['title'] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
-
-                            <div class="svc-page-aside__help">
-                                <p class="svc-page-aside__help-label">Need this service?</p>
-                                <a href="mailto:{{ config('company.email') }}" class="svc-page-aside__mail">{{ config('company.email') }}</a>
-                                <a href="{{ route('contact') }}" class="butn-style01 w-100 text-center mt-3">Talk to operations</a>
-                            </div>
-
-                            @if(!empty($related))
-                                <div class="svc-page-aside__card svc-page-aside__card--related">
-                                    <h2 class="svc-page-aside__title">Related services</h2>
-                                    <ul class="svc-page-aside__related">
-                                        @foreach($related as $rel)
-                                            <li>
-                                                <a href="{{ route('services.show', $rel['slug']) }}">{{ $rel['title'] }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                        </aside>
-                    </div>
+                        @endif
+                    </aside>
                 </div>
             </div>
         </section>
