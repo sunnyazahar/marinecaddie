@@ -64,7 +64,7 @@ class SitemapController extends Controller
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
 
         foreach ($entries as $entry) {
-            $loc = $entry['path'] === '/' ? $base : $base.$entry['path'];
+            $loc = $entry['path'] === '/' ? $base.'/' : $base.$entry['path'];
             $lastmod = $this->lastmodFromSources($entry['sources']);
 
             $xml .= "  <url>\n";

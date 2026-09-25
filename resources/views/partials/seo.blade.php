@@ -115,24 +115,41 @@
     }
 
     $breadcrumbItems = [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => route('home')],
+        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => $orgUrl.'/'],
     ];
     if (! request()->routeIs('home')) {
         $position = 2;
-        if (request()->is('services/*')) {
+        if (request()->is('services') || request()->is('services/*')) {
             $breadcrumbItems[] = [
                 '@type' => 'ListItem',
                 'position' => $position++,
                 'name' => 'Services',
-                'item' => route('services'),
+                'item' => $orgUrl.'/services',
             ];
         }
-        $breadcrumbItems[] = [
-            '@type' => 'ListItem',
-            'position' => $position,
-            'name' => $pageTitle !== '' ? $pageTitle : $fullTitle,
-            'item' => $canonical,
-        ];
+        // Avoid duplicating Services when this IS the services index
+        if (! request()->routeIs('services')) {
+            $crumbName = $pageTitle !== '' ? $pageTitle : ($serviceName !== '' ? $serviceName : $fullTitle);
+            $breadcrumbItems[] = [
+                '@type' => 'ListItem',
+                'position' => $position,
+                'name' => $crumbName,
+                'item' => $canonical,
+            ];
+        }
+    }
+
+    // Google ignores / rejects single-item BreadcrumbList (homepage only)
+    $breadcrumbNode = count($breadcrumbItems) >= 2
+        ? [
+            '@type' => 'BreadcrumbList',
+            '@id' => $canonical . '#breadcrumb',
+            'itemListElement' => $breadcrumbItems,
+        ]
+        : null;
+
+    if ($breadcrumbNode === null) {
+        unset($webPageNode['breadcrumb']);
     }
 @endphp
 
@@ -189,11 +206,7 @@
             'inLanguage' => $inLanguage,
         ],
         $webPageNode,
-        [
-            '@type' => 'BreadcrumbList',
-            '@id' => $canonical . '#breadcrumb',
-            'itemListElement' => $breadcrumbItems,
-        ],
+        $breadcrumbNode,
         $schemaType === 'Service' ? [
             '@type' => 'Service',
             '@id' => $canonical . '#service',

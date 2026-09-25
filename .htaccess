@@ -1,8 +1,14 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Apex → www FIRST (before any rewrite into /public/… — that path must never appear in Location)
+    # Apex → https://www… (one hop; covers http+https apex)
     RewriteCond %{HTTP_HOST} ^marinecaddie\.com$ [NC]
+    RewriteRule ^ https://www.marinecaddie.com%{REQUEST_URI} [L,R=301]
+
+    # HTTP www → https://www… (skip when edge already set X-Forwarded-Proto: https)
+    RewriteCond %{HTTP_HOST} ^www\.marinecaddie\.com$ [NC]
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
     RewriteRule ^ https://www.marinecaddie.com%{REQUEST_URI} [L,R=301]
 
     # Fix leaked /public/… URLs (old favicon redirect mistake)

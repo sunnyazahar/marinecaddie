@@ -17,6 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Hostinger / LiteSpeed terminates TLS at the edge — trust X-Forwarded-* so
+        // ForceCanonicalHost can detect HTTPS correctly and avoid redirect loops.
+        $middleware->trustProxies(at: '*');
+
         $middleware->prepend(\App\Http\Middleware\ForceCanonicalHost::class);
         $middleware->append(\App\Http\Middleware\FixAssetUrls::class);
 
