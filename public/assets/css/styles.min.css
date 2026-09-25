@@ -3109,6 +3109,8 @@ button.butn-style01,
   font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .svc-page-trust {
@@ -3295,6 +3297,8 @@ button.butn-style01,
   line-height: 1.78;
   font-size: 1.02rem;
   font-weight: 400;
+  text-align: justify;
+  hyphens: auto;
   background: transparent;
 }
 .svc-page-panel__body:last-child {
@@ -3306,6 +3310,8 @@ button.butn-style01,
   font-size: 1.05rem;
   line-height: 1.78;
   font-weight: 400;
+  text-align: justify;
+  hyphens: auto;
   background: transparent;
 }
 .svc-page-highlights {
@@ -3391,6 +3397,8 @@ button.butn-style01,
   margin: 0;
   color: #c8c8c4;
   line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .svc-page-gallery {
@@ -3447,6 +3455,8 @@ button.butn-style01,
   line-height: 1.7;
   padding: 0 1.15rem 1.1rem;
   background: transparent !important;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .svc-page-aside {
