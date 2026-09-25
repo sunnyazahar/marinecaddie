@@ -86,8 +86,8 @@
   "vessel-husbandry": {
     "provider": "Pexels",
     "license": "Pexels License \u2014 free to use, including commercial use",
-    "photo_id": 209719,
-    "source": "https://www.pexels.com/photo/209719/"
+    "photo_id": 29311756,
+    "source": "https://www.pexels.com/photo/29311756/"
   },
   "crew-logistics": {
     "provider": "Pexels",
@@ -96,10 +96,10 @@
     "source": "https://www.pexels.com/photo/2026324/"
   },
   "port-coordination": {
-    "provider": "Pexels",
-    "license": "Pexels License \u2014 free to use, including commercial use",
-    "photo_id": 2226458,
-    "source": "https://www.pexels.com/photo/2226458/"
+    "provider": "User provided",
+    "license": "Provided by site owner for MarineCaddie use",
+    "photo_id": null,
+    "source": "local-upload:image-fa2dbfea-d94c-4251-904c-2a1b0bf66d68.jpg"
   },
   "air-freight": {
     "provider": "Pexels",
@@ -116,8 +116,8 @@
   "road-transportation": {
     "provider": "Pexels",
     "license": "Pexels License \u2014 free to use, including commercial use",
-    "photo_id": 2199293,
-    "source": "https://www.pexels.com/photo/2199293/"
+    "photo_id": 5696170,
+    "source": "https://www.pexels.com/photo/5696170/"
   },
   "express-courier": {
     "provider": "Pexels",
@@ -134,8 +134,8 @@
   "multimodal-transport": {
     "provider": "Pexels",
     "license": "Pexels License \u2014 free to use, including commercial use",
-    "photo_id": 221047,
-    "source": "https://www.pexels.com/photo/221047/"
+    "photo_id": 30115463,
+    "source": "https://www.pexels.com/photo/30115463/"
   },
   "tp-trans-shipment-clearance": {
     "provider": "Pexels",
@@ -156,16 +156,16 @@
     "source": "https://www.pexels.com/photo/4481326/"
   },
   "duty-exemption": {
-    "provider": "Pexels",
-    "license": "Pexels License \u2014 free to use, including commercial use",
-    "photo_id": 4246192,
-    "source": "https://www.pexels.com/photo/4246192/"
+    "provider": "User provided",
+    "license": "Provided by site owner for MarineCaddie use",
+    "photo_id": null,
+    "source": "local-upload:image-ba77850f-72fc-42f0-af6b-84d79ba94556.jpg"
   },
   "customs-consulting": {
     "provider": "Pexels",
     "license": "Pexels License \u2014 free to use, including commercial use",
-    "photo_id": 4484078,
-    "source": "https://www.pexels.com/photo/4484078/"
+    "photo_id": 3184292,
+    "source": "https://www.pexels.com/photo/3184292/"
   },
   "oog-cargo": {
     "provider": "Pexels",
@@ -174,10 +174,10 @@
     "source": "https://www.pexels.com/photo/93398/"
   },
   "dangerous-goods": {
-    "provider": "Pexels",
-    "license": "Pexels License \u2014 free to use, including commercial use",
-    "photo_id": 257775,
-    "source": "https://www.pexels.com/photo/257775/"
+    "provider": "User provided",
+    "license": "Provided by site owner for MarineCaddie use",
+    "photo_id": null,
+    "source": "local-upload:image-ed4b506e-36b4-4a9c-8f9b-49e091daa20f.png"
   },
   "heavy-lift": {
     "provider": "Pexels",
