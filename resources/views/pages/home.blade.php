@@ -75,8 +75,16 @@
             <div class="mc-cinematic__brand">
                 <p class="mc-cinematic__kicker">{{ config('company.tagline') }}</p>
                 <h1 class="mc-cinematic__headline">{{ config('company.headline') }}</h1>
-                <p class="mc-cinematic__motto">{{ config('company.motto') }}</p>
+                <div class="hero-motto-ticker" aria-label="{{ config('company.motto') }}">
+                    <div class="hero-motto-ticker__track">
+                        <span class="hero-motto-ticker__item">{{ config('company.motto') }}</span>
+                        <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
+                        <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
+                        <span class="hero-motto-ticker__item" aria-hidden="true">{{ config('company.motto') }}</span>
+                    </div>
+                </div>
             </div>
+            <p class="mc-cinematic__kicker mc-cinematic__kicker--stack">{{ config('company.tagline') }}</p>
 
             <nav class="mc-cinematic__services" aria-label="Select a service">
                 @foreach($services as $key => $service)
