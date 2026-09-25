@@ -2,6 +2,7 @@
 
 @section('title', 'Portfolio Details')
 @section('meta_title', 'Project Details | MarineCaddie Portfolio')
+@section('og_image_alt', 'MarineCaddie portfolio project banner')
 @section('meta_description', 'Detailed look at a MarineCaddie maritime logistics engagement—scope, approach, and outcomes for vessel and cargo support.')
 @section('meta_robots', 'noindex, follow')
 @section('schema_type', 'WebPage')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('portfolio-details') }}" style="background-image: url(&quot;{{ page_banner('portfolio-details') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('portfolio-details') }}" style="background-image: url(&quot;{{ page_banner('portfolio-details') }}&quot;);" role="img" aria-label="MarineCaddie portfolio project banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

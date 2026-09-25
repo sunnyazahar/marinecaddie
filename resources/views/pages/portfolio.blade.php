@@ -2,6 +2,7 @@
 
 @section('title', 'Portfolio')
 @section('meta_title', 'Case Studies & Portfolio | MarineCaddie Shipping')
+@section('og_image_alt', 'MarineCaddie portfolio banner')
 @section('meta_description', 'Explore MarineCaddie portfolio highlights—maritime logistics, freight forwarding, and port support across global networks.')
 @section('meta_keywords', 'logistics portfolio, supply chain case studies, MarineCaddie projects')
 @section('meta_robots', 'noindex, follow')
@@ -11,7 +12,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('portfolio') }}" style="background-image: url(&quot;{{ page_banner('portfolio') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('portfolio') }}" style="background-image: url(&quot;{{ page_banner('portfolio') }}&quot;);" role="img" aria-label="MarineCaddie portfolio banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">                                                    

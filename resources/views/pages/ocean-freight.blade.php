@@ -2,6 +2,7 @@
 
 @section('title', 'Ocean Freight')
 @section('meta_title', 'Ocean Freight Forwarding | MarineCaddie Shipping')
+@section('og_image_alt', 'MarineCaddie ocean freight banner')
 @section('meta_description', 'Ocean freight by MarineCaddie—reliable sea freight forwarding for maritime and commercial cargo across global trade lanes.')
 @section('meta_keywords', 'ocean freight, sea freight, maritime shipping, FCL, LCL, freight forwarding')
 @section('schema_type', 'Service')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('ocean-freight') }}" style="background-image: url(&quot;{{ page_banner('ocean-freight') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('ocean-freight') }}" style="background-image: url(&quot;{{ page_banner('ocean-freight') }}&quot;);" role="img" aria-label="MarineCaddie ocean freight banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

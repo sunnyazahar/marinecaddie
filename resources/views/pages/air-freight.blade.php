@@ -2,6 +2,7 @@
 
 @section('title', 'Air Freight')
 @section('meta_title', 'Air Freight & Express / Hand Carry | MarineCaddie')
+@section('og_image_alt', 'MarineCaddie air freight banner')
 @section('meta_description', 'MarineCaddie air freight for time-critical maritime cargo—express courier and hand-carry options to keep vessels moving worldwide.')
 @section('meta_keywords', 'air freight, express courier, hand carry, time-critical shipping, maritime air cargo')
 @section('schema_type', 'Service')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('air-freight') }}" style="background-image: url(&quot;{{ page_banner('air-freight') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('air-freight') }}" style="background-image: url(&quot;{{ page_banner('air-freight') }}&quot;);" role="img" aria-label="MarineCaddie air freight banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

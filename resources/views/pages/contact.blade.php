@@ -2,6 +2,7 @@
 
 @section('title', 'Contact')
 @section('meta_title', 'Contact MarineCaddie Shipping | Dubai Ops Team')
+@section('og_image_alt', 'MarineCaddie contact banner')
 @section('meta_description', 'Contact MarineCaddie Shipping LLC in Deira, Dubai. Email ops@marinecaddie.com for ship spares, freight, customs, and port husbandry.')
 @section('meta_keywords', 'contact MarineCaddie, Dubai shipping company, maritime logistics contact, ops@marinecaddie.com, Deira Dubai')
 @section('schema_type', 'ContactPage')
@@ -17,7 +18,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section contact-page-banner top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_webp('assets/img/banner/contact-banner.jpg') }}?v=mc4" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/contact-banner.jpg') }}?v=mc4&quot;);">
+        <section class="page-title-section contact-page-banner top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ theme_webp('assets/img/banner/contact-banner.jpg') }}?v=mc4" style="background-image: url(&quot;{{ theme_webp('assets/img/banner/contact-banner.jpg') }}?v=mc4&quot;);" role="img" aria-label="MarineCaddie contact banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

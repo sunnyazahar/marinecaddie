@@ -16,7 +16,7 @@
 
         <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background services-page-banner" data-background="{{ page_banner('services') }}" style="background-image: url(&quot;{{ page_banner('services') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background services-page-banner" data-background="{{ page_banner('services') }}" style="background-image: url(&quot;{{ page_banner('services') }}&quot;);" role="img" aria-label="MarineCaddie services banner">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-xl-6">

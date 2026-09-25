@@ -2,6 +2,7 @@
 
 @section('title', 'How We Work')
 @section('meta_title', 'How MarineCaddie Works | Ship Spare Process')
+@section('og_image_alt', 'MarineCaddie how we work process banner')
 @section('meta_description', 'See MarineCaddie’s door-to-deck ship spare process: supplier, collection, hub, documentation, customs, carrier, delivery, onboard handover, and POD.')
 @section('schema_type', 'WebPage')
 @section('header_class', 'scrollHeader')
@@ -9,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('how-we-work') }}" style="background-image: url(&quot;{{ page_banner('how-we-work') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('how-we-work') }}" style="background-image: url(&quot;{{ page_banner('how-we-work') }}&quot;);" role="img" aria-label="MarineCaddie how we work process banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

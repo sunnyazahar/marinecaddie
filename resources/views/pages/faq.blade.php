@@ -2,6 +2,7 @@
 
 @section('title', 'FAQ')
 @section('meta_title', 'FAQ | MarineCaddie Maritime Logistics Questions')
+@section('og_image_alt', 'MarineCaddie FAQ banner')
 @section('meta_description', 'Answers about MarineCaddie ship spares logistics, customs clearance, vessel husbandry, freight forwarding, and how to contact our Dubai operations team.')
 @section('meta_keywords', 'MarineCaddie FAQ, ship spares FAQ, customs clearance, vessel husbandry, maritime logistics')
 @section('schema_type', 'FAQPage')
@@ -63,7 +64,7 @@
 @endphp
 
         <!-- BANNER -->
-        <section class="page-title-section top-position1 bg-img cover-background faq-page-banner" data-background="{{ page_banner('faq') }}" style="background-image: url(&quot;{{ page_banner('faq') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background faq-page-banner" data-background="{{ page_banner('faq') }}" style="background-image: url(&quot;{{ page_banner('faq') }}&quot;);" role="img" aria-label="MarineCaddie FAQ banner">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-xl-6">

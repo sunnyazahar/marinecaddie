@@ -2,6 +2,7 @@
 
 @section('title', 'Ship Spares Logistics')
 @section('meta_title', 'Ship Spares Logistics | 24/7 Door-to-Deck | MarineCaddie')
+@section('og_image_alt', 'MarineCaddie ship spares logistics banner')
 @section('meta_description', 'Time-critical ship spares logistics from MarineCaddie—24/7 operations, hand carry, door-to-deck delivery, customs clearance, and last-mile onboard support.')
 @section('meta_keywords', 'ship spares logistics, door-to-deck, time-critical shipping, hand carry, maritime spare parts')
 @section('schema_type', 'Service')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('ship-spares-logistics') }}" style="background-image: url(&quot;{{ page_banner('ship-spares-logistics') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('ship-spares-logistics') }}" style="background-image: url(&quot;{{ page_banner('ship-spares-logistics') }}&quot;);" role="img" aria-label="MarineCaddie ship spares logistics banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

@@ -2,6 +2,7 @@
 
 @section('title', 'Customs Clearance')
 @section('meta_title', 'Customs Clearance | Import, Export & TP | MarineCaddie')
+@section('og_image_alt', 'MarineCaddie customs clearance banner')
 @section('meta_description', 'MarineCaddie customs clearance—TP/trans-shipment, import and export clearance, duty exemption support, and customs consulting for maritime cargo.')
 @section('schema_type', 'Service')
 @section('header_class', 'scrollHeader')
@@ -9,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('ship-spares-logistics') }}" style="background-image: url(&quot;{{ page_banner('ship-spares-logistics') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('ship-spares-logistics') }}" style="background-image: url(&quot;{{ page_banner('ship-spares-logistics') }}&quot;);" role="img" aria-label="MarineCaddie customs clearance banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

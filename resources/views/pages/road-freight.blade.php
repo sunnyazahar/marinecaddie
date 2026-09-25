@@ -2,6 +2,7 @@
 
 @section('title', 'Road Transportation')
 @section('meta_title', 'Road Transportation | Port & Inland Logistics | MarineCaddie')
+@section('og_image_alt', 'MarineCaddie road transportation banner')
 @section('meta_description', 'Road transportation by MarineCaddie—reliable inland trucking connecting ports, warehouses, suppliers, and vessel delivery points.')
 @section('meta_keywords', 'road transportation, trucking, inland transport, port trucking, last mile maritime logistics')
 @section('schema_type', 'Service')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('road-transportation') }}" style="background-image: url(&quot;{{ page_banner('road-transportation') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('road-transportation') }}" style="background-image: url(&quot;{{ page_banner('road-transportation') }}&quot;);" role="img" aria-label="MarineCaddie road transportation banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

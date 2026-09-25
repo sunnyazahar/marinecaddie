@@ -2,6 +2,7 @@
 
 @section('title', 'Blog')
 @section('meta_title', 'Logistics Insights Blog | MarineCaddie Shipping')
+@section('og_image_alt', 'MarineCaddie blog banner')
 @section('meta_description', 'Insights on maritime logistics, ship spare delivery, freight trends, and port operations from MarineCaddie Shipping.')
 @section('meta_keywords', 'logistics blog, maritime logistics news, ship spares insights, freight forwarding')
 @section('meta_robots', 'noindex, follow')
@@ -11,7 +12,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('blog') }}" style="background-image: url(&quot;{{ page_banner('blog') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('blog') }}" style="background-image: url(&quot;{{ page_banner('blog') }}&quot;);" role="img" aria-label="MarineCaddie blog banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

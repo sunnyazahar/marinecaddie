@@ -12,7 +12,7 @@
     $services = config('company.services', []);
 @endphp
 {{-- Cinematic gate stage — height reserved from first paint (CLS-safe) --}}
-<section class="mc-cinematic" id="mc-cinematic" aria-label="MarineCaddie">
+<section class="mc-cinematic" id="mc-cinematic" aria-label="MarineCaddie home hero — ship spare logistics and marine agency">
     <div class="mc-cinematic__stage">
         {{-- Ocean layer (existing hero video / poster) --}}
         <div class="mc-cinematic__ocean mc-hero secondary-overlay" data-overlay-dark="7" aria-hidden="true">

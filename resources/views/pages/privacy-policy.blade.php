@@ -2,6 +2,7 @@
 
 @section('title', 'Privacy Policy')
 @section('meta_title', 'Privacy Policy | MarineCaddie Shipping')
+@section('og_image_alt', 'MarineCaddie privacy policy banner')
 @section('meta_description', 'Read how MarineCaddie Shipping collects, uses, and protects personal information when you use our website and logistics services.')
 @section('meta_keywords', 'MarineCaddie privacy policy, data protection, website privacy')
 @section('schema_type', 'WebPage')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('privacy-policy') }}" style="background-image: url(&quot;{{ page_banner('privacy-policy') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('privacy-policy') }}" style="background-image: url(&quot;{{ page_banner('privacy-policy') }}&quot;);" role="img" aria-label="MarineCaddie privacy policy banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

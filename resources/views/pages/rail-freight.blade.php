@@ -2,6 +2,7 @@
 
 @section('title', 'Vessel Husbandry / Port Support')
 @section('meta_title', 'Vessel Husbandry & Port Support | MarineCaddie')
+@section('og_image_alt', 'MarineCaddie vessel husbandry banner')
 @section('meta_description', 'Vessel husbandry and port support by MarineCaddie—agency, crew change, bunkering, chandling, and more across India, Sri Lanka, Indonesia & Singapore.')
 @section('meta_keywords', 'vessel husbandry, port agency, crew change, ship chandling, bunkering, port support India Sri Lanka Indonesia Singapore')
 @section('schema_type', 'Service')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('multimodal-transport') }}" style="background-image: url(&quot;{{ page_banner('multimodal-transport') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('multimodal-transport') }}" style="background-image: url(&quot;{{ page_banner('multimodal-transport') }}&quot;);" role="img" aria-label="MarineCaddie vessel husbandry banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

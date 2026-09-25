@@ -2,6 +2,7 @@
 
 @section('title', 'Home Alternative')
 @section('meta_title', 'MarineCaddie Shipping | Home Alternative')
+@section('og_image_alt', 'MarineCaddie alternate home banner')
 @section('meta_description', 'Alternate homepage layout for MarineCaddie Shipping — specialized marine logistics and freight forwarding for vessels and global ports.')
 @section('meta_keywords', 'MarineCaddie, maritime logistics, ship spares')
 @section('meta_robots', 'noindex, follow')

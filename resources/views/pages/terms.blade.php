@@ -2,6 +2,7 @@
 
 @section('title', 'Terms & Conditions')
 @section('meta_title', 'Terms & Conditions | MarineCaddie Shipping')
+@section('og_image_alt', 'MarineCaddie terms and conditions banner')
 @section('meta_description', 'Terms and conditions for using the MarineCaddie Shipping website and engaging with our maritime logistics services.')
 @section('meta_keywords', 'MarineCaddie terms, terms of use, logistics terms and conditions')
 @section('schema_type', 'WebPage')
@@ -10,7 +11,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('terms') }}" style="background-image: url(&quot;{{ page_banner('terms') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('terms') }}" style="background-image: url(&quot;{{ page_banner('terms') }}&quot;);" role="img" aria-label="MarineCaddie terms and conditions banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

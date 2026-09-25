@@ -12,7 +12,7 @@
 @section('header_class', 'scrollHeader')
 
 @section('content')
-        <section class="svc-page-hero" style="--svc-hero-image: url('{{ page_banner($service['slug']) }}');">
+        <section class="svc-page-hero" style="--svc-hero-image: url('{{ page_banner($service['slug']) }}');" role="img" aria-label="MarineCaddie — {{ $service['title'] }} service banner">
             <div class="svc-page-hero__shade" aria-hidden="true"></div>
             <div class="container position-relative">
                 <nav class="svc-page-crumbs" aria-label="Breadcrumb">

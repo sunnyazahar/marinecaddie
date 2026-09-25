@@ -2,6 +2,7 @@
 
 @section('title', 'Our Mission & Vision')
 @section('meta_title', 'Mission & Vision | MarineCaddie Shipping')
+@section('og_image_alt', 'MarineCaddie mission and vision banner')
 @section('meta_description', 'MarineCaddie’s mission: keep vessels moving with reliable, time-critical maritime logistics. Our vision: be the most trusted global marine logistics partner.')
 @section('schema_type', 'AboutPage')
 @section('header_class', 'scrollHeader')
@@ -9,7 +10,7 @@
 @section('content')
 <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('mission-vision') }}" style="background-image: url(&quot;{{ page_banner('mission-vision') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay" data-overlay-dark="8" data-background="{{ page_banner('mission-vision') }}" style="background-image: url(&quot;{{ page_banner('mission-vision') }}&quot;);" role="img" aria-label="MarineCaddie mission and vision banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

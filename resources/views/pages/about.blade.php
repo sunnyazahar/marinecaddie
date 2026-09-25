@@ -2,6 +2,7 @@
 
 @section('title', 'About Us')
 @section('meta_title', 'About MarineCaddie | Dubai Marine Logistics')
+@section('og_image_alt', 'MarineCaddie about banner — Dubai marine logistics')
 @section('meta_description', 'MarineCaddie Shipping LLC provides time-critical ship spare logistics, vessel husbandry, freight forwarding, and customs clearance from Dubai to global ports.')
 @section('schema_type', 'AboutPage')
 @section('meta_robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
@@ -14,7 +15,7 @@
 
         <!-- PAGETITLE
         ================================================== -->
-        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay about-page-banner" data-overlay-dark="8" data-background="{{ page_banner('about') }}" style="background-image: url(&quot;{{ page_banner('about') }}&quot;);">
+        <section class="page-title-section top-position1 bg-img cover-background secondary-overlay about-page-banner" data-overlay-dark="8" data-background="{{ page_banner('about') }}" style="background-image: url(&quot;{{ page_banner('about') }}&quot;);" role="img" aria-label="MarineCaddie about banner — Dubai marine logistics">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
