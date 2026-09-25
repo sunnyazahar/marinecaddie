@@ -31,24 +31,23 @@
             </div>
         </section>
 
+        @php
+            $trustItems = $service['trust'] ?? [
+                ['label' => '24/7 Ops Desk', 'text' => 'Responsive coordination when vessel schedules shift.'],
+                ['label' => 'Global Port Reach', 'text' => 'Coverage and partners across key maritime hubs.'],
+                ['label' => 'Door-to-Deck Mindset', 'text' => 'From supplier pickup to onboard handover.'],
+            ];
+        @endphp
         <section class="svc-page-trust">
             <div class="container">
                 <div class="svc-page-trust__grid">
-                    <div class="svc-page-trust__item">
-                        <span class="svc-page-trust__num">01</span>
-                        <h2 class="svc-page-trust__label">24/7 Ops Desk</h2>
-                        <p>Responsive coordination when vessel schedules shift.</p>
-                    </div>
-                    <div class="svc-page-trust__item">
-                        <span class="svc-page-trust__num">02</span>
-                        <h2 class="svc-page-trust__label">Global Port Reach</h2>
-                        <p>Coverage and partners across key maritime hubs.</p>
-                    </div>
-                    <div class="svc-page-trust__item">
-                        <span class="svc-page-trust__num">03</span>
-                        <h2 class="svc-page-trust__label">Door-to-Deck Mindset</h2>
-                        <p>From supplier pickup to onboard handover.</p>
-                    </div>
+                    @foreach($trustItems as $trust)
+                        <div class="svc-page-trust__item">
+                            <span class="svc-page-trust__num">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                            <h2 class="svc-page-trust__label">{{ $trust['label'] }}</h2>
+                            <p>{{ $trust['text'] }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -60,6 +59,9 @@
                         <article class="svc-page-panel wow fadeInUp" data-wow-delay="100ms">
                             <h2 class="svc-page-panel__heading">Overview</h2>
                             <p class="svc-page-panel__lead">{{ $service['intro'] }}</p>
+                            @foreach($service['body'] ?? [] as $paragraph)
+                                <p class="svc-page-panel__body">{{ $paragraph }}</p>
+                            @endforeach
                         </article>
 
                         <article class="svc-page-panel wow fadeInUp" data-wow-delay="150ms">
@@ -70,6 +72,28 @@
                                 @endforeach
                             </ul>
                         </article>
+
+                        @if(!empty($service['when_to_use']))
+                            <article class="svc-page-panel wow fadeInUp" data-wow-delay="170ms">
+                                <h2 class="svc-page-panel__heading">When to use this service</h2>
+                                <ul class="svc-page-highlights">
+                                    @foreach($service['when_to_use'] as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ul>
+                            </article>
+                        @endif
+
+                        @if(!empty($service['what_we_need']))
+                            <article class="svc-page-panel wow fadeInUp" data-wow-delay="180ms">
+                                <h2 class="svc-page-panel__heading">What we need from you</h2>
+                                <ul class="svc-page-highlights">
+                                    @foreach($service['what_we_need'] as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ul>
+                            </article>
+                        @endif
 
                         <article class="svc-page-panel wow fadeInUp" data-wow-delay="200ms">
                             <h2 class="svc-page-panel__heading">How we deliver</h2>
@@ -166,3 +190,16 @@
             </div>
         </section>
 @endsection
+
+@if(!empty($service['faqs']))
+@push('faq_schema')
+{!! json_encode(collect($service['faqs'])->map(fn ($faq) => [
+    '@type' => 'Question',
+    'name' => $faq['q'],
+    'acceptedAnswer' => [
+        '@type' => 'Answer',
+        'text' => $faq['a'],
+    ],
+])->values()->all(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+@endpush
+@endif

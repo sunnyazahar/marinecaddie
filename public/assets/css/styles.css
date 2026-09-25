@@ -3114,6 +3114,15 @@ button.butn-style01,
   font-size: 1.55rem !important;
   font-weight: 700 !important;
 }
+.svc-page-panel__body {
+  margin: 0 0 1rem;
+  color: #4a4f55;
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+.svc-page-panel__body:last-child {
+  margin-bottom: 0;
+}
 .svc-page-panel__lead {
   margin: 0;
   color: #42526a;

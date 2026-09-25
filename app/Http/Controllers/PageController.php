@@ -40,6 +40,33 @@ class PageController extends Controller
         $service = $catalog[$slug];
         $service['slug'] = $slug;
 
+        $seoCopy = config('services_seo_copy.'.$slug, []);
+        if (is_array($seoCopy) && $seoCopy !== []) {
+            if (! empty($seoCopy['trust']) && is_array($seoCopy['trust'])) {
+                $service['trust'] = $seoCopy['trust'];
+            }
+            if (! empty($seoCopy['body']) && is_array($seoCopy['body'])) {
+                $service['body'] = $seoCopy['body'];
+            }
+            if (! empty($seoCopy['when_to_use']) && is_array($seoCopy['when_to_use'])) {
+                $service['when_to_use'] = $seoCopy['when_to_use'];
+            }
+            if (! empty($seoCopy['what_we_need']) && is_array($seoCopy['what_we_need'])) {
+                $service['what_we_need'] = $seoCopy['what_we_need'];
+            }
+            if (! empty($seoCopy['extra_faqs']) && is_array($seoCopy['extra_faqs'])) {
+                $service['faqs'] = array_values(array_merge(
+                    $service['faqs'] ?? [],
+                    $seoCopy['extra_faqs']
+                ));
+            }
+        }
+
+        $seoExtra = config('services_seo_copy_extra.'.$slug, []);
+        if (is_array($seoExtra) && $seoExtra !== []) {
+            $service['body'] = array_values(array_merge($service['body'] ?? [], $seoExtra));
+        }
+
         $siblings = collect($catalog)
             ->filter(fn (array $item) => ($item['category'] ?? '') === ($service['category'] ?? ''))
             ->map(function (array $item, string $itemSlug) {

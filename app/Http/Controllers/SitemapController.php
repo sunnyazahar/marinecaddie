@@ -31,6 +31,8 @@ class SitemapController extends Controller
         $serviceSources = [
             resource_path('views/pages/service-show.blade.php'),
             config_path('services_catalog.php'),
+            config_path('services_seo_copy.php'),
+            config_path('services_seo_copy_extra.php'),
         ];
 
         foreach (array_keys(config('services_catalog', [])) as $slug) {
