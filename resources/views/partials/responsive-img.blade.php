@@ -1,7 +1,7 @@
 {{-- Responsive WebP with JPEG/PNG fallback. Usage:
      @include('partials.responsive-img', [
          'path' => 'assets/img/banner/slide-01.jpg',
-         'alt' => '...',
+         'alt' => 'MarineCaddie — descriptive image text',
          'class' => 'rounded',
          'lazy' => true,          // default true
          'priority' => false,     // LCP: fetchpriority=high, no lazy
@@ -11,8 +11,17 @@
 --}}
 @php
     $path = $path ?? '';
-    $alt = $alt ?? '';
+    $alt = trim((string) ($alt ?? ''));
+    // Brand every image alt for SEO / Google Images
+    if ($alt === '') {
+        $alt = 'MarineCaddie';
+    } elseif (stripos($alt, 'MarineCaddie') === false) {
+        $alt = 'MarineCaddie — '.$alt;
+    }
     $title = $title ?? $alt;
+    if (is_string($title) && $title !== '' && stripos($title, 'MarineCaddie') === false) {
+        $title = 'MarineCaddie — '.$title;
+    }
     $class = $class ?? '';
     $lazy = $lazy ?? true;
     $priority = $priority ?? false;

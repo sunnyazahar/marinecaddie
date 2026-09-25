@@ -43,7 +43,7 @@
 @endphp
 <span class="nav-mega-ico nav-mega-ico--{{ $size }}" aria-hidden="true">
     @if($png)
-        <img src="{{ theme_asset('assets/img/nav-icons/' . $png) }}" alt="">
+        <img src="{{ theme_asset('assets/img/nav-icons/' . $png) }}" alt="MarineCaddie — {{ $name }}">
     @else
         {!! $svg !!}
     @endif

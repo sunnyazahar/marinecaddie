@@ -103,7 +103,7 @@
                                 <div class="faq-main__shot faq-main__shot--side">
                                     @include('partials.responsive-img', [
                                         'path' => 'assets/img/content/faq-03.jpg',
-                                        'alt' => 'Ship spares and port support',
+                                        'alt' => 'MarineCaddie — ship spares and port support',
                                         'class' => 'faq-main__img',
                                         'lazy' => true,
                                     ])

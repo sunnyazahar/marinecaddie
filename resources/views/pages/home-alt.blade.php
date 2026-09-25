@@ -124,7 +124,7 @@
                 <div class="row align-items-xl-center mt-n1-9">
                     <div class="col-lg-6 mt-1-9">
                         <div class="image-box text-xl-end image-hover wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                            <img src="{{ theme_asset('assets/img/content/about-02.jpg') }}" alt="..." title="..." class="rounded">
+                            <img src="{{ theme_asset('assets/img/content/about-02.jpg') }}" alt="about MarineCaddie maritime operations" title="about MarineCaddie maritime operations" class="rounded">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-1-9">
@@ -148,14 +148,14 @@
                             </div>
                             <div class="d-flex align-items-center wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
                                 <div class="d-flex align-items-center">
-                                    <img src="{{ theme_asset('assets/img/avatar/avatar-13.jpg') }}" class="border-radius-4" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/avatar/avatar-13.jpg') }}" class="border-radius-4" alt="MarineCaddie — team member portrait" title="MarineCaddie — team member portrait">
                                     <div class="content-box ms-3">
                                         <h3 class="h4 title">Michael Gsell</h3>
                                         <span class="designation"> Marketing Coordinator</span>
                                     </div>
                                 </div>
                                 <div class="ms-1-9 ms-xl-7">
-                                    <img src="{{ theme_asset('assets/img/content/signature-02.png') }}" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/signature-02.png') }}" alt="MarineCaddie — authorized signature" title="MarineCaddie — authorized signature">
                                 </div>
                             </div>
                         </div>
@@ -260,32 +260,32 @@
                 <div class="row g-0">
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ theme_asset('assets/img/clients/icon-01.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-01.png') }}" alt="MarineCaddie — trusted logistics partner logo 1" title="MarineCaddie — trusted logistics partner logo 1">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-md-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ theme_asset('assets/img/clients/icon-02.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-02.png') }}" alt="MarineCaddie — trusted logistics partner logo 2" title="MarineCaddie — trusted logistics partner logo 2">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-end border-md-end-0 border-xl-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ theme_asset('assets/img/clients/icon-03.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-03.png') }}" alt="MarineCaddie — trusted logistics partner logo 3" title="MarineCaddie — trusted logistics partner logo 3">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-md-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ theme_asset('assets/img/clients/icon-04.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-04.png') }}" alt="MarineCaddie — trusted logistics partner logo 4" title="MarineCaddie — trusted logistics partner logo 4">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom border-end py-3 py-md-4 py-xl-5">
-                            <img src="{{ theme_asset('assets/img/clients/icon-05.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-05.png') }}" alt="MarineCaddie — trusted logistics partner logo 5" title="MarineCaddie — trusted logistics partner logo 5">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-xl-2 text-center">
                         <div class="position-relative client-line border-bottom py-3 py-md-4 py-xl-5">
-                            <img src="{{ theme_asset('assets/img/clients/icon-06.png') }}" alt="..." title="...">
+                            <img src="{{ theme_asset('assets/img/clients/icon-06.png') }}" alt="MarineCaddie — trusted logistics partner logo 6" title="MarineCaddie — trusted logistics partner logo 6">
                         </div>
                     </div>
                 </div>
@@ -307,7 +307,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — ship spare collection and consolidation process" title="MarineCaddie — ship spare collection and consolidation process">
                                     <div class="count-size">
                                         <span class="number">01</span>
                                     </div>
@@ -319,7 +319,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — customs clearance and carrier booking process" title="MarineCaddie — customs clearance and carrier booking process">
                                     <div class="count-size">
                                         <span class="number">02</span>
                                     </div>
@@ -331,7 +331,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — last-mile and onboard delivery process" title="MarineCaddie — last-mile and onboard delivery process">
                                     <div class="count-size">
                                         <span class="number">03</span>
                                     </div>
@@ -343,7 +343,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — proof of delivery and shipment follow-up" title="MarineCaddie — proof of delivery and shipment follow-up">
                                     <div class="count-size">
                                         <span class="number">04</span>
                                     </div>
@@ -398,7 +398,7 @@
                             </div>
                             <div class="row mb-2-3 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                                 <div class="col-sm-5 image-hover mb-3 mb-sm-0">
-                                    <img src="{{ theme_asset('assets/img/content/faq-01.jpg') }}" alt="..." title="..." class="rounded">
+                                    <img src="{{ theme_asset('assets/img/content/faq-01.jpg') }}" alt="MarineCaddie — marine logistics FAQ support" title="MarineCaddie — marine logistics FAQ support" class="rounded">
                                 </div>
                                 <div class="col-sm-7">
                                     <p class="mb-0">We are committed to delivering reliable, efficient, and innovative logistics solutions that keep your business moving with years.</p>
@@ -473,7 +473,7 @@
                         </div>
                         <div class="col-lg-4 my-2-2 my-lg-0">
                             <div class="contact-icon01">
-                                <img src="{{ theme_asset('assets/img/icons/icon-18.png') }}" class="w-30px" alt="..." title="...">
+                                <img src="{{ theme_asset('assets/img/icons/icon-18.png') }}" class="w-30px" alt="MarineCaddie — marine logistics feature icon" title="MarineCaddie — marine logistics feature icon">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -629,7 +629,7 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
                         <article class="card card-style06 border-0 rounded h-100">
                             <div class="image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-01.jpg') }}" alt="MarineCaddie — logistics insights blog article" title="MarineCaddie — logistics insights blog article" class="rounded-top">
                                 <div class="card-img-text"><a href="{{ route('home.alt') }}#">Shipping</a></div>
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
@@ -645,7 +645,7 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                         <article class="card card-style06 border-0 rounded h-100">
                             <div class="image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-02.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-02.jpg') }}" alt="MarineCaddie — shipment tracking blog article" title="MarineCaddie — shipment tracking blog article" class="rounded-top">
                                 <div class="card-img-text"><a href="{{ route('home.alt') }}#">Transport</a></div>
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
@@ -661,7 +661,7 @@
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
                         <article class="card card-style06 border-0 rounded h-100">
                             <div class="image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-03.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-03.jpg') }}" alt="MarineCaddie — smart logistics solutions blog" title="MarineCaddie — smart logistics solutions blog" class="rounded-top">
                                 <div class="card-img-text"><a href="{{ route('home.alt') }}#">Tracking</a></div>
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">

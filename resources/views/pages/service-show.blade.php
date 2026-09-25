@@ -114,7 +114,7 @@
                             <div class="svc-page-gallery wow fadeInUp" data-wow-delay="220ms">
                                 @foreach($service['gallery'] as $image)
                                     <figure>
-                                        <img src="{{ theme_asset($image) }}" alt="{{ $service['title'] }}" title="{{ $service['title'] }}" loading="lazy">
+                                        <img src="{{ theme_asset($image) }}" alt="MarineCaddie — {{ $service['title'] }}" title="MarineCaddie — {{ $service['title'] }}" loading="lazy">
                                     </figure>
                                 @endforeach
                             </div>

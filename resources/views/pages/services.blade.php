@@ -45,7 +45,7 @@
                             <div class="services-intro__shot services-intro__shot--main">
                                 @include('partials.responsive-img', [
                                     'path' => 'assets/img/content/about-07.jpg',
-                                    'alt' => 'Marine logistics operations',
+                                    'alt' => 'MarineCaddie — marine logistics operations',
                                     'class' => 'services-intro__img',
                                     'lazy' => true,
                                 ])
@@ -53,7 +53,7 @@
                             <div class="services-intro__shot services-intro__shot--side">
                                 @include('partials.responsive-img', [
                                     'path' => 'assets/img/content/about-06.jpg',
-                                    'alt' => 'Port operations and vessel support',
+                                    'alt' => 'MarineCaddie — port operations and vessel support',
                                     'class' => 'services-intro__img',
                                     'lazy' => true,
                                 ])
@@ -117,7 +117,7 @@
                                 <span class="services-deep-dive__media">
                                     @include('partials.responsive-img', [
                                         'path' => $page['image'],
-                                        'alt' => $page['title'],
+                                        'alt' => 'MarineCaddie — '.$page['title'],
                                         'lazy' => true,
                                     ])
                                 </span>

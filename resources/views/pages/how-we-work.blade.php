@@ -39,7 +39,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-01.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — ship spare collection and consolidation process" title="MarineCaddie — ship spare collection and consolidation process">
                                     <div class="count-size">
                                         <span class="number">01</span>
                                     </div>
@@ -51,7 +51,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="350ms" style="visibility: visible; animation-delay: 350ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-02.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — customs clearance and carrier booking process" title="MarineCaddie — customs clearance and carrier booking process">
                                     <div class="count-size">
                                         <span class="number">02</span>
                                     </div>
@@ -63,7 +63,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-03.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — last-mile and onboard delivery process" title="MarineCaddie — last-mile and onboard delivery process">
                                     <div class="count-size">
                                         <span class="number">03</span>
                                     </div>
@@ -75,7 +75,7 @@
                         <div class="col-sm-6 col-lg-3 mt-2-9 wow fadeInUp" data-wow-delay="650ms" style="visibility: visible; animation-delay: 650ms; animation-name: fadeInUp;">
                             <div class="text-center process-block">
                                 <div class="process-img">
-                                    <img src="{{ theme_asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="..." title="...">
+                                    <img src="{{ theme_asset('assets/img/content/process-04.jpg') }}" class="mb-4 rounded-circle" alt="MarineCaddie — proof of delivery and shipment follow-up" title="MarineCaddie — proof of delivery and shipment follow-up">
                                     <div class="count-size">
                                         <span class="number">04</span>
                                     </div>
@@ -238,7 +238,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-03.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-03.png') }}" alt="MarineCaddie — trusted logistics partner" title="MarineCaddie — trusted logistics partner" class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -253,7 +253,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-04.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-04.png') }}" alt="MarineCaddie — trusted logistics partner" title="MarineCaddie — trusted logistics partner" class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -268,7 +268,7 @@
                             <div class="row g-0">
                                 <div class="col-sm-3 border-sm-end">
                                     <div class="text-sm-center px-sm-1-6 px-xxl-5 py-sm-1-6">
-                                        <img src="{{ theme_asset('assets/img/icons/icon-05.png') }}" alt="..." title="..." class="w-60px">
+                                        <img src="{{ theme_asset('assets/img/icons/icon-05.png') }}" alt="MarineCaddie — trusted logistics partner" title="MarineCaddie — trusted logistics partner" class="w-60px">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">

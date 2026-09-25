@@ -44,7 +44,7 @@
                     <article class="mv-panel mv-panel--mission wow fadeInUp" data-wow-delay="150ms" id="mission">
                         <div class="mv-panel__mark" aria-hidden="true">01</div>
                         <div class="mv-panel__media">
-                            <img src="{{ theme_asset('assets/img/content/about-04.jpg') }}" alt="Marine logistics operations supporting vessel efficiency" loading="lazy">
+                            <img src="{{ theme_asset('assets/img/content/about-04.jpg') }}" alt="MarineCaddie — Marine logistics operations supporting vessel efficiency" loading="lazy">
                         </div>
                         <div class="mv-panel__body">
                             <span class="mv-panel__eyebrow">Our Mission</span>
@@ -61,7 +61,7 @@
                     <article class="mv-panel mv-panel--vision wow fadeInUp" data-wow-delay="250ms" id="vision">
                         <div class="mv-panel__mark" aria-hidden="true">02</div>
                         <div class="mv-panel__media">
-                            <img src="{{ theme_asset('assets/img/content/about-05.jpg') }}" alt="Global maritime network and trusted logistics partnership" loading="lazy">
+                            <img src="{{ theme_asset('assets/img/content/about-05.jpg') }}" alt="MarineCaddie — Global maritime network and trusted logistics partnership" loading="lazy">
                         </div>
                         <div class="mv-panel__body">
                             <span class="mv-panel__eyebrow">Our Vision</span>

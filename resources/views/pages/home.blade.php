@@ -61,11 +61,11 @@
 
         <div class="mc-cinematic__gates" aria-hidden="true">
             <div class="mc-cinematic__gate mc-cinematic__gate--left">
-                <img class="mc-cinematic__scene" src="{{ theme_webp('assets/img/banner/gate-scene.jpg') }}?v=real6" width="1728" height="1152" alt="">
+                <img class="mc-cinematic__scene" src="{{ theme_webp('assets/img/banner/gate-scene.jpg') }}?v=real6" width="1728" height="1152" alt="MarineCaddie maritime logistics gateway">
                 <span class="mc-cinematic__gate-word">Marine</span>
             </div>
             <div class="mc-cinematic__gate mc-cinematic__gate--right">
-                <img class="mc-cinematic__scene" src="{{ theme_webp('assets/img/banner/gate-scene.jpg') }}?v=real6" width="1728" height="1152" alt="">
+                <img class="mc-cinematic__scene" src="{{ theme_webp('assets/img/banner/gate-scene.jpg') }}?v=real6" width="1728" height="1152" alt="MarineCaddie ship spares and port logistics">
                 <span class="mc-cinematic__gate-word">Caddie</span>
             </div>
         </div>
@@ -108,7 +108,7 @@
                     @endphp
                     <a href="{{ $href }}" class="mc-cinematic__service" data-service="{{ $key }}">
                         <span class="mc-cinematic__service-ico">
-                            <img src="{{ theme_webp('assets/img/nav-icons/'.$icon.'.png') }}" width="40" height="40" alt="">
+                            <img src="{{ theme_webp('assets/img/nav-icons/'.$icon.'.png') }}" width="40" height="40" alt="MarineCaddie — {{ $short }}">
                         </span>
                         <span class="mc-cinematic__service-num">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                         <span class="mc-cinematic__service-title">{{ $short }}</span>

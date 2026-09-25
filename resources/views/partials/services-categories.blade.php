@@ -17,7 +17,7 @@
                     <div class="services-category__media">
                         @include('partials.responsive-img', [
                             'path' => $service['image'] ?? 'assets/img/services/service-01.jpg',
-                            'alt' => $service['title'],
+                            'alt' => 'MarineCaddie — '.$service['title'],
                             'title' => $service['title'],
                             'lazy' => true,
                         ])

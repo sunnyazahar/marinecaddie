@@ -48,7 +48,7 @@
                             <div class="about-story__shot about-story__shot--side">
                                 @include('partials.responsive-img', [
                                     'path' => 'assets/img/content/about-05.jpg',
-                                    'alt' => 'Port and vessel coordination',
+                                    'alt' => 'MarineCaddie — port and vessel coordination',
                                     'class' => 'about-story__img',
                                     'lazy' => true,
                                 ])
@@ -162,7 +162,7 @@
                                 <div class="about-services-snap__media">
                                     @include('partials.responsive-img', [
                                         'path' => $svc['image'] ?? 'assets/img/content/marine-logistics.jpg',
-                                        'alt' => $svc['title'],
+                                        'alt' => 'MarineCaddie — '.$svc['title'],
                                         'lazy' => true,
                                     ])
                                     <span class="about-services-snap__num">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>

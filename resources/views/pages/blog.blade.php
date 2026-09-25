@@ -33,7 +33,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-01.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-01.jpg') }}" alt="MarineCaddie — logistics insights blog article" title="MarineCaddie — logistics insights blog article" class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -54,7 +54,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-02.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-02.jpg') }}" alt="MarineCaddie — shipment tracking blog article" title="MarineCaddie — shipment tracking blog article" class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -75,7 +75,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-03.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-03.jpg') }}" alt="MarineCaddie — smart logistics solutions blog" title="MarineCaddie — smart logistics solutions blog" class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -96,7 +96,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-04.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-04.jpg') }}" alt="MarineCaddie — cargo and warehouse blog article" title="MarineCaddie — cargo and warehouse blog article" class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -117,7 +117,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-05.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-05.jpg') }}" alt="MarineCaddie — faster delivery logistics blog" title="MarineCaddie — faster delivery logistics blog" class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">
@@ -138,7 +138,7 @@
                     <div class="col-md-6 col-lg-4 mt-2-2 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                         <article class="card card-style01">
                             <div class="blog-img position-relative overflow-hidden rounded-top image-hover">
-                                <img src="{{ theme_asset('assets/img/blog/blog-06.jpg') }}" alt="..." title="..." class="rounded-top">
+                                <img src="{{ theme_asset('assets/img/blog/blog-06.jpg') }}" alt="MarineCaddie — supply chain success blog" title="MarineCaddie — supply chain success blog" class="rounded-top">
                             </div>
                             <div class="card-body position-relative pt-2-6 pb-1-9 pb-xl-2-6 px-1-9 px-xl-2-4">
                                 <div class="post-date">

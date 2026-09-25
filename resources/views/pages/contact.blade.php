@@ -77,7 +77,7 @@
                             <div class="contact-presence-card__header">
                                 @if($flag !== '')
                                     <span class="contact-presence-card__flag" aria-hidden="true">
-                                        <img src="{{ theme_asset('assets/img/flags/' . $flag . '.svg') }}" alt="" width="28" height="21" loading="lazy">
+                                        <img src="{{ theme_asset('assets/img/flags/' . $flag . '.svg') }}" alt="MarineCaddie office — {{ $country }}" width="28" height="21" loading="lazy">
                                     </span>
                                 @endif
                                 <h3 class="contact-presence-card__title">{{ $country }}</h3>
