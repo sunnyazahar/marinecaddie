@@ -385,7 +385,7 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li class="js-nav-why" data-nav-hash="why-choose-us"><a href="{{ route('about') }}#why-choose-us">Why MarineCaddie ?</a></li>
+                                        <li class="js-nav-why" data-nav-hash="why-choose-us"><a href="{{ route('how-we-work') }}#why-choose-us">Why MarineCaddie ?</a></li>
                                         <li class="{{ $navContact ? 'current active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                                         <li class="nav-mobile-ctas d-xl-none">
                                             <div class="header-attr-actions header-attr-actions--mobile">

@@ -107,20 +107,12 @@
                                     <p class="text-white opacity8 mb-0">{{ config('company.presence') }}</p>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                    <h3 class="h4 text-white">Follow us</h3>
-                                    <ul class="social-icon-style03 list-unstyled">
-                                        <li><a href="https://www.linkedin.com/company/marinec/" aria-label="MarineCaddie on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="ti-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Email</h3>
                                     <p class="mb-0 text-white opacity8">{{ config('company.motto') }}</p>
                                     <p class="mb-0"><a href="mailto:{{ config('company.email') }}" class="text-decoration-underline text-primary text-white-hover">{{ config('company.email') }}</a></p>
                                 </div>
                             </div>
-                            <div class="contact-text wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                                <p class="mb-0">{{ config('company.address.short') }}</p>
-                            </div>
+                           
                         </div>
                     </div>
                     <div class="col-lg-6 mt-2-9">
