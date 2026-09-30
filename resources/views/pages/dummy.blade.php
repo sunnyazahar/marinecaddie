@@ -78,19 +78,6 @@
             <span class="mc-gate-enter__label">Enter</span>
         </button>
 
-        <div class="mc-golf" id="mc-golf" aria-hidden="true" hidden>
-            <div class="mc-golf__backdrop"></div>
-            <div class="mc-golf__cam">
-                <div class="mc-golf__shake">
-                    <img class="mc-golf__img" data-shot="address" data-src="{{ theme_asset('assets/img/golf/golf-address.webp') }}?v=golf1" width="1280" height="720" alt="" loading="eager" decoding="async">
-                    <img class="mc-golf__img" data-shot="backswing" data-src="{{ theme_asset('assets/img/golf/golf-backswing.webp') }}?v=golf1" width="1280" height="720" alt="" loading="eager" decoding="async">
-                    <img class="mc-golf__img" data-shot="finish" data-src="{{ theme_asset('assets/img/golf/golf-finish.webp') }}?v=golf1" width="1280" height="720" alt="" loading="eager" decoding="async">
-                    <canvas class="mc-golf__fx"></canvas>
-                </div>
-            </div>
-            <button type="button" class="mc-golf__skip" tabindex="-1">Skip</button>
-        </div>
-
         {{-- Brand + service hub, anchored low so the sky stays open --}}
         <div class="mc-cinematic__hub">
             <div class="mc-cinematic__brand">
