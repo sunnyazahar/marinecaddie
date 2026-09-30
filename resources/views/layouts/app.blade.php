@@ -59,9 +59,7 @@
     <script src="{{ theme_asset('assets/js/nav-mobile.js') }}?v=20260924nav1" defer></script>
     <script src="{{ theme_asset('assets/js/quote-modal.js') }}?v=20260924nav1" defer></script>
     <script src="{{ theme_asset('assets/js/perf-lazy.js') }}?v=20260825video1" defer></script>
-    @if(request()->routeIs('home'))
-    <script src="{{ theme_asset('assets/js/home-gate.js') }}?v=20260923cin10" defer></script>
-    @elseif(request()->routeIs('home.dummy'))
+    @if(request()->routeIs('home', 'home.dummy'))
     <script src="{{ theme_asset('assets/js/golf-gate.js') }}?v=20260930golf4" defer></script>
     @endif
 
