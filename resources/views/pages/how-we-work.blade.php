@@ -109,10 +109,7 @@
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                                     <h3 class="h4 text-white">Follow us</h3>
                                     <ul class="social-icon-style03 list-unstyled">
-                                        <li><a href="{{ route('how-we-work') }}#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ route('how-we-work') }}#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ route('how-we-work') }}#"><i class="ti-linkedin"></i></a></li>
-                                        <li><a href="{{ route('how-we-work') }}#"><i class="ti-instagram"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/marinec/" aria-label="MarineCaddie on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="ti-instagram"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-6 mt-1-9 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
@@ -279,47 +276,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- COUNTER
-        ================================================== -->
-        <section class="pt-0 counter-style01">
-            <div class="container">
-                <div class="row g-0 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 bg-primary border-top border-primary">
-                            <div class="h4 text-white">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="35"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">3</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span></div></div>k
-                            </div>
-                            <p class="d-inline-block text-center text-white">Shipments Handled</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 border-lg-end border-top">
-                            <div class="h4">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="25"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span></div></div>+
-                            </div>
-                            <p>Years of Experience</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 border-sm-end border-lg-top">
-                            <div class="h4">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="89"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">8</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">9</span></span></span></span></span></div></div>+
-                            </div>
-                            <p>Network Partners</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-block text-center py-1-6 py-sm-2-5 border-sm-top">
-                            <div class="h4">
-                                <div class="d-inline-block odometer odometer-auto-theme" data-count="98"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">9</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">8</span></span></span></span></span></div></div>+
-                            </div>
-                            <p>On-Time Delivery Rate</p>
                         </div>
                     </div>
                 </div>
