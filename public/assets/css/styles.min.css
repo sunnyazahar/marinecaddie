@@ -6224,6 +6224,204 @@ body.mc-gates-skip .mc-cinematic__gate--right {
   color: #d9d9d4;
 }
 
+/* Enter button on the closed gates */
+.mc-gate-enter {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  z-index: 8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1.9rem 0.8rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(14, 14, 16, 0.72), rgba(0, 0, 0, 0.55));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 18px 44px rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #f4f2ec;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.45s ease, transform 0.45s ease, border-color 0.25s ease, background 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.mc-gate-enter::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(247, 148, 29, 0.75);
+  opacity: 0;
+  animation: mcGateEnterPulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.mc-gate-enter:hover,
+.mc-gate-enter:focus-visible {
+  border-color: rgba(247, 148, 29, 0.85);
+  background: linear-gradient(180deg, rgba(28, 20, 12, 0.8), rgba(0, 0, 0, 0.6));
+  outline: none;
+}
+.mc-gate-enter:focus-visible {
+  box-shadow: 0 0 0 3px rgba(247, 148, 29, 0.45), 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+.mc-gate-enter__ball {
+  position: relative;
+  width: 2.3rem;
+  height: 2.3rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 28%, #fff 0 18%, rgba(255, 255, 255, 0) 42%),
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.22) 100%),
+    radial-gradient(circle, rgba(0, 0, 0, 0.09) 0 1.2px, transparent 1.6px) 0 0 / 5px 5px,
+    #f2f1ec;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+  transition: transform 0.45s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+.mc-gate-enter:hover .mc-gate-enter__ball {
+  transform: rotate(-35deg) translateX(2px);
+}
+.mc-gate-enter.is-loading .mc-gate-enter__ball {
+  animation: mcGateEnterSpin 0.9s linear infinite;
+}
+@keyframes mcGateEnterPulse {
+  0% { opacity: 0.8; transform: scale(1); }
+  70%, 100% { opacity: 0; transform: scale(1.18, 1.45); }
+}
+@keyframes mcGateEnterSpin {
+  to { transform: rotate(360deg); }
+}
+.mc-cinematic.is-golfing .mc-gate-enter,
+.mc-cinematic.is-open .mc-gate-enter,
+body.mc-gates-skip .mc-gate-enter {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.92);
+}
+@media (max-width: 991.98px) {
+  .mc-gate-enter {
+    top: calc(min(70svh, 520px) * 0.86);
+    gap: 0.7rem;
+    padding: 0.7rem 1.55rem 0.7rem 0.7rem;
+    font-size: 0.88rem;
+  }
+  .mc-gate-enter__ball {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Ball flight + hole-out drawn over the golf map on the gate */
+.mc-gate-fx {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.mc-cinematic.is-open .mc-gate-fx {
+  opacity: 0;
+}
+
+/* Golf shot overlay (plays on Enter, then the gates open) */
+.mc-golf {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  overflow: hidden;
+  background: #0a0f0a;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.mc-golf[hidden] {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .mc-golf {
+    bottom: auto;
+    height: calc(100svh - 70px);
+  }
+}
+.mc-golf.is-on {
+  opacity: 1;
+}
+.mc-golf.is-out {
+  opacity: 0;
+  transition-duration: 0.7s;
+  pointer-events: none;
+}
+.mc-golf__backdrop {
+  position: absolute;
+  inset: -40px;
+  background: #1b2a17 center / cover no-repeat;
+  filter: blur(26px) saturate(1.1) brightness(0.42);
+  transform: translateZ(0);
+}
+.mc-golf__cam,
+.mc-golf__shake {
+  position: absolute;
+  inset: 0;
+}
+.mc-golf__cam {
+  will-change: transform;
+}
+.mc-golf__img,
+.mc-golf__fx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  max-width: none;
+  margin: 0;
+  pointer-events: none;
+}
+.mc-golf__img {
+  opacity: 0;
+  object-fit: fill;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.mc-golf__img.is-shown {
+  opacity: 1;
+}
+.mc-golf__fx {
+  z-index: 2;
+}
+.main-wrapper .mc-golf__skip,
+.mc-golf__skip {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #f4f2ec;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.mc-golf__skip:hover,
+.mc-golf__skip:focus-visible {
+  border-color: #F7941D;
+  outline: none;
+}
+
 /* Hub */
 .mc-cinematic__hub {
   position: relative;
@@ -6241,6 +6439,10 @@ body.mc-gates-skip .mc-cinematic__gate--right {
 body.mc-gates-skip .mc-cinematic__hub {
   opacity: 1;
   transform: translateY(0);
+}
+/* Golf gate waits for Enter: keep the hidden hub unclickable until the gates open */
+.mc-cinematic--golf:not(.is-open) .mc-cinematic__hub {
+  pointer-events: none;
 }
 body.mc-gates-skip .mc-cinematic__hub {
   transition: none;

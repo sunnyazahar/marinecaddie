@@ -14,6 +14,11 @@ class PageController extends Controller
         return view('pages.home-alt');
     }
 
+    public function dummy()
+    {
+        return view('pages.dummy');
+    }
+
     public function about()
     {
         return view('pages.about');

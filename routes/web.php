@@ -43,6 +43,7 @@ Route::get('/favicon-96x96.png', function () {
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/home-alt', [PageController::class, 'homeAlt'])->name('home.alt');
+Route::get('/dummy', [PageController::class, 'dummy'])->name('home.dummy');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/mission-vision', [PageController::class, 'missionVision'])->name('mission-vision');
 Route::get('/services', [PageController::class, 'services'])->name('services');
