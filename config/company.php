@@ -84,6 +84,13 @@ return [
 
     'who_we_are' => 'Global reach, local support offering local expertise and communication in your language.',
 
+    /* Upload the portrait to public/assets/img/team/founder-ceo.jpg (portrait, ~800×1000). Until then a user icon shows. */
+    'founder' => [
+        'name' => 'Shagir Mohammed',
+        'title' => 'Founder & CEO',
+        'photo' => 'assets/img/team/founder-ceo.jpg',
+    ],
+
     'mission' => 'To provide reliable, innovative, and time-critical maritime logistics solutions that keep vessels operating efficiently while delivering exceptional customer service worldwide.',
 
     'mission_focus' => [

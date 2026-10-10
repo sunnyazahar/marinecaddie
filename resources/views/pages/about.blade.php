@@ -90,6 +90,80 @@
             </div>
         </section>
 
+        <!-- FOUNDER MESSAGE
+        ================================================== -->
+        @php
+            $founder = config('company.founder', []);
+            $founderPhoto = $founder['photo'] ?? '';
+            $founderHasPhoto = $founderPhoto !== '' && is_file(public_path($founderPhoto));
+            $founderName = trim((string) ($founder['name'] ?? ''));
+            $founderTitle = $founder['title'] ?? 'Founder & CEO';
+        @endphp
+        <section class="about-founder" id="founder-message" aria-labelledby="about-founder-title">
+            <div class="container">
+                <div class="row g-4 g-xl-5 align-items-start">
+                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="100ms">
+                        <figure class="about-founder__portrait">
+                            <div class="about-founder__photo">
+                                @if($founderHasPhoto)
+                                    @include('partials.responsive-img', [
+                                        'path' => $founderPhoto,
+                                        'alt' => trim(($founderName !== '' ? $founderName.', ' : '').$founderTitle.' of MarineCaddie'),
+                                        'class' => 'about-founder__img',
+                                        'lazy' => true,
+                                        'width' => 800,
+                                        'height' => 1000,
+                                    ])
+                                @else
+                                    <div class="about-founder__avatar" aria-hidden="true">
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                                            <defs>
+                                                <linearGradient id="founderAvatarFill" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0" stop-color="#f2f0ea"/>
+                                                    <stop offset="1" stop-color="#9fb3d1"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="100" cy="100" r="96" fill="rgba(255,255,255,0.06)" stroke="rgba(247,148,29,0.55)" stroke-width="2"/>
+                                            <circle cx="100" cy="100" r="84" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3 6"/>
+                                            <circle cx="100" cy="78" r="30" fill="url(#founderAvatarFill)"/>
+                                            <path d="M42 162c4-32 28-52 58-52s54 20 58 52c-16 14-36 22-58 22s-42-8-58-22z" fill="url(#founderAvatarFill)"/>
+                                        </svg>
+                                    </div>
+                                @endif
+                            </div>
+                            <figcaption class="about-founder__plate">
+                                @if($founderName !== '')
+                                    <span class="about-founder__plate-name">{{ $founderName }}</span>
+                                @endif
+                                <span class="about-founder__plate-role">{{ $founderTitle }}</span>
+                                <span class="about-founder__plate-co">{{ config('company.legal_name') }}</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="150ms">
+                        <div class="about-founder__copy">
+                            <span class="about-founder__eyebrow">Message from</span>
+                            <h2 class="about-founder__title" id="about-founder-title">Founder &amp; CEO</h2>
+                            <p class="about-founder__welcome">Welcome to MarineCaddie.</p>
+                            <p class="about-founder__lead">MarineCaddie was built with a simple idea – ship spares logistics needs a specialist, not a general forwarder.</p>
+                            <p>Having worked closely with the maritime industry, I have seen how critical a spare is – a vessel waiting, a schedule changing, a delivery window measured in hours, not days. Conventional logistics often does not understand this urgency.</p>
+                            <p>That is why we created MarineCaddie – a company built exclusively around ship spares logistics.</p>
+                            <p>We operate as your 3PL/4PL logistics partner, with our presence across Dubai, India, China, Singapore, South Korea, Vietnam, Sri Lanka, Netherlands, Germany and USA, supported by specialist partners worldwide. Through our 24/7 Door-to-Deck service and Global Hubs for consolidation, we ensure:</p>
+                            <ul class="about-founder__rights">
+                                <li>The right spare</li>
+                                <li>The right vessel</li>
+                                <li>The right port</li>
+                                <li>The right time.</li>
+                            </ul>
+                            <p class="about-founder__promise">Our promise is simple – <strong>Smart Caddies, Smarter Logistics.</strong></p>
+                            <p>We understand your operations, we speak your language, and we deliver when it matters most.</p>
+                            <p>Thank you for trusting MarineCaddie as your global logistics partner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- WHY CHOOSE US
         ================================================== -->
         <section class="about-motto-split" id="why-choose-us">
